@@ -11,6 +11,11 @@ wp-content/*
 # ignore these plugins
 wp-content/plugins/hello.php
 
+# ignore fichier config.php
+wp-config.php
+.git
+
+
 # ignore specific themes
 wp-content/themes/twenty*/
 
