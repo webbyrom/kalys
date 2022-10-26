@@ -14,23 +14,30 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 @font-face {
-    font-family: 'AlexBrush';
-    src: local('font/AlexBrush-Regular.eot') format('eot');
-    src: local('font/AlexBrush-Regular.svg') format('svg');
-    src: local('font/AlexBrush-Regular.ttf') format('ttf');
-    src: local('font/AlexBrush-regular.woff') format('woff');
-    src: local('font/AlexBrush-Regular.woff2') format('woff2');
-
+    font-family: "AlexBrush";
+    src: local("font/AlexBrush-Regular.eot") format("eot");
+    src: local("font/AlexBrush-Regular.svg") format("svg");
+    src: local("font/AlexBrush-Regular.ttf") format("ttf");
+    src: local("font/AlexBrush-regular.woff") format("woff");
+    src: local("font/AlexBrush-Regular.woff2") format("woff2");
 }
-body{
-    font-family: 'mrblaketon-pro', 'AlexBrush'!important;
-    background-color: rgba(224, 232, 226, 0.5)!important;
-    font-size: larger;
-    font-style: italic;
-    color: rgb(174, 27, 177)!important;
-    padding: auto;
-
+body {
+    text-align: justify;
+    color: rgb(174, 27, 177) !important;
+    background-color: rgba(224, 232, 226, 0.5) !important;
+    font-family: "mrblaketon-pro", "AlexBrush" !important;
+    h1 {
+        font-size: 76px !important;
+        font-weight: 600 !important;
+        font-style: italic;
+        margin: 25px 0px;
+        padding: auto;
+    }
+    h2 {
+        font-size: 55px;
+    }
 }
+
 .container-footer {
     background-color: rgb(203, 160, 206);
     width: 100%;
