@@ -23,7 +23,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   src: local("font/AlexBrush-Regular.woff2") format("woff2");
 }
 body {
-  font-family: "AlexBrush" !important;
+  font-family: "mrblaketon-pro", "AlexBrush" !important;
   background-color: rgba(224, 232, 226, 0.5) !important;
   font-size: larger;
   font-style: italic;
