@@ -1,6 +1,6 @@
 </div>
 <div class="container container-footer">
-    <p>test footer</p>
+    <p class="texte-center">test footer</p>
 </div>
 <?php wp_footer() ?>
 </body>
