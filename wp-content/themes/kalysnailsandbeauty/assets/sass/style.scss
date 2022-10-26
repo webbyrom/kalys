@@ -13,15 +13,26 @@ Text Domain: Kalys Nails and Beauty.
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+@font-face {
+    font-family: 'AlexBrush';
+    src: local('font/AlexBrush-Regular.eot') format('eot');
+    src: local('font/AlexBrush-Regular.svg') format('svg');
+    src: local('font/AlexBrush-Regular.ttf') format('ttf');
+    src: local('font/AlexBrush-regular.woff') format('woff');
+    src: local('font/AlexBrush-Regular.woff2') format('woff2');
+
+}
 body{
-    background-color: rgba(77, 190, 103, 0.5)!important;
+    font-family: 'AlexBrush'!important;
+    background-color: rgba(224, 232, 226, 0.5)!important;
     font-size: larger;
+    font-style: italic;
     color: rgb(174, 27, 177)!important;
     padding: auto;
 
 }
 .container-footer {
-    background-color: blue;
+    background-color: rgb(203, 160, 206);
     width: 100%;
     height: auto;
 }
