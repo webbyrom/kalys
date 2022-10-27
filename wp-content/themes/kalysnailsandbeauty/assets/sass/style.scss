@@ -22,16 +22,19 @@ Use it to make something cool, have fun, and share what you've learned with othe
     src: local("font/AlexBrush-Regular.woff2") format("woff2");
 }
 body {
+    /*display: inline-flex;*/
     text-align: justify;
     color: rgb(174, 27, 177) !important;
     background-color: rgba(224, 232, 226, 0.5) !important;
     font-family: "mrblaketon-pro", "AlexBrush" !important;
     h1 {
+        justify-content: center;
         font-size: 76px !important;
         font-weight: 600 !important;
         font-style: italic;
         margin: 25px 0px;
         padding: auto;
+        margin: auto;
     }
     h2 {
         font-size: 55px;
