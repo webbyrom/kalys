@@ -3,6 +3,7 @@
 function kalys_supports()
 {
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
 }
 function kalys_register_assets()
 {
