@@ -4,6 +4,9 @@ function kalys_supports()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_theme_support('menus');
+    register_nav_menu('header', ' menu header');
+
 }
 function kalys_register_assets()
 {
@@ -24,7 +27,19 @@ function kalys_title($title)
 function kalys_title_separator($title) {
     return '|';
 }
+function kalys_menu_class ($classes) {
+    $classes[] = 'nav-item';
+    return $classes;
+
+}
+function kalys_menu_link_class($attrs) {
+    $attrs['class'] = 'nav-link';
+    return $attrs;
+
+}
 add_action('after_setup_theme', 'kalys_supports');
 add_action('wp_enqueue_scripts', 'kalys_register_assets');
 add_filter('wp_title', 'kalys_title');
 add_filter('document_title_separator', 'kalys_title_separator');
+add_filter('nav_menu_css_class', 'kalys_menu_class');
+add_filter('nav_menu_link_attributes', 'kalys_menu_link_class');
