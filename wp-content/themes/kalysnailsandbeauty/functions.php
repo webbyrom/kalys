@@ -21,6 +21,10 @@ function kalys_title($title)
 {
     return $title .= get_bloginfo('name', 'description');
 }
+function kalys_title_separator($title) {
+    return '|';
+}
 add_action('after_setup_theme', 'kalys_supports');
 add_action('wp_enqueue_scripts', 'kalys_register_assets');
 add_filter('wp_title', 'kalys_title');
+add_filter('document_title_separator', 'kalys_title_separator');
