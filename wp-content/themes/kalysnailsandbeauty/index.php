@@ -20,6 +20,8 @@
             </div>
         <?php endwhile ?>
     </div>
+    <?php kalys_pagination() ?>
+<?= paginate_links(); ?>
 <?php else : ?>
     <h3>Pas d'articles</h3>
 <?php endif; ?>
