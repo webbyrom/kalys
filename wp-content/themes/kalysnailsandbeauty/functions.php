@@ -60,6 +60,28 @@ function kalys_pagination() {
     echo '</ul>';
     echo '</nav>';
 }
+
+function kalys_init() {
+    register_taxonomy('soin', 'post', [
+       'labels' => [
+            'name' => 'Soin',
+            'singular_name' => 'Soin',
+            'plural_name'   => 'Soins',
+            'search_items'  => 'Rechercher tous les soins',
+            'all_items'     => 'Tous les Soins',
+            'edit_item'     => 'Editer le soin',
+            'update_item'   => 'Mettre à jour le soin',
+            'add_new_item'  => 'Ajouter un nouveau soin',
+            'new_item_name' => 'Ajouter un nouveau soin',
+            'menu_name'     => 'Soin',
+       ],
+       'show_in_rest'   => true,
+       'hierarchical'   => true,
+       'show_admin_column'  => true,
+       ]);
+}
+
+add_action('init', 'kalys_init');
 add_action('after_setup_theme', 'kalys_supports');
 add_action('wp_enqueue_scripts', 'kalys_register_assets');
 add_filter('wp_title', 'kalys_title');
