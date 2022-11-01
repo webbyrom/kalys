@@ -8,6 +8,8 @@ function kalys_supports()
     register_nav_menu('header', 'menu header');
     register_nav_menu('footer', 'menu footer');
 
+    add_image_size('card-header-post', 350, 215, true);
+
 }
 function kalys_register_assets()
 {
@@ -64,3 +66,6 @@ add_filter('wp_title', 'kalys_title');
 add_filter('document_title_separator', 'kalys_title_separator');
 add_filter('nav_menu_css_class', 'kalys_menu_class');
 add_filter('nav_menu_link_attributes', 'kalys_menu_link_class');
+
+require_once('metaboxes/sponso.php');
+SponsoMetaBox::register();
