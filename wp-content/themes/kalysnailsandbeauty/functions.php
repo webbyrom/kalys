@@ -73,7 +73,7 @@ function kalys_init() {
             'update_item'   => 'Mettre à jour le soin',
             'add_new_item'  => 'Ajouter un nouveau soin',
             'new_item_name' => 'Ajouter un nouveau soin',
-            'menu_name'     => 'Soin',
+            'menu_name'     => 'Soins',
        ],
        'show_in_rest'   => true,
        'hierarchical'   => true,
