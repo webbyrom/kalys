@@ -40,6 +40,9 @@ function kalys_menu_link_class($attrs) {
     return $attrs;
 
 }
+/*********************
+ * fonction pagination avec activation de la classe active, remplacement de la classe current par active
+ */
 function kalys_pagination() {
     $pages = paginate_links(['type' => 'array']);
     if ($pages === null) {
@@ -60,7 +63,9 @@ function kalys_pagination() {
     echo '</ul>';
     echo '</nav>';
 }
-
+/***********************************************************
+ * taxonomy des articles
+ */
 function kalys_init() {
     register_taxonomy('soin', 'post', [
        'labels' => [
