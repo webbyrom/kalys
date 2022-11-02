@@ -83,7 +83,61 @@ function kalys_init() {
        'show_in_rest'   => true,
        'hierarchical'   => true,
        'show_admin_column'  => true,
-       ]);
+    ]);
+    register_post_type('epilation', [
+        'labels' => [
+            'name'  => 'Epilation',
+            'singular_name' =>  'Epilation',
+            'plural_name'   =>  'Epilations',
+            'search_items'  =>  'Rechercher les épilations',
+            'all_item'  =>  'Toutes les épilations',
+            'edit_item' =>  'Editer l\'épilation',
+            'update_item'   =>  'Mettre à jour l\'épilation',
+            'add_new_item'  =>  'Ajouter une nouvelle épilation',
+            'new_item_name' =>  'Ajouter une nouvelle épilation',
+            'menu_name' =>  'Epilation',
+        ],
+        'show_in_rest'  => true,
+        'public'    =>  true,
+        'menu_position' => 2,
+        'menu_icon' =>  'dashicons-businesswoman',
+        'supports'  =>  ['title',
+                        'editor',
+                        'thumbnail',
+                        'comments',
+                        'author',
+                        'post-formats',
+                        ],
+        'show_in_rest'  =>  true,
+        'has_archive'   =>  true,
+    ]);
+    register_post_type('Manucure', [
+        'labels' => [
+            'name'  => 'Manucre',
+            'singular_name' =>  'Manucure',
+            'plural_name'   =>  'Manucres',
+            'search_items'  =>  'Rechercher les manucures',
+            'all_item'  =>  'Toutes les manucures',
+            'edit_item' =>  'Editer les manucures',
+            'update_item'   =>  'Mettre à jour les manucures',
+            'add_new_item'  =>  'Ajouter une nouvelle manucures',
+            'new_item_name' =>  'Ajouter une nouvelle manucures',
+            'menu_name' =>  'Manucre',
+        ],
+        'show_in_rest'  => true,
+        'public'    =>  true,
+        'menu_position' => 3,
+        'menu_icon' =>  'dashicons-admin-customizer',
+        'supports'  =>  ['title',
+                        'editor',
+                        'thumbnail',
+                        'comments',
+                        'author',
+                        'post-formats',
+                        ],
+        'show_in_rest'  =>  true,
+        'has_archive'   =>  true,
+    ]);
 }
 
 add_action('init', 'kalys_init');
@@ -95,4 +149,6 @@ add_filter('nav_menu_css_class', 'kalys_menu_class');
 add_filter('nav_menu_link_attributes', 'kalys_menu_link_class');
 
 require_once('metaboxes/sponso.php');
+require_once('options/kalys.php');
 SponsoMetaBox::register();
+KalysMenuPage::register();

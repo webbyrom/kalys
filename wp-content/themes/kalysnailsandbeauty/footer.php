@@ -16,8 +16,12 @@
                         <p class="texte-center">Kalys footer</p>
                     </div>
                 </div>
+                <div>
+                    <?= get_option('kalys_horaire') ?>
+                </div>
 
 </footer>
+
 <?php wp_footer(); ?>
 </body>
 
