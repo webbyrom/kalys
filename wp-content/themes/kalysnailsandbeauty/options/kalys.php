@@ -32,7 +32,7 @@ class KalysMenuPage
         <?php
         }, self::GROUP, 'kalys_options_section');
         /****
-         * enregiqtrement de la date
+         * enregistrement de la date
          */
         add_settings_field('kalys_options_date', "Date d'ouverture", function () {
             ?>
