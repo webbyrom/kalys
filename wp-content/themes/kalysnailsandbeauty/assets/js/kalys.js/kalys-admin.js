@@ -1,0 +1,1 @@
+jQuery(".kalys_datepicker").flatpickr({});
