@@ -113,16 +113,16 @@ function kalys_init() {
     ]);
     register_post_type('Manucure', [
         'labels' => [
-            'name'  => 'Manucre',
+            'name'  => 'Manucure',
             'singular_name' =>  'Manucure',
-            'plural_name'   =>  'Manucres',
+            'plural_name'   =>  'Manucures',
             'search_items'  =>  'Rechercher les manucures',
             'all_item'  =>  'Toutes les manucures',
             'edit_item' =>  'Editer les manucures',
             'update_item'   =>  'Mettre à jour les manucures',
             'add_new_item'  =>  'Ajouter une nouvelle manucures',
             'new_item_name' =>  'Ajouter une nouvelle manucures',
-            'menu_name' =>  'Manucre',
+            'menu_name' =>  'Manucure',
         ],
         'show_in_rest'  => true,
         'public'    =>  true,
