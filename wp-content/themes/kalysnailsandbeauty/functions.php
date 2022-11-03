@@ -152,3 +152,50 @@ require_once('metaboxes/sponso.php');
 require_once('options/kalys.php');
 SponsoMetaBox::register();
 KalysMenuPage::register();
+
+
+add_filter('manage_epilation_posts_columns', function ($columns){
+    return [
+        'cb'    => $columns['cb'],
+        'thumbnail' => 'Miniature',
+        'title'     => $columns['title'],
+        'date'      => $columns['date']
+    ];
+});
+/*****
+ * vréation d'un colonne dans l'admin wordpress( la colonne miniature)
+ */
+add_filter('manage_epilation_posts_custom_column', function($column, $postId){
+if ($column === 'thumbnail') {
+    the_post_thumbnail('thumbnail', $postId);
+}
+}, 10, 2);
+/****
+ * utilisation du fichier admin.css pour cette nouvelle colonne et partie
+ */
+ add_action('admin_enqueue_scripts', function (){
+    wp_enqueue_style('admin_kalys', get_template_directory_uri() . '/assets/css/admin-css/admin.css');
+ });
+
+
+ add_filter('manage_post_posts_columns', function ($columns){
+    $newColumns = [];
+    foreach($columns as $k => $v) {
+        if ($k === 'date') {
+            $newColumns['sponso'] = 'Article sponsorié ?';
+        }
+        $newColumns[$k] = $v;
+    }
+    return $newColumns;
+ });
+
+ add_filter('manage_post_posts_custom_column', function ($column, $postId){
+    if ($column === 'sponso') {
+        if (!empty(get_post_meta($postId, SponsoMetaBox::META_KEY, true))) {
+            $class = 'yes';
+        }else {
+            $class = 'no';
+        }
+        echo '<div class="bullet bullet-' . $class . '"></div>';
+    }
+ }, 10, 2);

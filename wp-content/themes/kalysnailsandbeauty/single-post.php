@@ -8,6 +8,31 @@
                 <?php endif ?>
                 <?php the_post_thumbnail('medium') ?>
                 <?php the_content() ?>
+                <h2>articles Relatifs</h2>
+                <div class="row">
+                        <?php
+                        $Soins = array_map(function ($term) {
+                                return $term->term_id;
+                        }, get_the_terms(get_post(), 'soin'));
+                        $query = new WP_Query([
+                                'post__not_in'  => [get_the_ID()],
+                                'post_type'     => 'post',
+                                'post_per_page' => 3,
+                                'tax_query' => [
+                                        [
+                                        'taxonomy' => 'soin',
+                                        'terms' => $Soins
+                                        ]
+                                ]
+                        ]);
+                        while ($query->have_posts()) : $query->the_post();
+                        ?>
+                                <div class="col-sm-4">
+                                        <?php get_template_part('parts/card', 'post'); ?>
+                                </div>
+                        <?php endwhile;
+                        wp_reset_postdata(); ?>
+                </div>
 <?php endwhile;
 endif; ?>
 
