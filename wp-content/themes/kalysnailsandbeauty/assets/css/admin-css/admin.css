@@ -2,18 +2,18 @@
     width: 150px;
 }
 
-.column-sponso {
+.column-kalys_sponso {
     text-align: center;
     align-items: center;
 }
 
-.column-sponso .bullet {
-    width: 15px;
-    height: 15px;
+.column-kalys_sponso .bullet {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: greenyellow;
 }
 
-.column-sponso .bullet-no {
+.column-kalys_sponso .bullet-no {
     background: red;
 }

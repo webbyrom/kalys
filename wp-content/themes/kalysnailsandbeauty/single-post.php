@@ -6,12 +6,15 @@
                                 Cet article est sponsorié
                         </div>
                 <?php endif ?>
-                <?php the_post_thumbnail('medium') ?>
+                <p>
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="" style=" width:100%; height:auto;">
+                </p>
+
                 <?php the_content() ?>
                 <h2>articles Relatifs</h2>
                 <div class="row">
                         <?php
-                        $Soins = array_map(function ($term) {
+                        $kalysSoins = array_map(function ($term) {
                                 return $term->term_id;
                         }, get_the_terms(get_post(), 'soin'));
                         $query = new WP_Query([
@@ -20,9 +23,16 @@
                                 'post_per_page' => 3,
                                 'tax_query' => [
                                         [
-                                        'taxonomy' => 'soin',
-                                        'terms' => $Soins
+                                                'taxonomy' => 'soin',
+                                                'terms' => $kalysSoins,
                                         ]
+                                ],
+                                'meta_query' => [
+                                        [
+                                                'key' => SponsoMetaBox::META_KEY,
+                                                'compare' => 'EXISTS'
+                                        ]
+
                                 ]
                         ]);
                         while ($query->have_posts()) : $query->the_post();

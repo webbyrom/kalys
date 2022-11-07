@@ -31,10 +31,10 @@ class SponsoMetaBox
 
     public static function save($post)
     {
-        /** enregistrement des méta données */
-        if (array_key_exists(self::META_KEY, $_POST) &&
-         current_user_can('publish_posts', $post) &&
-         wp_nonce_field(self::NONCE, self::NONCE)
+        if (
+            array_key_exists(self::META_KEY, $_POST) &&
+            current_user_can('publish_posts', $post) &&
+            wp_verify_nonce($_POST[self::NONCE], self::NONCE)
          ) {
             if ($_POST[self::META_KEY] === '0') {
                 delete_post_meta($post, self::META_KEY);

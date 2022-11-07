@@ -9,7 +9,6 @@ function kalys_supports()
     register_nav_menu('footer', 'menu footer');
 
     add_image_size('card-header-post', 350, 215, true);
-
 }
 function kalys_register_assets()
 {
@@ -27,36 +26,38 @@ function kalys_title($title)
 {
     return $title .= get_bloginfo('name', 'description');
 }
-function kalys_title_separator($title) {
+function kalys_title_separator($title)
+{
     return '|';
 }
-function kalys_menu_class ($classes) {
+function kalys_menu_class($classes)
+{
     $classes[] = 'nav-item';
     return $classes;
-
 }
-function kalys_menu_link_class($attrs) {
+function kalys_menu_link_class($attrs)
+{
     $attrs['class'] = 'nav-link';
     return $attrs;
-
 }
 /*********************
  * fonction pagination avec activation de la classe active, remplacement de la classe current par active
  */
-function kalys_pagination() {
+function kalys_pagination()
+{
     $pages = paginate_links(['type' => 'array']);
     if ($pages === null) {
         return;
     }
     echo '<nav aria-label="Pagination" class="my-4>';
     echo '<ul class="pagination">';
-    foreach($pages as $page){
-        $active = strpos($page,'current') !== false;
+    foreach ($pages as $page) {
+        $active = strpos($page, 'current') !== false;
         $class = 'page-item';
         if ($active) {
             $class .= ' active';
         }
-        echo'<li class="' . $class . '">';
+        echo '<li class="' . $class . '">';
         echo str_replace('page-numbers', 'page-link', $page);
         echo '</li>';
     }
@@ -66,9 +67,10 @@ function kalys_pagination() {
 /***********************************************************
  * taxonomy des articles
  */
-function kalys_init() {
+function kalys_init()
+{
     register_taxonomy('soin', 'post', [
-       'labels' => [
+        'labels' => [
             'name' => 'Soin',
             'singular_name' => 'Soin',
             'plural_name'   => 'Soins',
@@ -79,12 +81,12 @@ function kalys_init() {
             'add_new_item'  => 'Ajouter un nouveau soin',
             'new_item_name' => 'Ajouter un nouveau soin',
             'menu_name'     => 'Soins',
-       ],
-       'show_in_rest'   => true,
-       'hierarchical'   => true,
-       'show_admin_column'  => true,
+        ],
+        'show_in_rest'   => true,
+        'hierarchical'   => true,
+        'show_admin_column'  => true,
     ]);
-    register_post_type('epilation', [
+    register_post_type('kalys_epilation', [
         'labels' => [
             'name'  => 'Epilation',
             'singular_name' =>  'Epilation',
@@ -101,17 +103,18 @@ function kalys_init() {
         'public'    =>  true,
         'menu_position' => 2,
         'menu_icon' =>  'dashicons-businesswoman',
-        'supports'  =>  ['title',
-                        'editor',
-                        'thumbnail',
-                        'comments',
-                        'author',
-                        'post-formats',
-                        ],
+        'supports'  =>  [
+            'title',
+            'editor',
+            'thumbnail',
+            'comments',
+            'author',
+            'post-formats',
+        ],
         'show_in_rest'  =>  true,
         'has_archive'   =>  true,
     ]);
-    register_post_type('Manucure', [
+    register_post_type('kalys_manucure', [
         'labels' => [
             'name'  => 'Manucure',
             'singular_name' =>  'Manucure',
@@ -128,13 +131,14 @@ function kalys_init() {
         'public'    =>  true,
         'menu_position' => 3,
         'menu_icon' =>  'dashicons-admin-customizer',
-        'supports'  =>  ['title',
-                        'editor',
-                        'thumbnail',
-                        'comments',
-                        'author',
-                        'post-formats',
-                        ],
+        'supports'  =>  [
+            'title',
+            'editor',
+            'thumbnail',
+            'comments',
+            'author',
+            'post-formats',
+        ],
         'show_in_rest'  =>  true,
         'has_archive'   =>  true,
     ]);
@@ -154,7 +158,7 @@ SponsoMetaBox::register();
 KalysMenuPage::register();
 
 
-add_filter('manage_epilation_posts_columns', function ($columns){
+add_filter('manage_kalys_epilation_posts_columns', function ($columns) {
     return [
         'cb'    => $columns['cb'],
         'thumbnail' => 'Miniature',
@@ -163,39 +167,79 @@ add_filter('manage_epilation_posts_columns', function ($columns){
     ];
 });
 /*****
- * vréation d'un colonne dans l'admin wordpress( la colonne miniature)
+ * création d'un colonne dans l'admin wordpress( la colonne miniature)
  */
-add_filter('manage_epilation_posts_custom_column', function($column, $postId){
-if ($column === 'thumbnail') {
-    the_post_thumbnail('thumbnail', $postId);
-}
+add_filter('manage_kalys_epilation_posts_custom_column', function ($column, $postId) {
+    if ($column === 'thumbnail') {
+        the_post_thumbnail('thumbnail', $postId);
+    }
 }, 10, 2);
+add_filter('manage_kalys_manucure_posts_columns', function ($columns) {
+    return [
+        'cb'    => $columns['cb'],
+        'thumbnail' => 'Miniature',
+        'title'     => $columns['title'],
+        'date'      => $columns['date']
+    ];
+});
+add_filter('manage_kalys_manucure_posts_custom_column', function ($column, $postId) {
+    if ($column === 'thumbnail') {
+        the_post_thumbnail('thumbnail', $postId);
+    }
+}, 10, 2);
+
 /****
  * utilisation du fichier admin.css pour cette nouvelle colonne et partie
  */
- add_action('admin_enqueue_scripts', function (){
+add_action('admin_enqueue_scripts', function () {
     wp_enqueue_style('admin_kalys', get_template_directory_uri() . '/assets/css/admin-css/admin.css');
- });
+});
 
 
- add_filter('manage_post_posts_columns', function ($columns){
+add_filter('manage_post_posts_columns', function ($columns) {
     $newColumns = [];
-    foreach($columns as $k => $v) {
+    foreach ($columns as $k => $v) {
         if ($k === 'date') {
-            $newColumns['sponso'] = 'Article sponsorié ?';
+            $newColumns['kalys_sponso'] = 'Article sponsorisé ?';
         }
         $newColumns[$k] = $v;
     }
     return $newColumns;
- });
+});
 
- add_filter('manage_post_posts_custom_column', function ($column, $postId){
-    if ($column === 'sponso') {
+add_filter('manage_post_posts_custom_column', function ($column, $postId) {
+    if ($column === 'kalys_sponso') {
         if (!empty(get_post_meta($postId, SponsoMetaBox::META_KEY, true))) {
             $class = 'yes';
-        }else {
+        } else {
             $class = 'no';
         }
         echo '<div class="bullet bullet-' . $class . '"></div>';
     }
- }, 10, 2);
+}, 10, 2);
+
+
+/***
+ *  @param WP_Query $query
+ */
+function kalys_pre_get_posts($query)
+{
+    if (is_admin() || !is_home() || !$query->is_main_query()) {
+        return;
+    }
+    if (get_query_var('kalys_sponso') === '1') {
+        $meta_query = $query->get('meta_query', []);
+        $meta_query[] = [
+            'key'   => SponsoMetaBox::META_KEY,
+            'compare'   => 'EXISTS',
+        ];
+        $query->set('meta_query', $meta_query);
+    }
+}
+function kalys_query_vars($params)
+{
+    $params[] = 'kalys_sponso';
+    return $params;
+}
+add_action('pre_get_posts', 'kalys_pre_get_posts');
+add_filter('query_vars',  'kalys_query_vars');
