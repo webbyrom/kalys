@@ -243,3 +243,17 @@ function kalys_query_vars($params)
 }
 add_action('pre_get_posts', 'kalys_pre_get_posts');
 add_filter('query_vars',  'kalys_query_vars');
+
+function kalys_register_widget() {
+    register_sidebar([
+        'id' => 'homepage',
+        'name'  => 'Sidebar Accueil',
+        'before_widget' => '<div class="p-4 %2$s" id="%1$s">',
+        'after_widget' => '</div>',
+        'after_title' => '<h4 class="fst-italic">',
+        'before_title' => '</h4>',
+
+
+    ]);
+}
+add_action('widgets_init', 'kalys_register_widget');

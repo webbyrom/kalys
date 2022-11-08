@@ -51,4 +51,8 @@ body p {
   background-color: rgb(203, 160, 206);
   width: 100%;
   height: auto;
+}
+
+.btn.btn-outline-secondary {
+  margin-top: 5px;
 }/*# sourceMappingURL=style.css.map */
