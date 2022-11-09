@@ -8,14 +8,15 @@
   <a href="<?= get_post_type_archive_link('post') ?>">voir les derniéres actualités</a>
 <?php endwhile; ?>
 <main class="container">
-  <!-----  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+  <!---
+   <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
     <div class="col-md-6 px-0">
       <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
       <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
       <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
     </div>
   </div>
----->
+--->
   <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -114,8 +115,8 @@
         <pre><code>Example code block</code></pre>
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
       </article>
-
-      <!--   <article class="blog-post">
+<!---
+         <article class="blog-post">
         <h2 class="blog-post-title mb-1">Another blog post</h2>
         <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
 
@@ -162,7 +163,7 @@
 
         <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
       </article>
---->
+-->
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">New feature</h2>
         <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
@@ -186,14 +187,14 @@
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <?= get_sidebar('homepage'); ?>
-        <!----
+
         <div class="p-4 mb-3 bg-light rounded">
           <h4 class="fst-italic">About</h4>
           <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
         </div>
----->
-        <!----
-        <div class="p-4">
+
+
+ <!--       <div class="p-4">
           <h4 class="fst-italic">Archives</h4>
           <ol class="list-unstyled mb-0">
             <li><a href="#">March 2021</a></li>

@@ -24,13 +24,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 body {
     /*display: inline-flex;*/
     /*text-align: justify;*/
-    color: rgb(174, 27, 177) !important;
     background-color: rgba(224, 232, 226, 0.5) !important;
     font-family:"AlexBrush" !important;
     h1 {
+        color: rgb(174, 27, 177) !important;
         justify-content: center;
         font-family: "mrblaketon-pro";
-        font-size: 76px !important;
+       /* font-size: 76px !important;*/
         font-weight: 600 !important;
         font-style: italic;
         margin: 25px 0px;
@@ -38,8 +38,9 @@ body {
         margin: auto;
     }
     h2 {
+        color:darkgray;
         font-family: "mrblaketon-pro";
-        font-size: 55px;
+      /*  font-size: 55px;*/
     }
     p {
         font-family: "AlexBrush"!important;
@@ -53,4 +54,16 @@ body {
 }
 .btn.btn-outline-secondary {
     margin-top: 5px;
+}
+.widget_archive , h4 ,ul {
+    list-style-type: none;
+    /* font-size: 0.8em;*/
+    a {
+        /*font-size: 0.8em;*/
+        color:darkgray;
+       /* text-decoration: none;*/
+    }
+    a:hover {
+        color:rgb(166, 0, 255);
+    }
 }
