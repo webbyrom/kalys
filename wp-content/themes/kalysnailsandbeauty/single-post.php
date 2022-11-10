@@ -11,6 +11,11 @@
                 </p>
 
                 <?php the_content() ?>
+                <?php if (comments_open() || get_comments_number()) {
+                        comments_template();
+                }
+                ?>
+
                 <h2>articles Relatifs</h2>
                 <div class="row">
                         <?php

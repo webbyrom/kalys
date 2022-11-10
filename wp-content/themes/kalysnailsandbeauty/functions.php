@@ -1,10 +1,13 @@
 <?php
 
+require_once('options/apparence.php');
+
 function kalys_supports()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
+    add_theme_support('html5');
     register_nav_menu('header', 'menu header');
     register_nav_menu('footer', 'menu footer');
 
@@ -259,3 +262,25 @@ function kalys_register_widget() {
     ]);
 }
 add_action('widgets_init', 'kalys_register_widget');
+
+add_filter('comment_form_default_fields', function ($fields) {
+    $fields['email'] = <<<HTML
+    <div class="form-group"><label for="email">Email</label><input class="form-control" name="email" id="email" required></div>
+    HTML;
+    return $fields;
+});
+/***
+ * ajout des taxonomy lors du switch d'un thème
+ * ajoute Aisselles à la taxonomy soin
+ */
+/*add_action('after_switch_theme', function () {
+    wp_insert_term('Aisselles', 'soin');
+    wp_insert_term('Maillot', 'soin');
+
+});*/
+/***
+ * réécriture des permaliens à l'activation et la desactivation du thème
+ */
+add_action('after_switch_theme', 'flush_rewrite_rules');
+add_action('switch_theme', 'flush_rewrite_rules');
+
