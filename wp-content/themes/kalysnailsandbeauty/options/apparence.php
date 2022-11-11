@@ -16,7 +16,7 @@
         $manager->add_control(new WP_Customize_Color_Control($manager, 'header_background', [
             'section'   =>  'kalys_apparence',
             'setting'   =>  'header_background',
-            'label' =>  'Couleur du Header'
+            'label'     =>  'Couleur du Header'
         ]));
     });
 
