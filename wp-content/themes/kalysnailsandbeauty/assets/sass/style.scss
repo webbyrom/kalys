@@ -26,17 +26,24 @@ body {
     /*text-align: justify;*/
     background-color: rgba(224, 232, 226, 0.5) !important;
     font-family:"AlexBrush" !important;
-    h1 {
-        color: rgb(174, 27, 177) !important;
-        justify-content: center;
-        font-family: "mrblaketon-pro";
-       /* font-size: 76px !important;*/
-        font-weight: 600 !important;
-        font-style: italic;
-        margin: 25px 0px;
-        padding: auto;
-        margin: auto;
+    header {
+        nav  div a> img {
+            width: 150px!important;
+            height: auto;
+        }
+        h1 {
+            color: rgb(174, 27, 177) !important;
+            justify-content: center;
+            font-family: "mrblaketon-pro";
+           /* font-size: 76px !important;*/
+            font-weight: 600 !important;
+            font-style: italic;
+            margin: 25px 0px;
+            padding: auto;
+            margin: auto;
+        }
     }
+
     h2 {
         color:darkgray;
         font-family: "mrblaketon-pro";
@@ -46,6 +53,7 @@ body {
         font-family: "AlexBrush"!important;
     }
 }
+
 
 .container-footer {
     background-color: rgb(203, 160, 206);

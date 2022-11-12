@@ -28,7 +28,11 @@ body {
   background-color: rgba(224, 232, 226, 0.5) !important;
   font-family: "AlexBrush" !important;
 }
-body h1 {
+body header nav div a > img {
+  width: 150px !important;
+  height: auto;
+}
+body header h1 {
   color: rgb(174, 27, 177) !important;
   justify-content: center;
   font-family: "mrblaketon-pro";

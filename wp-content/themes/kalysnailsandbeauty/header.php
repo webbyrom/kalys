@@ -12,26 +12,31 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg mb-4" style="background-color: <?= get_theme_mod('header_background'); ?>!important ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?>
-    </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <?php wp_nav_menu([
-          'theme_location' => 'header',
-          'container' => false,
-          'menu_class' => 'navbar-nav me-auto',
-          'my-2 my-lg-0 navbar-nav-scroll',
-          'sticky-top',
+<body class="kalys-body">
+  <header class="nav-header">
+    <nav class="navbar navbar-expand-lg mb-4" style="background-color: <?= get_theme_mod('header_background'); ?>!important ">
+      <div class="container-fluid kalys-header">
+        <a href="<?php bloginfo('url') ?>" class="nav_logo" title=" Page d'accueil">
+          <img class="Kalys-logo-nav " src="<?= get_theme_mod('logo') ?>" alt="">
+        </a>
+        <a class="navbar-brand" href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <?php wp_nav_menu([
+            'theme_location' => 'header',
+            'container' => false,
+            'menu_class' => 'navbar-nav me-auto',
+            'my-2 my-lg-0 navbar-nav-scroll',
+            'sticky-top',
 
-        ])
-        ?>
+          ])
+          ?>
+        </div>
+        <?= get_search_form() ?>
       </div>
-      <?= get_search_form() ?>
-    </div>
-  </nav>
+    </nav>
+  </header>
   <div class="container container-header">
