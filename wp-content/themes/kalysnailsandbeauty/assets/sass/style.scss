@@ -15,11 +15,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 @font-face {
     font-family: "AlexBrush";
-    src: local("font/AlexBrush-Regular.eot") format("eot");
-    src: local("font/AlexBrush-Regular.svg") format("svg");
-    src: local("font/AlexBrush-Regular.ttf") format("ttf");
-    src: local("font/AlexBrush-regular.woff") format("woff");
-    src: local("font/AlexBrush-Regular.woff2") format("woff2");
+    src: local("assets/font/AlexBrush-Regular.eot") format("eot");
+    src: local("assets/font/AlexBrush-Regular.svg") format("svg");
+    src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
+    src: local("assets/font/AlexBrush-regular.woff") format("woff");
+    src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
 }
 body {
     /*display: inline-flex;*/
@@ -28,22 +28,23 @@ body {
     font-family:"AlexBrush" !important;
     header {
         nav  div a> img {
+            margin: auto;
             width: 150px!important;
             height: auto;
         }
-        h1 {
-            color: rgb(174, 27, 177) !important;
-            justify-content: center;
-            font-family: "mrblaketon-pro";
-           /* font-size: 76px !important;*/
-            font-weight: 600 !important;
-            font-style: italic;
-            margin: 25px 0px;
-            padding: auto;
-            margin: auto;
-        }
-    }
 
+    }
+    h1 {
+        color: rgb(217, 110, 219) !important;
+        justify-content: center;
+        font-family: "mrblaketon-pro";
+       /* font-size: 76px !important;*/
+        font-weight: 600 !important;
+        font-style: italic;
+        margin: 25px 0px;
+        padding: auto;
+        margin: auto;
+    }
     h2 {
         color:darkgray;
         font-family: "mrblaketon-pro";

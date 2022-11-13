@@ -16,7 +16,7 @@
   <header class="nav-header">
     <nav class="navbar navbar-expand-lg mb-4" style="background-color: <?= get_theme_mod('header_background'); ?>!important ">
       <div class="container-fluid kalys-header">
-        <a href="<?php bloginfo('url') ?>" class="nav_logo" title=" Page d'accueil">
+        <a href="<?= home_url('/') ?>" class="nav_logo" title=" <?= __('Homepage', 'kalys') ?>">
           <img class="Kalys-logo-nav " src="<?= get_theme_mod('logo') ?>" alt="">
         </a>
         <a class="navbar-brand" href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?>
