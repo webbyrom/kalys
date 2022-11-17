@@ -22,16 +22,39 @@ Use it to make something cool, have fun, and share what you've learned with othe
   src: local("assets/font/AlexBrush-regular.woff") format("woff");
   src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   /*display: inline-flex;*/
   /*text-align: justify;*/
   background-color: rgba(224, 232, 226, 0.5) !important;
   font-family: "AlexBrush" !important;
+  line-height: 1.2rem;
 }
-body header nav div a > img {
-  margin: auto;
-  width: 150px !important;
+body header {
+  display: inline-flex;
+  width: 100%;
+}
+body header a {
+  display: inline-block;
+  text-decoration: none;
+}
+body header img {
+  margin: 5%;
+  width: 150px;
   height: auto;
+}
+body header ul li {
+  margin: auto;
+  display: inline-flex;
+  padding: 10px;
+}
+body header button {
+  width: 85px;
+  height: 20px;
+  margin: auto;
 }
 body h1 {
   color: rgb(217, 110, 219) !important;
@@ -53,12 +76,59 @@ body p {
   font-family: "AlexBrush" !important;
 }
 
-.container-footer {
-  background-color: rgb(203, 160, 206);
-  width: 100%;
-  height: auto;
+/***********
+footer
+*/
+.kalys-footer {
+  /* display: block;*/
+  border-top: 1px solid #050505;
+  background: rebeccapurple;
+  padding-top: 44px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  font-size: 18px;
+  height: 250px;
 }
 
+.footer_col {
+  height: 200px;
+}
+
+.footer-title {
+  margin-left: 5%;
+  /*text-decoration: underline whitesmoke;*/
+}
+
+/*.footer_title:nth-child(2n) {
+    background-color: red;
+    width: auto;
+}*/
+/****
+test positionnement
+.col:nth-child(1n) {
+    margin-left: 25px;
+    background-color: brown;
+}
+.col:nth-child(2n) {
+    background-color: yellow;
+}
+.col:nth-child(3n) {
+    background-color: rgb(111, 0, 255);
+} ***/
+/*.col {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-left: 150px;
+    margin-top: 75px;
+    .footer-title {
+        width: ;
+        margin:0%;
+
+    }
+}*/
 .btn.btn-outline-secondary {
   margin-top: 5px;
 }
