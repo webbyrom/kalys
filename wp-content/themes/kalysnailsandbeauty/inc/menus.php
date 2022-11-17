@@ -19,9 +19,9 @@ add_action('widgets_init', function (){
     register_sidebar([
         'id'    => 'footer-nav',
         'name'  => __('Footer_nav', 'kalys'),
-        'before_title' => '<div class="footer-title col col-6">',
+        'before_title' => '<div class="footer-title">',
         'after_title'    => '</div>',
-        'before_widget' => '<div class="footer_col col col-6">',
-        'afer_widget'   => '</div'
+        'before_widget' => '<div class="footer_col">',
+        'after_widget'   => '</div'
     ]);
 });
