@@ -6,7 +6,7 @@ class YoutubeWidget extends WP_Widget
         parent::__construct('youtube_widget', 'Youtube Widget');
     }
 
-    public function widget($args, $instance)
+    public function widget( $args, $instance)
     {
         echo $args['before_widget'];
         if (isset($instance['title'])) {

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 435.82 435.82">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#radial-gradient-2);
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="-123.23" cy="559.52" fx="-123.23" fy="559.52" r="1049.43" gradientTransform="translate(119.95 119.64) scale(.49)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fec053"/>
+      <stop offset=".47" stop-color="#f2203e"/>
+      <stop offset=".71" stop-color="#b71fa8"/>
+      <stop offset="1" stop-color="#5351d6"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="-16.45" cy="418.6" fx="-16.45" fy="418.6" r="654.5" xlink:href="#radial-gradient"/>
+    <linearGradient id="linear-gradient" x1="179.7" y1="256.12" x2="256.12" y2="179.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fe7553"/>
+      <stop offset=".48" stop-color="#f2203e"/>
+      <stop offset="1" stop-color="#b71fa8"/>
+    </linearGradient>
+  </defs>
+  <rect id="_Tranche_" data-name="&amp;lt;Tranche&amp;gt;" class="cls-4" x="133.48" y="129.79" width="199.9" height="207.28"/>
+  <path class="cls-4" d="M249.07,316.61c-46.56,0-84.3-37.24-84.3-83.18s37.74-83.18,84.3-83.18"/>
+  <path class="cls-1" d="M214.3,283.05c7.02,2.69,13.38,2.75,34.77,2.75s27.7-.04,34.77-2.75c7.2-2.76,12.72-8.21,15.52-15.32"/>
+  <path class="cls-1" d="M266.76,233.43c0,9.64-7.92,17.46-17.69,17.46s-17.69-7.82-17.69-17.46"/>
+  <g>
+    <rect class="cls-2" width="435.82" height="435.82" rx="96.86" ry="96.86"/>
+    <rect class="cls-1" x="56.51" y="56.51" width="322.8" height="322.8" rx="90.77" ry="90.77"/>
+    <path class="cls-3" d="M350.09,147.72c-1.06-22.52-10.46-36.69-16.42-42.65-19.87-20.4-42.65-20.4-115.75-20.4s-95.89,0-115.75,20.4c-5.96,5.96-15.36,20.13-16.42,42.65s-1.59,60.92-1.32,70.19c-.26,9.27,.27,47.68,1.32,70.19s10.46,36.69,16.42,42.65c19.87,20.4,42.65,20.4,115.75,20.4s95.89,0,115.75-20.4c5.96-5.96,15.36-20.13,16.42-42.65s1.59-60.92,1.32-70.19c.26-9.27-.26-47.68-1.32-70.19Z"/>
+    <circle class="cls-1" cx="217.91" cy="217.91" r="83.35"/>
+    <circle class="cls-5" cx="217.91" cy="217.91" r="54.04"/>
+    <circle class="cls-1" cx="303.73" cy="131.21" r="19.42"/>
+  </g>
+</svg>

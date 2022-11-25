@@ -2,7 +2,7 @@
 // https://codex.wordpress.org/Plugin_API/Action_Reference/customize_register
     add_action('customize_register', function (WP_Customize_Manager $manager){
         /****
-         * Cela ajoute une nouvellesection (c’est-à-dire catégorie/groupe) à la page Personnalisateur de thème.
+         * Cela ajoute une nouvelle section (c’est-à-dire catégorie/groupe) à la page Personnalisateur de thème.
          */
         $manager->add_section('kalys_apparence', [
             'title' => 'Personnalisation de l\'apparence',

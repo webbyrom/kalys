@@ -26,6 +26,32 @@ Use it to make something cool, have fun, and share what you've learned with othe
   box-sizing: border-box;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ol, ul, li,
+form, label, footer, header, menu, nav {
+  margin: 0 !important;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline !important;
+}
+
+footer, header, menu, nav {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
 body {
   /*display: inline-flex;*/
   /*text-align: justify;*/
@@ -39,7 +65,6 @@ body header {
 }
 body header a {
   display: inline-block;
-  text-decoration: none;
 }
 body header img {
   margin: 5%;
@@ -58,12 +83,12 @@ body header button {
 }
 body h1 {
   color: rgb(217, 110, 219) !important;
-  justify-content: center;
+  /*justify-content: center;*/
   font-family: "mrblaketon-pro";
   /* font-size: 76px !important;*/
-  font-weight: 600 !important;
+  /* font-weight: 600 !important;*/
   font-style: italic;
-  margin: 25px 0px;
+  margin: 25px 0px 25px 50px !important;
   padding: auto;
   margin: auto;
 }
@@ -76,15 +101,19 @@ body p {
   font-family: "AlexBrush" !important;
 }
 
+.container-accueil {
+  background-color: red;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
 /***********
 footer
 */
 .kalys-footer {
   /* display: block;*/
-  -moz-column-count: 3;
-       column-count: 3;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  /* column-count: 3;
+   column-gap: 10px;*/
   border-top: 1px solid #050505;
   background: rebeccapurple;
   padding-top: 20px;
@@ -94,49 +123,41 @@ footer
   height: 300px;
 }
 
+.footer li a {
+  display: block;
+  padding: 7px 0;
+}
+
+.footer_col + .footer_col {
+  margin-top: space(4);
+  /*height: 200px;*/
+}
+
 .footer_col {
-  height: 200px;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: inline-flex;
 }
 
 .footer-title {
+  margin-bottom: 16px;
   margin-left: 5%;
   /*text-decoration: underline whitesmoke;*/
 }
 
-/*.footer_title:nth-child(2n) {
-    background-color: red;
-    width: auto;
-}*/
-/****
-test positionnement
-.col:nth-child(1n) {
-    margin-left: 25px;
-    background-color: brown;
-}
-.col:nth-child(2n) {
-    background-color: yellow;
-}
-.col:nth-child(3n) {
-    background-color: rgb(111, 0, 255);
-} ***/
-.col {
-  text-align: center;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  margin-left: 150px;
-  /* margin-top: 75px;*/
-}
-.col .footer-title {
-  margin: 0%;
-}
-
 .btn.btn-outline-secondary {
   margin-top: 5px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: lightgray;
+}
+
+.icon:hover {
+  color: #050505;
 }
 
 .widget_archive, h4, ul {
