@@ -27,5 +27,13 @@ add_action('widgets_init', function (){
         'before_widget' => '<div class="footer_col">',
         'after_widget'   => '</div>'
     ]);
+    register_sidebar([
+        'id'    => 'blog',
+        'name'  => __('Blog sidebar', 'kalys'),
+        'before_title' => '<div class="sidebar_title">',
+        'after_title'    => '</div>',
+        'before_widget' => '<div class="sidebar_widget">',
+        'after_widget'   => '</div>'
+    ]);
 });
 
