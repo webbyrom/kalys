@@ -12,7 +12,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body class="home">
+<body <?php body_class(); ?>>
 <header class="nav" style="background-color: <?= get_theme_mod('header_background') ?>">
   <a href="<?= home_url('/'); ?>" class="nav__logo" title="<?= __('Homepage', 'kalys') ?>">
     <img src="<?= get_theme_mod('logo') ?>" alt="">
