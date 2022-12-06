@@ -23,7 +23,7 @@
                 <?php the_content(); ?>
             </div>
             <?php
-            if (comments_open() || get_comments_number() > 0) {
+            if (comments_open() || absint(get_comments_number())  > 0) {
                 comments_template();
             }
             ?>
@@ -33,8 +33,6 @@
     <?php endwhile; ?>
     <aside class="sidebar">
         <?php dynamic_sidebar('blog') ?>
-
     </aside>
-
 </div>
 <?php get_footer(); ?>

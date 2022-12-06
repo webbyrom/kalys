@@ -6,6 +6,7 @@ require_once('inc/menus.php');
 require_once('inc/images.php');
 require_once('inc/query/posts.php');
 require_once('inc/taxonomy.php');
+require_once('inc/comments.php');
 
 /***
  * icon reseaux sociaux du footer
@@ -28,4 +29,12 @@ function kalys_pagination(): string
          'prev_text' => kalys_icon('arrow'),
          'next_text' => kalys_icon('arrow')
       ]);
+}
+function kalys_paginate_comments(): void {
+   echo '<div class="paginatin">';
+   paginate_comments_links([
+      'prev_text' => kalys_icon('arrow'),
+      'next_text' => kalys_icon('arrow')]);
+      echo '</div>';
+
 }
