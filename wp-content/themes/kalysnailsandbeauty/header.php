@@ -13,19 +13,20 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header class="nav" style="background-color: <?= get_theme_mod('header_background') ?>">
-  <a href="<?= home_url('/'); ?>" class="nav__logo" title="<?= __('Homepage', 'kalys') ?>">
-    <img src="<?= get_theme_mod('logo') ?>" alt="">
-  </a>
+  <header class="nav_menu" style="background-color: <?= get_theme_mod('header_background') ?>">
+    <a href="<?= home_url('/'); ?>" class="nav__logo" title="<?= __('Homepage', 'kalys') ?>">
+      <img src="<?= get_theme_mod('logo') ?>" alt="">
+    </a>
+    <!--------menu navigation------->
+    <?= esc_html( kalys_primary_nav());
+   
+      
+    ?>
+    <button class="nav__burger">
+      <span></span>
+    </button>
+  </header>
+  <!-------------------------Insertion slider revolution---------------------->
   <?php
-  wp_nav_menu([
-    'theme_location' => 'header',
-    'container' => false,
-    'menu_class' => 'nav__menu'
-  ]);
+  echo do_shortcode('[rev_slider alias="slider-2"][/rev_slider]');
   ?>
-  <button class="nav__burger">
-    <span></span>
-  </button>
-</header>
-  

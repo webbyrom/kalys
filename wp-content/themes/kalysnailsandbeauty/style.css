@@ -22,7 +22,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
   src: local("assets/font/AlexBrush-regular.woff") format("woff");
   src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -35,8 +37,27 @@ a {
   color: inherit;
 }
 
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ol, ul, li,
-form, label, footer, header, menu, nav {
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ol,
+ul,
+li,
+form,
+label,
+footer,
+header,
+.nav_menu {
   margin: 0 !important;
   padding: 0;
   border: 0;
@@ -44,47 +65,68 @@ form, label, footer, header, menu, nav {
   vertical-align: baseline !important;
 }
 
-footer, header, menu, nav {
-  display: block;
-}
-
-ol, ul {
-  list-style: none;
-}
-
+/*
+li {
+    display: flex;
+}*/
 body {
   /*display: inline-flex;*/
   /*text-align: justify;*/
   background-color: rgba(224, 232, 226, 0.5) !important;
   font-family: "AlexBrush" !important;
   line-height: 1.2rem;
+  /***********
+  footer
+  */
 }
 body header {
-  display: inline-flex;
-  width: 100%;
-}
-body header a {
-  display: inline-block;
+  display: flex;
+  /******** menu navigation****************************/
 }
 body header img {
   margin: 5%;
   width: 150px;
   height: auto;
 }
-body header ul li {
-  margin: auto;
-  display: inline-flex;
-  padding: 10px;
+body header .kalys_primary_nav {
+  font-size: x-large;
+  display: flex;
+  position: relative;
+  padding-top: 20px;
+  vertical-align: middle;
+  font-style: oblique;
+}
+body header ul.kalys_primary_nav li {
+  padding-right: 10px;
+}
+body header ul.kalys_primary_nav li ul {
+  position: absolute;
+  width: 200px;
+  /*   left: 50%;*/
+  line-height: 20px;
+  visibility: hidden;
+  opacity: 0;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(245, 245, 245);
+}
+body header ul.kalys_primary_nav li:hover > ul {
+  background: rgb(8, 8, 122);
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  display: table;
+  font-size: medium;
 }
 body header button {
   width: 85px;
   height: 20px;
   margin: auto;
 }
-body h1 {
+body header h1 {
   color: rgb(217, 110, 219) !important;
   /*justify-content: center;*/
-  font-family: "mrblaketon-pro";
+  font-family: "mrblaketon-pro" !important;
   /* font-size: 76px !important;*/
   /* font-weight: 600 !important;*/
   font-style: italic;
@@ -92,28 +134,23 @@ body h1 {
   padding: auto;
   margin: auto;
 }
-body h2 {
+body header h2 {
   color: darkgray;
   font-family: "mrblaketon-pro";
   /*  font-size: 55px;*/
 }
-body p {
+body header p {
   font-family: "AlexBrush" !important;
 }
-
-.container-accueil {
-  background-color: red;
+body .container-accueil {
+  /* background-color: red;*/
   width: 100vw !important;
   height: 100vh !important;
 }
-
-/***********
-footer
-*/
-.kalys-footer {
+body .kalys-footer {
   /* display: block;*/
   /* column-count: 3;
-   column-gap: 10px;*/
+  column-gap: 10px;*/
   border-top: 1px solid #050505;
   background: rebeccapurple;
   padding-top: 20px;
@@ -122,53 +159,51 @@ footer
   font-size: 18px;
   height: 300px;
 }
-
-.footer li a {
+body .footer li a {
   display: block;
   padding: 7px 0;
 }
-
-.footer_col + .footer_col {
+body .footer_col + .footer_col {
   margin-top: space(4);
   /*height: 200px;*/
 }
-
-.footer_col {
+body .footer_col {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   display: inline-flex;
 }
-
-.footer-title {
+body .footer-title {
   margin-bottom: 16px;
   margin-left: 5%;
   /*text-decoration: underline whitesmoke;*/
 }
-
-.btn.btn-outline-secondary {
+body .btn.btn-outline-secondary {
   margin-top: 5px;
 }
-
-.icon {
+body .icon {
   width: 25px;
   height: 25px;
   color: lightgray;
 }
-
-.icon:hover {
+body .icon:hover {
   color: #050505;
 }
-
-.widget_archive, h4, ul {
+body .widget_archive,
+body h4,
+body ul {
   list-style-type: none;
   /* font-size: 0.8em;*/
 }
-.widget_archive a, h4 a, ul a {
+body .widget_archive a,
+body h4 a,
+body ul a {
   /*font-size: 0.8em;*/
   color: darkgray;
   /* text-decoration: none;*/
 }
-.widget_archive a:hover, h4 a:hover, ul a:hover {
+body .widget_archive a:hover,
+body h4 a:hover,
+body ul a:hover {
   color: rgb(166, 0, 255);
 }/*# sourceMappingURL=style.css.map */

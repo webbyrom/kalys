@@ -21,142 +21,212 @@ Use it to make something cool, have fun, and share what you've learned with othe
     src: local("assets/font/AlexBrush-regular.woff") format("woff");
     src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
 }
-*, *::before, *::after {
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
+
 * {
     box-sizing: border-box;
 }
+
 a {
-    text-decoration: none!important;
+    text-decoration: none !important;
     color: inherit;
 }
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ol, ul, li, 
-form, label, footer, header, menu, nav {
-    margin:0!important;
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ol,
+ul,
+li,
+form,
+label,
+footer,
+header,
+.nav_menu {
+    margin: 0 !important;
     padding: 0;
     border: 0;
     font: inherit;
     vertical-align: baseline !important;
 }
-footer, header, menu, nav {
-    display: block;
-}
-ol, ul {
-    list-style: none;
-}
+
+/*
+li {
+    display: flex;
+}*/
 body {
     /*display: inline-flex;*/
     /*text-align: justify;*/
     background-color: rgba(224, 232, 226, 0.5) !important;
-    font-family:"AlexBrush" !important;
+    font-family: "AlexBrush" !important;
     line-height: 1.2rem;
+
     header {
-        display: inline-flex;
-        width: 100%;
-        a {
-           display: inline-block;
-        }
+        display: flex;
+
         img {
             margin: 5%;
             width: 150px;
             height: auto;
         }
-         ul li {
-            margin: auto;
-            display: inline-flex;
-            padding: 10px;
-         }
+
+        /******** menu navigation****************************/
+        .kalys_primary_nav {
+            font-size: x-large;
+            display: flex;
+            position: relative;
+            padding-top: 20px;
+            vertical-align: middle;
+            font-style: oblique;
+           
+            
+        }
+
+        ul.kalys_primary_nav li {
+            padding-right: 10px;
+        }
+
+        ul.kalys_primary_nav li ul {
+            position: absolute;
+            width: 200px;
+            /*   left: 50%;*/
+            line-height: 20px;
+            visibility: hidden;
+            opacity: 0;
+            padding: 05px;
+            border-radius: 5px;
+            background-color: rgb(245, 245, 245);
+            
+        }
+
+        ul.kalys_primary_nav li:hover>ul {
+            background: rgb(8, 8, 122);
+            z-index: 10;
+            opacity: 1;
+            visibility: visible;
+            display: table;
+            font-size: medium;
+           
+            
+        }
+
         button {
             width: 85px;
             height: 20px;
             margin: auto;
-        } 
+        }
 
-    }
-    h1 {
-        color: rgb(217, 110, 219) !important;
-        /*justify-content: center;*/
-        font-family: "mrblaketon-pro";
-       /* font-size: 76px !important;*/
-      /* font-weight: 600 !important;*/
-        font-style: italic;
-        margin: 25px 0px 25px 50px!important;
-        padding: auto;
-        margin: auto;
-    }
-    h2 {
-        color:darkgray;
-        font-family: "mrblaketon-pro";
-      /*  font-size: 55px;*/
-    }
-    p {
-        font-family: "AlexBrush"!important;
+        h1 {
+            color: rgb(217, 110, 219) !important;
+            /*justify-content: center;*/
+            font-family: "mrblaketon-pro" !important;
+            /* font-size: 76px !important;*/
+            /* font-weight: 600 !important;*/
+            font-style: italic;
+            margin: 25px 0px 25px 50px !important;
+            padding: auto;
+            margin: auto;
+        }
+
+        h2 {
+            color: darkgray;
+            font-family: "mrblaketon-pro";
+            /*  font-size: 55px;*/
+        }
+
+        p {
+            font-family: "AlexBrush" !important;
+        }
     }
 
-}
-.container-accueil {
-    background-color: red;
-   width: 100vw!important;
-   height:100vh!important;
-}
-/***********
+    .container-accueil {
+        /* background-color: red;*/
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    /***********
 footer
 */
 
-.kalys-footer {
-   /* display: block;*/
-  /* column-count: 3;
+    .kalys-footer {
+        /* display: block;*/
+        /* column-count: 3;
    column-gap: 10px;*/
-    border-top: 1px solid #050505;
-    background:rebeccapurple;
-    padding-top: 20px;
-    margin-top: 150px;
-    margin-bottom: 100px;
-    font-size: 18px;
-    height:300px;
-}
-.footer li a {
-    display: block;
-    padding: 7px 0;
-}
-.footer_col + .footer_col {
-    margin-top: space(4);
-    
-    /*height: 200px;*/
-   
-}
-.footer_col {
-    width: max-content;
-    display: inline-flex;
-}
-.footer-title {
-    margin-bottom: 16px;
-    margin-left: 5%;
-   /*text-decoration: underline whitesmoke;*/
-}
-
-.btn.btn-outline-secondary {
-    margin-top: 5px;
-}
-
-.icon {
-    width: 25px;
-    height: 25px;
-    color: lightgray;
-}
-.icon:hover {
-    color: #050505;
-}
-.widget_archive , h4 ,ul {
-    list-style-type: none;
-    /* font-size: 0.8em;*/
-    a {
-        /*font-size: 0.8em;*/
-        color:darkgray;
-       /* text-decoration: none;*/
+        border-top: 1px solid #050505;
+        background: rebeccapurple;
+        padding-top: 20px;
+        margin-top: 150px;
+        margin-bottom: 100px;
+        font-size: 18px;
+        height: 300px;
     }
-    a:hover {
-        color:rgb(166, 0, 255);
+
+    .footer li a {
+        display: block;
+        padding: 7px 0;
+    }
+
+    .footer_col+.footer_col {
+        margin-top: space(4);
+
+        /*height: 200px;*/
+    }
+
+    .footer_col {
+        width: max-content;
+        display: inline-flex;
+    }
+
+    .footer-title {
+        margin-bottom: 16px;
+        margin-left: 5%;
+        /*text-decoration: underline whitesmoke;*/
+    }
+
+    .btn.btn-outline-secondary {
+        margin-top: 5px;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+        color: lightgray;
+    }
+
+    .icon:hover {
+        color: #050505;
+    }
+
+    .widget_archive,
+    h4,
+    ul {
+        list-style-type: none;
+
+        /* font-size: 0.8em;*/
+        a {
+            /*font-size: 0.8em;*/
+            color: darkgray;
+            /* text-decoration: none;*/
+        }
+
+        a:hover {
+            color: rgb(166, 0, 255);
+        }
     }
 }
