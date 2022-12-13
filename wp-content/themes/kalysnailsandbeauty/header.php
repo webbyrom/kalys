@@ -27,6 +27,8 @@
     </button>
   </header>
   <!-------------------------Insertion slider revolution---------------------->
-  <?php
-  echo do_shortcode('[rev_slider alias="slider-2"][/rev_slider]');
+  <?php /*
+  
+    echo do_shortcode('[rev_slider alias="slider-2"][/rev_slider]');*/
+    
   ?>
