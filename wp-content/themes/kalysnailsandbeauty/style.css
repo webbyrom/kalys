@@ -79,51 +79,86 @@ body {
   footer
   */
 }
-body header {
+body header,
+body nav {
   display: flex;
+  width: 100%;
+  height: 100px;
   /******** menu navigation****************************/
 }
-body header img {
-  margin: 5%;
+body header .nav_logo img,
+body nav .nav_logo img {
+  position: relative;
   width: 150px;
   height: auto;
+  top: 15%;
+  left: 50%;
 }
-body header .kalys_primary_nav {
+body header .kalys_primary_nav,
+body nav .kalys_primary_nav {
+  width: calc(100% - 550px);
+  left: calc(50% - 350px);
   font-size: x-large;
   display: flex;
   position: relative;
   padding-top: 20px;
   vertical-align: middle;
   font-style: oblique;
+  overflow: hidden;
+  top: 15%;
 }
-body header ul.kalys_primary_nav li {
+body header .sub-menu ul,
+body nav .sub-menu ul {
+  width: auto;
+  /* z-index: 10;*/
+}
+body header ul.kalys_primary_nav li,
+body nav ul.kalys_primary_nav li {
+  z-index: 10;
   padding-right: 10px;
+  width: 120px;
+  margin-bottom: 20px;
 }
-body header ul.kalys_primary_nav li ul {
-  position: absolute;
-  width: 200px;
+body header ul.kalys_primary_nav li ul,
+body nav ul.kalys_primary_nav li ul {
+  /*position: absolute;*/
+  /*width: 200px;*/
   /*   left: 50%;*/
-  line-height: 20px;
+  /* line-height: 20px;*/
   visibility: hidden;
   opacity: 0;
   padding: 5px;
   border-radius: 5px;
   background-color: rgb(245, 245, 245);
 }
-body header ul.kalys_primary_nav li:hover > ul {
-  background: rgb(8, 8, 122);
-  z-index: 10;
+body header ul.kalys_primary_nav li:hover > ul,
+body nav ul.kalys_primary_nav li:hover > ul {
+  background: rgb(226, 174, 228);
   opacity: 1;
   visibility: visible;
   display: table;
   font-size: medium;
+  color: white !important;
+  z-index: 10;
+  position: fixed;
 }
-body header button {
+body header .sticky,
+body nav .sticky {
+  transition: 1s ease-in-out;
+  box-shadow: 10px 5px 10px white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+body header button,
+body nav button {
   width: 85px;
   height: 20px;
   margin: auto;
 }
-body header h1 {
+body header h1,
+body nav h1 {
   color: rgb(217, 110, 219) !important;
   /*justify-content: center;*/
   font-family: "mrblaketon-pro" !important;
@@ -134,12 +169,14 @@ body header h1 {
   padding: auto;
   margin: auto;
 }
-body header h2 {
+body header h2,
+body nav h2 {
   color: darkgray;
   font-family: "mrblaketon-pro";
   /*  font-size: 55px;*/
 }
-body header p {
+body header p,
+body nav p {
   font-family: "AlexBrush" !important;
 }
 body .container-accueil {

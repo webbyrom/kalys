@@ -13,22 +13,25 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <header class="nav_menu" style="background-color: <?= get_theme_mod('header_background') ?>">
-    <a href="<?= home_url('/'); ?>" class="nav__logo" title="<?= __('Homepage', 'kalys') ?>">
-      <img src="<?= get_theme_mod('logo') ?>" alt="">
-    </a>
-    <!--------menu navigation------->
-    <?= esc_html( kalys_primary_nav());
-   
-      
-    ?>
-    <button class="nav__burger">
-      <span></span>
-    </button>
+  <header id="kalys_header" class="kalys_header">
+    <nav id="kalys_nav_menu" class="kalys_nav_menu" style="background-color: <?= get_theme_mod('header_background') ?>">
+      <a href="<?= home_url('/'); ?>" class="nav_logo" title="<?= __('Homepage', 'kalys') ?>">
+        <img src="<?= get_theme_mod('logo') ?>" alt="">
+      </a>
+      <!--------menu navigation------->
+      <?= esc_html(kalys_primary_nav());
+
+
+      ?>
+      <button class="nav_burger">
+        <span></span>
+      </button>
+    </nav>
+
   </header>
   <!-------------------------Insertion slider revolution---------------------->
   <?php /*
   
     echo do_shortcode('[rev_slider alias="slider-2"][/rev_slider]');*/
-    
+
   ?>

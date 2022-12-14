@@ -76,53 +76,77 @@ body {
     font-family: "AlexBrush" !important;
     line-height: 1.2rem;
 
-    header {
+    header,
+    nav {
         display: flex;
+        width: 100%;
+        height: 100px;
 
-        img {
-            margin: 5%;
+        .nav_logo img {
+            position: relative;
             width: 150px;
             height: auto;
+            top: 15%;
+            left: 50%;
         }
 
         /******** menu navigation****************************/
         .kalys_primary_nav {
+            width: calc(100% - 550px);
+            left: calc(50% - 350px);
             font-size: x-large;
             display: flex;
             position: relative;
             padding-top: 20px;
             vertical-align: middle;
             font-style: oblique;
-           
-            
+            overflow: hidden;
+            top: 15%;
+        }
+
+        .sub-menu ul{
+            width: auto;
+            /* z-index: 10;*/
         }
 
         ul.kalys_primary_nav li {
+            z-index: 10;
             padding-right: 10px;
+            width: 120px;
+            margin-bottom: 20px;
         }
 
         ul.kalys_primary_nav li ul {
-            position: absolute;
-            width: 200px;
+            /*position: absolute;*/
+            /*width: 200px;*/
             /*   left: 50%;*/
-            line-height: 20px;
+            /* line-height: 20px;*/
             visibility: hidden;
             opacity: 0;
             padding: 05px;
             border-radius: 5px;
             background-color: rgb(245, 245, 245);
-            
         }
 
         ul.kalys_primary_nav li:hover>ul {
-            background: rgb(8, 8, 122);
-            z-index: 10;
+            background: rgb(226, 174, 228);
             opacity: 1;
             visibility: visible;
             display: table;
             font-size: medium;
-           
-            
+            color: white !important;
+            z-index: 10;
+            position: fixed;
+
+        }
+
+        .sticky {
+            transition: 1s ease-in-out;
+            box-shadow: 10px 5px 10px white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9;
         }
 
         button {
