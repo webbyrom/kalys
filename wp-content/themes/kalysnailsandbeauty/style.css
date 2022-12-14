@@ -40,6 +40,7 @@ a {
 html,
 body,
 div,
+main,
 span,
 h1,
 h2,
@@ -58,23 +59,20 @@ label,
 footer,
 header,
 .nav_menu {
-  margin: 0 !important;
+  margin: 0;
   padding: 0;
   border: 0;
   font: inherit;
   vertical-align: baseline !important;
 }
 
-/*
-li {
-    display: flex;
-}*/
 body {
   /*display: inline-flex;*/
   /*text-align: justify;*/
   background-color: rgba(224, 232, 226, 0.5) !important;
   font-family: "AlexBrush" !important;
   line-height: 1.2rem;
+  /************** content fornt-page*****/
   /***********
   footer
   */
@@ -133,7 +131,7 @@ body nav ul.kalys_primary_nav li ul {
 }
 body header ul.kalys_primary_nav li:hover > ul,
 body nav ul.kalys_primary_nav li:hover > ul {
-  background: rgb(226, 174, 228);
+  background: rgb(255, 255, 255);
   opacity: 1;
   visibility: visible;
   display: table;
@@ -157,32 +155,15 @@ body nav button {
   height: 20px;
   margin: auto;
 }
-body header h1,
-body nav h1 {
-  color: rgb(217, 110, 219) !important;
-  /*justify-content: center;*/
-  font-family: "mrblaketon-pro" !important;
-  /* font-size: 76px !important;*/
-  /* font-weight: 600 !important;*/
-  font-style: italic;
-  margin: 25px 0px 25px 50px !important;
-  padding: auto;
-  margin: auto;
+body .kalys-main-accueil, body .kalys-col-full, body h1, body h2 {
+  margin: 30px 30px 20px;
 }
-body header h2,
-body nav h2 {
+body .kalys-main-accueil h1, body .kalys-main-accueil h2, body .kalys-col-full h1, body .kalys-col-full h2, body h1 h1, body h1 h2, body h2 h1, body h2 h2 {
+  text-align: center;
   color: darkgray;
-  font-family: "mrblaketon-pro";
-  /*  font-size: 55px;*/
-}
-body header p,
-body nav p {
-  font-family: "AlexBrush" !important;
-}
-body .container-accueil {
-  /* background-color: red;*/
-  width: 100vw !important;
-  height: 100vh !important;
+  font-family: "AlexBrush";
+  font-style: italic;
+  font-weight: 700;
 }
 body .kalys-footer {
   /* display: block;*/
