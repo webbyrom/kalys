@@ -10,15 +10,15 @@
         ?>
     </div>
     <div class="kalys-col-full">
-        <H1 class="kalys-site-title"><?= get_bloginfo('name') . get_bloginfo('description') ?></H1>
         <h2 class="kalys-title-page"><?php the_title() ?></h2>
+
+        <div class="space-gradient"></div>
 
         <div class="kalys-accueil-section">
             <?php the_content() ?>
+
         </div>
     </div>
-
-
 </main>
 
 

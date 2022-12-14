@@ -34,7 +34,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 a {
     text-decoration: none !important;
-    color: inherit;
+    color:White;
 }
 
 html,
@@ -66,10 +66,11 @@ header,
     vertical-align: baseline !important;
 }
 
-body {
+body,
+main {
     /*display: inline-flex;*/
     /*text-align: justify;*/
-    background-color: rgba(224, 232, 226, 0.5) !important;
+    background-color: #d7eadf !important;
     font-family: "AlexBrush" !important;
     line-height: 1.2rem;
 
@@ -87,62 +88,91 @@ body {
             left: 50%;
         }
 
+        a {
+            text-decoration: none;
+            color: darkgrey;
+        }
+
+        a:hover {
+            transition: .8s ease-in-out;
+            color: rgb(5, 5, 5);
+        }
+
         /******** menu navigation****************************/
         .kalys_primary_nav {
-            width: calc(100% - 550px);
-            left: calc(50% - 350px);
+            width: 100%;
             font-size: x-large;
             display: flex;
+            justify-content: center;
             position: relative;
-            padding-top: 20px;
             vertical-align: middle;
             font-style: oblique;
             overflow: hidden;
-            top: 15%;
-        }
-
-        .sub-menu ul {
-            width: auto;
-            /* z-index: 10;*/
+            top: 25%;
+            a {
+                color: darkgray;
+            }
+            a:hover{
+                transition: .8s ease-in-out;
+                color: black;
+            }
         }
 
         ul.kalys_primary_nav li {
             z-index: 10;
-            padding-right: 10px;
             width: 120px;
-            margin-bottom: 20px;
+            list-style: none;
         }
 
         ul.kalys_primary_nav li ul {
-            /*position: absolute;*/
-            /*width: 200px;*/
-            /*   left: 50%;*/
-            /* line-height: 20px;*/
             visibility: hidden;
             opacity: 0;
-            padding: 05px;
+            padding: 5px;
             border-radius: 5px;
             background-color: rgb(245, 245, 245);
         }
 
-        ul.kalys_primary_nav li:hover > ul {
+        ul.kalys_primary_nav li:hover>ul {
             background: rgb(255, 255, 255);
             opacity: 1;
             visibility: visible;
             display: table;
             font-size: medium;
-            color: white !important;
             z-index: 10;
             position: fixed;
+            box-shadow: 10px 5px 10px grey;
+
+
+        }
+
+        ul.kalys_primary_nav ul.sub-menu>li:hover {
+            transition: .4s ease-in;
+            background: #ffccff;
+            padding-left: 5px;
+            border-radius: 5px;
         }
 
         .sticky {
             transition: 1s ease-in-out;
             box-shadow: 10px 5px 10px white;
             position: fixed;
+            background-color: white!important;
+            opacity: .8;
             top: 0;
             width: 100%;
             z-index: 9;
+          /*  a:hover{
+                color: white;
+            }*/
+            span{
+                transition: 1s ease-in-out;
+                color: black;
+            }
+           .sub-menu span{
+                transition: 1s ease-in-out;
+                color: black;
+                font-size: medium;
+            }
         }
 
         button {
@@ -151,17 +181,52 @@ body {
             margin: auto;
         }
     }
+
     /************** content fornt-page*****/
-   .kalys-main-accueil, .kalys-col-full, h1, h2 {
-        margin: 30px 30px 20px;
-            h1, h2 {
-                text-align: center;
-                color: darkgray;
-                font-family: 'AlexBrush';
-                font-style: italic;
-                font-weight: 700;
-            }
-           
+    .kalys-header-slider {
+        margin-bottom: 100px;
+        box-shadow: 5px 5px 5px white;
+    }
+
+    .kalys-col-full {
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 10px 5px 10px gray;
+    }
+
+    .kalys-col-full,
+    h1,
+    h2 {
+        /* margin: 30px 30px 20px;*/
+        box-sizing: border-box;
+        width: 80%;
+        margin: auto;
+
+        h2 {
+            font-size: 2em;
+            text-align: center;
+            color: darkgray;
+            font-family: 'AlexBrush';
+            font-style: italic;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+    }
+
+/*****
+Séparation sous le h1
+*/
+    .space-gradient {
+        background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
+        height: 5px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 75px;
+    }
+
+
 
     /***********
 footer
@@ -171,11 +236,10 @@ footer
         /* display: block;*/
         /* column-count: 3;
    column-gap: 10px;*/
-        border-top: 1px solid #050505;
-        background: rebeccapurple;
+        border-top: 1px solid #fdfdfd;
+        background: rgb(235, 169, 209);
         padding-top: 20px;
         margin-top: 150px;
-        margin-bottom: 100px;
         font-size: 18px;
         height: 300px;
     }
@@ -185,7 +249,7 @@ footer
         padding: 7px 0;
     }
 
-    .footer_col + .footer_col {
+    .footer_col+.footer_col {
         margin-top: space(4);
 
         /*height: 200px;*/
@@ -228,8 +292,6 @@ footer
             /* text-decoration: none;*/
         }
 
-        a:hover {
-            color: rgb(166, 0, 255);
-        }
+
     }
 }

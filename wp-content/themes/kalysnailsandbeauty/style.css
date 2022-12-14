@@ -34,7 +34,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 a {
   text-decoration: none !important;
-  color: inherit;
+  color: White;
 }
 
 html,
@@ -66,63 +66,93 @@ header,
   vertical-align: baseline !important;
 }
 
-body {
+body,
+main {
   /*display: inline-flex;*/
   /*text-align: justify;*/
-  background-color: rgba(224, 232, 226, 0.5) !important;
+  background-color: #d7eadf !important;
   font-family: "AlexBrush" !important;
   line-height: 1.2rem;
   /************** content fornt-page*****/
+  /*****
+  Séparation sous le h1
+  */
   /***********
   footer
   */
 }
 body header,
-body nav {
+body nav,
+main header,
+main nav {
   display: flex;
   width: 100%;
   height: 100px;
   /******** menu navigation****************************/
 }
 body header .nav_logo img,
-body nav .nav_logo img {
+body nav .nav_logo img,
+main header .nav_logo img,
+main nav .nav_logo img {
   position: relative;
   width: 150px;
   height: auto;
   top: 15%;
   left: 50%;
 }
+body header a,
+body nav a,
+main header a,
+main nav a {
+  text-decoration: none;
+  color: darkgrey;
+}
+body header a:hover,
+body nav a:hover,
+main header a:hover,
+main nav a:hover {
+  transition: 0.8s ease-in-out;
+  color: rgb(5, 5, 5);
+}
 body header .kalys_primary_nav,
-body nav .kalys_primary_nav {
-  width: calc(100% - 550px);
-  left: calc(50% - 350px);
+body nav .kalys_primary_nav,
+main header .kalys_primary_nav,
+main nav .kalys_primary_nav {
+  width: 100%;
   font-size: x-large;
   display: flex;
+  justify-content: center;
   position: relative;
-  padding-top: 20px;
   vertical-align: middle;
   font-style: oblique;
   overflow: hidden;
-  top: 15%;
+  top: 25%;
 }
-body header .sub-menu ul,
-body nav .sub-menu ul {
-  width: auto;
-  /* z-index: 10;*/
+body header .kalys_primary_nav a,
+body nav .kalys_primary_nav a,
+main header .kalys_primary_nav a,
+main nav .kalys_primary_nav a {
+  color: darkgray;
+}
+body header .kalys_primary_nav a:hover,
+body nav .kalys_primary_nav a:hover,
+main header .kalys_primary_nav a:hover,
+main nav .kalys_primary_nav a:hover {
+  transition: 0.8s ease-in-out;
+  color: black;
 }
 body header ul.kalys_primary_nav li,
-body nav ul.kalys_primary_nav li {
+body nav ul.kalys_primary_nav li,
+main header ul.kalys_primary_nav li,
+main nav ul.kalys_primary_nav li {
   z-index: 10;
-  padding-right: 10px;
   width: 120px;
-  margin-bottom: 20px;
+  list-style: none;
 }
 body header ul.kalys_primary_nav li ul,
-body nav ul.kalys_primary_nav li ul {
-  /*position: absolute;*/
-  /*width: 200px;*/
-  /*   left: 50%;*/
-  /* line-height: 20px;*/
+body nav ul.kalys_primary_nav li ul,
+main header ul.kalys_primary_nav li ul,
+main nav ul.kalys_primary_nav li ul {
   visibility: hidden;
   opacity: 0;
   padding: 5px;
@@ -130,98 +160,176 @@ body nav ul.kalys_primary_nav li ul {
   background-color: rgb(245, 245, 245);
 }
 body header ul.kalys_primary_nav li:hover > ul,
-body nav ul.kalys_primary_nav li:hover > ul {
+body nav ul.kalys_primary_nav li:hover > ul,
+main header ul.kalys_primary_nav li:hover > ul,
+main nav ul.kalys_primary_nav li:hover > ul {
   background: rgb(255, 255, 255);
   opacity: 1;
   visibility: visible;
   display: table;
   font-size: medium;
-  color: white !important;
   z-index: 10;
   position: fixed;
+  box-shadow: 10px 5px 10px grey;
+}
+body header ul.kalys_primary_nav ul.sub-menu > li:hover,
+body nav ul.kalys_primary_nav ul.sub-menu > li:hover,
+main header ul.kalys_primary_nav ul.sub-menu > li:hover,
+main nav ul.kalys_primary_nav ul.sub-menu > li:hover {
+  transition: 0.4s ease-in;
+  background: #ffccff;
+  padding-left: 5px;
+  border-radius: 5px;
 }
 body header .sticky,
-body nav .sticky {
+body nav .sticky,
+main header .sticky,
+main nav .sticky {
   transition: 1s ease-in-out;
   box-shadow: 10px 5px 10px white;
   position: fixed;
+  background-color: white !important;
+  opacity: 0.8;
   top: 0;
   width: 100%;
   z-index: 9;
+  /*  a:hover{
+        color: white;
+    }*/
+}
+body header .sticky span,
+body nav .sticky span,
+main header .sticky span,
+main nav .sticky span {
+  transition: 1s ease-in-out;
+  color: black;
+}
+body header .sticky .sub-menu span,
+body nav .sticky .sub-menu span,
+main header .sticky .sub-menu span,
+main nav .sticky .sub-menu span {
+  transition: 1s ease-in-out;
+  color: black;
+  font-size: medium;
 }
 body header button,
-body nav button {
+body nav button,
+main header button,
+main nav button {
   width: 85px;
   height: 20px;
   margin: auto;
 }
-body .kalys-main-accueil, body .kalys-col-full, body h1, body h2 {
-  margin: 30px 30px 20px;
+body .kalys-header-slider,
+main .kalys-header-slider {
+  margin-bottom: 100px;
+  box-shadow: 5px 5px 5px white;
 }
-body .kalys-main-accueil h1, body .kalys-main-accueil h2, body .kalys-col-full h1, body .kalys-col-full h2, body h1 h1, body h1 h2, body h2 h1, body h2 h2 {
+body .kalys-col-full,
+main .kalys-col-full {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 10px gray;
+}
+body .kalys-col-full,
+body h1,
+body h2,
+main .kalys-col-full,
+main h1,
+main h2 {
+  /* margin: 30px 30px 20px;*/
+  box-sizing: border-box;
+  width: 80%;
+  margin: auto;
+}
+body .kalys-col-full h2,
+body h1 h2,
+body h2 h2,
+main .kalys-col-full h2,
+main h1 h2,
+main h2 h2 {
+  font-size: 2em;
   text-align: center;
   color: darkgray;
   font-family: "AlexBrush";
   font-style: italic;
   font-weight: 700;
+  margin-bottom: 50px;
 }
-body .kalys-footer {
+body .space-gradient,
+main .space-gradient {
+  background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
+  height: 5px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 75px;
+}
+body .kalys-footer,
+main .kalys-footer {
   /* display: block;*/
   /* column-count: 3;
   column-gap: 10px;*/
-  border-top: 1px solid #050505;
-  background: rebeccapurple;
+  border-top: 1px solid #fdfdfd;
+  background: rgb(235, 169, 209);
   padding-top: 20px;
   margin-top: 150px;
-  margin-bottom: 100px;
   font-size: 18px;
   height: 300px;
 }
-body .footer li a {
+body .footer li a,
+main .footer li a {
   display: block;
   padding: 7px 0;
 }
-body .footer_col + .footer_col {
+body .footer_col + .footer_col,
+main .footer_col + .footer_col {
   margin-top: space(4);
   /*height: 200px;*/
 }
-body .footer_col {
+body .footer_col,
+main .footer_col {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   display: inline-flex;
 }
-body .footer-title {
+body .footer-title,
+main .footer-title {
   margin-bottom: 16px;
   margin-left: 5%;
   /*text-decoration: underline whitesmoke;*/
 }
-body .btn.btn-outline-secondary {
+body .btn.btn-outline-secondary,
+main .btn.btn-outline-secondary {
   margin-top: 5px;
 }
-body .icon {
+body .icon,
+main .icon {
   width: 25px;
   height: 25px;
   color: lightgray;
 }
-body .icon:hover {
+body .icon:hover,
+main .icon:hover {
   color: #050505;
 }
 body .widget_archive,
 body h4,
-body ul {
+body ul,
+main .widget_archive,
+main h4,
+main ul {
   list-style-type: none;
   /* font-size: 0.8em;*/
 }
 body .widget_archive a,
 body h4 a,
-body ul a {
+body ul a,
+main .widget_archive a,
+main h4 a,
+main ul a {
   /*font-size: 0.8em;*/
   color: darkgray;
   /* text-decoration: none;*/
-}
-body .widget_archive a:hover,
-body h4 a:hover,
-body ul a:hover {
-  color: rgb(166, 0, 255);
 }/*# sourceMappingURL=style.css.map */
