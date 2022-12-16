@@ -1,5 +1,5 @@
 </div>
-<footer class="kalys-footer container-fluid">
+<footer class="kalys-footer ">
    <?php dynamic_sidebar('footer-nav') ?>
     
 </footer>

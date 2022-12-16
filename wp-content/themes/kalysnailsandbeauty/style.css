@@ -74,6 +74,13 @@ main {
   font-family: "AlexBrush" !important;
   line-height: 1.2rem;
   /************** content fornt-page*****/
+  /*
+      .kalys_header_slider {
+          margin-top: 125px;
+          margin-bottom: 100px;
+          box-shadow: 5px 5px 5px white;
+      }
+  */
   /*****
   Séparation sous le h1
   */
@@ -194,8 +201,8 @@ main nav .sticky {
   width: 100%;
   z-index: 9;
   /*  a:hover{
-        color: white;
-    }*/
+      color: white;
+  }*/
 }
 body header .sticky span,
 body nav .sticky span,
@@ -219,11 +226,6 @@ main nav button {
   width: 85px;
   height: 20px;
   margin: auto;
-}
-body .kalys-header-slider,
-main .kalys-header-slider {
-  margin-bottom: 100px;
-  box-shadow: 5px 5px 5px white;
 }
 body .kalys-col-full,
 main .kalys-col-full {
@@ -267,6 +269,9 @@ main .space-gradient {
 }
 body .kalys-footer,
 main .kalys-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   /* display: block;*/
   /* column-count: 3;
   column-gap: 10px;*/
@@ -277,28 +282,20 @@ main .kalys-footer {
   font-size: 18px;
   height: 300px;
 }
-body .footer li a,
-main .footer li a {
-  display: block;
-  padding: 7px 0;
-}
-body .footer_col + .footer_col,
-main .footer_col + .footer_col {
-  margin-top: space(4);
-  /*height: 200px;*/
-}
 body .footer_col,
 main .footer_col {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  display: inline-flex;
+  display: table-footer-group;
+}
+body .footer_col ul,
+main .footer_col ul {
+  padding: 0;
 }
 body .footer-title,
 main .footer-title {
   margin-bottom: 16px;
-  margin-left: 5%;
-  /*text-decoration: underline whitesmoke;*/
 }
 body .btn.btn-outline-secondary,
 main .btn.btn-outline-secondary {

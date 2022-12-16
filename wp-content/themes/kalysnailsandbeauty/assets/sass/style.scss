@@ -34,7 +34,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 a {
     text-decoration: none !important;
-    color:White;
+    color: White;
 }
 
 html,
@@ -94,7 +94,7 @@ main {
         }
 
         a:hover {
-            transition: .8s ease-in-out;
+            transition: 0.8s ease-in-out;
             color: rgb(5, 5, 5);
         }
 
@@ -112,8 +112,8 @@ main {
             a {
                 color: darkgray;
             }
-            a:hover{
-                transition: .8s ease-in-out;
+            a:hover {
+                transition: 0.8s ease-in-out;
                 color: black;
             }
         }
@@ -132,7 +132,7 @@ main {
             background-color: rgb(245, 245, 245);
         }
 
-        ul.kalys_primary_nav li:hover>ul {
+        ul.kalys_primary_nav li:hover > ul {
             background: rgb(255, 255, 255);
             opacity: 1;
             visibility: visible;
@@ -141,12 +141,10 @@ main {
             z-index: 10;
             position: fixed;
             box-shadow: 10px 5px 10px grey;
-
-
         }
 
-        ul.kalys_primary_nav ul.sub-menu>li:hover {
-            transition: .4s ease-in;
+        ul.kalys_primary_nav ul.sub-menu > li:hover {
+            transition: 0.4s ease-in;
             background: #ffccff;
             padding-left: 5px;
             border-radius: 5px;
@@ -156,19 +154,19 @@ main {
             transition: 1s ease-in-out;
             box-shadow: 10px 5px 10px white;
             position: fixed;
-            background-color: white!important;
-            opacity: .8;
+            background-color: white !important;
+            opacity: 0.8;
             top: 0;
             width: 100%;
             z-index: 9;
-          /*  a:hover{
+            /*  a:hover{
                 color: white;
             }*/
-            span{
+            span {
                 transition: 1s ease-in-out;
                 color: black;
             }
-           .sub-menu span{
+            .sub-menu span {
                 transition: 1s ease-in-out;
                 color: black;
                 font-size: medium;
@@ -183,11 +181,13 @@ main {
     }
 
     /************** content fornt-page*****/
-    .kalys-header-slider {
+    /*
+    .kalys_header_slider {
+        margin-top: 125px;
         margin-bottom: 100px;
         box-shadow: 5px 5px 5px white;
     }
-
+*/
     .kalys-col-full {
         background-color: white;
         padding: 40px;
@@ -207,15 +207,14 @@ main {
             font-size: 2em;
             text-align: center;
             color: darkgray;
-            font-family: 'AlexBrush';
+            font-family: "AlexBrush";
             font-style: italic;
             font-weight: 700;
             margin-bottom: 50px;
         }
-
     }
 
-/*****
+    /*****
 Séparation sous le h1
 */
     .space-gradient {
@@ -226,13 +225,14 @@ Séparation sous le h1
         margin-bottom: 75px;
     }
 
-
-
     /***********
 footer
 */
 
     .kalys-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         /* display: block;*/
         /* column-count: 3;
    column-gap: 10px;*/
@@ -244,26 +244,16 @@ footer
         height: 300px;
     }
 
-    .footer li a {
-        display: block;
-        padding: 7px 0;
-    }
-
-    .footer_col+.footer_col {
-        margin-top: space(4);
-
-        /*height: 200px;*/
-    }
-
     .footer_col {
         width: max-content;
-        display: inline-flex;
+        display: table-footer-group;
+        ul {
+            padding: 0;
+        }
     }
 
     .footer-title {
         margin-bottom: 16px;
-        margin-left: 5%;
-        /*text-decoration: underline whitesmoke;*/
     }
 
     .btn.btn-outline-secondary {
@@ -291,7 +281,5 @@ footer
             color: darkgray;
             /* text-decoration: none;*/
         }
-
-
     }
 }

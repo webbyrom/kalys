@@ -25,9 +25,17 @@ add_action('after_setup_theme', function () {
         'audio',
         'image'
     ));
+    
     add_theme_support('custom-header');
     add_theme_support('automatic-fedd-links');
     add_theme_support('wp-block-styles');
+    add_theme_support('custom-logo', array(
+        'heigth'    =>  100,
+        'width'     =>  400,
+        'flex-height'   => true,
+        'flex-width'    => true,
+        'header-text'   => array('site-title', 'site-description'),
+    ));
 });
 /****
  * autorisation pour le dl du format svg

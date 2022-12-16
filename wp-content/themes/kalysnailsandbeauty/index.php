@@ -1,6 +1,9 @@
 <?php get_header() ?>
 
-<div class="container">
+<div class="container-fluid">
+    <div class="kalys_slider_header">
+        <?php add_revslider('slider-3'); ?>
+    </div>
 
     <h1 class="page-title">
         <?php if (is_category()) : ?>

@@ -21,17 +21,10 @@
       <!--------menu navigation------->
       <?= esc_html(kalys_primary_nav());
 
-
       ?>
       <button class="Kalys-price">
         <a href="" download="http://localhost/kalys/wp-content/uploads/2022/12/Flyer_148-x-210-verso.png"> Télécharger les tarifs</a>
       </button>
     </nav>
-
+    
   </header>
-  <!-------------------------Insertion slider revolution---------------------->
-  <?php /*
-  
-    echo do_shortcode('[rev_slider alias="slider-2"][/rev_slider]');*/
-
-  ?>
