@@ -8,6 +8,7 @@
         <?php endif ?>
     </a>
     <div class="news__body">
+        <?php the_content() ?>
         <header class="news__header">
             <?php
             $categories = get_the_category();

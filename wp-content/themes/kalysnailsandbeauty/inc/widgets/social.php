@@ -6,8 +6,8 @@ class Kalys_Social_Widget extends WP_Widget
     {
         parent::__construct('kalys_social_widget', __('Social widget', 'kalys'));
         $this->fields = [
-            'title' => __('Title', 'kalys'),
             'credits' => __('Credits', 'kalys'),
+            'title' => __('Title', 'kalys'),
             'tiktok' => 'TikTok',
             'facebook'=> 'Facebook',
             'instagram' => 'Instagram'

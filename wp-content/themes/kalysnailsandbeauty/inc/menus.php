@@ -13,7 +13,7 @@ add_action('after_setup_theme', function (){
 
 
 /****
- * Menu principale(ne pas oublier de le remplacer dans le header )
+ * Menu principal(ne pas oublier de le remplacer dans le header )
  */
 if (!function_exists('kalys_register_menu')) {
     function kalys_register_menu()

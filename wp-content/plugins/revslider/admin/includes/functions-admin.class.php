@@ -637,7 +637,12 @@ class RevSliderFunctionsAdmin extends RevSliderFunctions {
 	 * Create Multilanguage for JavaScript
 	 */
 	public function get_javascript_multilanguage(){
-		$lang = array(
+		$lang = array(			
+			'clipboardfirefox' => __('Please consult the Slider Revolution manual to learn how to use clipboard functionality with Firefox', 'revslider'),
+			'clipboardnotvalid' => __('Imported Content has no Valid Revolution Slider Structure', 'revslider'),
+			'clipboardwarning' => __('Clipboard Function is not available on Unsecure Websites', 'revslider'),
+			'clipboardexport' => __('Selected Layers exported to Clipboard', 'revslider'),
+			'clipboardimport' => __('Selected Layers imported from Clipboard', 'revslider'),
 			'up' => __('Up', 'revslider'),
 			'down' => __('Down', 'revslider'),
 			'left' => __('Left', 'revslider'),
@@ -742,6 +747,10 @@ class RevSliderFunctionsAdmin extends RevSliderFunctions {
 			'addcategory' => __('Add Category', 'revslider'),
 			'show' => __('Show', 'revslider'),
 			'perpage' => __('Per Page', 'revslider'),
+			'someParentIsHidden_a' => __('Parent Element is not Visible.', 'revslider'),
+			'someParentIsHidden_b' => __('Selected Layer will not always be visible on Carousel', 'revslider'),			
+			'someParentIsHidden_c' => __('Children Element is set to be always Visible', 'revslider'),
+			'someParentIsHidden_d' => __('Children Elements(s) will not always be visible on Carousel', 'revslider'),
 			'convertedlayer' => __('Layer converted Successfully', 'revslider'),
 			'layerloopdisabledduetimeline' => __('Layer Loop Effect disabled', 'revslider'),
 			'layerbleedsout' => __('<b>Layer width bleeds out of Grid:</b><br>-Auto Layer width has been removed<br>-Line Break set to Content Based', 'revslider'),
@@ -805,6 +814,7 @@ class RevSliderFunctionsAdmin extends RevSliderFunctions {
 			'globalcolors' => __('Global Colors', 'revslider'),
 			'elements' => __('Elements', 'revslider'),
 			'loadingthumbs' => __('Loading Thumbnails...', 'revslider'),
+			'currentSlide' => __('Current Slide', 'revslider'),
 			'jquerytriggered' => __('jQuery Triggered', 'revslider'),
 			'atriggered' => __('&lt;a&gt; Tag Link', 'revslider'),
 			'randomslide' => __('Random Slide', 'revslider'),
@@ -855,6 +865,12 @@ class RevSliderFunctionsAdmin extends RevSliderFunctions {
 			'embedingLine6' => __('To add the slider only to the homepage, use:', 'revslider'),
 			'embedingLine7' => __('To add the slider only to single Pages, use:', 'revslider'),
 			'noLayersSelected' => __('Select a Layer', 'revslider'),
+			'layerevent_click' => __('Click', 'revslider'),
+			'layerevent_mouseenter' => __('Enter', 'revslider'),
+			'layerevent_mouseleave' => __('Leave', 'revslider'),
+			'layerevent_focus' => __('Focus', 'revslider'),
+			'layerevent_blur' => __('Blur', 'revslider'),
+			'layerevent_change' => __('Change', 'revslider'),
 			'layeraction_group_link' => __('Link Actions', 'revslider'),
 			'layeraction_group_slide' => __('Slide Actions', 'revslider'),
 			'layeraction_group_layer' => __('Layer Actions', 'revslider'),

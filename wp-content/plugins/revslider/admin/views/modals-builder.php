@@ -767,7 +767,7 @@ if(!defined('ABSPATH')) exit();
 						<!-- INPUT FIELD LIST OF THE SELECTED ACTION -->
 						<div id="action_inputs">
 							<div id="action_interaction_wrap">
-								<select style="display:none !important" id="action_interaction" data-unselect=".layer_action_interaction_selector" data-select="#action_interaction*val*" class="easyinit" data-r="actions.action.#actionindex#.tooltip_event"><option value="click"><?php _e('Click', 'revslider');?></option><option value="mouseenter"><?php _e('Mouse Enter', 'revslider');?></option><option value="mouseleave"><?php _e('Mouse Leave', 'revslider');?></option></select>
+								<!--<select style="display:none !important" id="action_interaction" data-unselect=".layer_action_interaction_selector" data-select="#action_interaction*val*" class="easyinit" data-r="actions.action.#actionindex#.tooltip_event"><option value="click">Click</option><option value="mouseenter">Mouse Enter</option><option value="mouseleave">Mouse Leave</option></select>-->
 								<label_a><?php _e('Interaction', 'revslider');?></label_a><select id="action_interaction" class="easyinit actioninput tos2 nosearchbox" data-r="actions.action.#actionindex#.tooltip_event"><option value="click"><?php _e('Click', 'revslider');?></option><option value="mouseenter"><?php _e('Mouse Enter', 'revslider');?></option><option value="mouseleave"><?php _e('Mouse Leave', 'revslider');?></option></select>				
 							</div>
 							<!--<label_icon class="triggerselect layer_action_interaction_selector twostatetrigger material-icons selected mirrorhorizontal" data-select="#action_interaction" data-val="click" id="action_interaction_click">near_me</label_icon>
@@ -775,8 +775,10 @@ if(!defined('ABSPATH')) exit();
 							<label_icon class="triggerselect layer_action_interaction_selector twostatetrigger material-icons" data-select="#action_interaction" data-val="mouseleave" id="action_interaction_mouseleave">file_upload</label_icon>-->
 							<!-- TYPE OF ACTION -->
 							<label_a><?php _e('Action Type', 'revslider');?></label_a><div class="input_presets_wrap" id="layer_action_type"><div id="layer_action_fake"></div><input type="text" readonly  class="easyinit actioninput" data-r="actions.action.#actionindex#.action" value=""><i class="material-icons input_presets_dropdown">more_vert</i></div>
-							
+														
+							<div id="actions_extension_area"></div>
 							<div class="div20"></div>
+							<div id="actions_extension_settings_area"></div>
 
 							<!-- SIMPLE LINK SETTINGS -->
 							<div id="la_settings_link_menu" class="la_settings" style="margin-bottom:20px !important">
@@ -837,7 +839,7 @@ if(!defined('ABSPATH')) exit();
 
 							<!-- LAYER TARGET -->
 							<div id="la_settings_layertarget" class="la_settings">
-								<label_a><?php _e('Target Layer', 'revslider');?></label_a><select id="la_layer_target" data-evt="refreshActionView" data-theme="layer_selector_drop_down" data-r="actions.action.#actionindex#.layer_target" class="easyinit actioninput nosearchbox tos2"></select>					
+								<label_a><?php _e('Target Layer', 'revslider');?></label_a><select id="la_layer_target" data-evt="refreshActionView" data-theme="layer_selector_drop_down" data-r="actions.action.#actionindex#.layer_target" class="easyinit actioninput searchbox tos2"></select>					
 							</div>
 							
 

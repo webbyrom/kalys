@@ -1,0 +1,10 @@
+{
+    "sass.format.convert": true,
+    "sass.andStared": [
+    
+        "active",
+        "focus",
+        "hover",
+        "nth-child"
+    ]
+}

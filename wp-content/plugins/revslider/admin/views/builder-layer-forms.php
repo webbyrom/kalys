@@ -146,7 +146,7 @@ if(!defined('ABSPATH')) exit();
 						<oneshort><div id="minilayerprevimage_wrap" class="miniprevimage_wrap"><i class="material-icons">filter_hdr</i><div id="layer_image_src"></div></div></oneshort>
 						<oneshort>
 							<div id="image_layer_media_library_button" data-evt="updatelayerimagesrc" data-r="media.imageUrl" data-rid="media.imageId" data-sty="behavior.imageSourceType" data-lib="media.imageLib" class="getImageFromMediaLibrary basic_action_button longbutton layerinput"><i class="material-icons">style</i><?php _e('Media Library', 'revslider');?></div>
-							<div id="image_layer_object_library_button" data-evt="updatelayerimagesrc" data-r="media.imageUrl" data-rid="media.imageId" data-sty="behavior.imageSourceType" data-lib="media.imageLib" class="getImageFromObjectLibrary basic_action_button longbutton layerinput"><i class="material-icons">camera_enhance</i><?php _e('Object Library', 'revslider');?></div>
+							<div id="image_layer_object_library_button" data-evt="" data-r="media.imageUrl" data-rid="media.imageId" data-sty="behavior.imageSourceType" data-lib="media.imageLib" class="getImageFromObjectLibrary basic_action_button longbutton layerinput"><i class="material-icons">camera_enhance</i><?php _e('Object Library', 'revslider');?></div>
 						</oneshort>
 					</row>
 					<div class="div15"></div>
@@ -270,6 +270,7 @@ if(!defined('ABSPATH')) exit();
 					<longoption><i class="material-icons">stop</i><label_a ><?php _e('Stop Other Media', 'revslider');?></label_a><input type="checkbox" class="easyinit layerinput" data-r="media.stopAllVideo"></longoption>
 					<longoption class="_nsfa_"><i class="material-icons">fullscreen</i><label_a ><?php _e('Allow Fullscreen', 'revslider');?></label_a><input type="checkbox" class="easyinit layerinput" data-r="media.allowFullscreen"></longoption>
 					<longoption><i class="material-icons">pause</i><label_a ><?php _e('Pause Timer during Play', 'revslider');?></label_a><input type="checkbox" class="easyinit layerinput" data-r="media.pausetimer"></longoption>
+					<longoption class="carouselavailable standardunavailable sceneunavailable"><i class="material-icons">pause</i><label_a ><?php _e('Pause on Slide Change', 'revslider');?></label_a><input type="checkbox" class="easyinit layerinput" data-r="media.pauseOnSlideChange"></longoption>
 					<longoption><i class="material-icons">loop</i><label_a ><?php _e('Loop Media', 'revslider');?></label_a><input type="checkbox" class="easyinit layerinput" data-r="media.loop" id="layer_media_loop" data-change="layer_media_nextslideaten" data-changeto="false" data-changewhennot="false"></longoption>					
 					<longoption><i class="material-icons">skip_next</i><label_a ><?php _e('Next Slide at End', 'revslider');?></label_a><input type="checkbox" class="easyinit layerinput" data-r="media.nextSlideAtEnd" id="layer_media_nextslideaten" data-change="layer_media_loop" data-changeto="false" data-changewhennot="false"></longoption>
 					<longoption><i class="material-icons">fast_rewind</i><label_a ><?php _e('Rewind at Start', 'revslider');?></label_a><input type="checkbox" class="easyinit layerinput" data-r="media.forceRewind"></longoption>
@@ -352,7 +353,10 @@ if(!defined('ABSPATH')) exit();
 			<div id="form_layercontent_tag" class="form_inner open _nsfr_ _nsfc_ _nsfg_">
 				<div class="form_inner_header"><i class="material-icons">code</i><?php _e('HTML Tag', 'revslider');?></div>
 				<div class="collapsable">
-					<label_a><?php _e('Wrapping Tag', 'revslider');?></label_a><select id="layer_htmltag" class="layerinput tos2 nosearchbox easyinit" data-r="htmltag"><option value="div" selected="selected"><?php _e('&lt;rs-layer&gt;', 'revslider');?></option><option value="p"><?php _e('&lt;p&gt;', 'revslider');?></option><option value="h1"><?php _e('&lt;h1&gt;', 'revslider');?></option><option value="h2"><?php _e('&lt;h2&gt;', 'revslider');?></option><option value="h3"><?php _e('&lt;h3&gt;', 'revslider');?></option><option value="h4"><?php _e('&lt;h4&gt;', 'revslider');?></option><option value="h5"><?php _e('&lt;h5&gt;', 'revslider');?></option><option value="h6"><?php _e('&lt;h6&gt;', 'revslider');?></option><option value="span"><?php _e('&lt;span&gt;', 'revslider');?></option></select>
+					<label_a><?php _e('Wrapping Tag', 'revslider');?></label_a><select id="layer_htmltag" class="layerinput tos2 nosearchbox easyinit callEvent"  data-evt="updateLabelFor" data-evtparam="*val*" data-show=".show_labelfor_*val*" data-hide=".hide_labelfor_def" data-r="htmltag"><option value="div" selected="selected"><?php _e('&lt;rs-layer&gt;', 'revslider');?></option><option value="p"><?php _e('&lt;p&gt;', 'revslider');?></option><option value="h1"><?php _e('&lt;h1&gt;', 'revslider');?></option><option value="h2"><?php _e('&lt;h2&gt;', 'revslider');?></option><option value="h3"><?php _e('&lt;h3&gt;', 'revslider');?></option><option value="h4"><?php _e('&lt;h4&gt;', 'revslider');?></option><option value="h5"><?php _e('&lt;h5&gt;', 'revslider');?></option><option value="h6"><?php _e('&lt;h6&gt;', 'revslider');?></option><option value="span"><?php _e('&lt;span&gt;', 'revslider');?></option><option value="label"><?php _e('&lt;label&gt;', 'revslider');?></option></select>
+					<div class="show_labelfor_label hide_labelfor_def">
+						<label_a><?php _e('Label For', 'revslider');?></label_a><select id="label_for_target" data-evt="" data-theme="layer_selector_drop_down" data-r="labelfor" class="easyinit layerinput searchbox tos2"></select>
+					</div>
 				</div>
 			</div>
 
@@ -411,7 +415,7 @@ if(!defined('ABSPATH')) exit();
 
 					<longoption><i class="material-icons">settings_ethernet</i><label_a><?php _e('Hide "Under" Width', 'revslider');?></label_a><input type="checkbox"  id="layer_visibility_hideunder" class="layerinput easyinit" data-r="visibility.hideunder" /></longoption>
 					<longoption><i class="material-icons">center_focus_strong</i><label_a><?php _e('Show if mouse over Slider', 'revslider');?></label_a><input type="checkbox"  id="layer_visibility_showonover" class="layerinput easyinit" data-r="visibility.onlyOnSlideHover" /></longoption>
-					<div class="_lavoc_ _lavoc_individual"><longoption class="carouselavailable standardunavailable sceneunavailable"><i class="material-icons">view_carousel</i><label_a><?php _e('Always Visible on Carousel', 'revslider');?></label_a><input type="checkbox"  id="layer_visibility_oncarousel" class="layerinput easyinit" data-r="visibility.alwaysOnCarousel" /></longoption></div>
+					<div class="_lavoc_ _lavoc_individual"><longoption class="carouselavailable standardunavailable sceneunavailable"><i class="material-icons">view_carousel</i><label_a><?php _e('Always Visible on Carousel', 'revslider');?></label_a><input type="checkbox"  id="layer_visibility_oncarousel" data-evt="caralwaysvisiblecheck" class="layerinput easyinit callEvent" data-r="visibility.alwaysOnCarousel" /></longoption></div>
 				</div>
 			</div>
 		</div>
@@ -555,7 +559,9 @@ if(!defined('ABSPATH')) exit();
 						<oneshort><label_icon class="ui_letterspacing"></label_icon><input class="layerinput valueduekeyboard smallinput easyinit" data-numeric="true" data-responsive="true" data-r="idle.letterSpacing.#size#.v" data-min="-100" data-max="100" type="text" id="layer_letter_spacing_idle"></oneshort>
 					</row>
 					<div class="div10"></div>
-					<label_a></label_a><div id="quick_style_trigger" data-evt="quickstyletrigger" class="longbutton basic_action_button callEventButton"><i class="toptoolbaricon material-icons">invert_colors</i><?php _e('Quick Style', 'revslider');?></div>
+					<div id="quick_style_trigger_wrap">
+						<label_a></label_a><div id="quick_style_trigger" data-evt="quickstyletrigger" class="longbutton basic_action_button callEventButton"><i class="toptoolbaricon material-icons">invert_colors</i><?php _e('Quick Style', 'revslider');?></div>
+					</div>
 					<div class="div10"></div>
 					<div class="show_more_toggle" data-toggle="#more_font_style"><div class="shmt_bar"></div><div class="shmt_textmore"><?php _e('More', 'revslider');?><i class="material-icons">add</i></div><div class="shmt_textless"><?php _e('Less', 'revslider');?><i class="material-icons">remove</i></div></div>
 					<div id="more_font_style" style="display:none">
@@ -616,8 +622,8 @@ if(!defined('ABSPATH')) exit();
 					<row class="direktrow __idle__ _nsfi_ _nsfv_">						
 						<onelong><label_a><?php _e('BG Image', 'revslider');?></label_a><div class="miniprevimage_wrap"><i class="material-icons">filter_hdr</i><div id="layer_bg_image" data-showadvbg="#layer_bg_adv_settings"></div><div data-evt="updatelayerbgimage" data-r="idle.backgroundImage" data-rid="idle.backgroundImageId" data-lib="idle.bgimagelib" data-default="" class="resettodefault basic_action_button callEventButton layerinput onlyicon"><i class="material-icons">close</i></div></div></onelong>
 						<oneshort>
-							<div data-evt="updatelayerbgimage" data-r="idle.backgroundImage" data-rid="idle.backgroundImageId" data-lib="idle.bgimagelib" data-sty="behavior.imageSourceType" class="getImageFromMediaLibrary basic_action_button callEventButton layerinput"><i class="material-icons">style</i><?php _e('Media', 'revslider');?></div>
-							<div data-evt="updatelayerbgimage" data-r="idle.backgroundImage" data-rid="idle.backgroundImageId" data-lib="idle.bgimagelib" data-sty="behavior.imageSourceType" class="getImageFromObjectLibrary basic_action_button callEventButton layerinput"><i class="material-icons">camera_enhance</i><?php _e('Object', 'revslider');?></div>							
+							<div id="shape_layer_media_library_button" data-evt="updatelayerbgimage" data-r="idle.backgroundImage" data-rid="idle.backgroundImageId" data-lib="idle.bgimagelib" data-sty="behavior.imageSourceType" class="getImageFromMediaLibrary basic_action_button callEventButton layerinput"><i class="material-icons">style</i><?php _e('Media', 'revslider');?></div>
+							<div id="shape_layer_object_library_button" data-evt="updatelayerbgimage" data-r="idle.backgroundImage" data-rid="idle.backgroundImageId" data-lib="idle.bgimagelib" data-sty="behavior.imageSourceType" class="getImageFromObjectLibrary basic_action_button callEventButton layerinput"><i class="material-icons">camera_enhance</i><?php _e('Object', 'revslider');?></div>							
 						</oneshort>
 					</row>
 

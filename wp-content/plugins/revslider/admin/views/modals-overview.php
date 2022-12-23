@@ -87,7 +87,7 @@ if(!defined('ABSPATH')) exit();
 					<div class="modal_fields_title"><span id="rs-fontprecache-amount">0 of 14</span> <?php _e('Google Fonts Precached', 'revslider'); ?></div>
 					<div class="div5"></div>
 					<div style="margin-bottom:0px; line-height:15px;" class="modal_fields_title"><?php _e('Currently Precaching the', 'revslider'); ?> <strong>"<span id="rs-fontprecaching"><strong>Open Sans</strong></span>"</strong> <?php _e('Google Font', 'revslider'); ?></div>
-					<div style="font-weight:400;margin-bottom:0px; font-size:12px; line-height:15px" class="modal_fields_title">(<?php _e('Approximately Loading Time ', 'revslider'); ?><span id="aproxgloadtime"></span><?php _e('sec', 'revslider'); ?>)</div>							
+					<div style="font-weight:400;margin-bottom:0px; font-size:12px; line-height:15px" class="modal_fields_title">(<?php _e('Approximate Remaining Time:', 'revslider'); ?> <span id="aproxgloadtime"></span><?php _e('sec', 'revslider'); ?>)</div>							
 				</div>
 			</div>
 		</div>

@@ -15,7 +15,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 @font-face {
-  font-family: "AlexBrush";
+  font-family: "Alex Brush";
   src: local("assets/font/AlexBrush-Regular.eot") format("eot");
   src: local("assets/font/AlexBrush-Regular.svg") format("svg");
   src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
@@ -58,7 +58,7 @@ form,
 label,
 footer,
 header,
-.nav_menu {
+nav {
   margin: 0;
   padding: 0;
   border: 0;
@@ -71,16 +71,9 @@ main {
   /*display: inline-flex;*/
   /*text-align: justify;*/
   background-color: #d7eadf !important;
-  font-family: "AlexBrush" !important;
+  font-family: "Alex Brush" !important;
   line-height: 1.2rem;
   /************** content fornt-page*****/
-  /*
-      .kalys_header_slider {
-          margin-top: 125px;
-          margin-bottom: 100px;
-          box-shadow: 5px 5px 5px white;
-      }
-  */
   /*****
   Séparation sous le h1
   */
@@ -93,8 +86,8 @@ body nav,
 main header,
 main nav {
   display: flex;
-  width: 100%;
-  height: 100px;
+  width: 100vw;
+  height: 125px;
   /******** menu navigation****************************/
 }
 body header .nav_logo img,
@@ -104,7 +97,7 @@ main nav .nav_logo img {
   position: relative;
   width: 150px;
   height: auto;
-  top: 15%;
+  top: 35%;
   left: 50%;
 }
 body header a,
@@ -118,14 +111,15 @@ body header a:hover,
 body nav a:hover,
 main header a:hover,
 main nav a:hover {
-  transition: 0.8s ease-in-out;
-  color: rgb(5, 5, 5);
+  transition: 0.8s color ease-in-out;
+  color: rgb(162, 191, 218);
 }
 body header .kalys_primary_nav,
 body nav .kalys_primary_nav,
 main header .kalys_primary_nav,
 main nav .kalys_primary_nav {
-  width: 100%;
+  width: 100vW;
+  height: 125px;
   font-size: x-large;
   display: flex;
   justify-content: center;
@@ -133,7 +127,7 @@ main nav .kalys_primary_nav {
   vertical-align: middle;
   font-style: oblique;
   overflow: hidden;
-  top: 25%;
+  top: -25%;
 }
 body header .kalys_primary_nav a,
 body nav .kalys_primary_nav a,
@@ -145,7 +139,7 @@ body header .kalys_primary_nav a:hover,
 body nav .kalys_primary_nav a:hover,
 main header .kalys_primary_nav a:hover,
 main nav .kalys_primary_nav a:hover {
-  transition: 0.8s ease-in-out;
+  transition: 0.8s color ease-in-out;
   color: black;
 }
 body header ul.kalys_primary_nav li,
@@ -156,6 +150,12 @@ main nav ul.kalys_primary_nav li {
   width: 120px;
   list-style: none;
 }
+body header ul.kalys_primary_nav li:nth-child(-n+3),
+body nav ul.kalys_primary_nav li:nth-child(-n+3),
+main header ul.kalys_primary_nav li:nth-child(-n+3),
+main nav ul.kalys_primary_nav li:nth-child(-n+3) {
+  margin-right: 30px;
+}
 body header ul.kalys_primary_nav li ul,
 body nav ul.kalys_primary_nav li ul,
 main header ul.kalys_primary_nav li ul,
@@ -165,6 +165,7 @@ main nav ul.kalys_primary_nav li ul {
   padding: 5px;
   border-radius: 5px;
   background-color: rgb(245, 245, 245);
+  transition: opacity 0.8s ease-in-out;
 }
 body header ul.kalys_primary_nav li:hover > ul,
 body nav ul.kalys_primary_nav li:hover > ul,
@@ -192,13 +193,13 @@ body header .sticky,
 body nav .sticky,
 main header .sticky,
 main nav .sticky {
-  transition: 1s ease-in-out;
+  transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
   box-shadow: 10px 5px 10px white;
   position: fixed;
   background-color: white !important;
   opacity: 0.8;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 9;
   /*  a:hover{
       color: white;
@@ -208,7 +209,7 @@ body header .sticky span,
 body nav .sticky span,
 main header .sticky span,
 main nav .sticky span {
-  transition: 1s ease-in-out;
+  transition: 1s color ease-in-out;
   color: black;
 }
 body header .sticky .sub-menu span,
@@ -223,9 +224,39 @@ body header button,
 body nav button,
 main header button,
 main nav button {
-  width: 85px;
-  height: 20px;
-  margin: auto;
+  z-index: 10;
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  opacity: 0.7;
+  /* margin: auto;*/
+  right: 20%;
+  top: 7%;
+  border: none;
+  border-radius: 5px;
+  transition: color 0.8s, border 0.8s, background-color 0.8s, box-shadow 0.8s;
+}
+body header button a,
+body nav button a,
+main header button a,
+main nav button a {
+  transition: font-size 0.8s, font-weight 0.8s;
+  color: grey;
+}
+body header button:hover,
+body nav button:hover,
+main header button:hover,
+main nav button:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px white;
+}
+body header button:hover a:hover,
+body nav button:hover a:hover,
+main header button:hover a:hover,
+main nav button:hover a:hover {
+  font-size: large;
+  font-weight: 900;
 }
 body .kalys-col-full,
 main .kalys-col-full {
@@ -251,12 +282,12 @@ body h2 h2,
 main .kalys-col-full h2,
 main h1 h2,
 main h2 h2 {
-  font-size: 2em;
+  font-size: 4em;
   text-align: center;
-  color: darkgray;
-  font-family: "AlexBrush";
+  color: #F0B5B5;
+  font-family: "Alex Brush";
   font-style: italic;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 50px;
 }
 body .space-gradient,
@@ -272,11 +303,8 @@ main .kalys-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* display: block;*/
-  /* column-count: 3;
-  column-gap: 10px;*/
   border-top: 1px solid #fdfdfd;
-  background: rgb(235, 169, 209);
+  background-color: rgb(250, 224, 252) !important;
   padding-top: 20px;
   margin-top: 150px;
   font-size: 18px;
@@ -329,4 +357,8 @@ main ul a {
   /*font-size: 0.8em;*/
   color: darkgray;
   /* text-decoration: none;*/
+}
+
+.page-id-282, body {
+  background-color: #ffffff !important;
 }/*# sourceMappingURL=style.css.map */
