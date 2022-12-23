@@ -105,6 +105,7 @@ main {
             width: 100vW;
             height: 125px;
             font-size: x-large;
+            text-transform: capitalize;
             display: flex;
             justify-content: center;
             position: relative;
@@ -218,13 +219,14 @@ main {
         box-shadow: 10px 5px 10px gray;
     }
 
-    .kalys-col-full,
+    .kalys-col-full, .tilte-epilation,
     h1,
     h2 {
         /* margin: 30px 30px 20px;*/
         box-sizing: border-box;
         width: 80%;
         margin: auto;
+        text-transform: capitalize;
 
         h2 {
             font-size: 4em;
@@ -238,7 +240,7 @@ main {
     }
 
     /*****
-Séparation sous le h1
+Séparation sous le titre
 */
     .space-gradient {
         background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
@@ -259,9 +261,9 @@ footer
         border-top: 1px solid #fdfdfd;
         background-color: rgb(250, 224, 252)!important;
         padding-top: 20px;
-        margin-top: 150px;
+        margin-top: 50px;
         font-size: 18px;
-        height: 300px;
+        height: 250px;
     }
 
     .footer_col {

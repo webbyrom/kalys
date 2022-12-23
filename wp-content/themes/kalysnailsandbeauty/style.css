@@ -75,7 +75,7 @@ main {
   line-height: 1.2rem;
   /************** content fornt-page*****/
   /*****
-  Séparation sous le h1
+  Séparation sous le titre
   */
   /***********
   footer
@@ -121,6 +121,7 @@ main nav .kalys_primary_nav {
   width: 100vW;
   height: 125px;
   font-size: x-large;
+  text-transform: capitalize;
   display: flex;
   justify-content: center;
   position: relative;
@@ -265,21 +266,24 @@ main .kalys-col-full {
   border-radius: 10px;
   box-shadow: 10px 5px 10px gray;
 }
-body .kalys-col-full,
+body .kalys-col-full, body .tilte-epilation,
 body h1,
 body h2,
 main .kalys-col-full,
+main .tilte-epilation,
 main h1,
 main h2 {
   /* margin: 30px 30px 20px;*/
   box-sizing: border-box;
   width: 80%;
   margin: auto;
+  text-transform: capitalize;
 }
-body .kalys-col-full h2,
+body .kalys-col-full h2, body .tilte-epilation h2,
 body h1 h2,
 body h2 h2,
 main .kalys-col-full h2,
+main .tilte-epilation h2,
 main h1 h2,
 main h2 h2 {
   font-size: 4em;
@@ -306,9 +310,9 @@ main .kalys-footer {
   border-top: 1px solid #fdfdfd;
   background-color: rgb(250, 224, 252) !important;
   padding-top: 20px;
-  margin-top: 150px;
+  margin-top: 50px;
   font-size: 18px;
-  height: 300px;
+  height: 250px;
 }
 body .footer_col,
 main .footer_col {
