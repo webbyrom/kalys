@@ -1,5 +1,4 @@
 <?php
-
 /***********
  * Template Name: Manucure
  */
@@ -7,7 +6,7 @@
 <?php get_header(); ?>
 <section class="kalys-section-manucure">
     <div class="kalys-manucure-slider">
-        <?php add_revslider('slider-5'); ?>
+    <?php add_revslider('full-width-slider1'); ?>
     </div>
     <div class="tilte-manucure">
         <h2 class="kalys-manucure-title"><?php the_title() ?></h2>

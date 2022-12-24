@@ -14,11 +14,11 @@ add_action('init', function () {
         'labels'    =>  [
             'name'  =>__('Soin des mains', 'kalys'),
             'singular_name' =>__('Soin des mains', 'kalys'),
-            'edit_item' =>__('Edit soin des mains', 'kalys'),
-            'new_item'  =>__('New soin des mains', 'kalys'),
-            'view_item' =>__('View soin des mains', 'kalys'),
-            'view_items' =>__('View Soins des mains', 'kalys'),
-            'search_items' =>__('Search soins des mains', 'kalys'),
+            'edit_item' =>__('Modifer soin des mains', 'kalys'),
+            'new_item'  =>__('Nouveau soin des mains', 'kalys'),
+            'view_item' =>__('Voir soin des mains', 'kalys'),
+            'view_items' =>__('Voir Soins des mains', 'kalys'),
+            'search_items' =>__('Recherche soins des mains', 'kalys'),
             'not_found' =>__('Pas de soins de mains trouvés', 'kalys'),
             'not_found_in_trash' =>__('pas de soins des mains trouvé à la poubelle', 'kalys'),
             'all_items' =>__('Tous les soins des mains', 'kalys'),
@@ -56,7 +56,7 @@ add_action('init', function () {
             'parent_item'   =>__('manucure Parente', 'kalys'),
             'parent_item_colon' =>__('manucure Parente', 'kalys'),
             'edit_item' =>__('Modifier la manucure', 'kalys'),
-            'view_item' =>__('voir la manucure', 'kalys'),
+            'view_item' =>__('Voir la manucure', 'kalys'),
             'update_item'   =>__('Mettre à jour la manucure', 'kalys'),
             'add_new_item'  =>__('Ajouter une nouvelle manucure', 'kalys'),
             'new_item_name' =>__('Nouveau nom de manucure', 'kalys'),
@@ -71,9 +71,11 @@ add_action('init', function () {
             'back_to_items' =>__('&larr', 'Retour à l\'article', 'kalys'),
         ],
         'show_in_rest' => true,
+        'show_ui'   => true,
         'hierarchical'=> true,
         'show_in_menu'  => true,
         'public'    => true,
+        'show_admin_column'  => true,
     ]);
     register_post_type('soin-corps', [
         'label' => __('Soin du corps'),
@@ -81,11 +83,11 @@ add_action('init', function () {
         'labels'    =>  [
             'name'  =>__('Soin du corps', 'kalys'),
             'singular_name' =>__('Soin du corps', 'kalys'),
-            'edit_item' =>__('Edit soin du corps', 'kalys'),
-            'new_item'  =>__('New soin du corps', 'kalys'),
-            'view_item' =>__('View soin du corps', 'kalys'),
-            'view_items' =>__('View Soins du corps', 'kalys'),
-            'search_items' =>__('Search soins du corps', 'kalys'),
+            'edit_item' =>__('Modifier soin du corps', 'kalys'),
+            'new_item'  =>__('Nouveau soin du corps', 'kalys'),
+            'view_item' =>__('Voir soin du corps', 'kalys'),
+            'view_items' =>__('Voir Soins du corps', 'kalys'),
+            'search_items' =>__('Recherhcer soins du corps', 'kalys'),
             'not_found' =>__('Pas de soins de corps trouvés', 'kalys'),
             'not_found_in_trash' =>__('pas de soins du corps trouvé à la poubelle', 'kalys'),
             'all_items' =>__('Tous les soins du corps', 'kalys'),
@@ -110,7 +112,7 @@ add_action('init', function () {
         'taxonomies'    => ['épilation'],
         'supports'  =>  ['title', 'editor', 'comments', 'author', 'excerpt', 'thumbnail'],
         'show_in_rest'  => true,
-        'has_archive'   =>true,
+        'has_archive'   => true,
     ]);
     register_taxonomy('épilation', 'soin-corps', [
         'labels'    =>  [
@@ -136,14 +138,14 @@ add_action('init', function () {
             'most_used' =>_x('Le plus utlisé', 'kalys'),
             'back_to_items' =>__('&larr', 'Retour à l\'article', 'kalys'),
         ],
-        'show_in_rest'   => true,
-        'hierarchical'   => true,
+        'show_in_rest' => true,
+        'show_ui'   => true,
+        'hierarchical'=> true,
+        'show_in_menu'  => true,
+        'public'    => true,
         'show_admin_column'  => true,
     ]);
-   
 });
-
-
 
 register_activation_hook(__FILE__ , 'flush_rewrite_rules');
 register_deactivation_hook(__FILE__ , 'flush_rewrite_rules');

@@ -1,5 +1,4 @@
 <?php
-
 /*********
  * Template Name: Archive épilation
  */
@@ -15,8 +14,13 @@
     </div>
     <div class="space-gradient"></div>
     <div class="kalys-epilation-archive-main">
+        <div class="kalys-single-epilation">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        </div>
         <?php the_content() ?>
     </div>
+    <?php endwhile;
+    endif; ?>
     <aside class="kalys-sidebar">
         <?php dynamic_sidebar('blog') ?>
     </aside>
