@@ -1,7 +1,7 @@
 === Royal Elementor Addons (Elementor Templates, Post Grid, Mega Menu & Header Footer Builder, WooCommerce Builder, Product Grid, Slider, Parallax Image & other Free Elementor Widgets) ===
 Contributors: WP Royal, rubeushagrid13, cyberpinky, elementoraddonswpr, ggedenidze1982
 Tags: elementor, elementor templates, elementor addons, widgets for elementor, elementor widgets, elementor mega menu, elementor woocommerce builder, theme builder, header footer builder, elementor post grid, elementor product grid, addons for elementor
-Stable tag: 1.3.59
+Stable tag: 1.3.60
 Requires at least: 5.0
 Tested up to: 6.1.1
 Requires PHP: 5.6
@@ -374,6 +374,12 @@ memory_limit 256M or more
 post_max_size 64M
 
 == Changelog ==
+= Royal Elementor Addons v1.3.60 - 2022-12-28 =
+* ADDED: Hotel Elementor Template Kit [**Hotel**](https://demosites.royal-elementor-addons.com/hotel-v1/?ref=rea-wpo-pp-details-tab).
+* ADDED: Premade Pages Templates Library(New requested feature).
+* FIXED: Elementor Woocommerce Grid/Slider widget query-related issues.
+* FIXED: Elementor mega menu, search widget, and template kit import related Security issues.
+
 = Royal Elementor Addons v1.3.59 - 2022-12-15 =
 * FIXED: Category and Tag query issue for elementor post grid widget.
 

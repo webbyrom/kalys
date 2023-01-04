@@ -13,6 +13,7 @@
     </div>
     <div class="space-gradient"></div>
     <div class="kalys-epilation-main">
+        <?php wp_list_categories(['taxonomy' =>'soin-mains', 'soin-corps']); ?>
         <?php the_content() ?>
     </div>
 </section>

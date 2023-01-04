@@ -73,7 +73,12 @@ main {
   background-color: #d7eadf !important;
   font-family: "Alex Brush" !important;
   line-height: 1.2rem;
+  /******  menu actif */
   /************** content fornt-page*****/
+  /*   ul.kalys_primary_nav li.menu-item-type-custom>a, li.menu-item-type-post_type.current-menu-item>a {
+      color: white;
+  }
+  */
   /*****
   Séparation sous le titre
   */
@@ -118,7 +123,7 @@ body header .kalys_primary_nav,
 body nav .kalys_primary_nav,
 main header .kalys_primary_nav,
 main nav .kalys_primary_nav {
-  width: 100vW;
+  width: 100vw;
   height: 125px;
   font-size: x-large;
   text-transform: capitalize;
@@ -186,9 +191,10 @@ body nav ul.kalys_primary_nav ul.sub-menu > li:hover,
 main header ul.kalys_primary_nav ul.sub-menu > li:hover,
 main nav ul.kalys_primary_nav ul.sub-menu > li:hover {
   transition: 0.4s ease-in;
-  background: #ffccff;
+  background: #ecd2ec;
   padding-left: 5px;
   border-radius: 5px;
+  width: 100%;
 }
 body header .sticky,
 body nav .sticky,
@@ -202,24 +208,31 @@ main nav .sticky {
   top: 0;
   width: 100vw;
   z-index: 9;
-  /*  a:hover{
-      color: white;
-  }*/
 }
 body header .sticky span,
 body nav .sticky span,
 main header .sticky span,
 main nav .sticky span {
   transition: 1s color ease-in-out;
-  color: black;
+  /*color: black;*/
 }
 body header .sticky .sub-menu span,
 body nav .sticky .sub-menu span,
 main header .sticky .sub-menu span,
 main nav .sticky .sub-menu span {
   transition: 1s ease-in-out;
-  color: black;
+  /* color: black;*/
   font-size: medium;
+}
+body header .sticky ul.kalys_primary_nav li.kalys_m_active > a,
+body header .sticky ul.sub-menu li.current-menu-item > a,
+body nav .sticky ul.kalys_primary_nav li.kalys_m_active > a,
+body nav .sticky ul.sub-menu li.current-menu-item > a,
+main header .sticky ul.kalys_primary_nav li.kalys_m_active > a,
+main header .sticky ul.sub-menu li.current-menu-item > a,
+main nav .sticky ul.kalys_primary_nav li.kalys_m_active > a,
+main nav .sticky ul.sub-menu li.current-menu-item > a {
+  color: rgb(129, 212, 129);
 }
 body header button,
 body nav button,
@@ -259,6 +272,12 @@ main nav button:hover a:hover {
   font-size: large;
   font-weight: 900;
 }
+body ul.kalys_primary_nav li.kalys_m_active > a,
+body ul.sub-menu li.current-menu-item > a,
+main ul.kalys_primary_nav li.kalys_m_active > a,
+main ul.sub-menu li.current-menu-item > a {
+  color: rgb(129, 212, 129);
+}
 body .kalys-col-full,
 main .kalys-col-full {
   background-color: white;
@@ -266,7 +285,8 @@ main .kalys-col-full {
   border-radius: 10px;
   box-shadow: 10px 5px 10px gray;
 }
-body .kalys-col-full, body .tilte-epilation,
+body .kalys-col-full,
+body .tilte-epilation,
 body h1,
 body h2,
 main .kalys-col-full,
@@ -279,7 +299,8 @@ main h2 {
   margin: auto;
   text-transform: capitalize;
 }
-body .kalys-col-full h2, body .tilte-epilation h2,
+body .kalys-col-full h2,
+body .tilte-epilation h2,
 body h1 h2,
 body h2 h2,
 main .kalys-col-full h2,
@@ -288,7 +309,7 @@ main h1 h2,
 main h2 h2 {
   font-size: 4em;
   text-align: center;
-  color: #F0B5B5;
+  color: #f0b5b5;
   font-family: "Alex Brush";
   font-style: italic;
   font-weight: 500;
@@ -301,6 +322,20 @@ main .space-gradient {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 75px;
+}
+body .kalys-post-manucure,
+main .kalys-post-manucure {
+  display: inline-flex;
+}
+body ul.nav.nav-pills,
+main ul.nav.nav-pills {
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+}
+body .card-body,
+main .card-body {
+  background-color: lightblue;
 }
 body .kalys-footer,
 main .kalys-footer {
@@ -363,6 +398,7 @@ main ul a {
   /* text-decoration: none;*/
 }
 
-.page-id-282, body {
+.page-id-282,
+body {
   background-color: #ffffff !important;
 }/*# sourceMappingURL=style.css.map */

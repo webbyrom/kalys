@@ -591,6 +591,7 @@ class Wpr_Woo_Grid extends Widget_Base {
 			'query_taxonomy_product_cat',
 			[
 				'label' => esc_html__( 'Categories', 'wpr-addons' ),
+				'type' => 'wpr-ajax-select2',
 				'options' => 'ajaxselect2/get_taxonomies',
 				'query_slug' => 'product_cat',
 				'multiple' => true,
@@ -606,6 +607,7 @@ class Wpr_Woo_Grid extends Widget_Base {
 			'query_taxonomy_product_tag',
 			[
 				'label' => esc_html__( 'Tags', 'wpr-addons' ),
+				'type' => 'wpr-ajax-select2',
 				'options' => 'ajaxselect2/get_taxonomies',
 				'query_slug' => 'product_tag',
 				'multiple' => true,
@@ -997,7 +999,6 @@ class Wpr_Woo_Grid extends Widget_Base {
 				'max' => 10,
 				'frontend_available' => true,
 				'default' => 2,
-				'prefix_class' => 'wpr-grid-slides-to-scroll-',
 				'render_type' => 'template',
 				'separator' => 'before',
 				'condition' => [
@@ -8502,6 +8503,7 @@ class Wpr_Woo_Grid extends Widget_Base {
 			'pauseOnHover' => $settings['layout_slider_pause_on_hover'],
 			'prevArrow' => '#wpr-grid-slider-prev-'. $this->get_id(),
 			'nextArrow' => '#wpr-grid-slider-next-'. $this->get_id(),
+			'sliderSlidesToScroll' => +$settings['layout_slides_to_scroll'],
 		];
 
 		if ( ! wpr_fs()->can_use_premium_code() ) {

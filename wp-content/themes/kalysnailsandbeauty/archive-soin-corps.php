@@ -6,8 +6,7 @@
 <?php get_header(); ?>
 <section class="kalys-epilation-archive">
     <div class="kalys-epilation-archive-slider">
-        <?php add_revslider('slider-4');
-        ?>
+        <?php add_revslider('slider-4'); ?>
     </div>
     <div class="tilte-epilation-archive">
         <h2 class="kalys-epilation-archive-title"><?php single_post_title() ?></h2>
@@ -19,11 +18,11 @@
         </div>
         <?php the_content() ?>
     </div>
-    <?php endwhile;
-    endif; ?>
-    <aside class="kalys-sidebar">
-        <?php dynamic_sidebar('blog') ?>
-    </aside>
+<?php endwhile;
+            endif; ?>
+<aside class="kalys-sidebar">
+    <?php dynamic_sidebar('blog') ?>
+</aside>
 </section>
 <?php get_footer(); ?>
 </section>

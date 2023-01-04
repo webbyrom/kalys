@@ -2,7 +2,7 @@
 /*********
  * Plugin Name: Kalys soin des mains et soin du corps
  * Description: Gestion des posts type
- * Author: Romain Fourel | Web-byrom
+ * Author: Romain Fourel | https://web-byrom.com
  * Version: 1.0.0
  * 
  */
@@ -36,9 +36,10 @@ add_action('init', function () {
             'item_updated'  =>__('Soin des mains mis à jour', 'kalys'),
         ],
         'public'  => true,
-        'hierarchical'  => true,
+        'hierarchical'  => false,
         'menu_position' => 3,
         'exclude_from_search' =>  false,
+        'rewrite'   => ['slug' => 'soin-mains'],
         'taxonomies'  => ['manucure'],
         'supports'  =>  ['title', 'editor', 'comments', 'author', 'excerpt', 'thumbnail'],
         'show_in_rest'  => true,
@@ -105,11 +106,12 @@ add_action('init', function () {
             'item_updated'  => __('Soin du corps mis à jour', 'kalys'),
     
         ],
-        'public'    =>  true,
-        'hierarchical'  =>  true,
-        'menu_position' => 4,
-        'exclude_from_search'   =>  false,
-        'taxonomies'    => ['épilation'],
+        'public'  => true,
+        'hierarchical'  => false,
+        'menu_position' => 3,
+        'exclude_from_search' =>  false,
+        'rewrite'   => ['slug' => 'soin-corps'],
+        'taxonomies'  => ['épilation'],
         'supports'  =>  ['title', 'editor', 'comments', 'author', 'excerpt', 'thumbnail'],
         'show_in_rest'  => true,
         'has_archive'   => true,

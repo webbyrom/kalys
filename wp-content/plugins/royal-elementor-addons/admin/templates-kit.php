@@ -200,6 +200,13 @@ function get_theme_status() {
 ** Install/Activate Required Theme
 */
 function wpr_activate_required_theme() {
+
+    $nonce = $_POST['nonce'];
+
+    if ( !wp_verify_nonce( $nonce, 'wpr-templates-kit-js' )  || !current_user_can( 'manage_options' ) ) {
+      exit; // Get out of here, the nonce is rotten!
+    }
+    
     // Get Current Theme
     $theme = get_option('stylesheet');
 
@@ -217,6 +224,13 @@ function wpr_activate_required_theme() {
 ** Activate Required Plugins
 */
 function wpr_activate_required_plugins() {
+
+    $nonce = $_POST['nonce'];
+
+    if ( !wp_verify_nonce( $nonce, 'wpr-templates-kit-js')  || !current_user_can( 'manage_options' ) ) {
+      exit; // Get out of here, the nonce is rotten!
+    }
+
     if ( isset($_POST['plugin']) ) {
         if ( 'contact-form-7' == $_POST['plugin'] ) {
             if ( !is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) {
@@ -238,6 +252,13 @@ function wpr_activate_required_plugins() {
 ** Deactivate Extra Plugins
 */
 function wpr_fix_royal_compatibility() {
+
+    $nonce = $_POST['nonce'];
+
+    if ( !wp_verify_nonce( $nonce, 'wpr-templates-kit-js' )  || !current_user_can( 'manage_options' ) ) {
+      exit; // Get out of here, the nonce is rotten!
+    }
+
     // Get currently active plugins
     $active_plugins = (array) get_option( 'active_plugins', array() );
     $active_plugins = array_values($active_plugins);
@@ -282,6 +303,12 @@ function wpr_fix_royal_compatibility() {
 */
 function wpr_import_templates_kit() {
 
+    $nonce = $_POST['nonce'];
+
+    if ( !wp_verify_nonce( $nonce, 'wpr-templates-kit-js' )  || !current_user_can( 'manage_options' ) ) {
+      exit; // Get out of here, the nonce is rotten!
+    }
+
     // Temp Define Importers
     if ( ! defined('WP_LOAD_IMPORTERS') ) {
         define('WP_LOAD_IMPORTERS', true);
@@ -302,8 +329,8 @@ function wpr_import_templates_kit() {
         // Tmp
         update_option( 'wpr-import-kit-id', $kit );
 
-        // Regenerate Extra Image Sizes
-        add_filter( 'intermediate_image_sizes_advanced', 'disable_extra_image_sizes', 10, 3 );
+        // Disable Extra Image Sizes
+        add_filter( 'intermediate_image_sizes_advanced', [new Utilities, 'disable_extra_image_sizes'], 10, 3 );
 
         // No Limit for Execution
         set_time_limit(0);
@@ -400,6 +427,13 @@ function download_template( $kit, $file ) {
 ** Reset Previous Import
 */
 function wpr_reset_previous_import() {
+
+    $nonce = $_POST['nonce'];
+
+    if ( !wp_verify_nonce( $nonce, 'wpr-templates-kit-js' )  || !current_user_can( 'manage_options' ) ) {
+      exit; // Get out of here, the nonce is rotten!
+    }
+    
     $args = [
         'post_type' => [
             'page',
@@ -614,6 +648,13 @@ function wpr_fix_elementor_images() {
 ** Final Settings Setup
 */
 function wpr_final_settings_setup() {
+
+    $nonce = $_POST['nonce'];
+
+    if ( !wp_verify_nonce( $nonce, 'wpr-templates-kit-js' )  || !current_user_can( 'manage_options' ) ) {
+      exit; // Get out of here, the nonce is rotten!
+    }
+    
     $kit = !empty(get_option('wpr-import-kit-id')) ? esc_html(get_option('wpr-import-kit-id')) : '';
 
     // Elementor Site Settings
@@ -638,45 +679,7 @@ function wpr_final_settings_setup() {
     }
 
     // Regenerate Extra Image Sizes
-    regenerate_extra_image_sizes();
-}
-
-/**
-** Regenerate Extra Image Sizes
-*/
-function disable_extra_image_sizes( $new_sizes, $image_meta, $attachment_id ) {
-    $all_attachments = get_option( 'st_attachments', array() );
-
-    // If the cron job is already scheduled, bail.
-    if ( in_array( $attachment_id, $all_attachments, true ) ) {
-        return $new_sizes;
-    }
-
-    $all_attachments[] = $attachment_id;
-
-    update_option( 'st_attachments', $all_attachments, 'no' );
-
-    // Return blank array of sizes to not generate any sizes in this request.
-    return array();
-}
-
-/**
-** Regenerate Extra Image Sizes
-*/
-function regenerate_extra_image_sizes() {
-    $all_attachments = get_option( 'st_attachments', array() );
-
-    if ( empty( $all_attachments ) ) {
-        return;
-    }
-
-    foreach ( $all_attachments as $attachment_id ) {
-        $file = get_attached_file( $attachment_id );
-        if ( false !== $file ) {
-            wp_generate_attachment_metadata( $attachment_id, $file );
-        }
-    }
-    update_option( 'st_attachments', array(), 'no' );
+    Utilities::regenerate_extra_image_sizes();
 }
 
 /**
