@@ -1,0 +1,29 @@
+.e-app-export-kit-content {
+  --e-app-export-kit-content-title-color: tints(700);
+  --e-app-export-kit-content-description-color: tints(600);
+}
+.e-app-export-kit-content__checkbox {
+  flex-shrink: 0;
+  -webkit-margin-end: spacing(12);
+          margin-inline-end: spacing(12);
+}
+.e-app-export-kit-content__title {
+  color: var(--e-app-export-kit-content-title-color);
+}
+.e-app-export-kit-content__description {
+  color: var(--e-app-export-kit-content-description-color);
+  -webkit-margin-end: spacing(20);
+          margin-inline-end: spacing(20);
+}
+.e-app-export-kit-content__notice {
+  margin-top: spacing(16);
+}
+.e-app-export-kit-content__small-notice {
+  font-style: italic;
+  color: var(--e-app-export-kit-content-description-color);
+}
+
+.eps-theme-dark .e-app-export-kit-content {
+  --e-app-export-kit-content-title-color: dark-tints(100);
+  --e-app-export-kit-content-description-color: dark-tints(200);
+}/*# sourceMappingURL=kit-content.css.map */

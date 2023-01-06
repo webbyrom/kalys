@@ -1,0 +1,41 @@
+.e-app-collapse {
+  --e-app-collapse-icon-color: tints(600);
+}
+.e-app-collapse-toggle {
+  position: relative;
+}
+.e-app-collapse-toggle--active {
+  cursor: pointer;
+}
+.e-app-collapse-toggle__icon {
+  color: var(--e-app-collapse-icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: type(size, "14");
+  position: absolute;
+  top: 50%;
+  right: var(--e-app-collapse-toggle-icon-spacing);
+  transform: translateY(-50%);
+}
+.e-app-collapse-toggle__icon:before {
+  transition: all 0.2s linear;
+}
+.e-app-collapse-content {
+  display: none;
+}
+.e-app-collapse--opened .e-app-collapse-toggle__icon:before {
+  transform: rotate(-180deg);
+}
+.e-app-collapse--opened .e-app-collapse-content {
+  display: block;
+}
+
+[dir=rtl] .e-app-collapse-toggle__icon {
+  right: initial;
+  left: var(--e-app-collapse-toggle-icon-spacing);
+}
+
+.eps-theme-dark .e-app-collapse {
+  --e-app-collapse-icon-color: dark-tints(200);
+}/*# sourceMappingURL=collapse.css.map */

@@ -177,7 +177,7 @@ main {
             }
             ul.kalys_primary_nav li.kalys_m_active > a,
             ul.sub-menu li.current-menu-item > a {
-                color: rgb(129, 212, 129);
+                color:#c334f4;
             }
         }
 
@@ -211,7 +211,7 @@ main {
     /******  menu actif */
     ul.kalys_primary_nav li.kalys_m_active > a,
     ul.sub-menu li.current-menu-item > a {
-        color: rgb(129, 212, 129);
+        color:#c334f4;
     }
     /************** content fornt-page*****/
     /*   ul.kalys_primary_nav li.menu-item-type-custom>a, li.menu-item-type-post_type.current-menu-item>a {
@@ -226,7 +226,8 @@ main {
     }
 
     .kalys-col-full,
-    .tilte-epilation,
+    .tilte-epilation,.kalys-title.page,
+    .title-manucure-archive,
     h1,
     h2 {
         /* margin: 30px 30px 20px;*/

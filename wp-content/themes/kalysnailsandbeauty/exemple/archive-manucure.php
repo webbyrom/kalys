@@ -1,18 +1,27 @@
 <?php get_header(); ?>
-
-<h1>Toutes nos manucures</h1>
-<!----- affichage des actualités-->
-<?php if (have_posts()) : ?>
-    <div class="row">
-        <?php while (have_posts()) : the_post(); ?>
-            <div class="col-sm-4">
-                <?php get_template_part('parts/card', 'post'); ?><!----va recuper le contenue du dossier parts et le fichier post.php--->
-            </div>
-        <?php endwhile ?>
+<section class="kalys-manucure-archive">
+    <div class="kalys-manucure-archive-slider">
+        <?php add_revslider('slider-4');
+        ?>
     </div>
-    <?php kalys_pagination() ?>
-<?= paginate_links(); ?>
-<?php else : ?>
-    <h3>Pas d'articles</h3>
-<?php endif; ?>
+    <div class="title-manucure-archive">
+        <h2 class="kalys-manucure-archive-title kalys-title-page"><?php single_post_title() ?></h2>
+    </div>
+    <div class="space-gradient"></div>
+    <div class="kalys-manucure-archive-main">
+        <div class="kalys-single-manucure">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <div class="archive-img-en-avant">
+                        <?php the_post_thumbnail('thumbnail') ?>
+                    </div>
+        </div>
+
+        <?php the_content() ?>
+    </div>
+<?php endwhile;
+            endif; ?>
+<aside class="kalys-sidebar">
+    <?php dynamic_sidebar('blog') ?>
+</aside>
+</section>
 <?php get_footer(); ?>

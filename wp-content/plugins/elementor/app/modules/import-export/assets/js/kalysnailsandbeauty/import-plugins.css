@@ -1,0 +1,18 @@
+.e-app-import-plugins {
+  --e-app-import-plugins-selection-section-heading-color: tints(600);
+  padding-bottom: spacing(24);
+}
+.e-app-import-plugins__section {
+  margin-top: spacing(30);
+}
+.e-app-import-plugins__section-heading {
+  color: var(--e-app-import-plugins-selection-section-heading-color);
+  margin-bottom: spacing(16);
+}
+.e-app-import-plugins__versions-notice {
+  margin-bottom: spacing(12);
+}
+
+.eps-theme-dark .e-app-import-plugins {
+  --e-app-import-plugins-selection-section-heading-color: dark-tints(200);
+}/*# sourceMappingURL=import-plugins.css.map */

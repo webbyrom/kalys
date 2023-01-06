@@ -7,10 +7,10 @@
 <?php get_header(); ?>
 <section class="kalys-section-manucure container">
     <div class="kalys-manucure-slider">
-        <?php add_revslider('full-width-slider1'); ?>
+        <?php add_revslider('slider-5'); ?>
     </div>
     <div class="tilte-manucure">
-        <h2 class="kalys-manucure-title"><?php single_post_title() ?></h2>
+        <h2 class="kalys-manucure-title kalys-title-page"><?php single_post_title() ?></h2>
     </div>
     <div class="space-gradient"></div>
     <div class="kalys-manucure-main">
@@ -22,30 +22,30 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-      
-            <div class="row kalys-post-manucure my-4">
-            <?php
-        $kalysPostMan = array_map(function ($term) {
-            return $term->term_id;
-        }, get_the_terms(get_post_type(), 'manucure'));
 
-        $query = new WP_Query([
-             'post__not-in'  =>[get_the_ID()],
-            'post_type' => 'soin-mains',
-            'post_status' => 'publishedS',
-            'orderby'=> 'date',
-            'order' => 'DESC',
-            'post_per_page' => 3,
-            'tax_query' => [
-                'taxonomy'  =>  'manucure',
-                'terms' => $kalysPostMan,
-            ],
-            'meta_query' => ['compare'=> 'EXISTS']
-        ]);
-        while ($query->have_posts()) : $query->the_post(); ?>
+        <div class="row kalys-post-manucure my-4">
+            <?php
+            $kalysPostMan = array_map(function ($term) {
+                return $term->term_id;
+            }, get_the_terms(get_post_type(), 'manucure'));
+
+            $query = new WP_Query([
+                'post__not-in'  => [get_the_ID()],
+                'post_type' => 'soin-mains',
+                'post_status' => 'publish',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'post_per_page' => 3,
+                'tax_query' => [
+                    'taxonomy'  =>  'manucure',
+                    'terms' => $kalysPostMan,
+                ],
+                'meta_query' => ['compare' => 'EXISTS']
+            ]);
+            while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="card-group col-sm-4">
                     <div class="card" style="width: 18rem;">
-                        <?php the_post_thumbnail('thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
+                        <?php the_post_thumbnail('medium', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
                         <div class="card-body">
                             <h5 class="card-title"><?php the_title() ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><?php the_category('-') ?></h6>
@@ -64,5 +64,10 @@
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
             <?php the_content() ?>
+</section>
+<section class="kalys-manucure-sidebar">
+    <aside class="kalys-sidebar">
+        <?php dynamic_sidebar('blog') ?>
+    </aside>
 </section>
 <?php get_footer(); ?>

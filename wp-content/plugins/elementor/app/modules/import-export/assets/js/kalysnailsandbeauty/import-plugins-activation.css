@@ -1,0 +1,10 @@
+.e-app-import-plugins-activation__installing-plugins {
+  padding: spacing(10) 0;
+}
+.e-app-import-plugins-activation__plugin-name {
+  -webkit-margin-start: spacing(8);
+          margin-inline-start: spacing(8);
+}
+.e-app-import-plugins-activation__plugin-status-item {
+  margin-bottom: spacing(12);
+}/*# sourceMappingURL=import-plugins-activation.css.map */

@@ -1,0 +1,22 @@
+.e-app-drop-zone {
+  --e-app-drop-zone-icon-color: tints(400);
+  --e-app-drop-zone-text-color: tints(500);
+  --e-app-drop-zone-secondary-text-color: tints(600);
+}
+.e-app-drop-zone__icon {
+  margin-bottom: spacing(44);
+  color: var(--e-app-drop-zone-icon-color);
+  font-size: 60px;
+}
+.e-app-drop-zone__text {
+  color: var(--e-app-drop-zone-text-color);
+}
+.e-app-drop-zone__secondary-text {
+  color: var(--e-app-drop-zone-secondary-text-color);
+}
+
+.eps-theme-dark .e-app-drop-zone {
+  --e-app-drop-zone-icon-color: tints(400);
+  --e-app-drop-zone-text-color: dark-tints(200);
+  --e-app-drop-zone-secondary-text-color: dark-tints(100);
+}/*# sourceMappingURL=drop-zone.css.map */

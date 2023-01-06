@@ -1,0 +1,18 @@
+.e-app-import-export-message-banner {
+  --e-app-import-export-message-banner-heading-color: tints(700);
+  --e-app-import-export-message-banner-description-color: tints(600);
+  margin-bottom: spacing(30);
+}
+.e-app-import-export-message-banner__heading {
+  color: var(--e-app-import-export-message-banner-heading-color);
+  margin-bottom: spacing(10);
+}
+.e-app-import-export-message-banner__description {
+  color: var(--e-app-import-export-message-banner-description-color);
+  margin-bottom: 0;
+}
+
+.eps-theme-dark .e-app-import-export-message-banner {
+  --e-app-import-export-message-banner-heading-color: dark-tints(300);
+  --e-app-import-export-message-banner-description-color: dark-tints(200);
+}/*# sourceMappingURL=message-banner.css.map */

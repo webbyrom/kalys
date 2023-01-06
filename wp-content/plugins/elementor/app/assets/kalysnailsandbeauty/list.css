@@ -1,0 +1,22 @@
+.eps-list {
+  --eps-list-item-separated-border-color: tints(200);
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.eps-list--padding {
+  padding: var(--eps-list-padding);
+}
+.eps-list__item {
+  padding: 0;
+}
+.eps-list__item--padding {
+  padding: var(--eps-list-item-padding);
+}
+.eps-list--separated .eps-list__item:not(:last-child) {
+  border-bottom: 1px solid var(--eps-list-item-separated-border-color);
+}
+
+.eps-theme-dark .eps-list {
+  --eps-list-item-separated-border-color: dark-tints(700);
+}/*# sourceMappingURL=list.css.map */

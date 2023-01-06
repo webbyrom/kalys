@@ -1,0 +1,47 @@
+:root {
+  --select2-selection-background-color: theme-colors(light);
+  --select2-selection-color: tints(600);
+  --select2-selection-border-color: tints(300);
+  --select2-selection-opened-focused-border-color: tints(200);
+  --select2-single-selection-rendered-color: tints(600);
+  --select2-default-single-selection-background-color: theme-colors(light);
+  --select2-default-single-selection-border-color: tints(300);
+  --select2-default-multiple-selection-background-color: theme-colors(light);
+  --select2-default-multiple-selection-choice-background-color: tints(200);
+  --select2-default-multiple-selection-choice-color: tints(600);
+  --select2-default-multiple-selection-choice-border-color: tints(200);
+  --select2-default-multiple-selection-choice-remove-color: tints(500);
+  --select2-default-multiple-selection-choice-remove-hover-color: tints(600);
+  --select2-default-results-selected-option-background-color: theme-colors(light);
+  --select2-default-results-selected-option-color: tints(600);
+  --select2-default-results-highlighted-option-background-color: #5897fb;
+  --select2-default-results-highlighted-option-color: theme-colors(light);
+  --select2-results-selected-option-background-color: #5897fb;
+  --select2-results-selected-option-color: theme-colors(light);
+  --select2-dropdown-background-color: theme-colors(light);
+  --select2-dropdown-border-color: tints(300);
+}
+
+.eps-theme-dark {
+  --select2-selection-background-color: dark-tints(700);
+  --select2-selection-color: dark-tints(100);
+  --select2-selection-border-color: dark-tints(400);
+  --select2-selection-opened-focused-border-color: dark-tints(300);
+  --select2-single-selection-rendered-color: dark-tints(100);
+  --select2-default-single-selection-background-color: dark-tints(700);
+  --select2-default-single-selection-border-color: dark-tints(500);
+  --select2-default-multiple-selection-background-color: dark-tints(700);
+  --select2-default-multiple-selection-choice-background-color: dark-tints(500);
+  --select2-default-multiple-selection-choice-color: dark-tints(100);
+  --select2-default-multiple-selection-choice-border-color: dark-tints(500);
+  --select2-default-multiple-selection-choice-remove-color: dark-tints(200);
+  --select2-default-multiple-selection-choice-remove-hover-color: dark-tints(100);
+  --select2-default-results-selected-option-background-color: dark-tints(700);
+  --select2-default-results-selected-option-color: dark-tints(100);
+  --select2-default-results-highlighted-option-background-color: dark-tints(500);
+  --select2-default-results-highlighted-option-color: dark-tints(100);
+  --select2-results-selected-option-background-color: dark-tints(500);
+  --select2-results-selected-option-color: dark-tints(100);
+  --select2-dropdown-background-color: dark-tints(700);
+  --select2-dropdown-border-color: dark-tints(400);
+}/*# sourceMappingURL=select2-api.css.map */

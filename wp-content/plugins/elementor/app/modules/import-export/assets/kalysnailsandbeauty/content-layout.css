@@ -1,0 +1,8 @@
+.e-app-import-export-content-layout {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.e-app-import-export-content-layout__container {
+  flex-basis: 1075px;
+}/*# sourceMappingURL=content-layout.css.map */

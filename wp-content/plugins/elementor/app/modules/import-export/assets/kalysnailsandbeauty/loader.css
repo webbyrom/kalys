@@ -1,0 +1,18 @@
+.e-app-import-export-loader {
+  --e-app-import-export-loader-color: tints(400);
+  color: var(--e-app-import-export-loader-color);
+  font-size: 50px;
+}
+.e-app-import-export-loader.eicon-loading {
+  font-size: type(size, "30");
+}
+.e-app-import-export-loader--absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.eps-theme-dark .e-app-import-export-loader {
+  --e-app-import-export-loader-color: dark-tints(400);
+}/*# sourceMappingURL=loader.css.map */

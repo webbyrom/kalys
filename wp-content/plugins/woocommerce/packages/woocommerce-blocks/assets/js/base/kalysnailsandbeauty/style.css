@@ -1,0 +1,17 @@
+.wc-block-components-review-sort-select {
+  text-align: right;
+}/*# sourceMappingURL=style.css.map */-left: calc(24px + 0.25em);
+  position: relative;
+  text-decoration: none;
+}
+.wc-block-components-checkout-return-to-cart-button svg {
+  left: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}/*# sourceMappingURL=style.css.map */g,
+.is-mobile .wc-block-components-payment-method-label--with-icon > svg,
+.is-small .wc-block-components-payment-method-label--with-icon > img,
+.is-small .wc-block-components-payment-method-label--with-icon > svg {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

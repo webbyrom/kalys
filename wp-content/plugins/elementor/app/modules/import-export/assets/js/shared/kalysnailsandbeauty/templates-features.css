@@ -1,0 +1,8 @@
+.e-app-export-templates-features__locked {
+  --e-app-export-templates-features-locked-color: tints(500);
+  color: var(--e-app-export-templates-features-locked-color);
+}
+
+.eps-theme-dark .e-app-export-templates-features__locked {
+  --e-app-export-templates-features-locked-color: dark-tints(300);
+}/*# sourceMappingURL=templates-features.css.map */

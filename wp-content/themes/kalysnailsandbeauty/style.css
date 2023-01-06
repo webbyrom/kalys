@@ -232,7 +232,7 @@ main header .sticky ul.kalys_primary_nav li.kalys_m_active > a,
 main header .sticky ul.sub-menu li.current-menu-item > a,
 main nav .sticky ul.kalys_primary_nav li.kalys_m_active > a,
 main nav .sticky ul.sub-menu li.current-menu-item > a {
-  color: rgb(129, 212, 129);
+  color: #c334f4;
 }
 body header button,
 body nav button,
@@ -276,7 +276,7 @@ body ul.kalys_primary_nav li.kalys_m_active > a,
 body ul.sub-menu li.current-menu-item > a,
 main ul.kalys_primary_nav li.kalys_m_active > a,
 main ul.sub-menu li.current-menu-item > a {
-  color: rgb(129, 212, 129);
+  color: #c334f4;
 }
 body .kalys-col-full,
 main .kalys-col-full {
@@ -286,11 +286,14 @@ main .kalys-col-full {
   box-shadow: 10px 5px 10px gray;
 }
 body .kalys-col-full,
-body .tilte-epilation,
+body .tilte-epilation, body .kalys-title.page,
+body .title-manucure-archive,
 body h1,
 body h2,
 main .kalys-col-full,
 main .tilte-epilation,
+main .kalys-title.page,
+main .title-manucure-archive,
 main h1,
 main h2 {
   /* margin: 30px 30px 20px;*/
@@ -300,11 +303,14 @@ main h2 {
   text-transform: capitalize;
 }
 body .kalys-col-full h2,
-body .tilte-epilation h2,
+body .tilte-epilation h2, body .kalys-title.page h2,
+body .title-manucure-archive h2,
 body h1 h2,
 body h2 h2,
 main .kalys-col-full h2,
 main .tilte-epilation h2,
+main .kalys-title.page h2,
+main .title-manucure-archive h2,
 main h1 h2,
 main h2 h2 {
   font-size: 4em;

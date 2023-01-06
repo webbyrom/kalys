@@ -1,0 +1,11 @@
+.e-app-wizard-footer {
+  --e-app-wizard-footer-border-color: tints(300);
+  padding: spacing(8);
+}
+.e-app-wizard-footer__separator {
+  border-top: 1px solid var(--e-app-wizard-footer-border-color);
+}
+
+.eps-theme-dark .e-app-wizard-footer {
+  --e-app-wizard-footer-border-color: dark-tints(500);
+}/*# sourceMappingURL=wizard-footer.css.map */

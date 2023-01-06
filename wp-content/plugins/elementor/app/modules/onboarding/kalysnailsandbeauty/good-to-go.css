@@ -1,0 +1,18 @@
+.e-onboarding__page-goodToGo .e-onboarding__page-content-section-title,
+.e-onboarding__page-goodToGo .e-onboarding__page-content-section-text {
+  text-align: center;
+}
+.e-onboarding__cards-grid.e-onboarding__page-content {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.e-onboarding__cards-grid .e-onboarding__card {
+  max-width: 555px;
+}
+.e-onboarding__cards-grid .e-onboarding__card:not(:last-child) {
+  -webkit-margin-end: 20px;
+          margin-inline-end: 20px;
+}
+.e-onboarding__good-to-go-footer {
+  justify-content: end;
+}/*# sourceMappingURL=good-to-go.css.map */

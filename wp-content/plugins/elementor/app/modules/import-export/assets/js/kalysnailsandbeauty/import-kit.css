@@ -1,0 +1,19 @@
+.e-app-import {
+  --e-app-import-back-to-library-color: tints(500);
+  padding-bottom: spacing(20);
+}
+.e-app-import__drop-zone {
+  margin-top: spacing(20);
+}
+.e-app-import__back-to-library {
+  color: var(--e-app-import-back-to-library-color);
+  margin-bottom: spacing(24);
+}
+.e-app-import__back-to-library > i {
+  -webkit-margin-end: spacing(8);
+          margin-inline-end: spacing(8);
+}
+
+.eps-theme-dark .e-app-import {
+  --e-app-import-back-to-library-color: dark-tints(200);
+}/*# sourceMappingURL=import-kit.css.map */

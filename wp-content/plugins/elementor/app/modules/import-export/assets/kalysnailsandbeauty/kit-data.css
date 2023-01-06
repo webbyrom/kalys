@@ -1,0 +1,19 @@
+.e-app-import-export-kit-data {
+  --e-app-import-export-kit-data-site-area-color: tints(700);
+  --e-app-import-export-kit-data-included-color: tints(500);
+}
+.e-app-import-export-kit-data__site-area, .e-app-import-export-kit-data__included {
+  margin-bottom: 0;
+}
+.e-app-import-export-kit-data__site-area {
+  color: var(--e-app-import-export-kit-data-site-area-color);
+  font-weight: bold;
+}
+.e-app-import-export-kit-data__included {
+  color: var(--e-app-import-export-kit-data-included-color);
+}
+
+.eps-theme-dark .e-app-import-export-kit-data {
+  --e-app-import-export-kit-data-site-area-color: dark-tints(200);
+  --e-app-import-export-kit-data-included-color: dark-tints(300);
+}/*# sourceMappingURL=kit-data.css.map */

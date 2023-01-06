@@ -1,8 +1,3 @@
-<?php
-/*********
- * Template Name: Archive épilation
- */
-?>
 <?php get_header(); ?>
 <section class="kalys-epilation-archive">
     <div class="kalys-epilation-archive-slider">
@@ -15,6 +10,9 @@
     <div class="kalys-epilation-archive-main">
         <div class="kalys-single-epilation">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <div class="archive-img-en-avant">
+                        <?php the_post_thumbnail('thumbnail') ?>
+                    </div>
         </div>
         <?php the_content() ?>
     </div>
@@ -25,4 +23,3 @@
 </aside>
 </section>
 <?php get_footer(); ?>
-</section>

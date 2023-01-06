@@ -1,6 +1,6 @@
 <?php
 /*********
- * Plugin Name: Kalys soin des mains et soin du corps
+ * Plugin Name: Kalys Nails & Beauty
  * Description: Gestion des posts type
  * Author: Romain Fourel | https://web-byrom.com
  * Version: 1.0.0
@@ -36,7 +36,7 @@ add_action('init', function () {
             'item_updated'  =>__('Soin des mains mis à jour', 'kalys'),
         ],
         'public'  => true,
-        'hierarchical'  => false,
+        'hierarchical'  => true,
         'menu_position' => 3,
         'exclude_from_search' =>  false,
         'rewrite'   => ['slug' => 'soin-mains'],
@@ -107,7 +107,7 @@ add_action('init', function () {
     
         ],
         'public'  => true,
-        'hierarchical'  => false,
+        'hierarchical'  => true,
         'menu_position' => 3,
         'exclude_from_search' =>  false,
         'rewrite'   => ['slug' => 'soin-corps'],

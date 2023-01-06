@@ -1,0 +1,29 @@
+:root {
+  --color-box-shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+.eps-theme-dark {
+  --color-box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  --card-background-color: rgba(255, 255, 255, 0.5);
+  --card-background-color-hover: #fff;
+  --card-box-shadow: 0 4px 10px var(--color-box-shadow-color);
+  --card-header-footer-border: 1px solid #f1f3f5;
+  --card-header-footer-active-border: 2px solid #e2e6ea;
+  --card-headline-color: #6d7882;
+  --card-figure-background-color: #f1f3f5;
+  --card-image-overlay-background-color: rgba(0, 0, 0, 0.2);
+}
+
+.eps-theme-dark {
+  --card-background-color: #404349;
+  --card-background-color-hover: rgba(76, 79, 86, 0.8);
+  --card-box-shadow: 0 3px 6px var(--color-box-shadow-color);
+  --card-header-footer-border: 1px solid #34383c;
+  --card-header-footer-active-border: 1px solid #26292C;
+  --card-headline-color: #e0e1e3;
+  --card-figure-background-color: #34383c;
+  --card-image-overlay-background-color: rgba(52, 56, 60, 0.5);
+}/*# sourceMappingURL=card-api.css.map */

@@ -1,0 +1,6 @@
+.e-app-import-export-info-modal__section:not(:first-child) {
+  margin-top: spacing(30);
+}
+.e-app-import-export-info-modal__heading {
+  margin-bottom: spacing(20);
+}/*# sourceMappingURL=info-modal.css.map */

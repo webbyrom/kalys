@@ -1,0 +1,29 @@
+.wp-block-woocommerce-checkout-order-note-block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.wp-block-woocommerce-checkout-order-note-block .wc-block-checkout__add-note {
+  margin-top: 0;
+  margin-bottom: 0;
+}/*# sourceMappingURL=editor.css.map */--checkout {
+  margin-bottom: 0;
+}
+.wp-block-woocommerce-checkout-express-payment-block.wp-block-woocommerce-checkout-express-payment-block--has-express-payment-methods {
+  padding: 14px 0;
+  margin: -14px 0 14px 0 !important;
+  position: relative;
+}
+
+.wp-block-woocommerce-checkout-express-payment-block-placeholder * {
+  pointer-events: all;
+}
+.wp-block-woocommerce-checkout-express-payment-block-placeholder .wp-block-woocommerce-checkout-express-payment-block-placeholder__description {
+  display: block;
+  margin: 0 0 1em;
+}/*# sourceMappingURL=editor.css.map */s-product .wc-block-components-product-add-to-cart-button:not(.is-link):focus, .wp-block-woocommerce-cart-cross-sells-products-block .cross-sells-product .wc-block-components-product-add-to-cart-button:not(.is-link):hover {
+  background-color: #d5d5d5;
+  border-color: #d5d5d5;
+  color: #333;
+}/*# sourceMappingURL=editor.css.map */

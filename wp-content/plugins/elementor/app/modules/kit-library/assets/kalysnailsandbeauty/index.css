@@ -1,0 +1,32 @@
+.e-kit-library__index-layout-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.e-kit-library__index-layout-top-area {
+  padding: spacing(30) spacing(44);
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  width: 100%;
+  z-index: 2;
+  background-color: var(--app-background-color);
+  gap: spacing(24);
+}
+.e-kit-library__index-layout-top-area-search, .e-kit-library__index-layout-top-area-sort {
+  min-width: 265px;
+}
+.e-kit-library__index-layout-top-area-search {
+  flex: 1;
+}
+.e-kit-library__index-layout-main {
+  padding-top: spacing(0);
+  padding-bottom: spacing(24);
+  overflow-y: hidden;
+  height: auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}/*# sourceMappingURL=index.css.map */

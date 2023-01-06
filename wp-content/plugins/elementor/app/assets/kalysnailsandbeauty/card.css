@@ -1,0 +1,106 @@
+:root {
+  --color-box-shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+.eps-theme-dark {
+  --color-box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  --card-background-color: rgba(255, 255, 255, 0.5);
+  --card-background-color-hover: #fff;
+  --card-box-shadow: 0 4px 10px var(--color-box-shadow-color);
+  --card-header-footer-border: 1px solid #f1f3f5;
+  --card-header-footer-active-border: 2px solid #e2e6ea;
+  --card-headline-color: #6d7882;
+  --card-figure-background-color: #f1f3f5;
+  --card-image-overlay-background-color: rgba(0, 0, 0, 0.2);
+}
+
+.eps-theme-dark {
+  --card-background-color: #404349;
+  --card-background-color-hover: rgba(76, 79, 86, 0.8);
+  --card-box-shadow: 0 3px 6px var(--color-box-shadow-color);
+  --card-header-footer-border: 1px solid #34383c;
+  --card-header-footer-active-border: 1px solid #26292C;
+  --card-headline-color: #e0e1e3;
+  --card-figure-background-color: #34383c;
+  --card-image-overlay-background-color: rgba(52, 56, 60, 0.5);
+}
+
+.eps-card {
+  background-color: var(--card-background-color);
+  box-shadow: 0 4px 10px var(--color-box-shadow-color);
+  border-radius: 0.1875rem;
+  transition: 0.3s;
+  font-size: 0.75rem;
+  /*
+   todo: TBD: Optionally remove headline styling in favor of a global atom depending on variation needs
+  */
+}
+.eps-card__header {
+  padding: 0.625rem;
+  border-bottom: var(--card-header-footer-border);
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+.eps-card__header--padding {
+  padding: var(--eps-card-header-padding);
+}
+.eps-card__headline {
+  color: var(--card-headline-color);
+  margin-bottom: 0;
+  font-weight: 500;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.eps-card__body {
+  padding: 0.625rem 0.625rem;
+}
+.eps-card__body--padding {
+  padding: var(--eps-card-body-padding);
+}
+.eps-card__figure {
+  background-color: var(--card-figure-background-color);
+  position: relative;
+  padding-bottom: var(--card-image-aspect-ratio, 95.6%);
+  overflow: hidden;
+  height: 0;
+}
+.eps-card__image {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: top;
+     object-position: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.eps-card__image-overlay {
+  position: absolute;
+  top: 0;
+  background-color: var(--card-image-overlay-background-color);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s;
+}
+.eps-card__image-overlay:hover {
+  opacity: 1;
+}
+.eps-card__footer {
+  padding: 0.625rem;
+  border-top: var(--card-header-footer-border);
+  font-size: 0.6875rem;
+}
+.eps-card__footer--padding {
+  padding: var(--eps-card-footer-padding);
+}
+.eps-card:hover {
+  background-color: var(--card-background-color-hover);
+}/*# sourceMappingURL=card.css.map */

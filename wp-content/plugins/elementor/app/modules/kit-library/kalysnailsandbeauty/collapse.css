@@ -1,0 +1,28 @@
+.eps-collapse__title {
+  cursor: pointer;
+  padding: spacing(5) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+}
+.eps-collapse__title:focus {
+  outline: none;
+}
+.eps-collapse__icon {
+  transition: all 150ms;
+  transform: rotate(getValueByDirection(0deg, 180deg));
+}
+.eps-collapse__content {
+  margin-top: spacing(10);
+  display: none;
+}
+.eps-collapse[data-open] .eps-collapse__content {
+  display: block;
+}
+.eps-collapse[data-open] .eps-collapse__icon {
+  transform: rotate(90deg);
+}/*# sourceMappingURL=collapse.css.map */

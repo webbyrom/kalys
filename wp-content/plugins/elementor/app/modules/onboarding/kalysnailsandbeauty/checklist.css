@@ -1,0 +1,16 @@
+.e-onboarding__checklist {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+.e-onboarding__checklist-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.e-onboarding__checklist-item .eicon-check-circle {
+  -webkit-margin-end: 9px;
+          margin-inline-end: 9px;
+  font-size: 16px;
+  font-weight: 600;
+}/*# sourceMappingURL=checklist.css.map */
