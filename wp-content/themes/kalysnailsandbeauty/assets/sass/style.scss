@@ -213,7 +213,7 @@ main {
     ul.sub-menu li.current-menu-item > a {
         color:#c334f4;
     }
-    /************** content fornt-page*****/
+    /************** content front-page*****/
     /*   ul.kalys_primary_nav li.menu-item-type-custom>a, li.menu-item-type-post_type.current-menu-item>a {
         color: white;
     }
@@ -237,7 +237,7 @@ main {
         text-transform: capitalize;
 
         h2 {
-            font-size: 4em;
+            font-size: 3em;
             text-align: center;
             color: #f0b5b5;
             font-family: "Alex Brush";
@@ -266,8 +266,9 @@ Séparation sous le titre
         justify-content: center;
     }
     .card-body {
-        background-color: lightblue;
+        background-color: rgb(236, 198, 195);
     }
+
     /***********
 footer
 */
@@ -322,6 +323,33 @@ footer
             /* text-decoration: none;*/
         }
     }
+}
+/**********
+page actualités/blog
+
+*********/   
+.blog.kalys-news, h1.title-news {
+    font-size: 5em;
+    text-align: center;
+    color: #f0b5b5;
+    font-family: "Alex Brush";
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.news-list{
+    display: flex;
+    position: relative;
+}
+.news-sidebar{
+    position: relative;
+    float: right;
+   
+    
+
+}
+.home-news,.card, .news-img >img{
+    width: 100%;
 }
 .page-id-282,
 body {

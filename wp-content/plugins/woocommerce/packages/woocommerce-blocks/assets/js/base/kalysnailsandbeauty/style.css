@@ -1,6 +1,6 @@
-.wc-block-components-review-sort-select {
-  text-align: right;
-}/*# sourceMappingURL=style.css.map */-left: calc(24px + 0.25em);
+.wc-block-components-review-list.wc-block-components-review-list {
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */+ 0.25em);
   position: relative;
   text-decoration: none;
 }
@@ -9,9 +9,11 @@
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
-}/*# sourceMappingURL=style.css.map */g,
-.is-mobile .wc-block-components-payment-method-label--with-icon > svg,
-.is-small .wc-block-components-payment-method-label--with-icon > img,
-.is-small .wc-block-components-payment-method-label--with-icon > svg {
-  display: none;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */omponents-product-details__name,
+.wc-block-components-product-details__value {
+  display: inline-block;
+}
+
+.is-large:not(.wc-block-checkout) .wc-block-components-product-details__name {
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */ppingURL=style.css.map */
