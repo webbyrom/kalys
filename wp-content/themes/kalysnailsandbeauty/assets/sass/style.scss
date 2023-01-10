@@ -340,6 +340,7 @@ page actualités/blog
 .news-list{
     display: flex;
     position: relative;
+    padding-left: 40px;
 }
 .news-sidebar{
     position: relative;
@@ -350,6 +351,7 @@ page actualités/blog
 }
 .home-news,.card, .news-img >img{
     width: 100%;
+    height: auto;
 }
 .page-id-282,
 body {

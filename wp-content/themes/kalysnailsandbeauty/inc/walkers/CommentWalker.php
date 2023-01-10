@@ -25,7 +25,6 @@ class KalysCommentWalker extends \Walker_Comment {
 		}
 		$template = locate_template('template-parts/comment.php');
 		include($template);
-		
-		
+
 	}
 }

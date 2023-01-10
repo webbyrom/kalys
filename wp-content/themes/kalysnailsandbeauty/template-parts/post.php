@@ -1,15 +1,13 @@
 <article class="home-news">
-
     <div class="row">
-
         <div class="row ">
-            <div class="col g-4">
-                <div class="card" style="width: 18rem;">
+            <div class="col">
+                <div class="card" style="width: 25rem;">
                     <?php if (has_post_thumbnail()) : ?>
                         <a href="<?php the_permalink() ?>" title="<?= esc_attr(get_the_title()) ?>" class="news-img">
-                            <?php the_post_thumbnail() ?>
+                            <?php the_post_thumbnail('medium', true) ?>
                         <?php else : ?>
-                            <img width="250" height="250" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8c/CJCwAICQLXkCArnAAAAABJRU5ErkJggg=="> <?php endif ?>
+                            <img width="100%" height="250" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8c/CJCwAICQLXkCArnAAAAABJRU5ErkJggg=="> <?php endif ?>
 
                         <div class="card-body">
                             <a href="<?php the_permalink() ?>" class="news-title"><?php the_title() ?></a>

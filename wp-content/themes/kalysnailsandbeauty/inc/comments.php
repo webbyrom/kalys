@@ -1,10 +1,9 @@
 <?php
 add_filter('comment_form_default_fields', function (array $fields): array {
-    
+
     $authorLabel = __('Name');
     $emailLabel =   __('Email');
     $fields['author']   =   <<<HTML
-
     <div class="form-group">
         <input type="text" id="author" name="author" class="form-control" required>
         <label for="author">{$authorLabel}</label>
@@ -21,7 +20,7 @@ HTML;
 });
 
 add_filter('comment_form_defaults', function (array $fileds): array {
-    $commentLabel = _x( 'comment', 'noun');
+    $commentLabel = _x('comment', 'noun');
     $fields['title_reply'] =    '';
     $fields['class_form']   =   'form-2column';
     $fields['class_submit'] = 'btn';
@@ -34,18 +33,15 @@ add_filter('comment_form_defaults', function (array $fileds): array {
 
 add_filter('comment_form_fields', function (array $fields): array {
     $newFields  =   [];
-    foreach($fields as $key => $value) {
-        if ($key === 'comment') {
-
-        }else {
-            if ($key === 'cookies') {
+    foreach ($fields as $key => $value) {
+        if ($key !== 'comment') {
+                    if ($key === 'cookies') {
                 $newFields['comment'] = $fields['comment'];
-
             }
             $newFields[$key] = $value;
         }
     }
-    if (!isset($newFields['comment'])){
+    if (!isset($newFields['comment'])) {
         $newFields['comment'] = $fields['comment'];
     }
     return $newFields;
