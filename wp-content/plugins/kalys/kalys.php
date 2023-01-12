@@ -77,6 +77,7 @@ add_action('init', function () {
         'show_in_menu'  => true,
         'public'    => true,
         'show_admin_column'  => true,
+        'show_in_quick_edit'    => true
     ]);
     register_post_type('soin-corps', [
         'label' => __('Soin du corps'),
@@ -146,6 +147,7 @@ add_action('init', function () {
         'show_in_menu'  => true,
         'public'    => true,
         'show_admin_column'  => true,
+        'show_in_quick_edit'    => true
     ]);
 });
 
