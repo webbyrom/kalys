@@ -82,6 +82,10 @@ main {
   /*****
   Séparation sous le titre
   */
+  /*********
+     Test mise en page calendar
+
+  ***************/
   /***********
   footer
   */
@@ -286,7 +290,8 @@ main .kalys-col-full {
   box-shadow: 10px 5px 10px gray;
 }
 body .kalys-col-full,
-body .tilte-epilation, body .kalys-title.page,
+body .tilte-epilation,
+body .kalys-title.page,
 body .title-manucure-archive,
 body h1,
 body h2,
@@ -303,7 +308,8 @@ main h2 {
   text-transform: capitalize;
 }
 body .kalys-col-full h2,
-body .tilte-epilation h2, body .kalys-title.page h2,
+body .tilte-epilation h2,
+body .kalys-title.page h2,
 body .title-manucure-archive h2,
 body h1 h2,
 body h2 h2,
@@ -342,6 +348,24 @@ main ul.nav.nav-pills {
 body .card-body,
 main .card-body {
   background-color: rgb(236, 198, 195);
+}
+body .bookly-search-form,
+body .bg-white.svelte-10vuyub,
+body .bookly-search-form-small,
+main .bookly-search-form,
+main .bg-white.svelte-10vuyub,
+main .bookly-search-form-small {
+  display: contents !important;
+  font-family: "Courier New", Courier, monospace;
+}
+body .bookly-bootstrap .btn-outline-secondary,
+main .bookly-bootstrap .btn-outline-secondary {
+  font-weight: 900;
+  font-size: 1.3em !important;
+}
+body .bookly-bootstrap .btn-outline-secondary:hover,
+main .bookly-bootstrap .btn-outline-secondary:hover {
+  background-color: #ce8aca;
 }
 body .kalys-footer,
 main .kalys-footer {
@@ -404,11 +428,39 @@ main ul a {
   /* text-decoration: none;*/
 }
 
+/***********
+ zoom hover img card page manucure
+
+
+
+*****************************/
+div.card {
+  width: 25rem;
+  overflow: hidden;
+}
+
+div.zoom-img-card-hover div.zoom-img-card {
+  position: relative;
+}
+div.zoom-img-card-hover div.zoom-img-card * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+div.zoom-img-card-hover div.zoom-img-card img {
+  max-width: 100%;
+  transition: all 0.8s;
+}
+div.zoom-img-card-hover:hover .zoom-img-card img {
+  transform: scale(1.06);
+}
+
 /**********
 page actualités/blog
 
 *********/
-.blog.kalys-news, h1.title-news {
+.blog.kalys-news,
+h1.title-news {
   font-size: 5em;
   text-align: center;
   color: #f0b5b5;
@@ -429,7 +481,9 @@ page actualités/blog
   float: right;
 }
 
-.home-news, .card, .news-img > img {
+.home-news,
+.card,
+.news-img > img {
   width: 100%;
   height: auto;
 }

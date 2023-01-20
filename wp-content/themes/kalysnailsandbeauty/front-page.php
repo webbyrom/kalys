@@ -10,11 +10,11 @@
         <div class="space-gradient"></div>
 
         <div class="kalys-accueil-section">
-
             <?php the_content() ?>
 
         </div>
-
     </div>
+
 </main>
+
 <?php get_footer(); ?>

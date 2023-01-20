@@ -1,10 +1,10 @@
 <article class="home-news">
     <div class="row">
         <div class="row ">
-            <div class="col">
-                <div class="card" style="width: 25rem;">
+            <div class="col zoom-img-card-hover">
+                <div class="card zoom-img-card">
                     <?php if (has_post_thumbnail()) : ?>
-                        <a href="<?php the_permalink() ?>" title="<?= esc_attr(get_the_title()) ?>" class="news-img">
+                        <a href="<?php the_permalink() ?>" title="<?= esc_attr(get_the_title()) ?>" class="news-img  ">
                             <?php the_post_thumbnail('medium', true) ?>
                         <?php else : ?>
                             <img width="100%" height="250" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8c/CJCwAICQLXkCArnAAAAABJRU5ErkJggg=="> <?php endif ?>

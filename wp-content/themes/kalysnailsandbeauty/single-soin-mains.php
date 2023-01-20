@@ -43,8 +43,8 @@
                 'meta_query' => ['compare' => 'EXISTS']
             ]);
             while ($query->have_posts()) : $query->the_post(); ?>
-                <div class="card-group col-sm-4">
-                    <div class="card" style="width: 18rem;">
+                <div class="card-group col-sm-4 zoom-img-card-hover">
+                    <div class="card zoom-img-card" style="width: 18rem;">
                         <?php the_post_thumbnail('medium', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
                         <div class="card-body">
                             <h5 class="card-title"><?php the_title() ?></h5>

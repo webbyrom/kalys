@@ -1,7 +1,7 @@
-=== Royal Elementor Addons (Elementor Templates, Post Grid, Mega Menu & Header Footer Builder, WooCommerce Builder, Product Grid, Slider, Parallax Image & other Free Elementor Widgets) ===
+=== Royal Elementor Addons and Templates ===
 Contributors: WP Royal, rubeushagrid13, cyberpinky, elementoraddonswpr, ggedenidze1982
 Tags: elementor, elementor templates, elementor addons, widgets for elementor, elementor widgets, elementor mega menu, elementor woocommerce builder, theme builder, header footer builder, elementor post grid, elementor product grid, addons for elementor
-Stable tag: 1.3.60
+Stable tag: 1.3.62
 Requires at least: 5.0
 Tested up to: 6.1.1
 Requires PHP: 5.6
@@ -166,6 +166,7 @@ and other custom branding related settings)
 - [**One Page Digital Marketing Agency**](https://demosites.royal-elementor-addons.com/one-page-v1/blog-one-page-v1/?ref=rea-wpo-pp-details-tab)
 - [**Travel Agency**](https://demosites.royal-elementor-addons.com/travel-agency-v1/?ref=rea-wpo-pp-details-tab)
 - [**Architecture & Interior**](https://demosites.royal-elementor-addons.com/architecture-v2/?ref=rea-wpo-pp-details-tab)
+- [**Fytness & Gym**](https://demosites.royal-elementor-addons.com/fitness-gym-v1/?ref=rea-wpo-pp-details-tab)
 
 **How to Import Template Kit:**
 
@@ -374,6 +375,19 @@ memory_limit 256M or more
 post_max_size 64M
 
 == Changelog ==
+= Royal Elementor Addons v1.3.62 - 2023-01-16 =
+* ADDED: Fytness & Gym Elementor Template Kit - [**Fytness & Gym**](https://demosites.royal-elementor-addons.com/fitness-gym-v1/?ref=rea-wpo-pp-details-tab).
+
+
+= Royal Elementor Addons v1.3.61 - 2023-01-12 =
+* ADDED: Phone field added to elementor Mailchimp widget.
+* ADDED: Clear fields option after form submission for elementor Mailchimp widget.
+* FIXED: Whatsapp and telegram sharing widgets issues fixed.
+* FIXED: Deprecated widgets registration hooks fixed.
+* ADDED: Custom CSS turn on/off switcher added in the dashboard extensions panel.
+* FIXED: Elementor Magazin grid widget featured image gradient bg color.
+
+
 = Royal Elementor Addons v1.3.60 - 2022-12-28 =
 * ADDED: Hotel Elementor Template Kit [**Hotel**](https://demosites.royal-elementor-addons.com/hotel-v1/?ref=rea-wpo-pp-details-tab).
 * ADDED: Premade Pages Templates Library(New requested feature).

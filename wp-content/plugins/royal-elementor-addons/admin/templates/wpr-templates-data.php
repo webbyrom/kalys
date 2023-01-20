@@ -128,6 +128,19 @@ class WPR_Templates_Data {
 					'priority' => 20,
 				],
 			],
+			'fitness-gym' => [
+				'v1' => [
+					'name' => 'Fitness Gym',
+					'pages' => 'home,about,gallery,classes,pricing,gallery,review,trainers,contact,comingsoon,',
+					'plugins' => '{"contact-form-7":'. $is_cf7_active .', "media-library-assistant":'. $is_mla_active .'}',
+					'tags' => 'personal trainer gym fitness yoga exercises workout blog cardio strength training weightlifting crossfit hiit bodyweight exercises muscle building bodybuilding powerlifting',
+					'theme-builder' => true,
+					'woo-builder' => false,
+					'off-canvas' => false,
+					'price' => $is_pro_active ? 'free' : 'free',
+					'priority' => 21,
+				],
+			],
 			'food-blog' => [
 				'v1' => [
 					'name' => 'Food Blog',
