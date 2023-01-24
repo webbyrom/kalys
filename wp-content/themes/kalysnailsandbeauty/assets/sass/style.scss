@@ -15,13 +15,31 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 @font-face {
     font-family: "Alex Brush";
-    src: local("assets/font/AlexBrush-Regular.eot") format("eot");
-    src: local("assets/font/AlexBrush-Regular.svg") format("svg");
-    src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
-    src: local("assets/font/AlexBrush-regular.woff") format("woff");
-    src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
+    src: local("assets/font/alexbrush/AlexBrush-Regular.eot") format("eot");
+    src: local("assets/font/alexbrush/AlexBrush-Regular.svg") format("svg");
+    src: local("assets/font/alexbrush/AlexBrush-Regular.ttf") format("ttf");
+    src: local("assets/font/alexbrush/AlexBrush-Regular.woff") format("woff");
+    src: local("assets/font/alexbrush/AlexBrush-Regular.woff2") format("woff2");
+    
 }
-
+@font-face {
+    font-family: "Charm";
+    src: local("assets/font/Charm/Charm-Regular.eot") format("eot");
+    src: local("assets/font/Charm/Charm-Regular.svg") format("svg");
+    src: local("assets/font/Charm/Charm-Regular.ttf") format("ttf");
+    src: local("assets/font/Charm/Charm-Regular.woff") format("woff");
+    src: local("assets/font/Charm/Charm-Regular.woff2") format("woff2");
+    
+}
+@font-face {
+    font-family: "Charm";
+    src: local("assets/font/Charm/Charm-Bold.eot") format("eot");
+    src: local("assets/font/Charm/Charm-Bold.svg") format("svg");
+    src: local("assets/font/Charm/Charm-Bold.ttf") format("ttf");
+    src: local("assets/font/Charm/Charm-Bold.woff") format("woff");
+    src: local("assets/font/Charm/Charm-Bold.woff2") format("woff2");
+    
+}
 *,
 *::before,
 *::after {
@@ -62,7 +80,7 @@ nav {
     margin: 0;
     padding: 0;
     border: 0;
-    font: inherit;
+    font-family: inherit;
     vertical-align: baseline !important;
 }
 
@@ -71,8 +89,9 @@ main {
     /*display: inline-flex;*/
     /*text-align: justify;*/
     background-color: #d7eadf !important;
-    font-family: "Alex Brush" !important;
+    font-family: 'Charm'!important;
     line-height: 1.2rem;
+    text-align: center;
 
     header,
     nav {
@@ -91,6 +110,9 @@ main {
         a {
             text-decoration: none;
             color: darkgrey;
+            span {
+                font-family: 'Charm'!important;
+            }
         }
 
         a:hover {
@@ -129,6 +151,7 @@ main {
             margin-right: 30px;
         }
         ul.kalys_primary_nav li ul {
+            text-align: center;
             visibility: hidden;
             opacity: 0;
             padding: 5px;
@@ -174,11 +197,11 @@ main {
                 transition: 1s ease-in-out;
                 /* color: black;*/
                 font-size: medium;
-            }
+            }/*
             ul.kalys_primary_nav li.kalys_m_active > a,
             ul.sub-menu li.current-menu-item > a {
                 color: #c334f4;
-            }
+            }*/
         }
 
         button {
@@ -227,21 +250,25 @@ main {
 
     .kalys-col-full,
     .tilte-epilation,
-    .kalys-title.page,
+    .kalys-title-page,
     .title-manucure-archive,
     h1,
     h2 {
         /* margin: 30px 30px 20px;*/
+        font-size: 4rem;
         box-sizing: border-box;
         width: 80%;
+        color: #f0b5b5;
         margin: auto;
+        font-family: "Alex Brush";
         text-transform: capitalize;
 
         h2 {
-            font-size: 3em;
+            font-size: 50px;
             text-align: center;
-            color: #f0b5b5;
-            font-family: "Alex Brush";
+            margin: auto;
+           /* color: #f0b5b5;*/
+           /* font-family: "Alex Brush";*/
             font-style: italic;
             font-weight: 500;
             margin-bottom: 50px;
@@ -267,7 +294,8 @@ Séparation sous le titre
         justify-content: center;
     }
     .card-body {
-        background-color: rgb(236, 198, 195);
+        background-color: rgb(245 156 149 / 19%);
+       
     }
 
     /*********
@@ -278,11 +306,12 @@ Séparation sous le titre
     .bg-white.svelte-10vuyub,
     .bookly-search-form-small {
         display: contents !important;
-        font-family: "Courier New", Courier, monospace;
+        font-family: 'Charm';
+       /* font-family: "Courier New", Courier, monospace;*/
     }
     .bookly-bootstrap .btn-outline-secondary {
         font-weight: 900;
-        font-size: 1.3em !important;
+        font-size: 1.5rem!important;
     }
     .bookly-bootstrap .btn-outline-secondary:hover {
         background-color: #ce8aca;
@@ -322,7 +351,7 @@ footer
     .icon {
         width: 25px;
         height: 25px;
-        color: lightgray;
+        color: rgb(131, 130, 130);
     }
 
     .icon:hover {
@@ -349,12 +378,18 @@ footer
 
 *****************************/
 div.card {
-    width: 25rem;
+    width: 18rem;
     overflow: hidden;
+    transition: all 0.8s;
+    &:hover {
+        box-shadow: 5px 5px 5px rgb(235, 219, 219);
+    }
+    
 }
 div.zoom-img-card-hover {
    div.zoom-img-card {
         position: relative;
+        
 
         * {
             box-sizing: border-box;
@@ -362,6 +397,7 @@ div.zoom-img-card-hover {
             padding: 0;
         }
         img {
+            filter: blur(3px);
             max-width: 100%;
             -moz-transition: all 0.8s;
             -webkit-transition: all 0.8s;
@@ -371,12 +407,17 @@ div.zoom-img-card-hover {
     &:hover {
         .zoom-img-card {
             img {
+                filter: blur(0px);
                 -webkit-transform: scale(1.06);
                 -moz-transform: scale(1.06);
                 transform: scale(1.06);
+               /* padding-bottom: 10px;*/
             }
         }
     }
+}
+div.card-body{
+    padding:10px 10px 10px 20px!important;
 }
 /**********
 page actualités/blog
@@ -400,6 +441,9 @@ h1.title-news {
 .news-sidebar {
     position: relative;
     float: right;
+   ul{
+    width: 250px;
+   }
 }
 
 .home-news,

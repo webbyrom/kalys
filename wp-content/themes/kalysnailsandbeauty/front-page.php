@@ -5,7 +5,7 @@
         <?php add_revslider('slider-1', 'homepage'); ?>
     </div>
     <div class="kalys-col-full">
-        <h2 class="kalys-title-page"><?php the_title() ?></h2>
+        <h1 class="kalys-title-page"><?php the_title() ?></h1>
 
         <div class="space-gradient"></div>
 

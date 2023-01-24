@@ -16,11 +16,27 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 @font-face {
   font-family: "Alex Brush";
-  src: local("assets/font/AlexBrush-Regular.eot") format("eot");
-  src: local("assets/font/AlexBrush-Regular.svg") format("svg");
-  src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
-  src: local("assets/font/AlexBrush-regular.woff") format("woff");
-  src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
+  src: local("assets/font/alexbrush/AlexBrush-Regular.eot") format("eot");
+  src: local("assets/font/alexbrush/AlexBrush-Regular.svg") format("svg");
+  src: local("assets/font/alexbrush/AlexBrush-Regular.ttf") format("ttf");
+  src: local("assets/font/alexbrush/AlexBrush-Regular.woff") format("woff");
+  src: local("assets/font/alexbrush/AlexBrush-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Charm";
+  src: local("assets/font/Charm/Charm-Regular.eot") format("eot");
+  src: local("assets/font/Charm/Charm-Regular.svg") format("svg");
+  src: local("assets/font/Charm/Charm-Regular.ttf") format("ttf");
+  src: local("assets/font/Charm/Charm-Regular.woff") format("woff");
+  src: local("assets/font/Charm/Charm-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Charm";
+  src: local("assets/font/Charm/Charm-Bold.eot") format("eot");
+  src: local("assets/font/Charm/Charm-Bold.svg") format("svg");
+  src: local("assets/font/Charm/Charm-Bold.ttf") format("ttf");
+  src: local("assets/font/Charm/Charm-Bold.woff") format("woff");
+  src: local("assets/font/Charm/Charm-Bold.woff2") format("woff2");
 }
 *,
 *::before,
@@ -62,7 +78,7 @@ nav {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
+  font-family: inherit;
   vertical-align: baseline !important;
 }
 
@@ -71,8 +87,9 @@ main {
   /*display: inline-flex;*/
   /*text-align: justify;*/
   background-color: #d7eadf !important;
-  font-family: "Alex Brush" !important;
+  font-family: "Charm" !important;
   line-height: 1.2rem;
+  text-align: center;
   /******  menu actif */
   /************** content front-page*****/
   /*   ul.kalys_primary_nav li.menu-item-type-custom>a, li.menu-item-type-post_type.current-menu-item>a {
@@ -115,6 +132,12 @@ main header a,
 main nav a {
   text-decoration: none;
   color: darkgrey;
+}
+body header a span,
+body nav a span,
+main header a span,
+main nav a span {
+  font-family: "Charm" !important;
 }
 body header a:hover,
 body nav a:hover,
@@ -170,6 +193,7 @@ body header ul.kalys_primary_nav li ul,
 body nav ul.kalys_primary_nav li ul,
 main header ul.kalys_primary_nav li ul,
 main nav ul.kalys_primary_nav li ul {
+  text-align: center;
   visibility: hidden;
   opacity: 0;
   padding: 5px;
@@ -212,6 +236,11 @@ main nav .sticky {
   top: 0;
   width: 100vw;
   z-index: 9;
+  /*
+  ul.kalys_primary_nav li.kalys_m_active > a,
+  ul.sub-menu li.current-menu-item > a {
+      color: #c334f4;
+  }*/
 }
 body header .sticky span,
 body nav .sticky span,
@@ -227,16 +256,6 @@ main nav .sticky .sub-menu span {
   transition: 1s ease-in-out;
   /* color: black;*/
   font-size: medium;
-}
-body header .sticky ul.kalys_primary_nav li.kalys_m_active > a,
-body header .sticky ul.sub-menu li.current-menu-item > a,
-body nav .sticky ul.kalys_primary_nav li.kalys_m_active > a,
-body nav .sticky ul.sub-menu li.current-menu-item > a,
-main header .sticky ul.kalys_primary_nav li.kalys_m_active > a,
-main header .sticky ul.sub-menu li.current-menu-item > a,
-main nav .sticky ul.kalys_primary_nav li.kalys_m_active > a,
-main nav .sticky ul.sub-menu li.current-menu-item > a {
-  color: #c334f4;
 }
 body header button,
 body nav button,
@@ -291,38 +310,42 @@ main .kalys-col-full {
 }
 body .kalys-col-full,
 body .tilte-epilation,
-body .kalys-title.page,
+body .kalys-title-page,
 body .title-manucure-archive,
 body h1,
 body h2,
 main .kalys-col-full,
 main .tilte-epilation,
-main .kalys-title.page,
+main .kalys-title-page,
 main .title-manucure-archive,
 main h1,
 main h2 {
   /* margin: 30px 30px 20px;*/
+  font-size: 4rem;
   box-sizing: border-box;
   width: 80%;
+  color: #f0b5b5;
   margin: auto;
+  font-family: "Alex Brush";
   text-transform: capitalize;
 }
 body .kalys-col-full h2,
 body .tilte-epilation h2,
-body .kalys-title.page h2,
+body .kalys-title-page h2,
 body .title-manucure-archive h2,
 body h1 h2,
 body h2 h2,
 main .kalys-col-full h2,
 main .tilte-epilation h2,
-main .kalys-title.page h2,
+main .kalys-title-page h2,
 main .title-manucure-archive h2,
 main h1 h2,
 main h2 h2 {
-  font-size: 3em;
+  font-size: 50px;
   text-align: center;
-  color: #f0b5b5;
-  font-family: "Alex Brush";
+  margin: auto;
+  /* color: #f0b5b5;*/
+  /* font-family: "Alex Brush";*/
   font-style: italic;
   font-weight: 500;
   margin-bottom: 50px;
@@ -347,7 +370,7 @@ main ul.nav.nav-pills {
 }
 body .card-body,
 main .card-body {
-  background-color: rgb(236, 198, 195);
+  background-color: rgba(245, 156, 149, 0.19);
 }
 body .bookly-search-form,
 body .bg-white.svelte-10vuyub,
@@ -356,12 +379,13 @@ main .bookly-search-form,
 main .bg-white.svelte-10vuyub,
 main .bookly-search-form-small {
   display: contents !important;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Charm";
+  /* font-family: "Courier New", Courier, monospace;*/
 }
 body .bookly-bootstrap .btn-outline-secondary,
 main .bookly-bootstrap .btn-outline-secondary {
   font-weight: 900;
-  font-size: 1.3em !important;
+  font-size: 1.5rem !important;
 }
 body .bookly-bootstrap .btn-outline-secondary:hover,
 main .bookly-bootstrap .btn-outline-secondary:hover {
@@ -402,7 +426,7 @@ body .icon,
 main .icon {
   width: 25px;
   height: 25px;
-  color: lightgray;
+  color: rgb(131, 130, 130);
 }
 body .icon:hover,
 main .icon:hover {
@@ -435,8 +459,12 @@ main ul a {
 
 *****************************/
 div.card {
-  width: 25rem;
+  width: 18rem;
   overflow: hidden;
+  transition: all 0.8s;
+}
+div.card:hover {
+  box-shadow: 5px 5px 5px rgb(235, 219, 219);
 }
 
 div.zoom-img-card-hover div.zoom-img-card {
@@ -448,11 +476,18 @@ div.zoom-img-card-hover div.zoom-img-card * {
   padding: 0;
 }
 div.zoom-img-card-hover div.zoom-img-card img {
+  filter: blur(3px);
   max-width: 100%;
   transition: all 0.8s;
 }
 div.zoom-img-card-hover:hover .zoom-img-card img {
+  filter: blur(0px);
   transform: scale(1.06);
+  /* padding-bottom: 10px;*/
+}
+
+div.card-body {
+  padding: 10px 10px 10px 20px !important;
 }
 
 /**********
@@ -479,6 +514,9 @@ h1.title-news {
 .news-sidebar {
   position: relative;
   float: right;
+}
+.news-sidebar ul {
+  width: 250px;
 }
 
 .home-news,
