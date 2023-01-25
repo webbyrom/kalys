@@ -15,31 +15,33 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 @font-face {
     font-family: "Alex Brush";
-    src: local("assets/font/alexbrush/AlexBrush-Regular.eot") format("eot");
-    src: local("assets/font/alexbrush/AlexBrush-Regular.svg") format("svg");
-    src: local("assets/font/alexbrush/AlexBrush-Regular.ttf") format("ttf");
-    src: local("assets/font/alexbrush/AlexBrush-Regular.woff") format("woff");
-    src: local("assets/font/alexbrush/AlexBrush-Regular.woff2") format("woff2");
-    
+    font-size: normal;
+    src: local("assets/font/AlexBrush-Regular.eot") format("eot");
+    src: local("assets/font/AlexBrush-Regular.svg") format("svg");
+    src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
+    src: local("assets/font/AlexBrush-Regular.woff") format("woff");
+    src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
 }
 @font-face {
-    font-family: "Charm";
-    src: local("assets/font/Charm/Charm-Regular.eot") format("eot");
-    src: local("assets/font/Charm/Charm-Regular.svg") format("svg");
-    src: local("assets/font/Charm/Charm-Regular.ttf") format("ttf");
-    src: local("assets/font/Charm/Charm-Regular.woff") format("woff");
-    src: local("assets/font/Charm/Charm-Regular.woff2") format("woff2");
-    
+    font-family: "Charm-bold";
+    font-weight: bold;
+    src: local("assets/font/Charm-Bold.eot") format("eot");
+    src: local("assets/font/Charm-Bold.svg") format("svg");
+    src: local("assets/font/Charm-Bold.ttf") format("ttf");
+    src: local("assets/font/Charm-Bold.woff") format("woff");
+    src: local("assets/font/Charm-Bold.woff2") format("woff2");
 }
+
 @font-face {
     font-family: "Charm";
-    src: local("assets/font/Charm/Charm-Bold.eot") format("eot");
-    src: local("assets/font/Charm/Charm-Bold.svg") format("svg");
-    src: local("assets/font/Charm/Charm-Bold.ttf") format("ttf");
-    src: local("assets/font/Charm/Charm-Bold.woff") format("woff");
-    src: local("assets/font/Charm/Charm-Bold.woff2") format("woff2");
-    
+    font-size: normal;
+    src: local("assets/font/Charm-Regular.eot") format("eot");
+    src: local("assets/font/Charm-Regular.svg") format("svg");
+    src: local("assets/font/Charm-Regular.ttf") format("ttf");
+    src: local("assets/font/Charm-Regular.woff") format("woff");
+    src: local("assets/font/Charm-Regular.woff2") format("woff2");
 }
+
 *,
 *::before,
 *::after {
@@ -82,14 +84,171 @@ nav {
     border: 0;
     font-family: inherit;
     vertical-align: baseline !important;
+    list-style: none;
+}
+/****** main navigation***/
+header,
+nav {
+    display: flex;
+    position: relative;
+    /* width: 100vw;*/
+    height: 125px;
+    .kalys_nav_menu {
+        position: relative;
+        /* top: 25%;*/
+        display: flex;
+        font-family: "Charm";
+        font-size: x-large;
+        /*justify-content: center;*/
+        /* overflow: hidden;*/
+        text-transform: capitalize;
+        /* width: 100vw;
+            height: 125px;
+            display: flex;
+            justify-content: center;
+           
+            font-style: oblique;
+            text-transform: capitalize;
+            position: relative;
+            vertical-align: middle;
+            
+            top: -25%;*/
+        .nav_logo {
+            position: relative;
+            top: 28%;
+            img {
+                position: relative;
+                width: 150px;
+                height: auto;
+                left: 40%;
+            }
+        }
+        ul.kalys_primary_nav {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            top: 28%;
+            height: auto;
+            /*width: 100vw; remplacder par margin auto*/
+            margin: auto;
+            li:nth-child(-n + 4) {
+                margin-right: 30px;
+            }
+
+            li > a {
+                color: darkgray;
+                transition: 0.8s color ease-in-out;
+            }
+            li > a:hover {
+                color: black;
+            }
+            .sub-menu {
+                position: sticky;
+                visibility: hidden;
+                width: 135px;
+                text-align: inherit;
+                padding: 0;
+                background-color: white;
+                font-size: 1rem;
+                height: auto;
+                z-index: 10;
+                border-radius: 2%;
+                opacity: 0;
+                /* padding: 5px;*/
+                border-radius: 5px;
+                background-color: rgb(245, 245, 245);
+                transition: opacity 0.8s ease-in-out;
+                li {
+                    position: relative;
+                    padding-left: 3px;
+                    z-index: 11;
+                    a {
+                        /*display: content;*/
+                        padding-left: 2%;
+                    }
+                }
+            }
+        }
+        ul.kalys_primary_nav li:hover > ul.sub-menu {
+            visibility: visible;
+            box-shadow: 10px 5px 10px grey;
+            opacity: 1;
+            /* display: table;*/
+        }
+        ul.kalys_primary_nav ul.sub-menu > li:hover {
+            transition: 0.4s ease-in;
+            background: #ecd2ec;
+            padding-left: 5px;
+            border-radius: 5px;
+            width: 100%;
+        }
+    }
+    .sticky {
+        position: fixed !important;
+        transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
+        box-shadow: 10px 5px 10px white;
+        background-color: white !important;
+        opacity: 0.8;
+        /*top: 0;*/
+        width: 100%;
+        z-index: 11;
+    
+        span {
+            transition: 1s color ease-in-out;
+            /*color: black;*/
+        }
+    }
+    button {
+        
+        z-index: 10;
+        position: absolute;
+        width: 120px;
+        height: 30px;
+        opacity: 0.7;
+        /* margin: auto;*/
+        right: 20%;
+        top: 28%;
+        border: none;
+        border-radius: 5px;
+        transition: color 0.8s, border 0.8s, background-color 0.8s, box-shadow 0.8s;
+        a {
+            display: flex;
+            justify-content: space-around;
+            transition: font-size 0.8s, font-weight 0.8s;
+            color: grey;
+            
+        }
+    }
+    button:hover {
+        background-color: #ffffff00;
+        border: 1px solid black;
+        box-shadow: 2px 2px 5px white;
+        a:hover {
+            color: black;
+            font-size: large;
+            font-weight: 900;
+        }
+    }
 }
 
+
+/****** homepage*/
+.home {
+    main {
+        background-color: #d7eadf !important;
+        font-family: "Charm";
+        text-align: justify;
+        line-height: 1.2rem;
+    }
+}
+
+/*
 body,
 main {
-    /*display: inline-flex;*/
-    /*text-align: justify;*/
+    display: inline-flex;
+    text-align: justify;
     background-color: #d7eadf !important;
-    font-family: 'Charm'!important;
+    font-family: "Charm" !important;
     line-height: 1.2rem;
     text-align: center;
 
@@ -111,7 +270,7 @@ main {
             text-decoration: none;
             color: darkgrey;
             span {
-                font-family: 'Charm'!important;
+                font-family: "Charm" !important;
             }
         }
 
@@ -121,16 +280,17 @@ main {
         }
 
         /******** menu navigation****************************/
-        .kalys_primary_nav {
+/* .kalys_primary_nav {
             width: 100vw;
             height: 125px;
-            font-size: x-large;
-            text-transform: capitalize;
             display: flex;
             justify-content: center;
+            font-family: "Charm"!important;
+            font-size: x-large;
+            font-style: oblique;
+            text-transform: capitalize;
             position: relative;
             vertical-align: middle;
-            font-style: oblique;
             overflow: hidden;
             top: -25%;
             a {
@@ -191,17 +351,17 @@ main {
 
             span {
                 transition: 1s color ease-in-out;
-                /*color: black;*/
+                /*color: black;*/ /*
             }
             .sub-menu span {
                 transition: 1s ease-in-out;
                 /* color: black;*/
-                font-size: medium;
-            }/*
+/* font-size: medium;
+            } 
             ul.kalys_primary_nav li.kalys_m_active > a,
             ul.sub-menu li.current-menu-item > a {
                 color: #c334f4;
-            }*/
+            }
         }
 
         button {
@@ -211,7 +371,7 @@ main {
             height: 30px;
             opacity: 0.7;
             /* margin: auto;*/
-            right: 20%;
+/* right: 20%;
             top: 7%;
             border: none;
             border-radius: 5px;
@@ -232,15 +392,13 @@ main {
         }
     }
     /******  menu actif */
+/*
     ul.kalys_primary_nav li.kalys_m_active > a,
     ul.sub-menu li.current-menu-item > a {
         color: #c334f4;
     }
     /************** content front-page*****/
-    /*   ul.kalys_primary_nav li.menu-item-type-custom>a, li.menu-item-type-post_type.current-menu-item>a {
-        color: white;
-    }
-    */
+/*
     .kalys-col-full {
         background-color: white;
         padding: 40px;
@@ -254,8 +412,6 @@ main {
     .title-manucure-archive,
     h1,
     h2 {
-        /* margin: 30px 30px 20px;*/
-        font-size: 4rem;
         box-sizing: border-box;
         width: 80%;
         color: #f0b5b5;
@@ -267,9 +423,9 @@ main {
             font-size: 50px;
             text-align: center;
             margin: auto;
-           /* color: #f0b5b5;*/
-           /* font-family: "Alex Brush";*/
-            font-style: italic;
+            /* color: #f0b5b5;*/
+/* font-family: "Alex Brush";*/
+/*font-style: italic;
             font-weight: 500;
             margin-bottom: 50px;
         }
@@ -277,7 +433,7 @@ main {
 
     /*****
 Séparation sous le titre
-*/
+*/ /*
     .space-gradient {
         background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
         height: 5px;
@@ -285,6 +441,9 @@ Séparation sous le titre
         border-radius: 10px;
         margin-bottom: 75px;
     }
+
+    /******** page manucure*********/
+/*
     .kalys-post-manucure {
         display: inline-flex;
     }
@@ -295,23 +454,22 @@ Séparation sous le titre
     }
     .card-body {
         background-color: rgb(245 156 149 / 19%);
-       
     }
 
     /*********
-    Test mise en page calendar
+     mise en page calendar
 
- ***************/
+ ***************/ /*
     .bookly-search-form,
     .bg-white.svelte-10vuyub,
     .bookly-search-form-small {
         display: contents !important;
-        font-family: 'Charm';
-       /* font-family: "Courier New", Courier, monospace;*/
+        font-family: "Charm";
+        /* font-family: "Courier New", Courier, monospace;*/ /*
     }
     .bookly-bootstrap .btn-outline-secondary {
         font-weight: 900;
-        font-size: 1.5rem!important;
+        font-size: 1.5rem !important;
     }
     .bookly-bootstrap .btn-outline-secondary:hover {
         background-color: #ce8aca;
@@ -319,7 +477,7 @@ Séparation sous le titre
     /***********
 footer
 */
-
+/*
     .kalys-footer {
         display: flex;
         flex-direction: row;
@@ -363,11 +521,11 @@ footer
     ul {
         list-style-type: none;
 
-        /* font-size: 0.8em;*/
+        /* font-size: 0.8em;*/ /*
         a {
             /*font-size: 0.8em;*/
-            color: darkgray;
-            /* text-decoration: none;*/
+/*color: darkgray;
+            /* text-decoration: none;*/ /*
         }
     }
 }
@@ -384,12 +542,10 @@ div.card {
     &:hover {
         box-shadow: 5px 5px 5px rgb(235, 219, 219);
     }
-    
 }
 div.zoom-img-card-hover {
-   div.zoom-img-card {
+    div.zoom-img-card {
         position: relative;
-        
 
         * {
             box-sizing: border-box;
@@ -411,47 +567,58 @@ div.zoom-img-card-hover {
                 -webkit-transform: scale(1.06);
                 -moz-transform: scale(1.06);
                 transform: scale(1.06);
-               /* padding-bottom: 10px;*/
+                /* padding-bottom: 10px;*/
             }
         }
     }
 }
-div.card-body{
-    padding:10px 10px 10px 20px!important;
+div.card-body {
+    padding: 10px 10px 10px 20px !important;
 }
 /**********
 page actualités/blog
 
 *********/
-.blog.kalys-news,
-h1.title-news {
-    font-size: 5em;
-    text-align: center;
-    color: #f0b5b5;
-    font-family: "Alex Brush";
-    font-style: italic;
-    font-weight: 500;
-    margin-bottom: 50px;
-}
-.news-list {
-    display: flex;
-    position: relative;
-    padding-left: 40px;
-}
-.news-sidebar {
-    position: relative;
-    float: right;
-   ul{
-    width: 250px;
-   }
+.blog {
+    font-family: "Charm" !important;
+    h1.title-news {
+        font-size: 5em;
+        text-align: center;
+        color: #f0b5b5;
+        font-family: "Alex Brush";
+        font-style: italic;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+
+    .news-list {
+        display: flex;
+        position: relative;
+        padding-left: 40px;
+    }
+    article.home-news {
+        font-family: "Charm" !important;
+    }
+    .home-news,
+    .card,
+    .news-img > img {
+        width: 100%;
+        height: auto;
+    }
+    .news-sidebar {
+        position: relative;
+        float: right;
+        ul {
+            width: 250px;
+        }
+    }
+} /*******************
+page manucure
+****************/
+.page-template-single-soin-mains {
+    font-family: "Charm" !important;
 }
 
-.home-news,
-.card,
-.news-img > img {
-    width: 100%;
-    height: auto;
-}
 .page-id-282,
 body {
     background-color: #ffffff !important;

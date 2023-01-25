@@ -16,27 +16,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 @font-face {
   font-family: "Alex Brush";
-  src: local("assets/font/alexbrush/AlexBrush-Regular.eot") format("eot");
-  src: local("assets/font/alexbrush/AlexBrush-Regular.svg") format("svg");
-  src: local("assets/font/alexbrush/AlexBrush-Regular.ttf") format("ttf");
-  src: local("assets/font/alexbrush/AlexBrush-Regular.woff") format("woff");
-  src: local("assets/font/alexbrush/AlexBrush-Regular.woff2") format("woff2");
+  font-size: normal;
+  src: local("assets/font/AlexBrush-Regular.eot") format("eot");
+  src: local("assets/font/AlexBrush-Regular.svg") format("svg");
+  src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
+  src: local("assets/font/AlexBrush-Regular.woff") format("woff");
+  src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Charm-bold";
+  font-weight: bold;
+  src: local("assets/font/Charm-Bold.eot") format("eot");
+  src: local("assets/font/Charm-Bold.svg") format("svg");
+  src: local("assets/font/Charm-Bold.ttf") format("ttf");
+  src: local("assets/font/Charm-Bold.woff") format("woff");
+  src: local("assets/font/Charm-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Charm";
-  src: local("assets/font/Charm/Charm-Regular.eot") format("eot");
-  src: local("assets/font/Charm/Charm-Regular.svg") format("svg");
-  src: local("assets/font/Charm/Charm-Regular.ttf") format("ttf");
-  src: local("assets/font/Charm/Charm-Regular.woff") format("woff");
-  src: local("assets/font/Charm/Charm-Regular.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Charm";
-  src: local("assets/font/Charm/Charm-Bold.eot") format("eot");
-  src: local("assets/font/Charm/Charm-Bold.svg") format("svg");
-  src: local("assets/font/Charm/Charm-Bold.ttf") format("ttf");
-  src: local("assets/font/Charm/Charm-Bold.woff") format("woff");
-  src: local("assets/font/Charm/Charm-Bold.woff2") format("woff2");
+  font-size: normal;
+  src: local("assets/font/Charm-Regular.eot") format("eot");
+  src: local("assets/font/Charm-Regular.svg") format("svg");
+  src: local("assets/font/Charm-Regular.ttf") format("ttf");
+  src: local("assets/font/Charm-Regular.woff") format("woff");
+  src: local("assets/font/Charm-Regular.woff2") format("woff2");
 }
 *,
 *::before,
@@ -80,187 +83,137 @@ nav {
   border: 0;
   font-family: inherit;
   vertical-align: baseline !important;
+  list-style: none;
 }
 
-body,
-main {
-  /*display: inline-flex;*/
-  /*text-align: justify;*/
-  background-color: #d7eadf !important;
-  font-family: "Charm" !important;
-  line-height: 1.2rem;
-  text-align: center;
-  /******  menu actif */
-  /************** content front-page*****/
-  /*   ul.kalys_primary_nav li.menu-item-type-custom>a, li.menu-item-type-post_type.current-menu-item>a {
-      color: white;
-  }
-  */
-  /*****
-  Séparation sous le titre
-  */
-  /*********
-     Test mise en page calendar
-
-  ***************/
-  /***********
-  footer
-  */
-}
-body header,
-body nav,
-main header,
-main nav {
+/****** main navigation***/
+header,
+nav {
   display: flex;
-  width: 100vw;
+  position: relative;
+  /* width: 100vw;*/
   height: 125px;
-  /******** menu navigation****************************/
 }
-body header .nav_logo img,
-body nav .nav_logo img,
-main header .nav_logo img,
-main nav .nav_logo img {
+header .kalys_nav_menu,
+nav .kalys_nav_menu {
+  position: relative;
+  /* top: 25%;*/
+  display: flex;
+  font-family: "Charm";
+  font-size: x-large;
+  /*justify-content: center;*/
+  /* overflow: hidden;*/
+  text-transform: capitalize;
+  /* width: 100vw;
+      height: 125px;
+      display: flex;
+      justify-content: center;
+
+      font-style: oblique;
+      text-transform: capitalize;
+      position: relative;
+      vertical-align: middle;
+
+      top: -25%;*/
+}
+header .kalys_nav_menu .nav_logo,
+nav .kalys_nav_menu .nav_logo {
+  position: relative;
+  top: 28%;
+}
+header .kalys_nav_menu .nav_logo img,
+nav .kalys_nav_menu .nav_logo img {
   position: relative;
   width: 150px;
   height: auto;
-  top: 35%;
-  left: 50%;
+  left: 40%;
 }
-body header a,
-body nav a,
-main header a,
-main nav a {
-  text-decoration: none;
-  color: darkgrey;
-}
-body header a span,
-body nav a span,
-main header a span,
-main nav a span {
-  font-family: "Charm" !important;
-}
-body header a:hover,
-body nav a:hover,
-main header a:hover,
-main nav a:hover {
-  transition: 0.8s color ease-in-out;
-  color: rgb(162, 191, 218);
-}
-body header .kalys_primary_nav,
-body nav .kalys_primary_nav,
-main header .kalys_primary_nav,
-main nav .kalys_primary_nav {
-  width: 100vw;
-  height: 125px;
-  font-size: x-large;
-  text-transform: capitalize;
-  display: flex;
-  justify-content: center;
+header .kalys_nav_menu ul.kalys_primary_nav,
+nav .kalys_nav_menu ul.kalys_primary_nav {
   position: relative;
-  vertical-align: middle;
-  font-style: oblique;
-  overflow: hidden;
-  top: -25%;
+  display: inline-flex;
+  justify-content: center;
+  top: 28%;
+  height: auto;
+  /*width: 100vw; remplacder par margin auto*/
+  margin: auto;
 }
-body header .kalys_primary_nav a,
-body nav .kalys_primary_nav a,
-main header .kalys_primary_nav a,
-main nav .kalys_primary_nav a {
-  color: darkgray;
-}
-body header .kalys_primary_nav a:hover,
-body nav .kalys_primary_nav a:hover,
-main header .kalys_primary_nav a:hover,
-main nav .kalys_primary_nav a:hover {
-  transition: 0.8s color ease-in-out;
-  color: black;
-}
-body header ul.kalys_primary_nav li,
-body nav ul.kalys_primary_nav li,
-main header ul.kalys_primary_nav li,
-main nav ul.kalys_primary_nav li {
-  z-index: 10;
-  width: 120px;
-  list-style: none;
-}
-body header ul.kalys_primary_nav li:nth-child(-n+3),
-body nav ul.kalys_primary_nav li:nth-child(-n+3),
-main header ul.kalys_primary_nav li:nth-child(-n+3),
-main nav ul.kalys_primary_nav li:nth-child(-n+3) {
+header .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4),
+nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
   margin-right: 30px;
 }
-body header ul.kalys_primary_nav li ul,
-body nav ul.kalys_primary_nav li ul,
-main header ul.kalys_primary_nav li ul,
-main nav ul.kalys_primary_nav li ul {
-  text-align: center;
+header .kalys_nav_menu ul.kalys_primary_nav li > a,
+nav .kalys_nav_menu ul.kalys_primary_nav li > a {
+  color: darkgray;
+  transition: 0.8s color ease-in-out;
+}
+header .kalys_nav_menu ul.kalys_primary_nav li > a:hover,
+nav .kalys_nav_menu ul.kalys_primary_nav li > a:hover {
+  color: black;
+}
+header .kalys_nav_menu ul.kalys_primary_nav .sub-menu,
+nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu {
+  position: -webkit-sticky;
+  position: sticky;
   visibility: hidden;
+  width: 135px;
+  text-align: inherit;
+  padding: 0;
+  background-color: white;
+  font-size: 1rem;
+  height: auto;
+  z-index: 10;
+  border-radius: 2%;
   opacity: 0;
-  padding: 5px;
+  /* padding: 5px;*/
   border-radius: 5px;
   background-color: rgb(245, 245, 245);
   transition: opacity 0.8s ease-in-out;
 }
-body header ul.kalys_primary_nav li:hover > ul,
-body nav ul.kalys_primary_nav li:hover > ul,
-main header ul.kalys_primary_nav li:hover > ul,
-main nav ul.kalys_primary_nav li:hover > ul {
-  background: rgb(255, 255, 255);
-  opacity: 1;
-  visibility: visible;
-  display: table;
-  font-size: medium;
-  z-index: 10;
-  position: fixed;
-  box-shadow: 10px 5px 10px grey;
+header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li,
+nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li {
+  position: relative;
+  padding-left: 3px;
+  z-index: 11;
 }
-body header ul.kalys_primary_nav ul.sub-menu > li:hover,
-body nav ul.kalys_primary_nav ul.sub-menu > li:hover,
-main header ul.kalys_primary_nav ul.sub-menu > li:hover,
-main nav ul.kalys_primary_nav ul.sub-menu > li:hover {
+header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a,
+nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a {
+  /*display: content;*/
+  padding-left: 2%;
+}
+header .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu,
+nav .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu {
+  visibility: visible;
+  box-shadow: 10px 5px 10px grey;
+  opacity: 1;
+  /* display: table;*/
+}
+header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li:hover,
+nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li:hover {
   transition: 0.4s ease-in;
   background: #ecd2ec;
   padding-left: 5px;
   border-radius: 5px;
   width: 100%;
 }
-body header .sticky,
-body nav .sticky,
-main header .sticky,
-main nav .sticky {
+header .sticky,
+nav .sticky {
+  position: fixed !important;
   transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
   box-shadow: 10px 5px 10px white;
-  position: fixed;
   background-color: white !important;
   opacity: 0.8;
-  top: 0;
-  width: 100vw;
-  z-index: 9;
-  /*
-  ul.kalys_primary_nav li.kalys_m_active > a,
-  ul.sub-menu li.current-menu-item > a {
-      color: #c334f4;
-  }*/
+  /*top: 0;*/
+  width: 100%;
+  z-index: 11;
 }
-body header .sticky span,
-body nav .sticky span,
-main header .sticky span,
-main nav .sticky span {
+header .sticky span,
+nav .sticky span {
   transition: 1s color ease-in-out;
   /*color: black;*/
 }
-body header .sticky .sub-menu span,
-body nav .sticky .sub-menu span,
-main header .sticky .sub-menu span,
-main nav .sticky .sub-menu span {
-  transition: 1s ease-in-out;
-  /* color: black;*/
-  font-size: medium;
-}
-body header button,
-body nav button,
-main header button,
-main nav button {
+header button,
+nav button {
   z-index: 10;
   position: absolute;
   width: 120px;
@@ -268,190 +221,326 @@ main nav button {
   opacity: 0.7;
   /* margin: auto;*/
   right: 20%;
-  top: 7%;
+  top: 28%;
   border: none;
   border-radius: 5px;
   transition: color 0.8s, border 0.8s, background-color 0.8s, box-shadow 0.8s;
 }
-body header button a,
-body nav button a,
-main header button a,
-main nav button a {
+header button a,
+nav button a {
+  display: flex;
+  justify-content: space-around;
   transition: font-size 0.8s, font-weight 0.8s;
   color: grey;
 }
-body header button:hover,
-body nav button:hover,
-main header button:hover,
-main nav button:hover {
+header button:hover,
+nav button:hover {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid black;
   box-shadow: 2px 2px 5px white;
 }
-body header button:hover a:hover,
-body nav button:hover a:hover,
-main header button:hover a:hover,
-main nav button:hover a:hover {
+header button:hover a:hover,
+nav button:hover a:hover {
+  color: black;
   font-size: large;
   font-weight: 900;
 }
-body ul.kalys_primary_nav li.kalys_m_active > a,
-body ul.sub-menu li.current-menu-item > a,
-main ul.kalys_primary_nav li.kalys_m_active > a,
-main ul.sub-menu li.current-menu-item > a {
-  color: #c334f4;
-}
-body .kalys-col-full,
-main .kalys-col-full {
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 10px 5px 10px gray;
-}
-body .kalys-col-full,
-body .tilte-epilation,
-body .kalys-title-page,
-body .title-manucure-archive,
-body h1,
-body h2,
-main .kalys-col-full,
-main .tilte-epilation,
-main .kalys-title-page,
-main .title-manucure-archive,
-main h1,
-main h2 {
-  /* margin: 30px 30px 20px;*/
-  font-size: 4rem;
-  box-sizing: border-box;
-  width: 80%;
-  color: #f0b5b5;
-  margin: auto;
-  font-family: "Alex Brush";
-  text-transform: capitalize;
-}
-body .kalys-col-full h2,
-body .tilte-epilation h2,
-body .kalys-title-page h2,
-body .title-manucure-archive h2,
-body h1 h2,
-body h2 h2,
-main .kalys-col-full h2,
-main .tilte-epilation h2,
-main .kalys-title-page h2,
-main .title-manucure-archive h2,
-main h1 h2,
-main h2 h2 {
-  font-size: 50px;
-  text-align: center;
-  margin: auto;
-  /* color: #f0b5b5;*/
-  /* font-family: "Alex Brush";*/
-  font-style: italic;
-  font-weight: 500;
-  margin-bottom: 50px;
-}
-body .space-gradient,
-main .space-gradient {
-  background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
-  height: 5px;
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 75px;
-}
-body .kalys-post-manucure,
-main .kalys-post-manucure {
-  display: inline-flex;
-}
-body ul.nav.nav-pills,
-main ul.nav.nav-pills {
-  font-size: xx-large;
-  display: flex;
-  justify-content: center;
-}
-body .card-body,
-main .card-body {
-  background-color: rgba(245, 156, 149, 0.19);
-}
-body .bookly-search-form,
-body .bg-white.svelte-10vuyub,
-body .bookly-search-form-small,
-main .bookly-search-form,
-main .bg-white.svelte-10vuyub,
-main .bookly-search-form-small {
-  display: contents !important;
+
+/****** homepage*/
+.home main {
+  background-color: #d7eadf !important;
   font-family: "Charm";
-  /* font-family: "Courier New", Courier, monospace;*/
-}
-body .bookly-bootstrap .btn-outline-secondary,
-main .bookly-bootstrap .btn-outline-secondary {
-  font-weight: 900;
-  font-size: 1.5rem !important;
-}
-body .bookly-bootstrap .btn-outline-secondary:hover,
-main .bookly-bootstrap .btn-outline-secondary:hover {
-  background-color: #ce8aca;
-}
-body .kalys-footer,
-main .kalys-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  border-top: 1px solid #fdfdfd;
-  background-color: rgb(250, 224, 252) !important;
-  padding-top: 20px;
-  margin-top: 50px;
-  font-size: 18px;
-  height: 250px;
-}
-body .footer_col,
-main .footer_col {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  display: table-footer-group;
-}
-body .footer_col ul,
-main .footer_col ul {
-  padding: 0;
-}
-body .footer-title,
-main .footer-title {
-  margin-bottom: 16px;
-}
-body .btn.btn-outline-secondary,
-main .btn.btn-outline-secondary {
-  margin-top: 5px;
-}
-body .icon,
-main .icon {
-  width: 25px;
-  height: 25px;
-  color: rgb(131, 130, 130);
-}
-body .icon:hover,
-main .icon:hover {
-  color: #050505;
-}
-body .widget_archive,
-body h4,
-body ul,
-main .widget_archive,
-main h4,
-main ul {
-  list-style-type: none;
-  /* font-size: 0.8em;*/
-}
-body .widget_archive a,
-body h4 a,
-body ul a,
-main .widget_archive a,
-main h4 a,
-main ul a {
-  /*font-size: 0.8em;*/
-  color: darkgray;
-  /* text-decoration: none;*/
+  text-align: justify;
+  line-height: 1.2rem;
 }
 
+/*
+body,
+main {
+    display: inline-flex;
+    text-align: justify;
+    background-color: #d7eadf !important;
+    font-family: "Charm" !important;
+    line-height: 1.2rem;
+    text-align: center;
+
+    header,
+    nav {
+        display: flex;
+        width: 100vw;
+        height: 125px;
+
+        .nav_logo img {
+            position: relative;
+            width: 150px;
+            height: auto;
+            top: 35%;
+            left: 50%;
+        }
+
+        a {
+            text-decoration: none;
+            color: darkgrey;
+            span {
+                font-family: "Charm" !important;
+            }
+        }
+
+        a:hover {
+            transition: 0.8s color ease-in-out;
+            color: rgb(162, 191, 218);
+        }
+
+        /******** menu navigation****************************/
+/* .kalys_primary_nav {
+            width: 100vw;
+            height: 125px;
+            display: flex;
+            justify-content: center;
+            font-family: "Charm"!important;
+            font-size: x-large;
+            font-style: oblique;
+            text-transform: capitalize;
+            position: relative;
+            vertical-align: middle;
+            overflow: hidden;
+            top: -25%;
+            a {
+                color: darkgray;
+            }
+            a:hover {
+                transition: 0.8s color ease-in-out;
+                color: black;
+            }
+        }
+
+        ul.kalys_primary_nav li {
+            z-index: 10;
+            width: 120px;
+            list-style: none;
+        }
+        ul.kalys_primary_nav li:nth-child(-n + 3) {
+            margin-right: 30px;
+        }
+        ul.kalys_primary_nav li ul {
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: rgb(245, 245, 245);
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        ul.kalys_primary_nav li:hover > ul {
+            background: rgb(255, 255, 255);
+            opacity: 1;
+            visibility: visible;
+            display: table;
+            font-size: medium;
+            z-index: 10;
+            position: fixed;
+            box-shadow: 10px 5px 10px grey;
+        }
+
+        ul.kalys_primary_nav ul.sub-menu > li:hover {
+            transition: 0.4s ease-in;
+            background: #ecd2ec;
+            padding-left: 5px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .sticky {
+            transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
+            box-shadow: 10px 5px 10px white;
+            position: fixed;
+            background-color: white !important;
+            opacity: 0.8;
+            top: 0;
+            width: 100vw;
+            z-index: 9;
+
+            span {
+                transition: 1s color ease-in-out;
+                /*color: black;*/ /*
+}
+.sub-menu span {
+    transition: 1s ease-in-out;
+    /* color: black;*/
+/* font-size: medium;
+            } 
+            ul.kalys_primary_nav li.kalys_m_active > a,
+            ul.sub-menu li.current-menu-item > a {
+                color: #c334f4;
+            }
+        }
+
+        button {
+            z-index: 10;
+            position: absolute;
+            width: 120px;
+            height: 30px;
+            opacity: 0.7;
+            /* margin: auto;*/
+/* right: 20%;
+            top: 7%;
+            border: none;
+            border-radius: 5px;
+            transition: color 0.8s, border 0.8s, background-color 0.8s, box-shadow 0.8s;
+            a {
+                transition: font-size 0.8s, font-weight 0.8s;
+                color: grey;
+            }
+        }
+        button:hover {
+            background-color: #ffffff00;
+            border: 1px solid black;
+            box-shadow: 2px 2px 5px white;
+            a:hover {
+                font-size: large;
+                font-weight: 900;
+            }
+        }
+    }
+    /******  menu actif */
+/*
+    ul.kalys_primary_nav li.kalys_m_active > a,
+    ul.sub-menu li.current-menu-item > a {
+        color: #c334f4;
+    }
+    /************** content front-page*****/
+/*
+    .kalys-col-full {
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 10px 5px 10px gray;
+    }
+
+    .kalys-col-full,
+    .tilte-epilation,
+    .kalys-title-page,
+    .title-manucure-archive,
+    h1,
+    h2 {
+        box-sizing: border-box;
+        width: 80%;
+        color: #f0b5b5;
+        margin: auto;
+        font-family: "Alex Brush";
+        text-transform: capitalize;
+
+        h2 {
+            font-size: 50px;
+            text-align: center;
+            margin: auto;
+            /* color: #f0b5b5;*/
+/* font-family: "Alex Brush";*/
+/*font-style: italic;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+    }
+
+    /*****
+Séparation sous le titre
+*/ /*
+ .space-gradient {
+     background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
+     height: 5px;
+     width: 100%;
+     border-radius: 10px;
+     margin-bottom: 75px;
+ }
+
+ /******** page manucure*********/
+/*
+    .kalys-post-manucure {
+        display: inline-flex;
+    }
+    ul.nav.nav-pills {
+        font-size: xx-large;
+        display: flex;
+        justify-content: center;
+    }
+    .card-body {
+        background-color: rgb(245 156 149 / 19%);
+    }
+
+    /*********
+     mise en page calendar
+
+ ***************/ /*
+.bookly-search-form,
+.bg-white.svelte-10vuyub,
+.bookly-search-form-small {
+    display: contents !important;
+    font-family: "Charm";
+    /* font-family: "Courier New", Courier, monospace;*/ /*
+    }
+    .bookly-bootstrap .btn-outline-secondary {
+        font-weight: 900;
+        font-size: 1.5rem !important;
+    }
+    .bookly-bootstrap .btn-outline-secondary:hover {
+        background-color: #ce8aca;
+    }
+    /***********
+footer
+*/
+/*
+    .kalys-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-top: 1px solid #fdfdfd;
+        background-color: rgb(250, 224, 252) !important;
+        padding-top: 20px;
+        margin-top: 50px;
+        font-size: 18px;
+        height: 250px;
+    }
+
+    .footer_col {
+        width: max-content;
+        display: table-footer-group;
+        ul {
+            padding: 0;
+        }
+    }
+
+    .footer-title {
+        margin-bottom: 16px;
+    }
+
+    .btn.btn-outline-secondary {
+        margin-top: 5px;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+        color: rgb(131, 130, 130);
+    }
+
+    .icon:hover {
+        color: #050505;
+    }
+
+    .widget_archive,
+    h4,
+    ul {
+        list-style-type: none;
+
+        /* font-size: 0.8em;*/ /*
+a {
+    /*font-size: 0.8em;*/
+/*color: darkgray;
+            /* text-decoration: none;*/ /*
+        }
+    }
+}
 /***********
  zoom hover img card page manucure
 
@@ -494,8 +583,10 @@ div.card-body {
 page actualités/blog
 
 *********/
-.blog.kalys-news,
-h1.title-news {
+.blog {
+  font-family: "Charm" !important;
+}
+.blog h1.title-news {
   font-size: 5em;
   text-align: center;
   color: #f0b5b5;
@@ -504,26 +595,33 @@ h1.title-news {
   font-weight: 500;
   margin-bottom: 50px;
 }
-
-.news-list {
+.blog .news-list {
   display: flex;
   position: relative;
   padding-left: 40px;
 }
-
-.news-sidebar {
+.blog article.home-news {
+  font-family: "Charm" !important;
+}
+.blog .home-news,
+.blog .card,
+.blog .news-img > img {
+  width: 100%;
+  height: auto;
+}
+.blog .news-sidebar {
   position: relative;
   float: right;
 }
-.news-sidebar ul {
+.blog .news-sidebar ul {
   width: 250px;
 }
 
-.home-news,
-.card,
-.news-img > img {
-  width: 100%;
-  height: auto;
+/*******************
+page manucure
+****************/
+.page-template-single-soin-mains {
+  font-family: "Charm" !important;
 }
 
 .page-id-282,
