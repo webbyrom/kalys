@@ -13,3 +13,9 @@
         })
     })
 })(jQuery)
+
+
+/*************
+ * menu active
+ */
+// class active on click and scroll

@@ -59,6 +59,7 @@ function kalys_add_active_class($classes, $item){
     in_array('current-menu-ancestor', $classes) ||
     in_array('current-menu-parent', $classes) ||
     in_array('current_page_parent', $classes) ||
+    in_array('menu-item-has-chidren', $classes) ||
     in_array('current_page_ancestor', $classes)) {
         $classes[] = 'kalys_m_active';
     }
