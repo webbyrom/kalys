@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Alex Brush';
-  src: url('/font/AlexBrush-Regular.eot');
-  src: url('/font/AlexBrush-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/font/AlexBrush-Regular.svg#AlexBrush-Regular') format('svg'),
-    url('/font/AlexBrush-Regular.ttf') format('truetype'),
-    url('/font/AlexBrush-Regular.woff') format('woff'),
-    url('/font/AlexBrush-Regular.woff2') format('woff2');
+  src: local('/font/AlexBrush-Regular.eot');
+  src: local('/font/AlexBrush-Regular.eot?#iefix') format('embedded-opentype'),
+    local('/font/AlexBrush-Regular.svg#AlexBrush-Regular') format('svg'),
+    local('/font/AlexBrush-Regular.ttf') format('truetype'),
+    local('/font/AlexBrush-Regular.woff') format('woff'),
+    local('/font/AlexBrush-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
@@ -13,26 +13,26 @@
 
 @font-face {
   font-family: 'Charm';
-  src: url('/font/Charm-Regular.eot');
-  src: url('/font/Charm-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/font/Charm-Regular.svg#Charm-Regular') format('svg'),
-    url('/font/Charm-Regular.ttf') format('truetype'),
-    url('/font/Charm-Regular.woff') format('woff'),
-    url('/font/Charm-Regular.woff2') format('woff2');
+  src: local('/font/Charm-Regular.eot');
+  src: local('/font/Charm-Regular.eot?#iefix') format('embedded-opentype'),
+    local('/font/Charm-Regular.svg#Charm-Regular') format('svg'),
+    local('/font/Charm-Regular.ttf') format('truetype'),
+    local('/font/Charm-Regular.woff') format('woff'),
+    local('/font/Charm-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  /*font-display: fallback;*/
 }
 
 @font-face {
   font-family: 'Charm-bold';
-  src: url('/font/Charm-Bold.eot');
-  src: url('/font/Charm-Bold.eot?#iefix') format('embedded-opentype'),
-    url('/font/Charm-Bold.eot.svg#Charm-Bold.eot') format('svg'),
-    url('/font/Charm-Bold.eot.ttf') format('truetype'),
-    url('/font/Charm-Bold.eot.woff') format('woff'),
-    url('/font/Charm-Bold.eot.woff2') format('woff2');
+  src: local('/font/Charm-Bold.eot');
+  src: local('/font/Charm-Bold.eot?#iefix') format('embedded-opentype'),
+    local('/font/Charm-Bold.eot.svg#Charm-Bold.eot') format('svg'),
+    local('/font/Charm-Bold.eot.ttf') format('truetype'),
+    local('/font/Charm-Bold.eot.woff') format('woff'),
+    local('/font/Charm-Bold.eot.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
-  font-display: fallback;
+  /*font-display: fallback;*/
 }

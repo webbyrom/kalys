@@ -81,6 +81,7 @@ label,
 footer,
 header,
 nav {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     border: 0;
@@ -88,6 +89,9 @@ nav {
     vertical-align: baseline !important;
     list-style: none;
     text-align: center;
+}
+.blog{
+    font-family: $font-body;
 }
 h1 {
     font-size: 4em !important;
@@ -111,7 +115,7 @@ nav {
     .kalys_nav_menu {
         position: relative;
         display: flex;
-        font-family: "Charm";
+        font-family: "Charm"!important;
         font-size: x-large;
         text-transform: capitalize;
         .nav_logo {
@@ -121,7 +125,7 @@ nav {
             height: auto;
             left: 2%;
             img {
-                border: 1px solid #c334f4;
+                border: 1px solid $color-border;
                 border-radius: 5px;
                 padding: 10px;
                 position: relative;
@@ -141,30 +145,30 @@ nav {
 
             li > a {
                 color: $font-body-color;
-                transition: 0.8s color ease-in-out;
+                transition: color 0.8s  ease-in-out;
+                &:hover{
+                    color: $link-hover;
+                }
             }
-            li > a:hover {
+           /* li > a:hover {
                 color: $link-hover;
-            }
+            }*/
             .sub-menu {
                 position: absolute;
                 visibility: hidden;
                 width: 135px;
                 text-align: inherit;
                 padding: 0;
-                background-color: white;
                 font-size: 1rem;
                 height: auto;
                 z-index: 10;
                 border-radius: 2%;
                 opacity: 0;
-                border-radius: 5px;
-                background-color: rgb(245, 245, 245);
                 transition: opacity 0.8s ease-in-out;
                 li {
                     position: relative;
                     padding-left: 3px;
-                    z-index: 11;
+                    z-index: 10;
                     a {
                         padding-left: 2%;
                     }
@@ -173,16 +177,22 @@ nav {
         }
         ul.kalys_primary_nav li:hover > ul.sub-menu {
             visibility: visible;
+            background-color: rgb(245, 245, 245);
             box-shadow: 10px 5px 10px grey;
             opacity: 1;
+            transition: padding-left 0.8s, background-color 0.8s ease-in-out;
         }
-        ul.kalys_primary_nav ul.sub-menu > li:hover {
-            transition: 0.4s ease-in;
-            background: #ecd2ec;
-            padding-left: 5px;
-            border-radius: 5px;
+        ul.kalys_primary_nav ul.sub-menu > li {
+            background-color: $color-shadow;
             width: 100%;
+            transition: padding-left 0.8s, background-color 0.8s ease-in-out;
+            &:hover{
+                background-color: #ecd2ec;
+                padding-left: 5px;
+                width: 100%;
+            }
         }
+        
     }
     /*****
     Ad class Sticky on navbar
@@ -198,7 +208,7 @@ nav {
         z-index: 11;
 
         span {
-            transition: 1s color ease-in-out;
+            transition: color 1s  ease-in-out;
         }
     }
     /***** button price*****/
@@ -232,7 +242,7 @@ nav {
         }
     }
     ul.kalys_primary_nav li.kalys_m_active > a {
-        color: #c334f4;
+        color: $color-border;
     }
 }
 
@@ -256,7 +266,7 @@ nav {
             border-radius: 10px;
             margin-bottom: 75px;
         }
-        /*********
+/*********
      mise en page calendar
 
  ***************/
@@ -338,7 +348,7 @@ Séparation sous le titre
     }
 
 
-    /***********
+/***********
 footer
 */
 
@@ -385,9 +395,9 @@ h4,
 ul {
     list-style-type: none;
 
-    font-size: 0.8em;
+   /* font-size: 0.8em;*/
     a {
-        font-size: 0.8em;
+       /* font-size: 0.8em;*/
         color: darkgray;
         text-decoration: none;
     }
@@ -444,12 +454,12 @@ page actualités/blog
 
 *********/
 .blog {
-    font-family: "Charm" !important;
+    font-family: $font-body!important;
     h1.title-news {
         font-size: 5em;
         text-align: center;
         color: #f0b5b5;
-        font-family: "Alex Brush";
+        font-family: $font-title;
         font-style: italic;
         font-weight: 500;
         margin-bottom: 50px;
@@ -461,7 +471,7 @@ page actualités/blog
         padding-left: 40px;
     }
     article.home-news {
-        font-family: "Charm" !important;
+        font-family: $font-body !important;
     }
     .home-news,
     .card,
@@ -480,7 +490,7 @@ page actualités/blog
 page manucure
 ****************/
 .page-template-single-soin-mains {
-    font-family: "Charm" !important;
+    font-family: $font-body !important;
 }
 
 .page-id-282,

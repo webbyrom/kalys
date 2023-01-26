@@ -81,6 +81,7 @@ label,
 footer,
 header,
 nav {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   border: 0;
@@ -88,6 +89,10 @@ nav {
   vertical-align: baseline !important;
   list-style: none;
   text-align: center;
+}
+
+.blog {
+  font-family: "Charm";
 }
 
 h1 {
@@ -120,7 +125,7 @@ header .kalys_nav_menu,
 nav .kalys_nav_menu {
   position: relative;
   display: flex;
-  font-family: "Charm";
+  font-family: "Charm" !important;
   font-size: x-large;
   text-transform: capitalize;
 }
@@ -148,6 +153,9 @@ nav .kalys_nav_menu ul.kalys_primary_nav {
   height: auto;
   /*width: 100vw; remplacder par margin auto*/
   margin: auto;
+  /* li > a:hover {
+       color: $link-hover;
+   }*/
 }
 header .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4),
 nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
@@ -156,7 +164,7 @@ nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
 header .kalys_nav_menu ul.kalys_primary_nav li > a,
 nav .kalys_nav_menu ul.kalys_primary_nav li > a {
   color: #5B5B5B;
-  transition: 0.8s color ease-in-out;
+  transition: color 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav li > a:hover,
 nav .kalys_nav_menu ul.kalys_primary_nav li > a:hover {
@@ -169,21 +177,18 @@ nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu {
   width: 135px;
   text-align: inherit;
   padding: 0;
-  background-color: white;
   font-size: 1rem;
   height: auto;
   z-index: 10;
   border-radius: 2%;
   opacity: 0;
-  border-radius: 5px;
-  background-color: rgb(245, 245, 245);
   transition: opacity 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li,
 nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li {
   position: relative;
   padding-left: 3px;
-  z-index: 11;
+  z-index: 10;
 }
 header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a,
 nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a {
@@ -192,15 +197,21 @@ nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a {
 header .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu,
 nav .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu {
   visibility: visible;
+  background-color: rgb(245, 245, 245);
   box-shadow: 10px 5px 10px grey;
   opacity: 1;
+  transition: padding-left 0.8s, background-color 0.8s ease-in-out;
+}
+header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li,
+nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li {
+  background-color: #ffffff;
+  width: 100%;
+  transition: padding-left 0.8s, background-color 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li:hover,
 nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li:hover {
-  transition: 0.4s ease-in;
-  background: #ecd2ec;
+  background-color: #ecd2ec;
   padding-left: 5px;
-  border-radius: 5px;
   width: 100%;
 }
 header .sticky,
@@ -216,7 +227,7 @@ nav .sticky {
 }
 header .sticky span,
 nav .sticky span {
-  transition: 1s color ease-in-out;
+  transition: color 1s ease-in-out;
 }
 header button,
 nav button {
@@ -263,9 +274,9 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
   text-align: center;
   line-height: 1.2rem;
   /*********
-      mise en page calendar
+       mise en page calendar
 
-  ***************/
+   ***************/
 }
 .home main .kalys-col-full {
   background-color: white;
@@ -356,7 +367,7 @@ Séparation sous le titre
     }
 
 
-    /***********
+/***********
 footer
 */
 .kalys-footer {
@@ -403,12 +414,12 @@ footer
 h4,
 ul {
   list-style-type: none;
-  font-size: 0.8em;
+  /* font-size: 0.8em;*/
 }
 .widget_archive a,
 h4 a,
 ul a {
-  font-size: 0.8em;
+  /* font-size: 0.8em;*/
   color: darkgray;
   text-decoration: none;
 }

@@ -1,0 +1,19 @@
+.wc-block-components-review-sort-select {
+  text-align: right;
+}/*# sourceMappingURL=style.css.map */=style.css.map */+ 0.25em);
+  position: relative;
+  text-decoration: none;
+}
+.wc-block-components-checkout-return-to-cart-button svg {
+  left: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}/*# sourceMappingURL=style.css.map */omponents-product-details__name,
+.wc-block-components-product-details__value {
+  display: inline-block;
+}
+
+.is-large:not(.wc-block-checkout) .wc-block-components-product-details__name {
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */ppingURL=style.css.map */
