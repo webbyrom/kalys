@@ -14,35 +14,64 @@ Text Domain: Kalys Nails and Beauty.
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+/*@font-face {
+    font-family: "Alex Brush";
+    font-size: normal;
+    src: local("assets/font/AlexBrush-Regular.eot") format("eot");
+    src: local("assets/font/AlexBrush-Regular.svg") format("svg");
+    src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
+    src: local("assets/font/AlexBrush-Regular.woff") format("woff");
+    src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Charm-bold";
+    font-weight: bold;
+    src: local("assets/font/Charm-Bold.eot") format("eot");
+    src: local("assets/font/Charm-Bold.svg") format("svg");
+    src: local("assets/font/Charm-Bold.ttf") format("ttf");
+    src: local("assets/font/Charm-Bold.woff") format("woff");
+    src: local("assets/font/Charm-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Charm";
+    font-size: normal;
+    src: local("assets/font/Charm-Regular.eot") format("eot");
+    src: local("assets/font/Charm-Regular.svg") format("svg");
+    src: local("assets/font/Charm-Regular.ttf") format("ttf");
+    src: local("assets/font/Charm-Regular.woff") format("woff");
+    src: local("assets/font/Charm-Regular.woff2") format("woff2");
+}
+*/
 /**********
 file vars  css
 *****/
 @font-face {
   font-family: "Alex Brush";
   font-size: normal;
-  src: local("assets/font/AlexBrush-Regular.eot") format("eot");
-  src: local("assets/font/AlexBrush-Regular.svg") format("svg");
-  src: local("assets/font/AlexBrush-Regular.ttf") format("ttf");
-  src: local("assets/font/AlexBrush-Regular.woff") format("woff");
-  src: local("assets/font/AlexBrush-Regular.woff2") format("woff2");
+  src: url("assets/font/AlexBrush-Regular.eot") format("eot");
+  src: url("assets/font/AlexBrush-Regular.svg") format("svg");
+  src: url("assets/font/AlexBrush-Regular.ttf") format("ttf");
+  src: url("assets/font/AlexBrush-Regular.woff") format("woff");
+  src: url("assets/font/AlexBrush-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Charm-bold";
   font-weight: bold;
-  src: local("assets/font/Charm-Bold.eot") format("eot");
-  src: local("assets/font/Charm-Bold.svg") format("svg");
-  src: local("assets/font/Charm-Bold.ttf") format("ttf");
-  src: local("assets/font/Charm-Bold.woff") format("woff");
-  src: local("assets/font/Charm-Bold.woff2") format("woff2");
+  src: url("assets/font/Charm-Bold.eot") format("eot");
+  src: url("assets/font/Charm-Bold.svg") format("svg");
+  src: url("assets/font/Charm-Bold.ttf") format("ttf");
+  src: url("assets/font/Charm-Bold.woff") format("woff");
+  src: url("assets/font/Charm-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Charm";
   font-size: normal;
-  src: local("assets/font/Charm-Regular.eot") format("eot");
-  src: local("assets/font/Charm-Regular.svg") format("svg");
-  src: local("assets/font/Charm-Regular.ttf") format("ttf");
-  src: local("assets/font/Charm-Regular.woff") format("woff");
-  src: local("assets/font/Charm-Regular.woff2") format("woff2");
+  src: url("assets/font/Charm-Regular.eot") format("eot");
+  src: url("assets/font/Charm-Regular.svg") format("svg");
+  src: url("assets/font/Charm-Regular.ttf") format("ttf");
+  src: url("assets/font/Charm-Regular.woff") format("woff");
+  src: url("assets/font/Charm-Regular.woff2") format("woff2");
 }
 *,
 *::before,
@@ -107,6 +136,11 @@ h3,
 h4 {
   color: #f0b5b5 !important;
   font-family: "Alex Brush" !important;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: x-large;
 }
 
 /****** main navigation***/
@@ -117,7 +151,7 @@ nav {
   /* width: 100vw;*/
   height: 125px;
   /*****
-  Ad class Sticky on navbar
+  Add class Sticky on navbar
   **/
   /***** button price*****/
 }
@@ -128,6 +162,7 @@ nav .kalys_nav_menu {
   font-family: "Charm" !important;
   font-size: x-large;
   text-transform: capitalize;
+  transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
 }
 header .kalys_nav_menu .nav_logo,
 nav .kalys_nav_menu .nav_logo {
@@ -139,11 +174,9 @@ nav .kalys_nav_menu .nav_logo {
 }
 header .kalys_nav_menu .nav_logo img,
 nav .kalys_nav_menu .nav_logo img {
-  border: 1px solid #c334f4;
-  border-radius: 5px;
   padding: 10px;
   position: relative;
-  box-shadow: 2px 2px 10px #ffffff;
+  transition: box-shadow 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav,
 nav .kalys_nav_menu ul.kalys_primary_nav {
@@ -153,9 +186,6 @@ nav .kalys_nav_menu ul.kalys_primary_nav {
   height: auto;
   /*width: 100vw; remplacder par margin auto*/
   margin: auto;
-  /* li > a:hover {
-       color: $link-hover;
-   }*/
 }
 header .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4),
 nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
@@ -175,41 +205,44 @@ nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu {
   position: absolute;
   visibility: hidden;
   width: 135px;
-  text-align: inherit;
+  background-color: #ffffff;
   padding: 0;
   font-size: 1rem;
   height: auto;
   z-index: 10;
-  border-radius: 2%;
+  border-radius: 10px;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li,
 nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li {
   position: relative;
-  padding-left: 3px;
-  z-index: 10;
 }
 header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a,
 nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a {
-  padding-left: 2%;
+  padding-left: 0;
 }
 header .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu,
 nav .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu {
   visibility: visible;
+  border-radius: 10px;
   background-color: rgb(245, 245, 245);
   box-shadow: 10px 5px 10px grey;
   opacity: 1;
-  transition: padding-left 0.8s, background-color 0.8s ease-in-out;
 }
-header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li,
-nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li {
+header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu,
+nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu {
   background-color: #ffffff;
+  border-radius: 10px;
+}
+header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li,
+nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li {
+  padding-left: 0;
   width: 100%;
   transition: padding-left 0.8s, background-color 0.8s ease-in-out;
 }
-header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li:hover,
-nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li:hover {
+header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li:hover,
+nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li:hover {
   background-color: #ecd2ec;
   padding-left: 5px;
   width: 100%;
@@ -217,13 +250,17 @@ nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu > li:hover {
 header .sticky,
 nav .sticky {
   position: fixed !important;
-  transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
   box-shadow: 10px 5px 10px white;
   background-color: white !important;
   opacity: 0.8;
   /*top: 0;*/
   width: 100%;
   z-index: 11;
+}
+header .sticky .nav_logo img,
+nav .sticky .nav_logo img {
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #000000;
 }
 header .sticky span,
 nav .sticky span {
@@ -267,6 +304,14 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
   color: #c334f4;
 }
 
+.space-gradient {
+  background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
+  height: 5px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 75px;
+}
+
 /****** homepage*/
 .home main {
   background-color: #d7eadf !important;
@@ -274,7 +319,7 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
   text-align: center;
   line-height: 1.2rem;
   /*********
-       mise en page calendar
+       layout calendar home-page
 
    ***************/
 }
@@ -284,14 +329,9 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
   box-shadow: 10px 5px 10px gray;
   border-radius: 10px;
 }
-.home main .space-gradient {
-  background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
-  height: 5px;
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 75px;
-}
-.home main .bookly-search-form, .home main .bg-white, .home main .svelte-10vuyub {
+.home main .bookly-search-form,
+.home main .bg-white,
+.home main .svelte-10vuyub {
   font-family: "Charm";
   flex-direction: column;
 }
@@ -307,118 +347,60 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
   background-color: #ce8aca;
 }
 
-/******  menu actif */
-/*
-    ul.kalys_primary_nav li.kalys_m_active > a,
-    ul.sub-menu li.current-menu-item > a {
-        color: #c334f4;
-    }
-    /************** content front-page*****/
-/*
-    .kalys-col-full {
-        background-color: white;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 10px 5px 10px gray;
-    }
-
-    .kalys-col-full,
-    .tilte-epilation,
-    .kalys-title-page,
-    .title-manucure-archive,
-    h1,
-    h2 {
-        box-sizing: border-box;
-        width: 80%;
-        color: #f0b5b5;
-        margin: auto;
-        font-family: "Alex Brush";
-        text-transform: capitalize;
-
-        h2 {
-            font-size: 50px;
-            text-align: center;
-            margin: auto;
-            /* color: #f0b5b5;*/
-/* font-family: "Alex Brush";*/
-/*font-style: italic;
-            font-weight: 500;
-            margin-bottom: 50px;
-        }
-    }
-
-    /*****
-Séparation sous le titre
-*/ /*
-
-
- /******** page manucure*********/
-/*
-    .kalys-post-manucure {
-        display: inline-flex;
-    }
-    ul.nav.nav-pills {
-        font-size: xx-large;
-        display: flex;
-        justify-content: center;
-    }
-    .card-body {
-        background-color: rgb(245 156 149 / 19%);
-    }
-
-
 /***********
 footer
 */
-.kalys-footer {
+.page-template-default .kalys-footer, .page .kalys-footer, .blog .kalys-footer {
   display: flex;
+  font-family: "Charm" !important;
   flex-direction: row;
   justify-content: space-evenly;
   border-top: 1px solid #fdfdfd;
   background-color: rgb(250, 224, 252) !important;
   padding-top: 20px;
-  margin-top: 50px;
   font-size: 18px;
   height: 250px;
 }
-
-.footer_col {
+.page-template-default .footer_col, .page .footer_col, .blog .footer_col {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   display: table-footer-group;
 }
-.footer_col ul {
+.page-template-default .footer_col ul, .page .footer_col ul, .blog .footer_col ul {
   padding: 0;
 }
-
-.footer-title {
+.page-template-default .footer-title, .page .footer-title, .blog .footer-title {
   margin-bottom: 16px;
 }
-
-.btn.btn-outline-secondary {
+.page-template-default .btn.btn-outline-secondary, .page .btn.btn-outline-secondary, .blog .btn.btn-outline-secondary {
   margin-top: 5px;
 }
-
-.icon {
+.page-template-default .icon, .page .icon, .blog .icon {
   width: 25px;
   height: 25px;
   color: rgb(131, 130, 130);
 }
-
-.icon:hover {
+.page-template-default .icon:hover, .page .icon:hover, .blog .icon:hover {
   color: #050505;
 }
-
-.widget_archive,
-h4,
-ul {
+.page-template-default .widget_archive,
+.page-template-default h4,
+.page-template-default ul, .page .widget_archive,
+.page h4,
+.page ul, .blog .widget_archive,
+.blog h4,
+.blog ul {
   list-style-type: none;
   /* font-size: 0.8em;*/
 }
-.widget_archive a,
-h4 a,
-ul a {
+.page-template-default .widget_archive a,
+.page-template-default h4 a,
+.page-template-default ul a, .page .widget_archive a,
+.page h4 a,
+.page ul a, .blog .widget_archive a,
+.blog h4 a,
+.blog ul a {
   /* font-size: 0.8em;*/
   color: darkgray;
   text-decoration: none;
@@ -507,7 +489,17 @@ page manucure
   font-family: "Charm" !important;
 }
 
-.page-id-282,
-body {
-  background-color: #ffffff !important;
+/*******
+page épilation
+******/
+.page-template-single-soin-corps {
+  background-color: #cdb5d7;
+}
+.page-template-single-soin-corps .kalys-epilation-bg {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #ffffff;
+}
+.page-template-single-soin-corps .elementor-widget-wpr-pricing-table .wpr-pricing-table-price {
+  background-color: #dd8fec;
 }/*# sourceMappingURL=style.css.map */

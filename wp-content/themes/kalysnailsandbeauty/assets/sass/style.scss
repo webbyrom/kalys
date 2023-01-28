@@ -13,9 +13,8 @@ Text Domain: Kalys Nails and Beauty.
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-@import "colors.scss";
 
-@font-face {
+/*@font-face {
     font-family: "Alex Brush";
     font-size: normal;
     src: local("assets/font/AlexBrush-Regular.eot") format("eot");
@@ -43,6 +42,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
     src: local("assets/font/Charm-Regular.woff") format("woff");
     src: local("assets/font/Charm-Regular.woff2") format("woff2");
 }
+*/
+@import "colors.scss";
 
 *,
 *::before,
@@ -90,7 +91,7 @@ nav {
     list-style: none;
     text-align: center;
 }
-.blog{
+.blog {
     font-family: $font-body;
 }
 h1 {
@@ -104,6 +105,10 @@ h3,
 h4 {
     color: $title-color !important;
     font-family: $font-title !important;
+    text-transform: capitalize;
+}
+h2 {
+    font-size: x-large;
 }
 /****** main navigation***/
 header,
@@ -115,9 +120,10 @@ nav {
     .kalys_nav_menu {
         position: relative;
         display: flex;
-        font-family: "Charm"!important;
+        font-family: "Charm" !important;
         font-size: x-large;
         text-transform: capitalize;
+        transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
         .nav_logo {
             position: relative;
             top: 28%;
@@ -125,11 +131,9 @@ nav {
             height: auto;
             left: 2%;
             img {
-                border: 1px solid $color-border;
-                border-radius: 5px;
                 padding: 10px;
                 position: relative;
-                box-shadow: 2px 2px 10px $color-shadow;
+                transition: box-shadow 0.8s ease-in-out;
             }
         }
         ul.kalys_primary_nav {
@@ -145,70 +149,77 @@ nav {
 
             li > a {
                 color: $font-body-color;
-                transition: color 0.8s  ease-in-out;
-                &:hover{
+                transition: color 0.8s ease-in-out;
+                &:hover {
                     color: $link-hover;
                 }
             }
-           /* li > a:hover {
-                color: $link-hover;
-            }*/
             .sub-menu {
                 position: absolute;
                 visibility: hidden;
                 width: 135px;
-                text-align: inherit;
+                background-color: #ffffff;
                 padding: 0;
                 font-size: 1rem;
                 height: auto;
                 z-index: 10;
-                border-radius: 2%;
+                border-radius: 10px;
                 opacity: 0;
                 transition: opacity 0.8s ease-in-out;
+
                 li {
                     position: relative;
-                    padding-left: 3px;
-                    z-index: 10;
                     a {
-                        padding-left: 2%;
+                        padding-left: 0;
                     }
                 }
             }
         }
         ul.kalys_primary_nav li:hover > ul.sub-menu {
             visibility: visible;
+            border-radius: 10px;
             background-color: rgb(245, 245, 245);
             box-shadow: 10px 5px 10px grey;
             opacity: 1;
-            transition: padding-left 0.8s, background-color 0.8s ease-in-out;
+            // transition: padding-left 0.8s, background-color 0.8s ease-in-out;
         }
-        ul.kalys_primary_nav ul.sub-menu > li {
+        ul.kalys_primary_nav ul.sub-menu {
             background-color: $color-shadow;
-            width: 100%;
-            transition: padding-left 0.8s, background-color 0.8s ease-in-out;
-            &:hover{
-                background-color: #ecd2ec;
-                padding-left: 5px;
+            border-radius: 10px;
+            li {
+                padding-left: 0;
                 width: 100%;
+                transition: padding-left 0.8s, background-color 0.8s ease-in-out;
+                &:hover {
+                    background-color: #ecd2ec;
+                    padding-left: 5px;
+                    width: 100%;
+                }
             }
         }
-        
     }
     /*****
-    Ad class Sticky on navbar
+    Add class Sticky on navbar
     **/
     .sticky {
         position: fixed !important;
-        transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
+        //   transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
         box-shadow: 10px 5px 10px white;
         background-color: white !important;
         opacity: 0.8;
         /*top: 0;*/
         width: 100%;
         z-index: 11;
+        .nav_logo {
+            img {
+                // border: 1px solid $color-border;
+                border-radius: 5px;
+                box-shadow: 2px 2px 10px $color-logo-shadow;
+            }
+        }
 
         span {
-            transition: color 1s  ease-in-out;
+            transition: color 1s ease-in-out;
         }
     }
     /***** button price*****/
@@ -245,7 +256,13 @@ nav {
         color: $color-border;
     }
 }
-
+.space-gradient {
+    background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
+    height: 5px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 75px;
+}
 /****** homepage*/
 .home {
     main {
@@ -259,24 +276,20 @@ nav {
             box-shadow: 10px 5px 10px gray;
             border-radius: 10px;
         }
-        .space-gradient {
-            background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
-            height: 5px;
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 75px;
-        }
+        
 /*********
-     mise en page calendar
+     layout calendar home-page
 
  ***************/
-        .bookly-search-form, .bg-white, .svelte-10vuyub {
+        .bookly-search-form,
+        .bg-white,
+        .svelte-10vuyub {
             font-family: "Charm";
             flex-direction: column;
         }
-        .bookly-bootstrap .justify-content-start{
+        .bookly-bootstrap .justify-content-start {
             display: flex;
-            justify-content: center!important;
+            justify-content: center !important;
         }
         .bookly-bootstrap .btn-outline-secondary {
             font-weight: 900;
@@ -288,119 +301,62 @@ nav {
     }
 }
 
-/******  menu actif */
-/*
-    ul.kalys_primary_nav li.kalys_m_active > a,
-    ul.sub-menu li.current-menu-item > a {
-        color: #c334f4;
-    }
-    /************** content front-page*****/
-/*
-    .kalys-col-full {
-        background-color: white;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 10px 5px 10px gray;
-    }
-
-    .kalys-col-full,
-    .tilte-epilation,
-    .kalys-title-page,
-    .title-manucure-archive,
-    h1,
-    h2 {
-        box-sizing: border-box;
-        width: 80%;
-        color: #f0b5b5;
-        margin: auto;
-        font-family: "Alex Brush";
-        text-transform: capitalize;
-
-        h2 {
-            font-size: 50px;
-            text-align: center;
-            margin: auto;
-            /* color: #f0b5b5;*/
-/* font-family: "Alex Brush";*/
-/*font-style: italic;
-            font-weight: 500;
-            margin-bottom: 50px;
-        }
-    }
-
-    /*****
-Séparation sous le titre
-*/ /*
-   
-
-    /******** page manucure*********/
-/*
-    .kalys-post-manucure {
-        display: inline-flex;
-    }
-    ul.nav.nav-pills {
-        font-size: xx-large;
-        display: flex;
-        justify-content: center;
-    }
-    .card-body {
-        background-color: rgb(245 156 149 / 19%);
-    }
-
-
 /***********
 footer
 */
-
-.kalys-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border-top: 1px solid #fdfdfd;
-    background-color: rgb(250, 224, 252) !important;
-    padding-top: 20px;
-    margin-top: 50px;
-    font-size: 18px;
-    height: 250px;
-}
-
-.footer_col {
-    width: max-content;
-    display: table-footer-group;
+.page-template-default, .page, .blog{
+    .kalys-footer {
+        display: flex;
+        font-family: $font-body!important;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-top: 1px solid #fdfdfd;
+        background-color: rgb(250, 224, 252) !important;
+        padding-top: 20px;
+        //margin-top: 50px;
+        font-size: 18px;
+        height: 250px;
+    }
+    
+    .footer_col {
+        width: max-content;
+        display: table-footer-group;
+        ul {
+            padding: 0;
+        }
+    }
+    
+    .footer-title {
+        margin-bottom: 16px;
+    }
+    
+    .btn.btn-outline-secondary {
+        margin-top: 5px;
+    }
+    
+    .icon {
+        width: 25px;
+        height: 25px;
+        color: rgb(131, 130, 130);
+    }
+    
+    .icon:hover {
+        color: #050505;
+    }
+    
+    .widget_archive,
+    h4,
     ul {
-        padding: 0;
+        list-style-type: none;
+    
+        /* font-size: 0.8em;*/
+        a {
+            /* font-size: 0.8em;*/
+            color: darkgray;
+            text-decoration: none;
+        }
     }
-}
-
-.footer-title {
-    margin-bottom: 16px;
-}
-
-.btn.btn-outline-secondary {
-    margin-top: 5px;
-}
-
-.icon {
-    width: 25px;
-    height: 25px;
-    color: rgb(131, 130, 130);
-}
-
-.icon:hover {
-    color: #050505;
-}
-
-.widget_archive,
-h4,
-ul {
-    list-style-type: none;
-
-   /* font-size: 0.8em;*/
-    a {
-       /* font-size: 0.8em;*/
-        color: darkgray;
-        text-decoration: none;
-    }
+    
 }
 
 /***********
@@ -454,7 +410,7 @@ page actualités/blog
 
 *********/
 .blog {
-    font-family: $font-body!important;
+    font-family: $font-body !important;
     h1.title-news {
         font-size: 5em;
         text-align: center;
@@ -492,8 +448,19 @@ page manucure
 .page-template-single-soin-mains {
     font-family: $font-body !important;
 }
+/*******
+page épilation
+******/
+.page-template-single-soin-corps {
+    background-color: $color-epilation-bg;
+    .kalys-epilation-bg {
+         background-color:$color-bg-epilation;
+         border-radius: 10px;
+         box-shadow:5px 5px 10px $color-shadow;
+     }
+     .elementor-widget-wpr-pricing-table .wpr-pricing-table-price{
+        background-color: #dd8fec;
+     }
+     
 
-.page-id-282,
-body {
-    background-color: #ffffff !important;
 }

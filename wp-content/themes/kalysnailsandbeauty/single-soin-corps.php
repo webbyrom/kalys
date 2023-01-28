@@ -5,16 +5,19 @@
  */
 ?>
 <?php get_header(); ?>
-<section class="kalys-section-epilation">
+<section class="kalys-section-epilation container">
     <div class="kalys-epilation-slider">
         <?php add_revslider('slider-4'); ?>
     </div>
-    <div class="tilte-epilation">
-        <h2 class="kalys-epilation-title"><?php single_post_title() ?></h2>
+    <div class="kalys-epilation-bg">
+        <div class="tilte-epilation">
+            <h1 class="kalys-epilation-title"><?php single_post_title() ?></h1>
+        </div>
+        <div class="space-gradient"></div>
+        <div class="kalys-epilation-main ">
+            <?php the_content() ?>
+        </div>
     </div>
-    <div class="space-gradient"></div>
-    <div class="kalys-epilation-main ">
-        <?php the_content() ?>
-    </div>
+
 </section>
 <?php get_footer(); ?>
