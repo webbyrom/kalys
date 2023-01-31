@@ -52,3 +52,8 @@ function kalys_title($title)
 {
     return $title .= get_bloginfo('name', 'description');
 }
+function kalys_title_separator( $sep)
+{
+    return '|';
+}
+add_filter('document_title_separator', 'kalys_title_separator', 10, 1);

@@ -10,7 +10,7 @@
     <div class="kalys-contact-slider">
     <?php add_revslider('slider-2'); ?>
     </div>
-    <h2 class="kalys-contact-title"><?php the_title() ?></h2>
+    <h1 class="kalys-contact-title"><?php the_title() ?></h1>
     <div class="space-gradient"></div>
     <div class="kalys-contact-main">
         <?php the_content() ?>

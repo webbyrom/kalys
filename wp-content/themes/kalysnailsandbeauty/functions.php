@@ -22,16 +22,17 @@ function kalys_icon(string $name): string
 /****
  * fonction pour la pagination
  */
-function kalys_pagination(): string
+function kalys_pagination(): void
 {
-   return '<div class="pagination">' .
+   echo '<div class="pagination">' .
       paginate_links([
          'prev_text' => kalys_icon('arrow'),
          'next_text' => kalys_icon('arrow')
       ]);
+      echo '</div';
 }
 function kalys_paginate_comments(): void {
-   echo '<div class="paginatin">';
+   echo '<div class="pagination">';
    paginate_comments_links([
       'prev_text' => kalys_icon('arrow'),
       'next_text' => kalys_icon('arrow')]);

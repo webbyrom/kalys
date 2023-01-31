@@ -9,7 +9,7 @@
                         <?php else : ?>
                             <img width="100%" height="250" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8c/CJCwAICQLXkCArnAAAAABJRU5ErkJggg=="> <?php endif ?>
 
-                        <div class="card-body">
+                        <div class="card-body card-body-manucure">
                             <a href="<?php the_permalink() ?>" class="news-title"><?php the_title() ?></a>
                             <div class="news-date"><?= sprintf(__('Published on %s at %s', 'kalys'), get_the_date(), get_the_time()) ?></div>
                             <div class="news-header">

@@ -1,5 +1,5 @@
 <?php
-
+defined('ABSPATH') or die('');
 /*********
  * Plugin Name: Kalys Nails & Beauty
  * Description: Gestion des posts type
