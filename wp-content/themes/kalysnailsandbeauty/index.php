@@ -14,20 +14,16 @@
         <?php endif ?>
     </h1>
     <div class="space-gradient"></div>
-    <div class="container news-list g-4">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/post'); ?>
-            <?php endwhile; ?>
-            <?= kalys_pagination() ?>
-        <?php else : ?>
-            <h3 class="no-news"><?= __('Pas de News', 'kalys') ?></h3>
-        <?php endif; ?>
-        <?php the_content() ?>
-    </div>
-    <aside class="news-sidebar">
-        <?php dynamic_sidebar('blog') ?>
-    </aside>
+
+    <main class="kalys-news container">
+        <div class="container news-list g-4">
+            <?php the_content() ?>
+        </div>
+        <aside class="news-sidebar">
+            <?php dynamic_sidebar('blog') ?>
+        </aside>
 </div>
+</main>
+
 
 <?php get_footer(); ?>

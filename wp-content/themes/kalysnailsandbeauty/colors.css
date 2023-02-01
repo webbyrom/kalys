@@ -1,30 +1,3 @@
 /**********
 file vars  css
-*****/
-@font-face {
-  font-family: "Alex Brush";
-  src: url("assets/font/AlexBrush-Regular.eot") format("eot");
-  src: url("assets/font/AlexBrush-Regular.svg") format("svg");
-  src: url("assets/font/AlexBrush-Regular.ttf") format("ttf");
-  src: url("assets/font/AlexBrush-Regular.woff") format("woff");
-  src: url("assets/font/AlexBrush-Regular.woff2") format("woff2");
-  font-size: normal;
-}
-@font-face {
-  font-family: "Charm-bold";
-  src: url("assets/font/Charm-Bold.eot") format("eot");
-  src: url("assets/font/Charm-Bold.svg") format("svg");
-  src: url("assets/font/Charm-Bold.ttf") format("ttf");
-  src: url("assets/font/Charm-Bold.woff") format("woff");
-  src: url("assets/font/Charm-Bold.woff2") format("woff2");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "Charm";
-  src: url("assets/font/Charm-Regular.eot") format("eot");
-  src: url("assets/font/Charm-Regular.svg") format("svg");
-  src: url("assets/font/Charm-Regular.ttf") format("ttf");
-  src: url("assets/font/Charm-Regular.woff") format("woff");
-  src: url("assets/font/Charm-Regular.woff2") format("woff2");
-  font-size: normal;
-}/*# sourceMappingURL=colors.css.map */
+*****//*# sourceMappingURL=colors.css.map */

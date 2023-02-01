@@ -19,23 +19,58 @@ file vars  css
 *****/
 @font-face {
   font-family: "Alex Brush";
-  src: url("assets/font/AlexBrush-Regular.eot") format("eot");
-  src: url("assets/font/AlexBrush-Regular.svg") format("svg"), url("assets/font/AlexBrush-Regular.ttf") format("ttf"), url("assets/font/AlexBrush-Regular.woff") format("woff"), url("assets/font/AlexBrush-Regular.woff2") format("woff2");
-  font-size: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Charm-bold";
-  src: url("assets/font/Charm-Bold.eot") format("eot");
-  src: url("assets/font/Charm-Bold.svg") format("svg"), url("assets/font/Charm-Bold.ttf") format("ttf"), url("assets/font/Charm-Bold.woff") format("woff"), url("assets/font/Charm-Bold.woff2") format("woff2");
-  font-weight: bold;
+  src: url("assets/font/AlexBrush-Regular.eot");
+  src: url("assets/font/AlexBrush-Regular.eot?#iefix") format("embedded-opentype"), url("assets/font/AlexBrush-Regular.svg#AlexBrush-Regular") format("svg"), url("assets/font/AlexBrush-Regular.ttf") format("truetype"), url("assets/font/AlexBrush-Regular.woff") format("woff"), url("assets/font/AlexBrush-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Charm";
-  src: url("assets/font/Charm-Regular.eot") format("eot");
-  src: url("assets/font/Charm-Regular.svg") format("svg"), url("assets/font/Charm-Regular.ttf") format("ttf"), url("assets/font/Charm-Regular.woff") format("woff"), url("assets/font/Charm-Regular.woff2") format("woff2");
-  font-size: normal;
+  src: url("assets/font/Charm-Regular.eot");
+  src: url("assets/font/Charm-Regular.eot?#iefix") format("embedded-opentype"), url("assets/font/Charm-Regular.svg#Charm-Regular") format("svg"), url("assets/font/Charm-Regular.ttf") format("truetype"), url("assets/font/Charm-Regular.woff") format("woff"), url("assets/font/Charm-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Charm-Bold";
+  src: url("assets/font/Charm-Bold.eot");
+  src: url("assets/font/Charm-Bold.eot?#iefix") format("embedded-opentype"), url("assets/font/Charm-Bold.svg#Charm-Bold") format("svg"), url("assets/font/Charm-Bold.ttf") format("truetype"), url("assets/font/Charm-Bold.woff") format("woff"), url("assets/font/Charm-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tillana";
+  src: url("assets/font/Tillana-Regular.eot");
+  src: url("assets/font/Tillana-Regular.eot?#iefix") format("embedded-opentype"), url("assets/font/Tillana-Regular.svg#Tillana-Regular") format("svg"), url("assets/font/Tillana-Regular.ttf") format("truetype"), url("assets/font/Tillana-Regular.woff") format("woff"), url("assets/font/Tillana-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tillana-Medium";
+  src: url("assets/font/Tillana-medium.eot");
+  src: url("assets/font/Tillana-medium.eot?#iefix") format("embedded-opentype"), url("assets/font/Tillana-medium.svg#Tillana-medium") format("svg"), url("assets/font/Tillana-medium.ttf") format("truetype"), url("assets/font/Tillana-medium.woff") format("woff"), url("assets/font/Tillana-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tillana-Bold";
+  src: url("assets/font/Tillana-Bold.eot");
+  src: url("assets/font/Tillana-Bold.eot?#iefix") format("embedded-opentype"), url("assets/font/Tillana-Bold.svg#Tillana-Bold") format("svg"), url("assets/font/Tillana-Bold.ttf") format("truetype"), url("assets/font/Tillana-Bold.woff") format("woff"), url("assets/font/Tillana-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tillana-SemiBold";
+  src: url("assets/font/Tillana-SemiBold.eot");
+  src: url("assets/font/Tillana-SemiBold.eot?#iefix") format("embedded-opentype"), url("assets/font/Tillana-SemiBold.svg#Tillana-SemiBold") format("svg"), url("assets/font/Tillana-SemiBold.ttf") format("truetype"), url("assets/font/Tillana-SemiBold.woff") format("woff"), url("assets/font/Tillana-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Tillana-ExtraBold";
+  src: url("assets/font/Tillana-ExtraBold.eot");
+  src: url("assets/font/Tillana-ExtraBold.eot?#iefix") format("embedded-opentype"), url("assets/font/Tillana-ExtraBold.svg#Tillana-ExtraBold") format("svg"), url("assets/font/illana-ExtraBold.ttf") format("truetype"), url("assets/font/Tillana-ExtraBold.woff") format("woff"), url("assets/font/Tillana-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
 }
 *,
@@ -86,7 +121,7 @@ nav {
 }
 
 .blog {
-  font-family: "Charm";
+  font-family: "Tillana-Medium";
 }
 
 h1 {
@@ -124,8 +159,8 @@ header .kalys_nav_menu,
 nav .kalys_nav_menu {
   position: relative;
   display: flex;
-  font-family: "Charm" !important;
-  font-size: x-large;
+  font-family: "Alex Brush" !important;
+  font-size: 2rem;
   text-transform: capitalize;
   transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
 }
@@ -150,8 +185,8 @@ nav .kalys_nav_menu ul.kalys_primary_nav {
   display: inline-flex;
   justify-content: center;
   height: auto;
-  /*width: 100vw; remplacder par margin auto*/
-  margin: auto;
+  width: 100vw;
+  top: -51%;
 }
 header .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4),
 nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
@@ -169,6 +204,7 @@ nav .kalys_nav_menu ul.kalys_primary_nav li > a:hover {
 header .kalys_nav_menu ul.kalys_primary_nav .sub-menu,
 nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu {
   position: absolute;
+  font-family: "Charm-Bold";
   visibility: hidden;
   width: 135px;
   background-color: #ffffff;
@@ -239,7 +275,7 @@ nav button {
   width: 120px;
   height: 30px;
   opacity: 0.7;
-  right: 20%;
+  right: 10%;
   top: 40%;
   border: 1px solid grey;
   border-radius: 5px;
@@ -281,7 +317,7 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
 /****** homepage*/
 .home main {
   background-color: #d7eadf !important;
-  font-family: "Charm";
+  font-family: "Tillana";
   text-align: center;
   line-height: 1.2rem;
   /*********
@@ -290,7 +326,7 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
    ***************/
 }
 .home main .kalys-col-full {
-  background-color: white;
+  background-color: #ffffff;
   box-sizing: border-box;
   box-shadow: 10px 5px 10px gray;
   border-radius: 10px;
@@ -298,7 +334,7 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
 .home main .bookly-search-form,
 .home main .bg-white,
 .home main .svelte-10vuyub {
-  font-family: "Charm";
+  font-family: "Tillana-SemiBold";
   flex-direction: column;
 }
 .home main .bookly-bootstrap .justify-content-start {
@@ -318,7 +354,7 @@ footer
 */
 .page-template-default .kalys-footer, .page .kalys-footer, .blog .kalys-footer, .single-post .kalys-footer {
   display: flex;
-  font-family: "Charm-bold" !important;
+  font-family: "Charm-Bold" !important;
   flex-direction: row;
   justify-content: space-evenly;
   border-top: 1px solid #fdfdfd;
@@ -345,10 +381,10 @@ footer
 .page-template-default .icon, .page .icon, .blog .icon, .single-post .icon {
   width: 25px;
   height: 25px;
-  color: rgb(131, 130, 130);
+  color: #5b5b5b;
 }
 .page-template-default .icon:hover, .page .icon:hover, .blog .icon:hover, .single-post .icon:hover {
-  color: #050505;
+  color: #000000;
 }
 .page-template-default .widget_archive,
 .page-template-default h4,
@@ -422,7 +458,7 @@ page actualités/blog
 
 *********/
 .blog {
-  font-family: "Charm" !important;
+  font-family: "Tillana-Medium" !important;
 }
 .blog h1.title-news {
   font-size: 5em;
@@ -439,7 +475,7 @@ page actualités/blog
   padding-left: 40px;
 }
 .blog article.home-news {
-  font-family: "Charm" !important;
+  font-family: "Tillana-Medium" !important;
 }
 .blog .home-news,
 .blog .card,
@@ -488,7 +524,7 @@ page actualités/blog
 page manucure
 ****************/
 .page-template-single-soin-mains {
-  font-family: "Charm" !important;
+  font-family: "Tillana-Medium" !important;
 }
 
 /*******
@@ -496,6 +532,9 @@ page épilation
 ******/
 .page-template-single-soin-corps {
   background-color: #cdb5d7;
+  /*************** 
+  Page template contact 
+  ***************/
 }
 .page-template-single-soin-corps .kalys-epilation-bg {
   background-color: #ffffff;
@@ -504,4 +543,11 @@ page épilation
 }
 .page-template-single-soin-corps .elementor-widget-wpr-pricing-table .wpr-pricing-table-price {
   background-color: #dd8fec;
+}
+
+.page-template-contact .kalys-contact-main {
+  font-family: "Tillana-SemiBold";
+}
+.page-template-contact .wpcf7.js {
+  font-family: "Tillana-SemiBold" !important;
 }/*# sourceMappingURL=style.css.map */

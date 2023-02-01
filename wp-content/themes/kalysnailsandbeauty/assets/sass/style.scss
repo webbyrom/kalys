@@ -14,7 +14,8 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import "colors.scss";
+@import'colors.scss' ;
+@import'font.scss';
 
 *,
 *::before,
@@ -63,7 +64,7 @@ nav {
     text-align: center;
 }
 .blog {
-    font-family: $font-body;
+    font-family: $tillan-medium;
 }
 h1 {
     font-size: 4em !important;
@@ -74,8 +75,8 @@ h1,
 h2,
 h3,
 h4 {
-    color: $title-color !important;
-    font-family: $font-title !important;
+    color: $title-color!important;
+    font-family: $font-title!important;
     text-transform: capitalize;
 }
 h2 {
@@ -91,8 +92,8 @@ nav {
     .kalys_nav_menu {
         position: relative;
         display: flex;
-        font-family: "Charm" !important;
-        font-size: x-large;
+        font-family:$font-title!important;
+        font-size: 2rem;
         text-transform: capitalize;
         transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
         .nav_logo {
@@ -113,8 +114,9 @@ nav {
             display: inline-flex;
             justify-content: center;
             height: auto;
-            /*width: 100vw; remplacder par margin auto*/
-            margin: auto;
+            width: 100vw; 
+            top: -51%;
+            //margin: auto;
             li:nth-child(-n + 4) {
                 margin-right: 30px;
             }
@@ -128,6 +130,7 @@ nav {
             }
             .sub-menu {
                 position: absolute;
+                font-family: $font-body-bold;
                 visibility: hidden;
                 width: 135px;
                 background-color: #ffffff;
@@ -201,7 +204,7 @@ nav {
         width: 120px;
         height: 30px;
         opacity: 0.7;
-        right: 20%;
+        right: 10%;
         top: 40%;
         border: 1px solid grey;
         border-radius: 5px;
@@ -238,12 +241,12 @@ nav {
 /****** homepage*/
 .home {
     main {
-        background-color: #d7eadf !important;
-        font-family: "Charm";
+        background-color: $background-boxed-home!important;
+        font-family: $font-tillana;
         text-align: center;
         line-height: 1.2rem;
         .kalys-col-full {
-            background-color: white;
+            background-color: $color-bg-epilation;
             box-sizing: border-box;
             box-shadow: 10px 5px 10px gray;
             border-radius: 10px;
@@ -256,7 +259,7 @@ nav {
         .bookly-search-form,
         .bg-white,
         .svelte-10vuyub {
-            font-family: "Charm";
+            font-family: $tillan-Sb;
             flex-direction: column;
         }
         .bookly-bootstrap .justify-content-start {
@@ -268,7 +271,7 @@ nav {
             font-size: 1.5rem !important;
         }
         .bookly-bootstrap .btn-outline-secondary:hover {
-            background-color: #ce8aca;
+            background-color: $bgbooklyHomeKalys;
         }
     }
 }
@@ -282,8 +285,8 @@ footer
         font-family: $font-body-bold!important;
         flex-direction: row;
         justify-content: space-evenly;
-        border-top: 1px solid #fdfdfd;
-        background-color: rgb(250, 224, 252) !important;
+        border-top: 1px solid $borderFooter;
+        background-color: $bgFooter!important;
         padding-top: 20px;
         //margin-top: 50px;
         font-size: 18px;
@@ -309,11 +312,11 @@ footer
     .icon {
         width: 25px;
         height: 25px;
-        color: rgb(131, 130, 130);
+        color: $font-body-color;
     }
     
     .icon:hover {
-        color: #050505;
+        color: $link-hover;
     }
     
     .widget_archive,
@@ -380,7 +383,7 @@ div.zoom-img-card-hover {
     .card-body {
 
         overflow: hidden;
-        padding: 10px 10px 10px 20px !important;
+        padding: 10px 10px 10px 20px!important;
         background-color:$color-epilation-bg;
     }
 }
@@ -390,11 +393,11 @@ page actualités/blog
 
 *********/
 .blog {
-    font-family: $font-body !important;
+    font-family:$tillan-medium!important;
     h1.title-news {
         font-size: 5em;
         text-align: center;
-        color: #f0b5b5;
+        color: $title-color;
         font-family: $font-title;
         font-style: italic;
         font-weight: 500;
@@ -407,7 +410,7 @@ page actualités/blog
         padding-left: 40px;
     }
     article.home-news {
-        font-family: $font-body !important;
+        font-family: $tillan-medium!important;
     }
     .home-news,
     .card,
@@ -460,7 +463,7 @@ page actualités/blog
 page manucure
 ****************/
 .page-template-single-soin-mains {
-    font-family: $font-body !important;
+    font-family: $tillan-medium!important;
 }
 /*******
 page épilation
@@ -473,8 +476,19 @@ page épilation
          box-shadow:5px 5px 10px $color-shadow;
      }
      .elementor-widget-wpr-pricing-table .wpr-pricing-table-price{
-        background-color: #dd8fec;
+        background-color: $bg-pricingT;
      }
-     
+/*************** 
+Page template contact 
+***************/      
 
+}
+.page-template-contact {
+    .kalys-contact-main{
+        font-family:$tillan-Sb;
+    }
+    .wpcf7.js {
+        font-family:$tillan-Sb!important;
+    }
+    
 }

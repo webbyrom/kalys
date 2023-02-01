@@ -1,40 +1,13 @@
 /**********
 file vars  css
 *****/
-@font-face {
-    font-family: "Alex Brush";
-    src: url("assets/font/AlexBrush-Regular.eot") format("eot");
-    src: url("assets/font/AlexBrush-Regular.svg") format("svg"), url("assets/font/AlexBrush-Regular.ttf") format("ttf"),
-        url("assets/font/AlexBrush-Regular.woff") format("woff"),
-        url("assets/font/AlexBrush-Regular.woff2") format("woff2");
-    font-size: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: "Charm-bold";
-    src: url("assets/font/Charm-Bold.eot") format("eot");
-    src: url("assets/font/Charm-Bold.svg") format("svg"), url("assets/font/Charm-Bold.ttf") format("ttf"),
-        url("assets/font/Charm-Bold.woff") format("woff"), url("assets/font/Charm-Bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Charm";
-    src: url("assets/font/Charm-Regular.eot") format("eot");
-    src: url("assets/font/Charm-Regular.svg") format("svg"), url("assets/font/Charm-Regular.ttf") format("ttf"),
-        url("assets/font/Charm-Regular.woff") format("woff"), url("assets/font/Charm-Regular.woff2") format("woff2");
-    font-size: normal;
-    font-style: normal;
-}
-
-// color vars
+// color vars//
 $title-color: #f0b5b5;
 $background-boxed-home: #d7eadf;
-$font-body-color: #5b5b5b;
+$font-body-color: #5b5b5b;// icon color too
 $font-nav-active: #b819d5d6;
-$link-hover: #000000;
+$link-hover: #000000;// icon hover too
 $color-shadow: #ffffff;
 $color-border: #c334f4; //color link nav active too
 $color-logo-shadow: #000000;
@@ -42,9 +15,18 @@ $color-epilation-bg: #cdb5d7;
 $color-bg-epilation: #ffffff;
 $link-nav-hover: #99ccff;
 $bg-sidebar: #ffe6e6;
+$bg-pricingT:#dd8fec;
+$bgbooklyHomeKalys:#ce8aca;
+$borderFooter:#fdfdfd;
+$bgFooter:rgb(250 224 252);
 
 // Font vars//
 $font-title: "Alex Brush";
 $font-title2: "Charm";
 $font-body: "Charm";
-$font-body-bold: "Charm-bold";
+$font-body-bold: "Charm-Bold";
+$font-tillana: "Tillana";
+$tillan-Sb:"Tillana-SemiBold";
+$tillan-Bold: "Tillana-Bold";
+$tillan-medium: "Tillana-Medium";
+$tillan-ExtraB: "Tillana-Extrabold";
