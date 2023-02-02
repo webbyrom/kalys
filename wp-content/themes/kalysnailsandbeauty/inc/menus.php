@@ -30,7 +30,10 @@ if (! function_exists('kalys_primary_nav')) {
         wp_nav_menu([
             'theme_location'    => 'primary',
             'sort_column'   =>  'menu_order',
-            'container'     =>  false,
+            'container'     =>  'div',
+            'container_class' => 'collapse kalys-collapse',
+            'container_id'  =>  'kalys_collapse',
+            'container_aria_label' => 'kalys_m_active',
             'menu_class'    =>  'kalys_primary_nav nav_menu',
             'menu_id'       =>  'kalys_primary_nav nav_menu',
             'echo'          => true,

@@ -96,6 +96,13 @@ nav {
         font-size: 2rem;
         text-transform: capitalize;
         transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
+        .collapse {
+            position: relative;
+            display: inline-flex;
+            margin: auto;
+            width: auto;
+            right: 10%;
+        }
         .nav_logo {
             position: relative;
             top: 10%;
@@ -114,9 +121,9 @@ nav {
             display: inline-flex;
             justify-content: center;
             height: auto;
-            width: 100vw; 
-            top: -51%;
-            //margin: auto;
+           // width: 100vw; 
+          //  top: -51%;
+            margin: auto;
             li:nth-child(-n + 4) {
                 margin-right: 30px;
             }
@@ -279,7 +286,7 @@ nav {
 /***********
 footer
 */
-.page-template-default, .page, .blog, .single-post{
+.page-template-default, .page, .blog, .single-post, .archive, .single{
     .kalys-footer {
         display: flex;
         font-family: $font-body-bold!important;
@@ -492,3 +499,5 @@ Page template contact
     }
     
 }
+
+

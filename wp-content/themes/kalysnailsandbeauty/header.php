@@ -14,7 +14,7 @@
 
 <body <?php body_class(); ?>>
   <header id="kalys_header" class="kalys_header">
-    <nav id="kalys_nav_menu" class="kalys_nav_menu nav" style="background-color: <?= get_theme_mod('header_background') ?>">
+    <nav id="kalys_nav_menu" class="kalys_nav_menu nav container-fluid" style="background-color: <?= get_theme_mod('header_background') ?>">
       <a href="<?= home_url('/'); ?>" class="nav_logo" title="<?= __('Homepage', 'kalys') ?>">
         <img src="<?= get_theme_mod('logo') ?>" alt="">
       </a>
