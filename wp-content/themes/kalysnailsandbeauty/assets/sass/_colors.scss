@@ -5,9 +5,9 @@ file vars  css
 // color vars//
 $title-color: #f0b5b5;
 $background-boxed-home: #d7eadf;
-$font-body-color: #5b5b5b;// icon color too
+$font-body-color: #5b5b5b; // icon color too
 $font-nav-active: #b819d5d6;
-$link-hover: #000000;// icon hover too
+$link-hover: #000000; // icon hover too
 $color-shadow: #ffffff;
 $color-border: #c334f4; //color link nav active too
 $color-logo-shadow: #000000;
@@ -15,10 +15,10 @@ $color-epilation-bg: #cdb5d7;
 $color-bg-epilation: #ffffff;
 $link-nav-hover: #99ccff;
 $bg-sidebar: #ffe6e6;
-$bg-pricingT:#dd8fec;
-$bgbooklyHomeKalys:#ce8aca;
-$borderFooter:#fdfdfd;
-$bgFooter:rgb(250 224 252);
+$bg-pricingT: #dd8fec;
+$bgbooklyHomeKalys: #ce8aca;
+$borderFooter: #fdfdfd;
+$bgFooter: rgb(250 224 252);
 
 // Font vars//
 $font-title: "Alex Brush";
@@ -26,7 +26,42 @@ $font-title2: "Charm";
 $font-body: "Charm";
 $font-body-bold: "Charm-Bold";
 $font-tillana: "Tillana";
-$tillan-Sb:"Tillana-SemiBold";
+$tillan-Sb: "Tillana-SemiBold";
 $tillan-Bold: "Tillana-Bold";
 $tillan-medium: "Tillana-Medium";
 $tillan-ExtraB: "Tillana-Extrabold";
+
+// responsive
+
+// phone
+$phone: 576px;
+
+// tablet portrait
+$tablet-P: 768px;
+
+//tablet
+$tablet: 992px;
+
+// desktop
+$desktop: 1200px;
+
+@mixin phone {
+    @media screen and (max-width: #{$phone}) {
+        @content;
+    }
+};
+@mixin tablet-P {
+    @media screen and (max-width: #{$tablet-P}) {
+        @content;
+    }
+};
+@mixin tablet {
+    @media screen and (max-width: #{$tablet}) {
+        @content;
+    }
+};
+@mixin desktop {
+    @media screen and (max-width: #{$desktop}) {
+        @content;
+    }
+};

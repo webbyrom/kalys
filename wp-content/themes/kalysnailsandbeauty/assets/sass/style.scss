@@ -14,8 +14,8 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import'colors.scss' ;
-@import'font.scss';
+@import "_colors.scss";
+@import "_font.scss";
 
 *,
 *::before,
@@ -63,9 +63,7 @@ nav {
     list-style: none;
     text-align: center;
 }
-.blog {
-    font-family: $tillan-medium;
-}
+
 h1 {
     font-size: 4em !important;
     font-family: inherit;
@@ -75,8 +73,8 @@ h1,
 h2,
 h3,
 h4 {
-    color: $title-color!important;
-    font-family: $font-title!important;
+    color: $title-color !important;
+    font-family: $font-title !important;
     text-transform: capitalize;
 }
 h2 {
@@ -89,31 +87,61 @@ nav {
     position: relative;
     /* width: 100vw;*/
     height: 125px;
+    //@include phone {
+    //   display: block;
+    //}
     .kalys_nav_menu {
         position: relative;
         display: flex;
-        font-family:$font-title!important;
+        font-family: $font-title !important;
         font-size: 2rem;
         text-transform: capitalize;
         transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
-        .collapse {
+        @include phone {
+            display: block;
+        }
+        .kalys-collapse {
             position: relative;
             display: inline-flex;
             margin: auto;
             width: auto;
             right: 10%;
+            @include phone {
+                display: block;
+                font-size: 1rem;
+                right: 0;
+                margin: 10px 0 0 0;
+                right: 0;
+                float: left;
+                z-index: 12;
+            }
+            .kalys_primary_nav {
+                @include phone {
+                    margin-right: 10px;
+                    display: block;
+                }
+            }
         }
         .nav_logo {
             position: relative;
             top: 10%;
-           /* width: 135px;*/
+            /* width: 135px;*/
             height: auto;
             left: 2%;
+            @include phone {
+                top: 0;
+                height: 75px;
+                left: 0;
+            }
             img {
                 padding: 10px;
                 width: 200px;
                 position: relative;
                 transition: box-shadow 0.8s ease-in-out;
+                @include phone {
+                    width: 120px;
+                    height: 75px;
+                }
             }
         }
         ul.kalys_primary_nav {
@@ -121,11 +149,19 @@ nav {
             display: inline-flex;
             justify-content: center;
             height: auto;
-           // width: 100vw; 
-          //  top: -51%;
+            // width: 100vw;
+            //  top: -51%;
             margin: auto;
+            @include phone {
+                margin-right: 10px;
+                display: block;
+            }
             li:nth-child(-n + 4) {
                 margin-right: 30px;
+                @include phone {
+                    margin-right: 10px;
+                    display: block;
+                }
             }
 
             li > a {
@@ -216,6 +252,9 @@ nav {
         border: 1px solid grey;
         border-radius: 5px;
         transition: color 0.8s, border 1s, background-color 0.8s, box-shadow 0.8s;
+        @include phone {
+            width: 80px;
+        }
         a {
             font-size: large;
             display: flex;
@@ -238,6 +277,35 @@ nav {
         color: $color-border;
     }
 }
+/*********
+ navbar responsive
+
+****************/
+div.kalys-collapse {
+     @include phone {
+        background-color: $title-color;
+        border-radius: 10px;
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    &::before {
+        content: ""; // mettre l'icone du burger
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: red;
+        display: none;
+        @include phone {
+            display: block;
+            position: absolute;
+            left: 10px;
+            //right: 0;
+            //top: 0;
+        }
+    }
+}
+
 .space-gradient {
     background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
     height: 5px;
@@ -248,7 +316,7 @@ nav {
 /****** homepage*/
 .home {
     main {
-        background-color: $background-boxed-home!important;
+        background-color: $background-boxed-home !important;
         font-family: $font-tillana;
         text-align: center;
         line-height: 1.2rem;
@@ -258,8 +326,14 @@ nav {
             box-shadow: 10px 5px 10px gray;
             border-radius: 10px;
         }
-        
-/*********
+        .kalys-home-img {
+            img:hover {
+                transition: box-shadow 0.8s ease-in-out;
+                box-shadow: 6px 6px 30px black;
+            }
+        }
+
+        /*********
      layout calendar home-page
 
  ***************/
@@ -272,6 +346,9 @@ nav {
         .bookly-bootstrap .justify-content-start {
             display: flex;
             justify-content: center !important;
+            @include phone {
+                display: block;
+            }
         }
         .bookly-bootstrap .btn-outline-secondary {
             font-weight: 900;
@@ -286,20 +363,25 @@ nav {
 /***********
 footer
 */
-.page-template-default, .page, .blog, .single-post, .archive, .single{
+.page-template-default,
+.page,
+.blog,
+.single-post,
+.archive,
+.single {
     .kalys-footer {
         display: flex;
-        font-family: $font-body-bold!important;
+        font-family: $font-body-bold !important;
         flex-direction: row;
         justify-content: space-evenly;
         border-top: 1px solid $borderFooter;
-        background-color: $bgFooter!important;
+        background-color: $bgFooter !important;
         padding-top: 20px;
         //margin-top: 50px;
         font-size: 18px;
         height: 250px;
     }
-    
+
     .footer_col {
         width: max-content;
         display: table-footer-group;
@@ -307,30 +389,30 @@ footer
             padding: 0;
         }
     }
-    
+
     .footer-title {
         margin-bottom: 16px;
     }
-    
+
     .btn.btn-outline-secondary {
         margin-top: 5px;
     }
-    
+
     .icon {
         width: 25px;
         height: 25px;
         color: $font-body-color;
     }
-    
+
     .icon:hover {
         color: $link-hover;
     }
-    
+
     .widget_archive,
     h4,
     ul {
         list-style-type: none;
-    
+
         /* font-size: 0.8em;*/
         a {
             /* font-size: 0.8em;*/
@@ -338,7 +420,6 @@ footer
             text-decoration: none;
         }
     }
-    
 }
 
 /***********
@@ -386,12 +467,10 @@ div.zoom-img-card-hover {
     }
 }
 .card-group {
-    
     .card-body {
-
         overflow: hidden;
-        padding: 10px 10px 10px 20px!important;
-        background-color:$color-epilation-bg;
+        padding: 10px 10px 10px 20px !important;
+        background-color: $color-epilation-bg;
     }
 }
 
@@ -400,7 +479,7 @@ page actualités/blog
 
 *********/
 .blog {
-    font-family:$tillan-medium!important;
+    font-family: $tillan-medium !important;
     h1.title-news {
         font-size: 5em;
         text-align: center;
@@ -415,9 +494,16 @@ page actualités/blog
         display: flex;
         position: relative;
         padding-left: 40px;
+        @include phone {
+            display: block;
+            padding: 10px;
+        }
     }
     article.home-news {
-        font-family: $tillan-medium!important;
+        font-family: $tillan-medium !important;
+        @include phone {
+            margin-bottom: 10px;
+        }
     }
     .home-news,
     .card,
@@ -438,39 +524,42 @@ page actualités/blog
         ul {
             width: 250px;
         }
+        @include phone {
+            display: none;
+        }
     }
     .pagination {
         display: inline-flex;
         margin: 20px 20px 20px 0;
         text-align: center;
-        .page-numbers{
+        .page-numbers {
             font-size: x-large;
         }
         .prev {
-           transform: rotate(0.5turn);
+            transform: rotate(0.5turn);
         }
         .next {
             position: relative;
-           // padding-left: 10px;
-           // transform: rotate(1turn);
+            // padding-left: 10px;
+            // transform: rotate(1turn);
             transform: translateY(-4px);
         }
-        .prev,.next{
+        .prev,
+        .next {
             width: 40px;
         }
-        .icon{
+        .icon {
             color: $color-border;
             font-size: 10px;
         }
     }
 }
 
-
 /*******************
 page manucure
 ****************/
 .page-template-single-soin-mains {
-    font-family: $tillan-medium!important;
+    font-family: $tillan-medium !important;
 }
 /*******
 page épilation
@@ -478,26 +567,22 @@ page épilation
 .page-template-single-soin-corps {
     background-color: $color-epilation-bg;
     .kalys-epilation-bg {
-         background-color:$color-bg-epilation;
-         border-radius: 10px;
-         box-shadow:5px 5px 10px $color-shadow;
-     }
-     .elementor-widget-wpr-pricing-table .wpr-pricing-table-price{
+        background-color: $color-bg-epilation;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px $color-shadow;
+    }
+    .elementor-widget-wpr-pricing-table .wpr-pricing-table-price {
         background-color: $bg-pricingT;
-     }
-/*************** 
+    }
+    /*************** 
 Page template contact 
-***************/      
-
+***************/
 }
 .page-template-contact {
-    .kalys-contact-main{
-        font-family:$tillan-Sb;
+    .kalys-contact-main {
+        font-family: $tillan-Sb;
     }
     .wpcf7.js {
-        font-family:$tillan-Sb!important;
+        font-family: $tillan-Sb !important;
     }
-    
 }
-
-
