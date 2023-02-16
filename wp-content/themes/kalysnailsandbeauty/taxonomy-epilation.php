@@ -2,6 +2,7 @@
 <div class=" container-fluid archive-soin-corps">
    
         <!------- revslider here----->
+        <?php add_revslider('post-type'); ?>
 </div>
 <div class="container-fluid archive-main">
     <h2 class="archive-soin-corps"><?php the_title() ?></h2>

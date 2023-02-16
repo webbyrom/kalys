@@ -10,7 +10,7 @@ add_action('after_setup_theme', function (){
         'footer'=> esc_html__('Menu footer', 'kalys')
     ]);
 });
-
+*/
 
 /****
  * Menu principal(ne pas oublier de le remplacer dans le header )

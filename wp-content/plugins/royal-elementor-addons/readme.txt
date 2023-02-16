@@ -1,14 +1,14 @@
 === Royal Elementor Addons and Templates ===
 Contributors: WP Royal, rubeushagrid13, cyberpinky, elementoraddonswpr, ggedenidze1982
 Tags: elementor, elementor templates, elementor addons, widgets for elementor, elementor widgets, elementor mega menu, elementor woocommerce builder, theme builder, header footer builder, elementor post grid, elementor product grid, addons for elementor
-Stable tag: 1.3.62
+Stable tag: 1.3.64
 Requires at least: 5.0
 Tested up to: 6.1.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Elementor Post, Portfolio, Woocommerce Grid builder Widgets. Slider, Carousel, Form, Testimonial, Gallery, Nav menu addons, Elementor widgets & Elementor templates. Just best elementor addons. Collection of unique addons for elementor. Elementor woocommerce builder & Elementor woocommerce templates. Elementor Mega Menu Builder.
+Elementor Post Grid, Portfolio, Woocommerce Grid builder Widgets. Slider, Carousel, Form, Testimonial, Gallery, Nav menu addons, Elementor widgets & Elementor templates. Just best elementor addons. Collection of unique addons for elementor. Elementor woocommerce builder & Elementor woocommerce templates. Elementor Mega Menu Builder.
 
 == Description ==
 
@@ -73,6 +73,9 @@ Comes with **75+ Elementor addons, 45+ Elementor Templates KIT (Growing Each Wee
 - [**Page List for Mega Menu**](https://royal-elementor-addons.com/elementor-mega-menu-widget/?ref=rea-wpo-pp-details-tab)
 - [**Data Table**](https://royal-elementor-addons.com/elementor-data-table-widget/?ref=rea-wpo-pp-details-tab)
 - [**Readeing Progress Bar**](https://royal-elementor-addons.com/elementor-reading-progress-bar-widget/?ref=rea-wpo-pp-details-tab)
+- [**Offcanvas Menu - sidebar menu**](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab)
+- [**Twitter Feed**](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab)
+- [**Instagram Feed**](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab)
 
 **Woocommerce Widgets:**
 
@@ -104,8 +107,8 @@ Comes with **75+ Elementor addons, 45+ Elementor Templates KIT (Growing Each Wee
 
 **Extensions and Other Features**
 
-- [**Theme Builder & Woocommerce Builder**](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab#headerfooterbuilder) - Header Footer Builder, Post & Product Archive builder, Single Post & Product builder, Single Page, Search, category, tags, 404, author, data page template builder.
-- [**Mega Menu Builder**](https://royal-elementor-addons.com/elementor-mega-menu-widget/?ref=rea-wpo-pp-details-tab#popupbuilder?ref=rea-wpo-pp-details-tab#popupbuilder) - Build any type of WordPress mega menu with Menu Badges and Icons, use any widgets in Mega menu content, supports Ajax loading of mega menu items for maximum page loading speed. Off-Canvas Mobile and Desktop Menus support. 
+- [**Elementor Theme Builder & Woocommerce Builder**](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab#headerfooterbuilder) - Header Footer Builder, Post & Product Archive builder, Single Post & Product builder, Single Page, Search, category, tags, 404, author, data page template builder.
+- [**Mega Menu Builder**](https://royal-elementor-addons.com/elementor-mega-menu-widget/?ref=rea-wpo-pp-details-tab#popupbuilder?ref=rea-wpo-pp-details-tab#popupbuilder) - Build any type of WordPress mega menu with Menu Badges and Icons, use any elementor widgets in Mega menu content, supports Ajax loading of mega menu items for maximum page loading speed. Off-Canvas Mobile and Desktop Menus support. 
 - [**Popup Builder**](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab#popupbuilder) - (Offer Sales Banners, Subscriptions Banners, GDPR Cookie Consent & Compliance Notice, Cookie Notice, Age Verification), 20+ Premade Popup Templates included in popup library
 - [**Parallax Scrolling**](https://royal-elementor-addons.com/elementor-parallax-background/?ref=rea-wpo-pp-details-tab) - Parallax effect extension
 - [**Parallax Multi-Layer Effect**](https://royal-elementor-addons.com/elementor-parallax-background/?ref=rea-wpo-pp-details-tab#multiparallax) -  extension
@@ -115,7 +118,7 @@ and other custom branding related settings)
 - Sticky Section (Can be used for creating Sticky Header / Menu)
 - Custom CSS - apply custom css to any section.
 
-**Wocommerce Builder Templates Kits**
+**Elementor Wocommerce Builder Templates Kits**
 
 - [**Electronic Store**](https://demosites.royal-elementor-addons.com/estore-v1/?ref=rea-wpo-pp-details-tab)
 - [**Woo Shop**](https://demosites.royal-elementor-addons.com/wooshop-v1/?ref=rea-wpo-pp-details-tab)
@@ -167,6 +170,8 @@ and other custom branding related settings)
 - [**Travel Agency**](https://demosites.royal-elementor-addons.com/travel-agency-v1/?ref=rea-wpo-pp-details-tab)
 - [**Architecture & Interior**](https://demosites.royal-elementor-addons.com/architecture-v2/?ref=rea-wpo-pp-details-tab)
 - [**Fytness & Gym**](https://demosites.royal-elementor-addons.com/fitness-gym-v1/?ref=rea-wpo-pp-details-tab)
+- [**Business Consulting**](https://demosites.royal-elementor-addons.com/business-consulting-v1/?ref=rea-wpo-pp-details-tab)
+- [**Car Repair**](https://demosites.royal-elementor-addons.com/car-repair-v1//?ref=rea-wpo-pp-details-tab)
 
 **How to Import Template Kit:**
 
@@ -315,6 +320,14 @@ If you already have posts, pages, or any other data in your WordPress none of th
 
 [Mega Menu Widget](https://royal-elementor-addons.com/elementor-mega-menu-widget/?ref=rea-wpo-pp-details-tab) - A free Mega Menu Widget. Use any elementor addons to display inside megamnu. We have developed a Page list widget, especially for megamenu which helps quickly display all pages in megamenu items. Also, Custom page badges can be set with megamenu page list widget. Our widget supports Horizontal and Vertical megamenu layouts. Some of the PRO features: Load Megamenu SubMenu Items with Ajax for maximum page speed scores, Add Icons and Badges to mega menu items, Set Submenu width to Automatically Fit to Section width where mega menu widget is placed, Display Mobile Menu sub-items as Mega Menu Item or WordPress Default Sub Item, Mobile Menu Off-Canvas Layout, Megamenu SubMenu Width option, Advanced Link Hover Effects: Slide, Grow, Drop, Mega menu SubMenu Entrance Advanced Effects, Mobile Menu Button Custom Text option. 
 
+== 36. Elementor Instagram Feed Widget ==
+
+[Instagram Feed Widget](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab) - The Instagram Feed Widget allows you to showcase your Instagram posts in various ways directly from your account. You have the flexibility to personalize the feed style, color, content, and more. The widget provides a range of styles to choose from, including: a photo-only feed, list style, photo list with hover, posts with a card layout, overlay feed, carousel layout, gallery masonry layout, and a feed with a profile link.
+
+== 37. Twitter Feed Widget ==
+
+[Twitter Feed Widget](https://royal-elementor-addons.com/?ref=rea-wpo-pp-details-tab) - Showcase images, profiles, and tweets seamlessly on your website with the Twitter Feed Widget. You have the ability to tailor the styles, layout, cover photo, header, dashboard, and more with the Twitter Feed Addon. The addon provides multiple styles to choose from, including cover photo style, masonry style, masonry style with multiple columns, grid style with a cover photo, carousel and slider style feed, and the ability to display a follow button.
+
 == Checkout other widgets on our demo page ==
 
 
@@ -375,8 +388,27 @@ memory_limit 256M or more
 post_max_size 64M
 
 == Changelog ==
+= Royal Elementor Addons v1.3.64 - 2023-02-10 =
+* FIXED: Minor Bugs.
+
+= Royal Elementor Addons v1.3.63 - 2023-02-09 =
+* ADDED: Instagram Feed widget.
+* ADDED: Twitter Feed widget.
+* ADDED: Offcanvas Menu widget (aka side menu).
+* ADDED: Lazy Loading for Elementor post grid widgets.
+* ADDED: Display Only Scheduled Posts option for Elementor post grid widget.
+* ADDED: Vertical Slider Option for Advanced Slider widget.
+* ADDED: Option to open grid items in new tab for Elementor post grid, woocommerce grid, and for magazine grid widgets.
+* FIXED: Elementor header footer was visible in coming soon and in maintenance mode.
+* FIXED: Custom field, Linkable filters and extra text-related issues for Post grid, woocommerce grid and magazine grid.
+* ADDED: Responsive Gutter controls for All grids.
+* FIXED: One page navigation custom icon issues.
+* ADDED: Business Consulting Elementor Templates Kit - [**Business Consulting**](https://demosites.royal-elementor-addons.com/business-consulting-v1/?ref=rea-wpo-pp-details-tab).
+* ADDED: Car Repair Elementor Templates Kit - [**Car Repair**](https://demosites.royal-elementor-addons.com/car-repair-v1//?ref=rea-wpo-pp-details-tab).
+
+
 = Royal Elementor Addons v1.3.62 - 2023-01-16 =
-* ADDED: Fytness & Gym Elementor Template Kit - [**Fytness & Gym**](https://demosites.royal-elementor-addons.com/fitness-gym-v1/?ref=rea-wpo-pp-details-tab).
+* ADDED: Fytness & Gym Elementor Templates Kit - [**Fytness & Gym**](https://demosites.royal-elementor-addons.com/fitness-gym-v1/?ref=rea-wpo-pp-details-tab).
 
 
 = Royal Elementor Addons v1.3.61 - 2023-01-12 =

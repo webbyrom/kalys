@@ -56,6 +56,23 @@ class Wpr_Advanced_Slider extends Widget_Base {
         // return 'https://royal-elementor-addons.com/contact/?ref=rea-plugin-panel-advanced-slider-help-btn';
     		return 'https://wordpress.org/support/plugin/royal-elementor-addons/';
     }
+		
+	public function add_control_slider_effect() {
+		$this->add_control(
+			'slider_effect',
+			[
+				'type' => Controls_Manager::SELECT,
+				'label' => esc_html__( 'Effect', 'wpr-addons' ),
+				'default' => 'slide',
+				'options' => [
+					'slide' => esc_html__( 'Slide', 'wpr-addons' ),
+					'sl_vl' => esc_html__( 'Sl Vertical (Pro)', 'wpr-addons' ),
+					'fade' => esc_html__( 'Fade', 'wpr-addons' ),
+				],
+				'separator' => 'before'
+			]
+		);
+	}
 
 	public function add_control_slider_nav_hover() {
 		$this->add_control(
@@ -196,6 +213,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 				'render_type' => 'template',
 				'frontend_available' => true,
 				'separator' => 'before',
+				'condition' => [
+					'slider_effect!' => 'slide_vertical'
+				]
 			]
 		);
 	}
@@ -212,6 +232,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 				'render_type' => 'template',
 				'frontend_available' => true,
 				'default' => 1,
+				'condition' => [
+					'slider_effect!' => 'slide_vertical'
+				]
 			]
 		);
 	}
@@ -785,6 +808,30 @@ class Wpr_Advanced_Slider extends Widget_Base {
 
 		$this->add_control_slides_to_scroll();
 
+		$this->add_control(
+			'slides_amount_hidden',
+			[
+				'type' => Controls_Manager::HIDDEN,
+				'prefix_class' => 'wpr-adv-slider-columns-',
+				'default' => 1,
+				'condition' => [
+					'slider_effect' => 'slide_vertical'
+				]
+			]
+		);
+
+		$this->add_control(
+			'slides_to_scroll_hidden',
+			[
+				'type' => Controls_Manager::HIDDEN,
+				'prefix_class' => 'wpr-adv-slides-to-scroll-',
+				'default' => 1,
+				'condition' => [
+					'slider_effect' => 'slide_vertical'
+				]
+			]
+		);
+
 		$this->add_responsive_control(
 			'slider_gutter',
 			[
@@ -1012,20 +1059,8 @@ class Wpr_Advanced_Slider extends Widget_Base {
 		$this->add_control_slider_autoplay_duration();
 
 		$this->add_control_slider_pause_on_hover();
-		
-		$this->add_control(
-			'slider_effect',
-			[
-				'type' => Controls_Manager::SELECT,
-				'label' => esc_html__( 'Effect', 'wpr-addons' ),
-				'default' => 'slide',
-				'options' => [
-					'slide' => esc_html__( 'Slide', 'wpr-addons' ),
-					'fade' => esc_html__( 'Fade', 'wpr-addons' ),
-				],
-				'separator' => 'before'
-			]
-		);
+
+		$this->add_control_slider_effect();
 
 		$this->add_control(
 			'slider_effect_duration',
@@ -1099,6 +1134,7 @@ class Wpr_Advanced_Slider extends Widget_Base {
 		// Section: Pro Features
 		Utilities::pro_features_list_section( $this, '', Controls_Manager::RAW_HTML, 'advanced-slider', [
 			'Add Unlimited Slides',
+			'Vertical Sliding',
 			'Elementor Templates Slider option',
 			'Scroll to Section Button',
 			'Ken Burn Effect',
@@ -2750,7 +2786,11 @@ class Wpr_Advanced_Slider extends Widget_Base {
 				// Slider Background Image
 				$slider_html .= '<div class="wpr-slider-item-bg '. esc_attr($ken_burn_class) .'" style="background-image: url('. esc_url($item_bg_image_url) .')"></div>';
 
-				$slider_amount = +$settings['slider_amount'];
+				if ( 'slide_vertical' === $settings['slider_effect'] ) {
+					$slider_amount = 1;
+				} else {
+					$slider_amount = +$settings['slider_amount'];
+				}
 
 				// Slider Overlay
 				$slider_overlay_html = '';
@@ -2907,6 +2947,10 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			$settings['slider_pause_on_hover'] = '';
 		}
 
+		if ( 'sl_vl' === $settings['slider_effect'] ) {
+			$settings['slider_effect'] = 'slide';
+		}
+
 		$slider_is_rtl = is_rtl();
 		$slider_direction = $slider_is_rtl ? 'rtl' : 'ltr';
 
@@ -2921,6 +2965,7 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			'pauseOnHover' => $settings['slider_pause_on_hover'],
 			'prevArrow' => '#wpr-slider-prev-'. $this->get_id(),
 			'nextArrow' => '#wpr-slider-next-'. $this->get_id(),
+			'vertical' => 'slide_vertical' === $settings['slider_effect'] ? true : false
 		];
 
 		$this->add_render_attribute( 'advanced-slider-attribute', [

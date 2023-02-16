@@ -17,6 +17,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /**********
 file vars  css
 *****/
+/******************* 
+icone
+***************/
+/*********** responsive****/
 @font-face {
   font-family: "Alex Brush";
   src: url("assets/font/AlexBrush-Regular.eot");
@@ -162,7 +166,7 @@ nav .kalys_nav_menu {
 }
 @media screen and (max-width: 576px) {
   header .kalys_nav_menu,
-nav .kalys_nav_menu {
+  nav .kalys_nav_menu {
     display: block;
   }
 }
@@ -176,7 +180,7 @@ nav .kalys_nav_menu .kalys-collapse {
 }
 @media screen and (max-width: 576px) {
   header .kalys_nav_menu .kalys-collapse,
-nav .kalys_nav_menu .kalys-collapse {
+  nav .kalys_nav_menu .kalys-collapse {
     display: block;
     font-size: 1rem;
     right: 0;
@@ -188,7 +192,7 @@ nav .kalys_nav_menu .kalys-collapse {
 }
 @media screen and (max-width: 576px) {
   header .kalys_nav_menu .kalys-collapse .kalys_primary_nav,
-nav .kalys_nav_menu .kalys-collapse .kalys_primary_nav {
+  nav .kalys_nav_menu .kalys-collapse .kalys_primary_nav {
     margin-right: 10px;
     display: block;
   }
@@ -203,7 +207,7 @@ nav .kalys_nav_menu .nav_logo {
 }
 @media screen and (max-width: 576px) {
   header .kalys_nav_menu .nav_logo,
-nav .kalys_nav_menu .nav_logo {
+  nav .kalys_nav_menu .nav_logo {
     top: 0;
     height: 75px;
     left: 0;
@@ -218,7 +222,7 @@ nav .kalys_nav_menu .nav_logo img {
 }
 @media screen and (max-width: 576px) {
   header .kalys_nav_menu .nav_logo img,
-nav .kalys_nav_menu .nav_logo img {
+  nav .kalys_nav_menu .nav_logo img {
     width: 120px;
     height: 75px;
   }
@@ -233,7 +237,7 @@ nav .kalys_nav_menu ul.kalys_primary_nav {
 }
 @media screen and (max-width: 576px) {
   header .kalys_nav_menu ul.kalys_primary_nav,
-nav .kalys_nav_menu ul.kalys_primary_nav {
+  nav .kalys_nav_menu ul.kalys_primary_nav {
     margin-right: 10px;
     display: block;
   }
@@ -244,7 +248,7 @@ nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
 }
 @media screen and (max-width: 576px) {
   header .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4),
-nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
+  nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
     margin-right: 10px;
     display: block;
   }
@@ -340,7 +344,7 @@ nav button {
 }
 @media screen and (max-width: 576px) {
   header button,
-nav button {
+  nav button {
     width: 80px;
   }
 }
@@ -474,7 +478,6 @@ footer
 .single-post .footer_col,
 .archive .footer_col,
 .single .footer_col {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   display: table-footer-group;
@@ -597,7 +600,7 @@ div.zoom-img-card-hover div.zoom-img-card img {
 div.zoom-img-card-hover:hover .zoom-img-card img {
   filter: contrast(150%);
   transform: scale(1.06);
-  /* padding-bottom: 10px;*/
+  padding-bottom: 10px;
 }
 
 .card-group .card-body {
