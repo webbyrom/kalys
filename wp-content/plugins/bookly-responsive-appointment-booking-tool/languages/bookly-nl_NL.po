@@ -8,8 +8,8 @@ msgstr ""
 "Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-14 12:55+0000\n"
-"PO-Revision-Date: 2022-12-14 15:41+0000\n"
+"POT-Creation-Date: 2023-02-08 13:47+0000\n"
+"PO-Revision-Date: 2023-02-08 13:47+0000\n"
 "Last-Translator: support@bookly.info\n"
 "Language-Team: Dutch\n"
 "X-Loco-Version: 2.3.1; wp-6.1"
@@ -90,6 +90,18 @@ msgstr "Lettertype"
 msgid "Choose the font for your invoice template"
 msgstr "Kies het lettertype voor uw factuur sjabloon"
 
+msgid "Invoice file name prefix"
+msgstr "Voorvoegsel factuur bestandsnaam"
+
+msgid ""
+"Set a prefix for the file name that will be used for your invoices. For "
+"example, if the file name prefix is \"myfile_\", your PDF file will be "
+"downloaded with the \"myfile_1.pdf\" name"
+msgstr ""
+"Stel een voorvoegsel in voor de bestandsnaam die zal worden gebruikt voor uw "
+"facturen. Als het voorvoegsel voor de bestandsnaam bijvoorbeeld \"myfile_\" "
+"is, wordt uw PDF-bestand gedownload met de naam \"myfile_1.pdf\"."
+
 msgid "Invoice template"
 msgstr "Factuur sjabloon"
 
@@ -165,9 +177,6 @@ msgstr "Kortingsbon"
 
 msgid "Group discount"
 msgstr "Groepskorting"
-
-msgid "Gift card discount"
-msgstr "Cadeaubon korting"
 
 msgid "Total"
 msgstr "Totaal"
@@ -3120,6 +3129,9 @@ msgstr "Maand"
 msgid "List"
 msgstr "Lijst"
 
+msgid "All day"
+msgstr "De hele dag"
+
 msgid "No appointments for selected period."
 msgstr "Geen afspraken in de geselecteerde periode."
 
@@ -3439,6 +3451,12 @@ msgstr "Afzender ID"
 
 msgid "Cost"
 msgstr "Kosten"
+
+msgid "Template"
+msgstr "Sjabloon"
+
+msgid "Language"
+msgstr "Taal"
 
 msgid "Flag"
 msgstr "Vlag"
@@ -4461,6 +4479,18 @@ msgstr "Geannuleerd"
 msgid "SMS has been sent successfully."
 msgstr "SMS is met succes verstuurd."
 
+msgid "WhatsApp Notifications"
+msgstr "WhatsApp-meldingen"
+
+msgid "Permanent access token"
+msgstr "Permanente toegangstoken"
+
+msgid "Phone number ID "
+msgstr "Telefoonnummer ID "
+
+msgid "WhatsApp Business Account ID"
+msgstr "WhatsApp zakelijke account-ID"
+
 msgid "Bookly Cloud Billing"
 msgstr "Bookly Cloud Facturatie"
 
@@ -4689,6 +4719,9 @@ msgstr "Volgende facturatiedatum"
 
 msgid "Deactivation date"
 msgstr "Deactiveringsdatum"
+
+msgid "Messages"
+msgstr "Berichten"
 
 msgid "Tasks"
 msgstr "Taken"
@@ -5252,6 +5285,9 @@ msgstr "Kaartinformatie met annuleren"
 msgid "Time zone of client"
 msgstr "Tijdzone van klant"
 
+msgid "Locale of client"
+msgstr "Locatie van de klant"
+
 msgid "URL of approve appointment link (to use inside <a> tag)"
 msgstr ""
 "URL van de link voor de goedkeuring van afspraak (te gebruiken binnen <a> "
@@ -5383,9 +5419,6 @@ msgstr "Spraakmeldingen"
 
 msgid "Make a test call"
 msgstr "Doe een testoproep"
-
-msgid "Language"
-msgstr "Taal"
 
 msgid "Select the language of your notifications"
 msgstr "Selecteer de taal van uw meldingen"
@@ -5908,6 +5941,9 @@ msgstr "Bevestig betaling"
 msgid "Complete payment"
 msgstr "Volledige betaling"
 
+msgid "Gift card discount"
+msgstr "Cadeaubon korting"
+
 msgid "Manual adjustment"
 msgstr "Handmatige aanpassing"
 
@@ -6022,6 +6058,33 @@ msgstr ""
 "U gaat een afspraak/afspraken verwijderen. Meldingen zullen worden verstuurd "
 "volgens uw instellingen."
 
+msgid "Header"
+msgstr "Koptekst"
+
+msgid "Variable"
+msgstr "Variabel"
+
+msgid "Message"
+msgstr "Bericht"
+
+msgid "New WhatsApp notification"
+msgstr "Nieuwe WhatsApp-melding"
+
+msgid "Edit WhatsApp notification"
+msgstr "WhatsApp-melding bewerken"
+
+msgid "In appeal"
+msgstr "In beroep"
+
+msgid "Pending deletion"
+msgstr "In afwachting van verwijdering"
+
+msgid "Paused"
+msgstr "Gepauzeerd"
+
+msgid "Limit exceeded"
+msgstr "Limiet overschreden"
+
 msgid "Delete customers"
 msgstr "Verwijder klanten"
 
@@ -6128,13 +6191,13 @@ msgid "Select mailing list"
 msgstr "Selecteer mailinglijst"
 
 msgid ""
-"You are going to delete item which is involved in upcoming appointments. All "
-"related appointments will be deleted. Please double check and edit "
-"appointments before this item deletion if needed."
+"You are going to delete an item that might be involved in existing "
+"appointments. All related appointments will be deleted. Please double-check "
+"and edit appointments before this item deletion if needed."
 msgstr ""
-"U gaat het item verwijderen dat betrokken is bij aankomende afspraken. Alle "
-"gerelateerde afspraken worden verwijderd. Controleer nogmaals en, indien "
-"nodig, wijzig afspraken voordat dit item wordt verwijderd."
+"U gaat een item verwijderen dat betrokken kan zijn bij bestaande afspraken. "
+"Alle gerelateerde afspraken worden verwijderd. Controleer en bewerk "
+"afspraken voordat u het item verwijdert."
 
 msgid "Edit appointments"
 msgstr "Wijzig afspraken"
@@ -6353,6 +6416,35 @@ msgstr "Geavanceerd service- en personeelsbeheer"
 
 msgid "Upgrade"
 msgstr "Upgrade"
+
+msgid "Migrate your Zoom JWT app to the new app type by June 1, 2023."
+msgstr "Migreer uw Zoom JWT app naar het nieuwe app type voor 1 juni 2023."
+
+msgid ""
+"Zoom JWT app type will be deprecated June 1, 2023. After this date, you will "
+"no longer be able to use your JWT apps."
+msgstr ""
+"Zoom JWT app type zal worden 1 juni 2023 afgeschaft. Na deze datum kunt u uw "
+"JWT-apps niet meer gebruiken."
+
+msgid ""
+"We recommend that you create an OAuth app to replace the functionality of a "
+"JWT app in your account."
+msgstr ""
+"Wij raden u aan een OAuth-app te maken om de functionaliteit van een JWT-app "
+"in uw account te vervangen."
+
+msgid ""
+"To learn more, please visit the <a href=\"https://marketplace.zoom."
+"us/docs/guides/build/jwt-app/jwt-faq/\" target=\"_blank\">official Zoom "
+"page</a> about this change"
+msgstr ""
+"Ga voor meer informatie naar de <a href=\"https://marketplace.zoom."
+"us/docs/guides/build/jwt-app/jwt-faq/\" target=\"_blank\">officiële Zoom-"
+"pagina</a> over deze wijziging."
+
+msgid "Go to Settings"
+msgstr "Ga naar Instellingen"
 
 #, php-format
 msgid ""
@@ -6924,6 +7016,12 @@ msgstr "Een aangepast blok voor het weergeven van pakket lijst"
 msgid "Your package has been created."
 msgstr "Uw pakket is aangemaakt."
 
+msgid "Show packages only"
+msgstr "Alleen pakketten tonen"
+
+msgid "Package info"
+msgstr "Pakket informatie"
+
 msgid "Creation Date"
 msgstr "Aanmaakdatum"
 
@@ -7210,12 +7308,17 @@ msgstr ""
 "herstellen. Voer de aankoopcode in het administratie paneel in."
 
 msgid ""
-"Please verify Bookly Pro license in the administrative panel. If you do not "
-"verify the license within {days}, access to your bookings will be disabled."
+"Please verify Bookly Pro license in the administrative panel on {site_url}."
 msgstr ""
-"Verifieer de Bookly licentie in het administratie paneel. Als u de licentie "
-"niet binnen {days} dagen verifieert, zal de toegang tot uw boekingen worden "
-"uitgeschakeld."
+"Controleer de licentie van Bookly Pro in het administratieve paneel op "
+"{site_url}."
+
+msgid ""
+"If you do not verify the license within {days}, access to your bookings will "
+"be disabled."
+msgstr ""
+"Als u de licentie niet binnen {days} verifieert, zal de toegang tot uw "
+"boekingen worden uitgeschakeld."
 
 msgid "Customer address"
 msgstr "Adres van de klant"
@@ -7277,27 +7380,23 @@ msgstr ""
 "licentie."
 
 msgid ""
-"Please contact your website administrator in order to verify the license for "
-"Bookly add-ons. If you do not verify the license within {days}, the "
-"respective add-ons will be disabled."
+"Please contact your website administrator of {site_url} in order to verify "
+"the license for Bookly add-ons."
 msgstr ""
-"Neem contact op met uw websitebeheerder om de licentie voor Bookly add-ons "
-"te verifiëren. Als u de licentie niet binnen {days} verifieert, zal de "
-"respectieve add-ons worden uitgeschakeld."
+"Neem contact op met uw websitebeheerder van {site_url} om de licentie voor "
+"Bookly add-ons te verifiëren."
+
+msgid ""
+"If you do not verify the license within {days}, the respective add-ons will "
+"be disabled."
+msgstr ""
+"Als u de licentie niet binnen {days} verifieert, worden de betreffende add-"
+"ons uitgeschakeld."
 
 msgid "Contact your admin to verify Bookly add-ons license; {days} remaining."
 msgstr ""
 "Neem contact op met admin om Bookly add-ons-licentie te verifiëren; {days} "
 "resterend."
-
-msgid ""
-"Please verify the license for Bookly add-ons in the administrative panel. If "
-"you do not verify the license within {days}, the respective add-ons will be "
-"disabled."
-msgstr ""
-"Gelieve de licentie voor Bookly add-ons in het administratieve panel te "
-"verifiëren. Als u niet de licentie binnen {days} verifieert, zal de "
-"respectieve add-ons worden uitgeschakeld."
 
 msgid "Please verify Bookly add-ons license; {days} remaining."
 msgstr "Verifieer Bookly add-ons-licentie; {days} resterend."
@@ -7311,6 +7410,9 @@ msgstr "Zoekformulier"
 msgid "Services form"
 msgstr "Services formulier"
 
+msgid "Staff form"
+msgstr "Personeelsformulier"
+
 msgid "A custom block for displaying cancellation confirmation"
 msgstr ""
 "Een aangepast blok voor het weergeven van de bevestiging van het annuleren"
@@ -7320,6 +7422,9 @@ msgstr "Een aangepast blok om het zoekformulier te tonen"
 
 msgid "A custom block for displaying services form"
 msgstr "Een aangepast blok voor het tonen van een services formulier"
+
+msgid "A custom block for displaying staff form"
+msgstr "Een aangepast blok voor de weergave van het personeelsformulier"
 
 msgid "no limit"
 msgstr "geen limiet"
@@ -8264,6 +8369,13 @@ msgstr ""
 "Met de catalogusweergave kunt u de diensten overzichtelijk organiseren en "
 "weergeven voor uw klanten."
 
+msgid ""
+"Catalog view allows you to organize and display the staff conveniently for "
+"your customers."
+msgstr ""
+"Met de catalogusweergave kunt u het personeel gemakkelijk ordenen en "
+"weergeven voor uw klanten."
+
 msgid "Step by step form"
 msgstr "Stap voor stap formulier"
 
@@ -8279,6 +8391,66 @@ msgid ""
 msgstr ""
 "Lichtgewicht formulier waarmee uw klanten hun afspraak kunnen annuleren en "
 "optioneel de reden van annulering kunnen opgeven."
+
+msgid "Placeholder"
+msgstr "Tijdelijke aanduiding"
+
+msgid "Empty option"
+msgstr "Lege optie"
+
+msgid "Width"
+msgstr "Breedte"
+
+msgid "Header height"
+msgstr "Hoogte koptekst"
+
+msgid "Form title"
+msgstr "Formulier titel"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Main color"
+msgstr "Hoofdkleur"
+
+msgid "Show 'Book more' button"
+msgstr "Toon 'Boek meer' knop"
+
+msgid "Show price"
+msgstr "Toon prijs"
+
+msgid "Show summary"
+msgstr "Toon samenvatting"
+
+msgid "Show QR Code"
+msgstr "QR-code tonen"
+
+msgid "Default value"
+msgstr "Standaardwaarde"
+
+msgid "Categories list"
+msgstr "Lijst van categorieën"
+
+msgid "Services list"
+msgstr "Lijst van services"
+
+msgid "Hide categories step"
+msgstr "Verberg categorieën stap"
+
+msgid "Hide services step"
+msgstr "Verberg services stap"
+
+msgid "Show cancellation reason"
+msgstr "Toon annuleringsreden"
+
+msgid "Staff list"
+msgstr "Personeelslijst"
+
+msgid "Hide staff step"
+msgstr "Verberg personeelsstap"
+
+msgid "Card content"
+msgstr "Kaartinhoud"
 
 msgid "Add new form"
 msgstr "Nieuw formulier toevoegen"
@@ -8329,50 +8501,8 @@ msgstr ""
 "eerder gekopieerde verkorte code. Het formulier wordt toegevoegd aan de "
 "pagina."
 
-msgid "Placeholder"
-msgstr "Tijdelijke aanduiding"
-
-msgid "Empty option"
-msgstr "Lege optie"
-
-msgid "Width"
-msgstr "Breedte"
-
-msgid "Form title"
-msgstr "Formulier titel"
-
-msgid "Slug"
-msgstr "Slug"
-
-msgid "Main color"
-msgstr "Hoofdkleur"
-
-msgid "Show 'Book more' button"
-msgstr "Toon 'Boek meer' knop"
-
-msgid "Show price"
-msgstr "Toon prijs"
-
-msgid "Show summary"
-msgstr "Toon samenvatting"
-
-msgid "Show QR Code"
-msgstr "QR-code tonen"
-
-msgid "Categories list"
-msgstr "Lijst van categorieën"
-
-msgid "Services list"
-msgstr "Lijst van services"
-
-msgid "Hide categories step"
-msgstr "Verberg categorieën stap"
-
-msgid "Hide services step"
-msgstr "Verberg services stap"
-
-msgid "Show cancellation reason"
-msgstr "Toon annuleringsreden"
+msgid "Service title"
+msgstr "Servicetitel"
 
 msgid "Book now"
 msgstr "Nu boeken"
@@ -8418,6 +8548,9 @@ msgstr "Vertel ons hoe u wilt betalen"
 
 msgid "Please select a category"
 msgstr "Kies een categorie"
+
+msgid "Please select a staff"
+msgstr "Selecteer een medewerker"
 
 msgid "Thank you for being with us"
 msgstr "Bedankt dat u voor ons kiest"
@@ -8477,9 +8610,6 @@ msgstr "E-mail details"
 msgid "Recipient"
 msgstr "Ontvanger"
 
-msgid "Message"
-msgstr "Bericht"
-
 msgid "Headers"
 msgstr "Kopteksten"
 
@@ -8523,6 +8653,9 @@ msgstr "Bookly zoekformulier toevoegen"
 
 msgid "Add Bookly services form"
 msgstr "Bookly services formulier toevoegen"
+
+msgid "Add Bookly staff form"
+msgstr "Bookly personeelsformulier toevoegen"
 
 msgid "Add appointment cancellation confirmation"
 msgstr "Voeg afspraak annulering bevestiging toe"
@@ -8973,13 +9106,6 @@ msgid ""
 "Please contact your website administrator in order to verify the license."
 msgstr "Neem contact op met uw websitebeheerder om de licentie te controleren."
 
-msgid ""
-"If you do not verify the license within {days}, access to your bookings will "
-"be disabled."
-msgstr ""
-"Als u de licentie niet binnen {days} verifieert, zal de toegang tot uw "
-"boekingen worden uitgeschakeld."
-
 msgid "Proceed to Bookly Pro without license verification"
 msgstr "Verder naar Bookly Pro zonder licentie verificatie"
 
@@ -9310,6 +9436,12 @@ msgstr "Vul standaard masker voor automatisch gegenereerde codes in."
 
 msgid "Show coupons"
 msgstr "Toon kortingsbonnen"
+
+msgid "Your coupon code if you have one"
+msgstr "Uw kortingscode als u die heeft"
+
+msgid "Button"
+msgstr "Knop"
 
 msgid "Group name"
 msgstr "Groepsnaam"

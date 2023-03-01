@@ -22,36 +22,40 @@
         <div class="kalys-manucure-main">
 
             <?php $kalysManucures = get_terms(['taxonomy' => 'manucure']); ?>
+            <?php if(is_array($kalysManucures)):?>
             <ul class="nav nav-pills">
-                <?php foreach ($kalysManucures as $kalysManucure) : ?>
+                <?php foreach ($kalysManucures as $kalysManucure): ?>
                     <li class="nav-item">
                         <a href="<?= get_term_link($kalysManucure) ?>" class="nav-link <?= is_tax('manucure', $kalysManucure->term_id) ? 'active' : '' ?>"><?= $kalysManucure->name ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <?php if (have_posts()): ?>
+            <?php endif; ?>
+           <?php if (have_posts()): ?>
                 <div class="row kalys-post-manucure my-4">
                     <?php
-                    $kalysPostMan = array_map(function ($term) {
-                        return $term->term_id;
-                    }, get_the_terms(get_posts(), 'manucure'));
+                   $kalysTerm = array_map(function (WP_TERM $term) {
+                       return $term->term_id;
+                   }, get_the_terms(get_post(), 'manucure'));
+                  //$post = get_the_terms(get_post(), 'soin-mains');
+                 
                     $query = new WP_Query([
                         'post__not-in'  => [get_the_ID()],
                         'post_type' => 'soin-mains',
                         'post_status' => 'publish',
-                        'orderby' => 'date',
+                        'orderby' => 'rand',
                         'order' => 'DESC',
-                        'post_per_page' => 3,
+                        'post_per_page' => 5,
                         'tax_query' => 
                         [
                             'taxonomy'  => 'manucure',
-                            'field' => 'slug',
+                            'field' => 'term_id',
                             'include_children' => true,
-                            'terms' => $kalysPostMan
+                            'terms' => $kalysTerm
                             
                         ]
                     ]);
-                    while ($query->have_posts()) : $query->the_post(); ?>
+                    while ($query->have_posts()): $query->the_post(); ?>
 
                         <div class="card-group col-sm-4 zoom-img-card-hover card-full-manucure">
                             <div class="card zoom-img-card" style="width: 18rem;">
@@ -74,10 +78,7 @@
                     <?php endwhile;
                     wp_reset_postdata(); ?>
                 <?php endif; ?>
-
-
                 </div>
-
 </section>
 
 <?php get_footer(); ?>

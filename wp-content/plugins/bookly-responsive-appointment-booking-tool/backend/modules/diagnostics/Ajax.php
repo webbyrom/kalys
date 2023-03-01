@@ -78,6 +78,36 @@ class Ajax extends Lib\Base\Ajax
 
         $result = array();
         $schema = new Schema();
+        $ignore = array();
+        foreach ( self::parameter( 'ignore', array() ) as $section ) {
+            switch ( $section ) {
+                case 'appointments':
+                    $ignore[] = 'bookly_appointments';
+                    $ignore[] = 'bookly_customer_appointments';
+                    break;
+                case 'mailing queue':
+                    $ignore[] = 'bookly_mailing_queue';
+                    break;
+                case 'payments':
+                    $ignore[] = 'bookly_payments';
+                    break;
+                case 'sessions':
+                    $ignore[] = 'bookly_sessions';
+                    break;
+                case 'logs':
+                    $ignore[] = 'bookly_log';
+                    $ignore[] = 'bookly_email_log';
+                    break;
+                case 'files':
+                    $ignore[] = 'bookly_files';
+                    $ignore[] = 'bookly_customer_appointment_files';
+                    break;
+            }
+        }
+        foreach ( $ignore as &$i ) {
+            $i = $wpdb->prefix . $i;
+        }
+        unset( $i );
         foreach ( apply_filters( 'bookly_plugins', array() ) as $plugin ) {
             /** @var Lib\Base\Plugin $plugin */
             $installer_class = $plugin::getRootNamespace() . '\Lib\Installer';
@@ -87,10 +117,12 @@ class Ajax extends Lib\Base\Ajax
 
             foreach ( $plugin::getEntityClasses() as $entity_class ) {
                 $table_name = $entity_class::getTableName();
-                $result['entities'][ $entity_class ] = array(
-                    'fields' => array_keys( $schema->getTableStructure( $table_name ) ),
-                    'values' => $wpdb->get_results( 'SELECT * FROM ' . $table_name, ARRAY_N ),
-                );
+                if ( ! in_array( $table_name, $ignore ) ) {
+                    $result['entities'][ $entity_class ] = array(
+                        'fields' => array_keys( $schema->getTableStructure( $table_name ) ),
+                        'values' => $wpdb->get_results( 'SELECT * FROM ' . $table_name, ARRAY_N ),
+                    );
+                }
             }
             $plugin_prefix = $plugin::getPrefix();
             $options_postfix = array( 'data_loaded', 'grace_start', 'db_version', 'installation_time' );
@@ -176,7 +208,7 @@ class Ajax extends Lib\Base\Ajax
                                     }
                                 }
                                 $placeholders[] = implode( ',', $params );
-                                if ( ++$counter > 50 ) {
+                                if ( ++ $counter > 50 ) {
                                     // Flush.
                                     $wpdb->query( $wpdb->prepare( sprintf( $query, implode( '),(', $placeholders ) ), $values ) );
                                     $placeholders = array();

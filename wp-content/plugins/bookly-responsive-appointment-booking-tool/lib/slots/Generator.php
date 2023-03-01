@@ -197,11 +197,27 @@ class Generator implements \Iterator
                                 continue;
                             }
                         }
-                        $timestamp = $this->srv_duration_days > 1 ?
-                            $slot->start()->modify( '-' . ( $this->srv_duration_days - 1 ) . ' day' )->value()->getTimestamp() :
-                            $slot->start()->value()->getTimestamp();
-                        $ex_slot = null;
+                        // For consecutive/parallel bookings try to find a next slot.
+                        if ( $this->next_generator && $slot->notFullyBooked() ) {
+                            $candidate_slot = $this->_tryFindNextSlot( $slot );
+                            if ( ! $candidate_slot ) {
+                                // If no next slot was found then skip this slot.
+                                if ( $this->srv_duration_days > 1 ) {
+                                    // For multi-day services we'll need this slot in the future, so store it.
+                                    $this->_storePastSlot( $slot );
+                                }
+                                continue;
+                            } else {
+                                $slot = $candidate_slot;
+                            }
+                        }
+                        // For multi-day services try to find available day in the past.
+                        if ( $this->srv_duration_days > 1 && ( $slot = $this->_tryFindPastSlot( $slot ) ) === false ) {
+                            continue;
+                        }
                         // Decide whether to add slot or skip it.
+                        $timestamp = $slot->start()->value()->getTimestamp();
+                        $ex_slot = null;
                         if ( $result->has( $timestamp ) ) {
                             // If result already has this timestamp...
                             if ( $slot->fullyBooked() ) {
@@ -214,27 +230,6 @@ class Generator implements \Iterator
                                     continue;
                                 }
                             }
-                        }
-                        // For consecutive/parallel bookings try to find a next slot.
-                        if ( $this->next_generator && $slot->notFullyBooked() ) {
-                            $candidate_slot = $this->_tryFindNextSlot( $slot );
-                            if ( $candidate_slot == false ) {
-                                // If no next slot was found then there are 2 options:
-                                if ( $this->srv_duration_days > 1 ) {
-                                    // 1. For multi-day services we still need to check days in the past.
-                                    //    Mark the current slot as intermediate and let the search move on
-                                    $slot = $slot->replaceState( Range::INTERMEDIATE );
-                                } else {
-                                    // 2. Skip this slot
-                                    continue;
-                                }
-                            } else {
-                                $slot = $candidate_slot;
-                            }
-                        }
-                        // For multi-day services try to find available day in the past.
-                        if ( $this->srv_duration_days > 1 && ( $slot = $this->_tryFindPastSlot( $slot ) ) === false ) {
-                            continue;
                         }
                         // Decide which slot to add.
                         if ( $ex_slot && $ex_slot->notFullyBooked() && ( $slot->waitingListStarted() || $ex_slot->noWaitingListStarted() ) ) {
@@ -376,11 +371,9 @@ class Generator implements \Iterator
                     $next_slot = false;
                 } else {
                     while ( in_array( $slot->staffId(), $next_slot->allParallelStaffIds() ) ) {
-                        if ( $next_slot->hasAltSlot() ) {
-                            // Try alternative slot.
-                            $next_slot = $next_slot->altSlot();
-                        } else {
-                            $next_slot = false;
+                        // Try alternative slot.
+                        $next_slot = $next_slot->deepAltSlot();
+                        if ( ! $next_slot ) {
                             break;
                         }
                     }
@@ -400,6 +393,23 @@ class Generator implements \Iterator
     }
 
     /**
+     * Store slot for further reference in _tryFindPastSlot().
+     *
+     * @param Range $slot
+     * @return void
+     */
+    private function _storePastSlot( Range $slot )
+    {
+        if ( ! isset ( $this->past_slots[ $slot->staffId() ] ) ) {
+            $this->past_slots[ $slot->staffId() ] = new RangeCollection();
+        }
+
+        // @todo In theory we can hold just $this->srv_duration_days slots in the past.
+        $timestamp = $slot->start()->value()->getTimestamp();
+        $this->past_slots[ $slot->staffId() ]->put( $timestamp, $slot );
+    }
+
+    /**
      * Try to find a valid slot in the past for multi-day services.
      *
      * @param Range $slot
@@ -407,34 +417,25 @@ class Generator implements \Iterator
      */
     private function _tryFindPastSlot( Range $slot )
     {
-        if ( ! isset ( $this->past_slots[ $slot->staffId() ] ) ) {
-            $this->past_slots[ $slot->staffId() ] = new RangeCollection();
-        }
-
-        // Store slot for further reference.
-        // @todo In theory we can hold just $this->srv_duration_days slots in the past.
-        $timestamp = $slot->start()->value()->getTimestamp();
-        $this->past_slots[ $slot->staffId() ]->put( $timestamp, $slot );
+        $this->_storePastSlot( $slot );
 
         // Find past slot
         $timestamp = $slot->start()->modify( sprintf( '-%s days', $this->srv_duration_days - 1 ) )->value()->getTimestamp();
-        if (
-            ( $past_slot = $this->past_slots[ $slot->staffId() ]->get( $timestamp ) ) === false ||
-            $past_slot->intermediate()
-        ) {
+        $past_slot = $this->past_slots[ $slot->staffId() ]->get( $timestamp );
+        if ( ! $past_slot ) {
             return false;
         }
 
-        // If past slot is partially booked then it is good to go,
-        // otherwise we need to check days between past and current slot
-        if ( $past_slot->notPartiallyBooked() ) {
+        // If past slot is partially booked or has waiting list started then it is good to go,
+        // otherwise we need to check days from past to current slot
+        if ( $past_slot->notPartiallyBooked() && $past_slot->noWaitingListStarted() ) {
             // Check if there are enough valid days for service duration in the past.
             $day = $slot->start();
-            for ( $d = 0; $d < $this->srv_duration_days; ++$d ) {
+            for ( $d = 0; $d < $this->srv_duration_days; ++ $d ) {
                 $timestamp = $day->value()->getTimestamp();
-                $intermediate_slot = $this->past_slots[ $slot->staffId() ]->get( $timestamp );
-                if ( ! $intermediate_slot || $intermediate_slot->notAvailable() && $intermediate_slot->notIntermediate() ) {
-                    // If current slot is not intermediate and is booked then we exit here
+                $day_slot = $this->past_slots[ $slot->staffId() ]->get( $timestamp );
+                if ( ! $day_slot || $day_slot->fullyBooked() && $past_slot->notFullyBooked() ) {
+                    // If day slot is fully booked and past slot is not then we exit here
                     return false;
                 }
                 $day = $day->modify( '-1 day' );

@@ -90,7 +90,7 @@ use Bookly\Lib;
 
             <div class="text-right mt-3">
                 <?php if ( Lib\Utils\Common::isCurrentUserAdmin() ): ?>
-                    <?php Controls\Buttons::renderDelete() ?>
+                    <?php Controls\Buttons::renderDelete( 'bookly-delete', null, null, array( 'disabled' => 'disabled' ) ) ?>
                 <?php endif ?>
             </div>
         </div>

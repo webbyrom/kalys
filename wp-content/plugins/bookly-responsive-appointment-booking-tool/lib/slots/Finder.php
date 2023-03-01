@@ -162,7 +162,7 @@ class Finder
 
             $extras_durations = array_reverse( $extras_durations );
 
-            for ( $q = 0; $q < $chain_item->getQuantity(); ++$q ) {
+            for ( $q = 0; $q < $chain_item->getQuantity(); ++ $q ) {
                 $spare_time = $collaborative_spare_time;
                 $connection = Generator::CONNECTION_CONSECUTIVE;
                 foreach ( array_reverse( $sub_services ) as $key => $sub_service ) {
@@ -297,9 +297,9 @@ class Finder
                     // Add slot to result.
                     $this->slots[ $group ][] = $slot;
 
-                    ++$slots_count;
+                    ++ $slots_count;
                     if ( $slot->notFullyBooked() ) {
-                        ++$available_slots_count;
+                        ++ $available_slots_count;
                     }
                 }
             }
@@ -345,7 +345,7 @@ class Finder
      */
     private function _breakDefault( DatePoint $dp, $srv_duration_days, $slots_count )
     {
-        return $dp->modify( -( $srv_duration_days > 1 ? $srv_duration_days - 1 : 0 ) . ' days' )->gte( $this->client_end_dp );
+        return $dp->modify( - ( $srv_duration_days > 1 ? $srv_duration_days - 1 : 0 ) . ' days' )->gte( $this->client_end_dp );
     }
 
     /**
@@ -463,6 +463,9 @@ class Finder
      */
     private function _prepareStaffData()
     {
+        // Reset staff data
+        $this->staff = array();
+
         $custom_service = false;
         // Prepare staff IDs for each service.
         $staff_ids = array();

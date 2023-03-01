@@ -6,7 +6,7 @@ use Bookly\Frontend\Modules\Booking\Proxy as BookingProxy;
 /**
  * Class UserBookingData
  *
- * @package Bookly\Frontend\Modules\Booking\Lib
+ * @package Bookly\Lib
  */
 class UserBookingData
 {
@@ -783,7 +783,7 @@ class UserBookingData
     {
         if ( $this->gift_card === null ) {
             $gift_card = BookingProxy\Pro::findOneGiftCardByCode( $this->getGiftCode() );
-            if ( $gift_card ) {
+            if ( $gift_card instanceof \BooklyPro\Lib\Entities\GiftCard ) {
                 $this->gift_card = $gift_card;
             } else {
                 $this->gift_card = false;
@@ -838,7 +838,6 @@ class UserBookingData
         if ( $payment->isLoaded() ) {
             /** @var Entities\CustomerAppointment $ca */
             foreach ( Entities\CustomerAppointment::query()->where( 'payment_id', $payment->getId() )->find() as $ca ) {
-                Utils\Log::deleteEntity( $ca, __METHOD__ );
                 $ca->deleteCascade();
             }
             $payment->delete();

@@ -109,6 +109,8 @@ class Service extends Lib\Base\Entity
     protected $min_time_prior_booking;
     /** @var  int */
     protected $min_time_prior_cancel;
+    /** @var string */
+    protected $gateways;
     /** @var  string */
     protected $visibility = Service::VISIBILITY_PUBLIC;
     /** @var  int */
@@ -118,47 +120,48 @@ class Service extends Lib\Base\Entity
     protected static $table = 'bookly_services';
 
     protected static $schema = array(
-        'id'                           => array( 'format' => '%d' ),
-        'category_id'                  => array( 'format' => '%d', 'reference' => array( 'entity' => 'Category' ) ),
-        'type'                         => array( 'format' => '%s' ),
-        'title'                        => array( 'format' => '%s' ),
-        'attachment_id'                => array( 'format' => '%d' ),
-        'duration'                     => array( 'format' => '%d' ),
-        'slot_length'                  => array( 'format' => '%s' ),
-        'price'                        => array( 'format' => '%f' ),
-        'color'                        => array( 'format' => '%s' ),
-        'deposit'                      => array( 'format' => '%s' ),
-        'capacity_min'                 => array( 'format' => '%d' ),
-        'capacity_max'                 => array( 'format' => '%d' ),
-        'one_booking_per_slot'         => array( 'format' => '%d' ),
-        'padding_left'                 => array( 'format' => '%d' ),
-        'padding_right'                => array( 'format' => '%d' ),
-        'info'                         => array( 'format' => '%s' ),
-        'start_time_info'              => array( 'format' => '%s' ),
-        'end_time_info'                => array( 'format' => '%s' ),
-        'package_life_time'            => array( 'format' => '%d' ),
-        'package_size'                 => array( 'format' => '%d' ),
-        'package_unassigned'           => array( 'format' => '%d' ),
-        'appointments_limit'           => array( 'format' => '%d' ),
-        'limit_period'                 => array( 'format' => '%s' ),
-        'staff_preference'             => array( 'format' => '%s' ),
-        'staff_preference_settings'    => array( 'format' => '%s' ),
-        'recurrence_enabled'           => array( 'format' => '%d' ),
-        'recurrence_frequencies'       => array( 'format' => '%s' ),
-        'same_staff_for_subservices'   => array( 'format' => '%d' ),
-        'units_min'                    => array( 'format' => '%d' ),
-        'units_max'                    => array( 'format' => '%d' ),
-        'time_requirements'            => array( 'format' => '%s' ),
+        'id' => array( 'format' => '%d' ),
+        'category_id' => array( 'format' => '%d', 'reference' => array( 'entity' => 'Category' ) ),
+        'type' => array( 'format' => '%s' ),
+        'title' => array( 'format' => '%s' ),
+        'attachment_id' => array( 'format' => '%d' ),
+        'duration' => array( 'format' => '%d' ),
+        'slot_length' => array( 'format' => '%s' ),
+        'price' => array( 'format' => '%f' ),
+        'color' => array( 'format' => '%s' ),
+        'deposit' => array( 'format' => '%s' ),
+        'capacity_min' => array( 'format' => '%d' ),
+        'capacity_max' => array( 'format' => '%d' ),
+        'one_booking_per_slot' => array( 'format' => '%d' ),
+        'padding_left' => array( 'format' => '%d' ),
+        'padding_right' => array( 'format' => '%d' ),
+        'info' => array( 'format' => '%s' ),
+        'start_time_info' => array( 'format' => '%s' ),
+        'end_time_info' => array( 'format' => '%s' ),
+        'package_life_time' => array( 'format' => '%d' ),
+        'package_size' => array( 'format' => '%d' ),
+        'package_unassigned' => array( 'format' => '%d' ),
+        'appointments_limit' => array( 'format' => '%d' ),
+        'limit_period' => array( 'format' => '%s' ),
+        'staff_preference' => array( 'format' => '%s' ),
+        'staff_preference_settings' => array( 'format' => '%s' ),
+        'recurrence_enabled' => array( 'format' => '%d' ),
+        'recurrence_frequencies' => array( 'format' => '%s' ),
+        'same_staff_for_subservices' => array( 'format' => '%d' ),
+        'units_min' => array( 'format' => '%d' ),
+        'units_max' => array( 'format' => '%d' ),
+        'time_requirements' => array( 'format' => '%s' ),
         'collaborative_equal_duration' => array( 'format' => '%d' ),
-        'online_meetings'              => array( 'format' => '%s' ),
-        'final_step_url'               => array( 'format' => '%s' ),
-        'wc_product_id'                => array( 'format' => '%d' ),
-        'wc_cart_info_name'            => array( 'format' => '%s' ),
-        'wc_cart_info'                 => array( 'format' => '%s' ),
-        'min_time_prior_booking'       => array( 'format' => '%d' ),
-        'min_time_prior_cancel'        => array( 'format' => '%d' ),
-        'visibility'                   => array( 'format' => '%s' ),
-        'position'                     => array( 'format' => '%d', 'sequent' => true ),
+        'online_meetings' => array( 'format' => '%s' ),
+        'final_step_url' => array( 'format' => '%s' ),
+        'wc_product_id' => array( 'format' => '%d' ),
+        'wc_cart_info_name' => array( 'format' => '%s' ),
+        'wc_cart_info' => array( 'format' => '%s' ),
+        'min_time_prior_booking' => array( 'format' => '%d' ),
+        'min_time_prior_cancel' => array( 'format' => '%d' ),
+        'gateways' => array( 'format' => '%s' ),
+        'visibility' => array( 'format' => '%s' ),
+        'position' => array( 'format' => '%d', 'sequent' => true ),
     );
 
     /** @var \BooklyServiceExtras\Lib\Entities\ServiceExtra[] */
@@ -1263,7 +1266,6 @@ class Service extends Lib\Base\Entity
         return $this->wc_cart_info;
     }
 
-
     /**
      * Get translated Cart info
      *
@@ -1300,7 +1302,7 @@ class Service extends Lib\Base\Entity
      * @param $min_time_prior_booking
      * @return $this
      */
-    public function setMinTimePriorBooking($min_time_prior_booking)
+    public function setMinTimePriorBooking( $min_time_prior_booking )
     {
         $this->min_time_prior_booking = $min_time_prior_booking;
         
@@ -1319,10 +1321,33 @@ class Service extends Lib\Base\Entity
      * @param $min_time_prior_cancel
      * @return $this
      */
-    public function setMinTimePriorCancel($min_time_prior_cancel)
+    public function setMinTimePriorCancel( $min_time_prior_cancel )
     {
         $this->min_time_prior_cancel = $min_time_prior_cancel;
-        
+
+        return $this;
+    }
+
+    /**
+     * Gets gateways
+     *
+     * @return string
+     */
+    public function getGateways()
+    {
+        return $this->gateways;
+    }
+
+    /**
+     * Sets gateways
+     *
+     * @param string $gateways
+     * @return $this
+     */
+    public function setGateways( $gateways )
+    {
+        $this->gateways = $gateways;
+
         return $this;
     }
 

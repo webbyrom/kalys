@@ -766,8 +766,9 @@ class Ajax extends Lib\Base\Ajax
                 $is_payment_disabled = Lib\Config::paymentStepDisabled();
                 $skip_payment = BookingProxy\CustomerGroups::getSkipPayment( $userData->getCustomer() );
                 $gateways = self::getGateways( $userData, clone $cart_info );
+                $gift_card = $userData->getGiftCard();
 
-                if ( $is_payment_disabled || isset( $gateways['local'] ) || $cart_info->getPayNow() <= 0 || $skip_payment ) {
+                if ( $is_payment_disabled || isset( $gateways['local'] ) || $cart_info->getPayNow() <= 0 || $skip_payment || $gift_card ) {
                     // Handle coupon.
                     $coupon = $userData->getCoupon();
                     if ( $coupon ) {
@@ -777,7 +778,15 @@ class Ajax extends Lib\Base\Ajax
                     $payment = null;
                     if ( ! $is_payment_disabled && ! $skip_payment ) {
                         if ( $cart_info->getTotal() <= 0 ) {
-                            if ( $cart_info->withDiscount() ) {
+                            // Check if all items in waiting list.
+                            $waiting_list_only = true;
+                            foreach ( $userData->cart->getItems() as $item ) {
+                                if ( ! $item->toBePutOnWaitingList() ) {
+                                    $waiting_list_only = false;
+                                    break;
+                                }
+                            }
+                            if ( ! $waiting_list_only ) {
                                 $payment = new Lib\Entities\Payment();
                                 $payment
                                     ->setType( Lib\Entities\Payment::TYPE_FREE )
@@ -802,17 +811,14 @@ class Ajax extends Lib\Base\Ajax
                                 }
                             }
 
-                            if ( $status !== Lib\Entities\Payment::STATUS_COMPLETED ) {
-                                $gift_card = $userData->getGiftCard();
-                                if ( $gift_card ) {
-                                    $type = Lib\Entities\Payment::TYPE_CLOUD_GIFT;
-                                    $cart_info->setGateway( $type );
-                                    if ( $gift_card->getBalance() >= $cart_info->getPayNow() ) {
-                                        $status = Lib\Entities\Payment::STATUS_COMPLETED;
-                                        $paid = $cart_info->getPayNow();
-                                        $gift_card->charge( $paid )->save();
-                                        $payment->setGatewayPriceCorrection( $cart_info->getPriceCorrection() );
-                                    }
+                            if ( ( $status !== Lib\Entities\Payment::STATUS_COMPLETED ) && $gift_card ) {
+                                $type = Lib\Entities\Payment::TYPE_CLOUD_GIFT;
+                                $cart_info->setGateway( $type );
+                                if ( $gift_card->getBalance() >= $cart_info->getPayNow() ) {
+                                    $status = Lib\Entities\Payment::STATUS_COMPLETED;
+                                    $paid = $cart_info->getPayNow();
+                                    $gift_card->charge( $paid )->save();
+                                    $payment->setGatewayPriceCorrection( $cart_info->getPriceCorrection() );
                                 }
                             }
 
@@ -1009,7 +1015,7 @@ class Ajax extends Lib\Base\Ajax
         $userData = new Lib\UserBookingData( self::parameter( 'form_id' ) );
 
         if ( $userData->load() ) {
-            add_action( 'set_logged_in_cookie', function( $logged_in_cookie ) {
+            add_action( 'set_logged_in_cookie', function ( $logged_in_cookie ) {
                 $_COOKIE[ LOGGED_IN_COOKIE ] = $logged_in_cookie;
             } );
             /** @var \WP_User $user */
@@ -1267,9 +1273,9 @@ class Ajax extends Lib\Base\Ajax
             if ( preg_match( '/^UTC[+-]/', $time_zone ) ) {
                 $offset = preg_replace( '/UTC\+?/', '', $time_zone );
                 $time_zone = null;
-                $time_zone_offset = -$offset * 60;
+                $time_zone_offset = - $offset * 60;
             } else {
-                $time_zone_offset = -timezone_offset_get( timezone_open( $time_zone ), new \DateTime() ) / 60;
+                $time_zone_offset = - timezone_offset_get( timezone_open( $time_zone ), new \DateTime() ) / 60;
             }
         }
 

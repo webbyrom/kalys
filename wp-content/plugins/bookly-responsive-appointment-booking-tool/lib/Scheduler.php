@@ -57,6 +57,28 @@ class Scheduler
      */
     public function __construct( Lib\Chain $chain, $datetime, $until, $repeat, array $params, array $exclude, $waiting_list_enabled = null, $ignore_appointments = array() )
     {
+        // Update $until for chain with duration greater than 24 hour
+        $duration = 0;
+        foreach ( $chain->getItems() as $chain_item ) {
+            $service = Lib\Entities\Service::find( $chain_item->getServiceId() );
+            if ( $service->withSubServices() ) {
+                foreach ( $service->getSubServices() as $sub_service ) {
+                    if ( $service->isCompound() ) {
+                        $duration += $sub_service->getDuration();
+                    } elseif ( $service->isCollaborative() ) {
+                        $duration = max( $duration, $sub_service->getDuration() );
+                    }
+                }
+            } else {
+                $duration = $chain_item->getUnits() * $service->getDuration();
+            }
+        }
+
+        $last_date = date_create( $datetime )->modify( max( 0, (int) ( $duration / DAY_IN_SECONDS ) - 1 ) . ' days' );
+        if ( $last_date > date_create( $until ) ) {
+            $until = $last_date->format( 'Y-m-d' );
+        }
+
         // Set up UserBookingData.
         $this->userData = new Lib\UserBookingData( null );
         $this->userData->resetChain();
@@ -80,10 +102,10 @@ class Scheduler
         // Set up Finder.
         $this->finder = new Lib\Slots\Finder(
             $this->userData,
-            function( DatePoint $client_dp ) {
+            function ( DatePoint $client_dp ) {
                 return $client_dp->format( 'Y-m-d' );
             },
-            function( DatePoint $client_dp, $groups_count, $slots_count ) {
+            function ( DatePoint $client_dp, $groups_count, $slots_count ) {
                 return $groups_count >= 1 ? 2 : 0;
             },
             $waiting_list_enabled,
@@ -275,7 +297,7 @@ class Scheduler
 
         $this->finder->load(
             $skip_days_off ?
-                function( DatePoint $dp, $srv_duration_days, $slots_count ) use ( $client_dp ) {
+                function ( DatePoint $dp, $srv_duration_days, $slots_count ) use ( $client_dp ) {
                     return ( $dp->gte( $client_dp->modify( max( $srv_duration_days, 1 ) . ' days' ) ) && $slots_count == 0 ) || $dp->gte( $this->finder->client_end_dp );
                 }
                 : null
@@ -364,7 +386,7 @@ class Scheduler
             }
 
             $result = array(
-                'index' => ++$this->index,
+                'index' => ++ $this->index,
                 'slots' => json_encode( $slots ),
                 'options' => $options,
                 'another_time' => $client_res_dp->neq( $client_req_dp ),
@@ -394,7 +416,7 @@ class Scheduler
     {
         $weekdays = array( 'mon' => 1, 'tue' => 2, 'wed' => 3, 'thu' => 4, 'fri' => 5, 'sat' => 6, 'sun' => 7 );
 
-        usort( $input, function( $a, $b ) use ( $weekdays ) {
+        usort( $input, function ( $a, $b ) use ( $weekdays ) {
             return $weekdays[ $a ] - $weekdays[ $b ];
         } );
     }

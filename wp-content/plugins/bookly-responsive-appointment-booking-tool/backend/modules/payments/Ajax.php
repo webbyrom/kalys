@@ -89,10 +89,10 @@ class Ajax extends Lib\Base\Ajax
                 'customer' => $payment['customer'] ?: $details['customer'],
                 'provider' => ( $payment['provider'] ?: $details['items'][0]['staff_name'] ),
                 'service' => ( $payment['service'] ?: $details['items'][0]['service_name'] ),
-                'start_date' => $payment['start_date'] ?: $details['items'][0]['appointment_date'] ?: __( 'N/A', 'bookly' ),
+                'start_date' => $payment['start_date'] ?: ( isset( $details['items'][0]['appointment_date'] ) && $details['items'][0]['appointment_date'] ? $details['items'][0]['appointment_date'] : __( 'N/A', 'bookly' ) ),
                 'start_date_format' => $payment['start_date']
                     ? Lib\Utils\DateTime::formatDateTime( $payment['start_date'] )
-                    : ( $details['items'][0]['appointment_date'] ? Lib\Utils\DateTime::formatDateTime( $details['items'][0]['appointment_date'] ) : __( 'N/A', 'bookly' ) ),
+                    : ( isset( $details['items'][0]['appointment_date'] ) && $details['items'][0]['appointment_date'] ? Lib\Utils\DateTime::formatDateTime( $details['items'][0]['appointment_date'] ) : __( 'N/A', 'bookly' ) ),
                 'paid' => $paid_title,
                 'status' => Lib\Entities\Payment::statusToString( $payment['status'] ),
             );

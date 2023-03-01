@@ -118,6 +118,7 @@ class Page extends Lib\Base\Ajax
         $one_participant = Lib\Utils\Codes::tokenize( '<div>' . str_replace( "\n", '</div><div>', get_option( 'bookly_cal_one_participant' ) ) . '</div>' );
         $many_participants = Lib\Utils\Codes::tokenize( '<div>' . str_replace( "\n", '</div><div>', get_option( 'bookly_cal_many_participants' ) ) . '</div>' );
         $tooltip = Lib\Utils\Codes::tokenize( '<i class="fas fa-fw fa-circle mr-1" style="color:{appointment_color}"></i><span>{service_name}</span>{#each participants as participant}<div class="d-flex"><div class="text-muted flex-fill">{participant.client_name}</div><div class="text-nowrap">{participant.nop}<span class="badge badge-{participant.status_color}">{participant.status}</span></div></div>{/each}<span class="d-block text-muted">{appointment_time} - {appointment_end_time}</span>' );
+        $tooltip_all_day = Lib\Utils\Codes::tokenize( '<i class="fas fa-fw fa-circle mr-1" style="color:{appointment_color}"></i><span>{service_name}</span>{#each participants as participant}<div class="d-flex"><div class="text-muted flex-fill">{participant.client_name}</div><div class="text-nowrap">{participant.nop}<span class="badge badge-{participant.status_color}">{participant.status}</span></div></div>{/each}<span class="d-block text-muted">{description}</span>' );
         $postfix_any = sprintf( ' (%s)', get_option( 'bookly_l10n_option_employee' ) );
         $coloring_mode = get_option( 'bookly_cal_coloring_mode' );
         $default_codes = array(
@@ -363,7 +364,7 @@ class Page extends Lib\Base\Ajax
                 default:
                     $color = $appointment['service_color'];
             }
-
+            $codes['description'] = Lib\Utils\Codes::stringify( $template, $codes, false );
             $appointments[ $key ] = array(
                 'id' => $appointment['id'],
                 'start' => $appointment['start_date'],
@@ -371,9 +372,10 @@ class Page extends Lib\Base\Ajax
                 'title' => ' ',
                 'color' => $color,
                 'resourceId' => $appointment['staff_id'],
+                'allDay' => $appointment['duration'] >= DAY_IN_SECONDS,
                 'extendedProps' => array(
-                    'tooltip' => Lib\Utils\Codes::stringify( $tooltip, $codes, false ),
-                    'desc' => Lib\Utils\Codes::stringify( $template, $codes, false ),
+                    'tooltip' => Lib\Utils\Codes::stringify( $appointment['duration'] >= DAY_IN_SECONDS ? $tooltip_all_day : $tooltip, $codes, false ),
+                    'desc' => $codes['description'],
                     'staffId' => $appointment['staff_id'],
                     'series_id' => (int) $appointment['series_id'],
                     'package_id' => (int) $appointment['package_id'],

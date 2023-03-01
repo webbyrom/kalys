@@ -8,9 +8,9 @@ msgstr ""
 "Language: pt_PT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-14 12:48+0000\n"
-"PO-Revision-Date: 2022-12-14 23:12+0000\n"
-"Last-Translator: Isabel Andrade <estgf_nemo@hotmail.com>\n"
+"POT-Creation-Date: 2023-02-08 13:54+0000\n"
+"PO-Revision-Date: 2023-02-14 08:00+0000\n"
+"Last-Translator: support@bookly.info\n"
 "Language-Team: Portuguese (Portugal)\n"
 "X-Loco-Version: 2.3.1; wp-6.1"
 
@@ -90,6 +90,18 @@ msgstr "Tipo de letra"
 
 msgid "Choose the font for your invoice template"
 msgstr "Escolha o tipo de letra para o seu modelo de fatura"
+
+msgid "Invoice file name prefix"
+msgstr "Prefixo do nome do ficheiro da fatura"
+
+msgid ""
+"Set a prefix for the file name that will be used for your invoices. For "
+"example, if the file name prefix is \"myfile_\", your PDF file will be "
+"downloaded with the \"myfile_1.pdf\" name"
+msgstr ""
+"Defina um prefixo para o nome do ficheiro que será utilizado para as suas "
+"faturas. Por exemplo, se o prefixo do nome do ficheiro for \"myfile_\", o "
+"seu ficheiro PDF será descarregado com o nome \"myfile_1.pdf\"."
 
 msgid "Invoice template"
 msgstr "Modelo da fatura"
@@ -171,9 +183,6 @@ msgstr "Cupão de desconto"
 
 msgid "Group discount"
 msgstr "Desconto de grupo"
-
-msgid "Gift card discount"
-msgstr "Desconto por cartão oferta"
 
 msgid "Total"
 msgstr "Total"
@@ -3154,6 +3163,9 @@ msgstr "Mês"
 msgid "List"
 msgstr "Lista"
 
+msgid "All day"
+msgstr "Todo o dia"
+
 msgid "No appointments for selected period."
 msgstr "Sem reservas para o período selecionado."
 
@@ -3495,6 +3507,12 @@ msgstr "ID do remetente"
 
 msgid "Cost"
 msgstr "Custo"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Language"
+msgstr "Idioma"
 
 msgid "Flag"
 msgstr "Flag"
@@ -4553,6 +4571,18 @@ msgstr "Cancelado"
 msgid "SMS has been sent successfully."
 msgstr "SMS foi enviada com sucesso."
 
+msgid "WhatsApp Notifications"
+msgstr "Notificações WhatsApp"
+
+msgid "Permanent access token"
+msgstr "Token de acesso permanente"
+
+msgid "Phone number ID "
+msgstr "Número de telefone ID"
+
+msgid "WhatsApp Business Account ID"
+msgstr "WhatsApp ID da conta comercial"
+
 msgid "Bookly Cloud Billing"
 msgstr "Bookly Cloud Faturação"
 
@@ -4788,6 +4818,9 @@ msgstr "Próxima data de faturação"
 
 msgid "Deactivation date"
 msgstr "Data de desativação"
+
+msgid "Messages"
+msgstr "Mensagens"
 
 msgid "Tasks"
 msgstr "Tarefas"
@@ -5411,6 +5444,9 @@ msgstr ""
 msgid "Time zone of client"
 msgstr "Fuso horário do cliente"
 
+msgid "Locale of client"
+msgstr "Local do cliente"
+
 msgid "URL of approve appointment link (to use inside <a> tag)"
 msgstr "URL para o link da aprovação da reserva (para usar dentro da tag <a>)"
 
@@ -5542,9 +5578,6 @@ msgstr "Notificações de voz"
 
 msgid "Make a test call"
 msgstr "Fazer uma chamada de teste"
-
-msgid "Language"
-msgstr "Idioma"
 
 msgid "Select the language of your notifications"
 msgstr "Selecione a língua das suas notificações"
@@ -6107,6 +6140,9 @@ msgstr "Vincular pagametno"
 msgid "Complete payment"
 msgstr "Complete o pagamento"
 
+msgid "Gift card discount"
+msgstr "Desconto por cartão oferta"
+
 msgid "Manual adjustment"
 msgstr "Ajuste manual"
 
@@ -6219,6 +6255,33 @@ msgid ""
 msgstr ""
 "Vai apagar a(s) reserva(s). Notificações serão enviadas de acordo com as "
 "suas configurações."
+
+msgid "Header"
+msgstr "Cabeçalho"
+
+msgid "Variable"
+msgstr "Variável"
+
+msgid "Message"
+msgstr "Mensagem"
+
+msgid "New WhatsApp notification"
+msgstr "Nova notificação WhatsApp"
+
+msgid "Edit WhatsApp notification"
+msgstr "Editar a notificação WhatsApp"
+
+msgid "In appeal"
+msgstr "Em recurso"
+
+msgid "Pending deletion"
+msgstr "Pendente de eliminação"
+
+msgid "Paused"
+msgstr "Pausado"
+
+msgid "Limit exceeded"
+msgstr "Limite excedido"
 
 msgid "Delete customers"
 msgstr "Apagar clientes"
@@ -6347,13 +6410,13 @@ msgstr ""
 "\n"
 
 msgid ""
-"You are going to delete item which is involved in upcoming appointments. All "
-"related appointments will be deleted. Please double check and edit "
-"appointments before this item deletion if needed."
+"You are going to delete an item that might be involved in existing "
+"appointments. All related appointments will be deleted. Please double-check "
+"and edit appointments before this item deletion if needed."
 msgstr ""
-"Vai apagar um item que tem reservas futuras. Todos as reservas relacionados "
-"serão apagadas. Por favor, confirme novamente e edite as reservas antes de "
-"apagar este item, caso necessário."
+"Vai eliminar um item que possa estar relacionado com as nomeações existentes."
+" Todas as nomeações relacionadas serão eliminadas. Por favor, verifique e "
+"edite as nomeações antes de eliminar este item, se necessário."
 
 msgid "Edit appointments"
 msgstr "Editar reservas "
@@ -6580,6 +6643,37 @@ msgstr "Serviço avançado e gestão do pessoal"
 
 msgid "Upgrade"
 msgstr "Atualização"
+
+msgid "Migrate your Zoom JWT app to the new app type by June 1, 2023."
+msgstr ""
+"Migre a sua aplicação Zoom JWT para o novo tipo de aplicação até 1 de Junho "
+"de 2023."
+
+msgid ""
+"Zoom JWT app type will be deprecated June 1, 2023. After this date, you will "
+"no longer be able to use your JWT apps."
+msgstr ""
+"O tipo de aplicação Zoom JWT será depreciado a 1 de Junho de 2023. Após esta "
+"data, deixará de poder utilizar as suas aplicações JWT."
+
+msgid ""
+"We recommend that you create an OAuth app to replace the functionality of a "
+"JWT app in your account."
+msgstr ""
+"Recomendamos que crie uma aplicação OAuth para substituir a funcionalidade "
+"de uma aplicação JWT na sua conta."
+
+msgid ""
+"To learn more, please visit the <a href=\"https://marketplace.zoom."
+"us/docs/guides/build/jwt-app/jwt-faq/\" target=\"_blank\">official Zoom "
+"page</a> about this change"
+msgstr ""
+"Para saber mais, visite por favor a página <a href=\"https://marketplace."
+"zoom.us/docs/guides/build/jwt-app/jwt-faq/\" target=\"_blank\" >oficial "
+"página Zoom</a> sobre esta alteração"
+
+msgid "Go to Settings"
+msgstr "Ir para Definições"
 
 #, php-format
 msgid ""
@@ -7159,6 +7253,12 @@ msgstr ""
 "O seu pacote foi criado.\n"
 "\n"
 
+msgid "Show packages only"
+msgstr "Mostrar apenas pacotes"
+
+msgid "Package info"
+msgstr "Informações do pacote"
+
 msgid "Creation Date"
 msgstr "Data de criação"
 
@@ -7448,12 +7548,16 @@ msgstr ""
 "suas reservas. Por favor, insira o código de compra no painel administrativo."
 
 msgid ""
-"Please verify Bookly Pro license in the administrative panel. If you do not "
-"verify the license within {days}, access to your bookings will be disabled."
+"Please verify Bookly Pro license in the administrative panel on {site_url}."
 msgstr ""
-"Por favor, verifique a licença do Bookly Pro no painel administrativo. Se "
-"não verificar a licença em {days}, o acesso às suas reservas será "
-"desabilitado."
+"Favor verificar a licença Bookly Pro no painel administrativo em {site_url}."
+
+msgid ""
+"If you do not verify the license within {days}, access to your bookings will "
+"be disabled."
+msgstr ""
+"Se você não verificar a licença dentro de {days}, o acesso às suas reservas "
+"será desativado."
 
 msgid "Customer address"
 msgstr "Endereço do cliente"
@@ -7515,27 +7619,23 @@ msgstr ""
 "Bookly Pro."
 
 msgid ""
-"Please contact your website administrator in order to verify the license for "
-"Bookly add-ons. If you do not verify the license within {days}, the "
-"respective add-ons will be disabled."
+"Please contact your website administrator of {site_url} in order to verify "
+"the license for Bookly add-ons."
 msgstr ""
-"Entre em contato com o administrador do site para verificar a licença para "
-"os add-ons Bookly. Se você não verificar a licença dentro de {days}, os "
-"respectivos add-ons serão desativados."
+"Por favor contacte o administrador do seu website {site_url} a fim de "
+"verificar a licença para os add-ons Bookly."
+
+msgid ""
+"If you do not verify the license within {days}, the respective add-ons will "
+"be disabled."
+msgstr ""
+"Se não verificar a licença dentro de {days}, os respetivos add-ons serão "
+"desativados."
 
 msgid "Contact your admin to verify Bookly add-ons license; {days} remaining."
 msgstr ""
 "Contacte o seu administrador para verificar a licença dos add-ons Bookly; "
 "{days} restantes."
-
-msgid ""
-"Please verify the license for Bookly add-ons in the administrative panel. If "
-"you do not verify the license within {days}, the respective add-ons will be "
-"disabled."
-msgstr ""
-"Por favor, verifique a licença para os Bookly add-ons no painel "
-"administrativo. Se não verificar a licença dentro de {days}, os respectivos "
-"add-ons serão desativados."
 
 msgid "Please verify Bookly add-ons license; {days} remaining."
 msgstr "Por favor, verifique a licença de add-ons Bookly; {days} restantes."
@@ -7551,6 +7651,9 @@ msgstr ""
 "Formulário de serviços\n"
 "\n"
 
+msgid "Staff form"
+msgstr "Formulário de staff"
+
 msgid "A custom block for displaying cancellation confirmation"
 msgstr "Bloco personalizado para exibição de confirmação de cancelamento"
 
@@ -7562,6 +7665,9 @@ msgid "A custom block for displaying services form"
 msgstr ""
 "Um bloco personalizado para exibir formulário de serviços\n"
 "\n"
+
+msgid "A custom block for displaying staff form"
+msgstr "Um bloco personalizado para exibir o formulário do pessoal"
 
 msgid "no limit"
 msgstr "sem limite"
@@ -8560,6 +8666,13 @@ msgstr ""
 "A visualização do catálogo permite-lhe organizar e exibir os serviços "
 "convenientemente para os seus clientes."
 
+msgid ""
+"Catalog view allows you to organize and display the staff conveniently for "
+"your customers."
+msgstr ""
+"A visualização do catálogo permite-lhe organizar e exibir o staff de forma "
+"conveniente para os seus clientes."
+
 msgid "Step by step form"
 msgstr "Formulário passo a passo"
 
@@ -8576,6 +8689,66 @@ msgid ""
 msgstr ""
 "Formulário Lightweight que permite aos seus clientes cancelar os seus "
 "compromissos e, opcionalmente, especificar o motivo do cancelamento."
+
+msgid "Placeholder"
+msgstr "Titular do lugar"
+
+msgid "Empty option"
+msgstr "Opção vazia"
+
+msgid "Width"
+msgstr "Largura"
+
+msgid "Header height"
+msgstr "Altura do cabeçalho"
+
+msgid "Form title"
+msgstr "Título do formulário"
+
+msgid "Slug"
+msgstr "Indicação"
+
+msgid "Main color"
+msgstr "Cor principal"
+
+msgid "Show 'Book more' button"
+msgstr "Mostrar botão 'Reservar mais'."
+
+msgid "Show price"
+msgstr "Mostrar preços"
+
+msgid "Show summary"
+msgstr "Mostrar sumário"
+
+msgid "Show QR Code"
+msgstr "Mostrar Código QR"
+
+msgid "Default value"
+msgstr "Valor por defeito"
+
+msgid "Categories list"
+msgstr "Lista de categorias"
+
+msgid "Services list"
+msgstr "Lista de serviços"
+
+msgid "Hide categories step"
+msgstr "Esconder etapa de categorias"
+
+msgid "Hide services step"
+msgstr "Esconder etapa de serviços"
+
+msgid "Show cancellation reason"
+msgstr "Mostrar motivo de cancelamento"
+
+msgid "Staff list"
+msgstr "Lista de staff"
+
+msgid "Hide staff step"
+msgstr "Esconder etapa do staff"
+
+msgid "Card content"
+msgstr "Conteúdo do cartão"
 
 msgid "Add new form"
 msgstr "Adicionar novo formulário"
@@ -8625,50 +8798,8 @@ msgstr ""
 "formulário de reserva num modo de edição de página e cole o código de atalho "
 "previamente copiado. O formulário será adicionado à página."
 
-msgid "Placeholder"
-msgstr "Titular do lugar"
-
-msgid "Empty option"
-msgstr "Opção vazia"
-
-msgid "Width"
-msgstr "Largura"
-
-msgid "Form title"
-msgstr "Título do formulário"
-
-msgid "Slug"
-msgstr "Indicação"
-
-msgid "Main color"
-msgstr "Cor principal"
-
-msgid "Show 'Book more' button"
-msgstr "Mostrar botão 'Reservar mais'."
-
-msgid "Show price"
-msgstr "Mostrar preços"
-
-msgid "Show summary"
-msgstr "Mostrar sumário"
-
-msgid "Show QR Code"
-msgstr "Mostrar Código QR"
-
-msgid "Categories list"
-msgstr "Lista de categorias"
-
-msgid "Services list"
-msgstr "Lista de serviços"
-
-msgid "Hide categories step"
-msgstr "Esconder etapa de categorias"
-
-msgid "Hide services step"
-msgstr "Esconder etapa de serviços"
-
-msgid "Show cancellation reason"
-msgstr "Mostrar motivo de cancelamento"
+msgid "Service title"
+msgstr "Título do serviço"
 
 msgid "Book now"
 msgstr "Reserve agora"
@@ -8715,6 +8846,9 @@ msgstr "Diga-nos, por favor, como gostaria de pagar"
 
 msgid "Please select a category"
 msgstr "Por favor selecione uma categoria"
+
+msgid "Please select a staff"
+msgstr "Por favor, selecione o staff"
 
 msgid "Thank you for being with us"
 msgstr "Obrigado por estar conosco"
@@ -8774,9 +8908,6 @@ msgstr "Detalhes email"
 msgid "Recipient"
 msgstr "Destinatário"
 
-msgid "Message"
-msgstr "Mensagem"
-
 msgid "Headers"
 msgstr "Cabeçalhos"
 
@@ -8826,6 +8957,9 @@ msgid "Add Bookly services form"
 msgstr ""
 "Adicionar formulário de serviços Bookly\n"
 "\n"
+
+msgid "Add Bookly staff form"
+msgstr "Acrescentar o formulário de staff Bookly"
 
 msgid "Add appointment cancellation confirmation"
 msgstr "Adicionar a confirmação de cancelamento de reserva"
@@ -9286,13 +9420,6 @@ msgid ""
 "Please contact your website administrator in order to verify the license."
 msgstr "Entre em contato com o administrador do site para verificar a licença."
 
-msgid ""
-"If you do not verify the license within {days}, access to your bookings will "
-"be disabled."
-msgstr ""
-"Se você não verificar a licença dentro de {days}, o acesso às suas reservas "
-"será desativado."
-
 msgid "Proceed to Bookly Pro without license verification"
 msgstr "Prosseguir para o Bookly Pro sem verificação de licença"
 
@@ -9623,6 +9750,12 @@ msgstr "Insira a máscara padrão para códigos gerados automaticamente."
 
 msgid "Show coupons"
 msgstr "Exibir cupões"
+
+msgid "Your coupon code if you have one"
+msgstr "O seu código de cupão, se o tiver"
+
+msgid "Button"
+msgstr "Botão"
 
 msgid "Group name"
 msgstr "Nome do grupo"

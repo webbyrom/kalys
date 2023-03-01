@@ -63,7 +63,7 @@ class ShortCode extends Lib\Base\Component
         }
 
         // Disable emoji in IE11
-        if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Trident/7.0' ) !== false ) {
+        if ( array_key_exists( 'HTTP_USER_AGENT', $_SERVER ) && strpos( $_SERVER['HTTP_USER_AGENT'], 'Trident/7.0' ) !== false ) {
             if ( self::postsHaveShortCode() ) {
                 Lib\Utils\Common::disableEmoji();
             }

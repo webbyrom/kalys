@@ -1,7 +1,7 @@
 === Royal Elementor Addons and Templates ===
 Contributors: WP Royal, rubeushagrid13, cyberpinky, elementoraddonswpr, ggedenidze1982
 Tags: elementor, elementor templates, elementor addons, widgets for elementor, elementor widgets, elementor mega menu, elementor woocommerce builder, theme builder, header footer builder, elementor post grid, elementor product grid, addons for elementor
-Stable tag: 1.3.64
+Stable tag: 1.3.65
 Requires at least: 5.0
 Tested up to: 6.1.1
 Requires PHP: 5.6
@@ -388,6 +388,16 @@ memory_limit 256M or more
 post_max_size 64M
 
 == Changelog ==
+= Royal Elementor Addons v1.3.65 - 2023-02-27 =
+* FIXED: Minor Bugs for Instagram elementor feed widget.
+* FIXED: Minor Bugs for the elementor ajax search widget.
+* FIXED: Many other small improvements and fixes.
+* FIXED: Parallax-related small bugs, now new elementor container supports parallax.
+* ADDED: Many premade elementor template pages in the REA library.
+* ADDED: Widgets Search and filter buttons in the plugin backend.
+* ADDED: Free vs PRO version comparison Table in the plugin backend.
+* ADDED: Real Estate v2 Elementor Templates Kit - [**Real Estate**](https://demosites.royal-elementor-addons.com/realestate-v2/?ref=rea-wpo-pp-details-tab).
+
 = Royal Elementor Addons v1.3.64 - 2023-02-10 =
 * FIXED: Minor Bugs.
 

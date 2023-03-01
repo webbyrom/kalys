@@ -555,7 +555,6 @@ class Ajax extends Lib\Base\Ajax
                                     ->setInternalNote( $internal_note )
                                     ->setExtrasDuration( $max_extras_duration )
                                     ->save();
-                                Lib\Utils\Log::createEntity( $appointment, __METHOD__ );
                             }
 
                             if ( $appointment->getId() ) {
@@ -624,18 +623,12 @@ class Ajax extends Lib\Base\Ajax
                     ->setInternalNote( $internal_note )
                     ->setExtrasDuration( $max_extras_duration );
 
-                if ( $appointment_id ) {
-                    Lib\Utils\Log::updateEntity( $appointment, __METHOD__ );
-                }
                 $modified = $appointment->getModified();
                 if ( $appointment->save() !== false ) {
 
                     $queue_changed_status = array();
                     $queue = array();
 
-                    if ( ! $appointment_id ) {
-                        Lib\Utils\Log::createEntity( $appointment, __METHOD__ );
-                    }
                     foreach ( $customers as &$customer ) {
                         if ( $customer['payment_action'] === 'create' ) {
                             // Set 'current', the employee can choose 'Create: Payment for the entire series',
@@ -667,8 +660,6 @@ class Ajax extends Lib\Base\Ajax
                                     ->setStartDate( date( 'Y-m-d H:i:s', $new_start_timestamp ) )
                                     ->setEndDate( date( 'Y-m-d H:i:s', $new_start_timestamp + $duration ) );
                                 $reschedule_modified = $reschedule_appointment->getModified();
-
-                                Lib\Utils\Log::updateEntity( $reschedule_appointment, __METHOD__, 'Reschedule recurring appointment' );
 
                                 $reschedule_appointment->save();
 

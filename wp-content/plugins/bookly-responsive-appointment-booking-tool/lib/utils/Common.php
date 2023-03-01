@@ -5,6 +5,7 @@ use Bookly\Lib;
 
 /**
  * Class Common
+ *
  * @package Bookly\Lib\Utils
  */
 abstract class Common extends Lib\Base\Cache
@@ -187,7 +188,7 @@ abstract class Common extends Lib\Base\Cache
                     }
 
                     try {
-                        foreach ( get_post_meta( $post->ID ) as $meta ) {
+                        foreach ( get_post_meta( $post->ID ) ?: array() as $meta ) {
                             if ( has_shortcode( $meta[0], $short_code ) ) {
                                 $result = true;
                                 break 2;
@@ -230,15 +231,14 @@ abstract class Common extends Lib\Base\Cache
      *
      * @param $url
      * @param $campaign
-     *
      * @return string
      */
     public static function prepareUrlReferrers( $url, $campaign )
     {
         return add_query_arg(
             array(
-                'utm_source'   => 'bookly_admin',
-                'utm_medium'   => Lib\Config::proActive() ? 'pro_active' : 'pro_not_active',
+                'utm_source' => 'bookly_admin',
+                'utm_medium' => Lib\Config::proActive() ? 'pro_active' : 'pro_not_active',
                 'utm_campaign' => $campaign,
             ),
             $url
@@ -260,7 +260,7 @@ abstract class Common extends Lib\Base\Cache
      * Get string translated with WPML.
      *
      * @param             $name
-     * @param string      $original_value
+     * @param string $original_value
      * @param null|string $language_code Return the translation in this language
      * @return string
      */
@@ -395,8 +395,7 @@ abstract class Common extends Lib\Base\Cache
         $query = Lib\Entities\Service::query( 's' )
             ->select( 'c.id AS category_id, c.name, s.id, s.title' )
             ->leftJoin( 'Category', 'c', 'c.id = s.category_id' )
-            ->sortBy( 'COALESCE(c.position,99999), s.position' )
-        ;
+            ->sortBy( 'COALESCE(c.position,99999), s.position' );
         if ( $raw_where !== null ) {
             $query->whereRaw( $raw_where, array() );
         }
@@ -404,12 +403,12 @@ abstract class Common extends Lib\Base\Cache
             $category_id = (int) $row['category_id'];
             if ( ! isset ( $result[ $category_id ] ) ) {
                 $result[ $category_id ] = array(
-                    'name'  => $category_id ? $row['name'] : __( 'Uncategorized', 'bookly' ),
+                    'name' => $category_id ? $row['name'] : __( 'Uncategorized', 'bookly' ),
                     'items' => array(),
                 );
             }
             $result[ $category_id ]['items'][] = array(
-                'id'    => $row['id'],
+                'id' => $row['id'],
                 'title' => $row['title'],
             );
         }
@@ -426,9 +425,9 @@ abstract class Common extends Lib\Base\Cache
      */
     private static function _xor( $str, $password = '' )
     {
-        $len   = strlen( $str );
+        $len = strlen( $str );
         $gamma = '';
-        $n     = $len > 100 ? 8 : 2;
+        $n = $len > 100 ? 8 : 2;
         while ( strlen( $gamma ) < $len ) {
             $gamma .= substr( pack( 'H*', sha1( $password . $gamma ) ), 0, $n );
         }
@@ -473,8 +472,7 @@ abstract class Common extends Lib\Base\Cache
         $entity = new $entity_class_name();
         do {
             $token = md5( uniqid( time(), true ) );
-        }
-        while ( $entity->loadBy( array( $token_field => $token ) ) === true );
+        } while ( $entity->loadBy( array( $token_field => $token ) ) === true );
 
         return $token;
     }
@@ -554,13 +552,13 @@ abstract class Common extends Lib\Base\Cache
     public static function getGateways()
     {
         $gateways = array();
-        if ( Lib\Config::payLocallyEnabled()) {
+        if ( Lib\Config::payLocallyEnabled() ) {
             $gateways[ Lib\Entities\Payment::TYPE_LOCAL ] = array(
                 'title' => __( 'Local', 'bookly' ),
             );
         }
 
-        if ( Lib\Cloud\API::getInstance()->account->productActive( Lib\Cloud\Account::PRODUCT_STRIPE ) ) {
+        if ( Lib\Config::stripeCloudEnabled() ) {
             $gateways[ Lib\Entities\Payment::TYPE_CLOUD_STRIPE ] = array(
                 'title' => 'Stripe Cloud',
             );
@@ -619,7 +617,7 @@ abstract class Common extends Lib\Base\Cache
             if ( Lib\Config::showOnlyBusinessHoursInCalendar() ) {
                 $min_time = $min;
                 $max_time = $max;
-            } else if ( $max > '24:00:00' ) {
+            } elseif ( $max > '24:00:00' ) {
                 $min_time = DateTime::buildTimeString( DateTime::timeToSeconds( $max ) - DAY_IN_SECONDS );
                 $max_time = $max;
             }
@@ -641,6 +639,7 @@ abstract class Common extends Lib\Base\Cache
             'day' => __( 'Day', 'bookly' ),
             'month' => __( 'Month', 'bookly' ),
             'list' => __( 'List', 'bookly' ),
+            'allDay' => __( 'All day', 'bookly' ),
             'noEvents' => __( 'No appointments for selected period.', 'bookly' ),
             'more' => __( '+%d more', 'bookly' ),
         );

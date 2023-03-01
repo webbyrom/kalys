@@ -87,7 +87,6 @@ class Ajax extends Lib\Base\Ajax
                     $queue
                 );
             }
-            Lib\Utils\Log::deleteEntity( $ca, __METHOD__ );
             $ca->deleteCascade();
         }
 
@@ -95,7 +94,6 @@ class Ajax extends Lib\Base\Ajax
         foreach ( Lib\Entities\Appointment::query()->whereIn( 'id', $appointments_list )->find() as $appointment ) {
             $ca = $appointment->getCustomerAppointments();
             if ( empty( $ca ) ) {
-                Lib\Utils\Log::deleteEntity( $appointment, __METHOD__ );
                 $appointment->delete();
             }
         }

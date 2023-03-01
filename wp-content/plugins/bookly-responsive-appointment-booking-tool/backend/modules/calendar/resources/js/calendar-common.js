@@ -50,6 +50,7 @@
             eventStartEditable: false,
             eventDurationEditable: false,
             allDaySlot: false,
+            allDayContent: obj.options.l10n.allDay,
 
             slotLabelFormat: function (date) {
                 return moment(date).locale('bookly').format(obj.options.l10n.mjsTimeFormat);
@@ -212,6 +213,15 @@
                     }
                     $('.bookly-ec-loading').show();
                 } else {
+                    let allDay = false;
+                    if (calendar.getEvents().length) {
+                        calendar.getEvents().forEach(function(event) {
+                            if (event.allDay) {
+                                allDay = true;
+                            }
+                        })
+                    }
+                    calendar.setOption('allDaySlot', allDay);
                     $('.bookly-ec-loading').hide();
                     obj.options.refresh();
                 }
@@ -295,7 +305,7 @@
         function fixPopoverPosition($popover) {
             let $event = $popover.closest('.ec-event'),
                 offset = $event.offset(),
-                top = Math.max($popover.outerHeight() + 40, Math.max($event.closest('.ec-body').offset().top, offset.top) - $(document).scrollTop());
+                top = Math.max($popover.outerHeight() + 40, Math.max($event.closest('.ec-body').length ? $event.closest('.ec-body').offset().top : $event.closest('.ec-all-day').offset().top, offset.top) - $(document).scrollTop());
 
             $popover.css('top', (top - $popover.outerHeight() - 4) + 'px')
             $popover.css('left', (offset.left + 2) + 'px')

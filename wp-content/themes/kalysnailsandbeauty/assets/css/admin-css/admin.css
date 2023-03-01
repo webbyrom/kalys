@@ -1,19 +1,15 @@
-.manage-column.column-thumbnail {
-    width: 150px;
+#menu-posts-soin-mains a.menu-icon-soin-mains> div{
+    margin-right: 5px;
 }
-
-.column-kalys_sponso {
-    text-align: center;
-    align-items: center;
+#menu-posts-soin-mains a.menu-icon-soin-mains> div >img{
+    padding-top: 0px;
 }
-
-.column-kalys_sponso .bullet {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: greenyellow;
+#menu-posts-soin-corps a.menu-icon-soin-corps> div {
+    margin-right: 9px;
 }
-
-.column-kalys_sponso .bullet-no {
-    background: red;
+#menu-posts-soin-corps a.menu-icon-soin-corps> div>img {
+    width: 36px;
+    height: 34px;
+    padding: 0 3px 0 2px;
+   
 }

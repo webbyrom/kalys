@@ -41,6 +41,7 @@ class Account extends Base
     const PRODUCT_VOICE = 'voice';
     const PRODUCT_SQUARE = 'square';
     const PRODUCT_GIFT = 'gift';
+    const PRODUCT_WHATSAPP = 'whatsapp';
 
     /** @var string */
     protected $username;

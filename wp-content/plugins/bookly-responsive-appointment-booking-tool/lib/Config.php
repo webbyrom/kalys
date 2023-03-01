@@ -374,7 +374,7 @@ abstract class Config
             || ( self::payuBizActive() && get_option( 'bookly_payu_biz_enabled' ) )
             || ( self::payuLatamActive() && get_option( 'bookly_payu_latam_enabled' ) )
             || ( self::stripeActive() && get_option( 'bookly_stripe_enabled' ) )
-            || ( Cloud\API::getInstance()->account->productActive( Cloud\Account::PRODUCT_STRIPE ) && get_option( 'bookly_cloud_stripe_enabled' ) )
+            || self::stripeCloudEnabled()
             || self::squareEnabled()
             || self::giftEnabled()
             || self::paypalEnabled()
@@ -426,6 +426,14 @@ abstract class Config
     public static function giftEnabled()
     {
         return self::proActive() && get_option( 'bookly_cloud_gift_enabled' ) && Cloud\API::getInstance()->account->productActive( Cloud\Account::PRODUCT_GIFT );
+    }
+
+    /**
+     * @return bool
+     */
+    public static function stripeCloudEnabled()
+    {
+        return get_option( 'bookly_cloud_stripe_enabled' ) && Cloud\API::getInstance()->account->productActive( Cloud\Account::PRODUCT_STRIPE );
     }
 
     /**

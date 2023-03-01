@@ -6,6 +6,7 @@ use Bookly\Lib\Entities\CustomerAppointment;
 use Bookly\Lib\Entities\Payment;
 use Bookly\Lib\Utils\Common;
 use Bookly\Lib\Utils\Log;
+use Bookly\Frontend\Modules\Booking\Proxy as BookingProxy;
 
 /**
  * Class Cart
@@ -182,6 +183,9 @@ class Cart
                         '\Bookly\Lib\Entities\CustomerAppointment',
                         'collaborative_token'
                     ) );
+            } elseif ( $service->isPackage() ) {
+                BookingProxy\Packages::createPackage( $order, $cart_item, $item_key );
+                continue;
             }
 
             // Series.
@@ -275,7 +279,6 @@ class Cart
                         ->setStartDate( $start_datetime )
                         ->setEndDate( $end_datetime )
                         ->save();
-                    Log::createEntity( $appointment, __METHOD__, $order->getCustomer()->getFullName() );
                 }
 
                 // Connect appointment with the cart item.
@@ -312,7 +315,6 @@ class Cart
                     ->setCreatedFrom( 'frontend' )
                     ->setCreatedAt( current_time( 'mysql' ) )
                     ->save();
-                Log::createEntity( $customer_appointment, __METHOD__, $order->getCustomer()->getFullName() );
 
                 Proxy\Files::attachFiles( $cart_item->getCustomFields(), $customer_appointment );
 
@@ -342,9 +344,9 @@ class Cart
                 }
                 if ( count( $item->getItems() ) === 1 ) {
                     if ( $series ) {
-                        $series->addItem( $item_key ++, $item );
+                        $series->addItem( $item_key++, $item );
                     } else {
-                        $order->addItem( $item_key ++, $item );
+                        $order->addItem( $item_key++, $item );
                     }
                 }
             }

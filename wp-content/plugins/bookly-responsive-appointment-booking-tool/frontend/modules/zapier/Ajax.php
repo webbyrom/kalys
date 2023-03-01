@@ -132,7 +132,7 @@ class Ajax extends Lib\Base\Ajax
             }
 
             // Custom fields
-            foreach ( Lib\Proxy\CustomFields::getForCustomerAppointment( new Lib\Entities\CustomerAppointment( array( 'custom_fields' => $appointment['custom_fields'] ) ) ) as $cf ) {
+            foreach ( Lib\Proxy\CustomFields::getForCustomerAppointment( new Lib\Entities\CustomerAppointment( array( 'id' => $appointment['ca_id'], 'custom_fields' => $appointment['custom_fields'] ) ) ) as $cf ) {
                 $custom_fields[] = $cf['label'] . ': ' . $cf['value'];
             }
 

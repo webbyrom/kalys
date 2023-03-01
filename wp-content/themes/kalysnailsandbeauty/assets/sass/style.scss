@@ -69,6 +69,7 @@ h1 {
     font-family: inherit;
     padding-top: 10px;
 }
+
 h1,
 h2,
 h3,
@@ -77,9 +78,11 @@ h4 {
     font-family: $font-title !important;
     text-transform: capitalize;
 }
+
 h2 {
     font-size: x-large;
 }
+
 /****** main navigation***/
 header,
 nav {
@@ -87,6 +90,7 @@ nav {
     position: relative;
     /* width: 100vw;*/
     height: 125px;
+
     //@include phone {
     //   display: block;
     //}
@@ -97,24 +101,27 @@ nav {
         font-size: 2rem;
         text-transform: capitalize;
         transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
+
         @include phone {
             display: block;
         }
+
         .kalys-collapse {
             position: relative;
             display: inline-flex;
             margin: auto;
             width: auto;
             right: 10%;
+
             @include phone {
                 display: block;
                 font-size: 1rem;
                 right: 0;
                 margin: 10px 0 0 0;
-                right: 0;
                 float: left;
                 z-index: 12;
             }
+
             .kalys_primary_nav {
                 @include phone {
                     margin-right: 10px;
@@ -122,28 +129,33 @@ nav {
                 }
             }
         }
+
         .nav_logo {
             position: relative;
             top: 10%;
             /* width: 135px;*/
             height: auto;
             left: 2%;
+
             @include phone {
                 top: 0;
                 height: 75px;
                 left: 0;
             }
+
             img {
                 padding: 10px;
                 width: 200px;
                 position: relative;
                 transition: box-shadow 0.8s ease-in-out;
+
                 @include phone {
                     width: 120px;
                     height: 75px;
                 }
             }
         }
+
         ul.kalys_primary_nav {
             position: relative;
             display: inline-flex;
@@ -152,25 +164,30 @@ nav {
             // width: 100vw;
             //  top: -51%;
             margin: auto;
+
             @include phone {
                 margin-right: 10px;
                 display: block;
             }
+
             li:nth-child(-n + 4) {
                 margin-right: 30px;
+
                 @include phone {
                     margin-right: 10px;
                     display: block;
                 }
             }
 
-            li > a {
+            li>a {
                 color: $font-body-color;
                 transition: color 0.8s ease-in-out;
+
                 &:hover {
                     color: $link-nav-hover;
                 }
             }
+
             .sub-menu {
                 position: absolute;
                 font-family: $font-body-bold;
@@ -187,13 +204,15 @@ nav {
 
                 li {
                     position: relative;
+
                     a {
                         padding-left: 0;
                     }
                 }
             }
         }
-        ul.kalys_primary_nav li:hover > ul.sub-menu {
+
+        ul.kalys_primary_nav li:hover>ul.sub-menu {
             visibility: visible;
             border-radius: 10px;
             background-color: rgb(245, 245, 245);
@@ -201,13 +220,16 @@ nav {
             opacity: 1;
             // transition: padding-left 0.8s, background-color 0.8s ease-in-out;
         }
+
         ul.kalys_primary_nav ul.sub-menu {
             background-color: $color-shadow;
             border-radius: 10px;
+
             li {
                 padding-left: 0;
                 width: 100%;
                 transition: padding-left 0.8s, background-color 0.8s ease-in-out;
+
                 &:hover {
                     background-color: #ecd2ec;
                     padding-left: 5px;
@@ -216,6 +238,7 @@ nav {
             }
         }
     }
+
     /*****
     Add class Sticky on navbar
     **/
@@ -228,6 +251,7 @@ nav {
         /*top: 0;*/
         width: 100%;
         z-index: 11;
+
         .nav_logo {
             img {
                 // border: 1px solid $color-border;
@@ -240,6 +264,7 @@ nav {
             transition: color 1s ease-in-out;
         }
     }
+
     /***** button price*****/
     button {
         z-index: 10;
@@ -252,9 +277,11 @@ nav {
         border: 1px solid grey;
         border-radius: 5px;
         transition: color 0.8s, border 1s, background-color 0.8s, box-shadow 0.8s;
+
         @include phone {
             width: 80px;
         }
+
         a {
             font-size: large;
             display: flex;
@@ -263,32 +290,36 @@ nav {
             color: grey;
         }
     }
+
     button:hover {
         background-color: #ffffff00;
         border: 1px solid black;
         box-shadow: 2px 2px 5px white;
+
         a:hover {
             color: black;
             font-size: medium;
             font-weight: 900;
         }
     }
-    ul.kalys_primary_nav li.kalys_m_active > a {
+
+    ul.kalys_primary_nav li.kalys_m_active>a {
         color: $color-border;
     }
 }
+
 /*********
  navbar responsive
 
 ****************/
 div.kalys-collapse {
-     @include phone {
+    @include phone {
         background-color: $title-color;
         border-radius: 10px;
         font-size: 2rem;
         text-align: center;
     }
-    
+
     &::before {
         content: ""; // mettre l'icone du burger
         width: 50px;
@@ -296,6 +327,7 @@ div.kalys-collapse {
         border-radius: 10px;
         background-color: red;
         display: none;
+
         @include phone {
             display: block;
             position: absolute;
@@ -313,6 +345,7 @@ div.kalys-collapse {
     border-radius: 10px;
     margin-bottom: 75px;
 }
+
 /****** homepage*/
 .home {
     main {
@@ -320,12 +353,23 @@ div.kalys-collapse {
         font-family: $font-tillana;
         text-align: center;
         line-height: 1.2rem;
+
         .kalys-col-full {
             background-color: $color-bg-epilation;
             box-sizing: border-box;
             box-shadow: 10px 5px 10px gray;
             border-radius: 10px;
+
+            /*******resposive accueil*****/
+            @include tablet {
+                box-shadow: none;
+            }
+
+            @include phone {
+                box-shadow: none;
+            }
         }
+
         .kalys-home-img {
             img:hover {
                 transition: box-shadow 0.8s ease-in-out;
@@ -343,23 +387,53 @@ div.kalys-collapse {
             font-family: $tillan-Sb;
             flex-direction: column;
         }
+
         .bookly-bootstrap .justify-content-start {
             display: flex;
             justify-content: center !important;
+
             @include phone {
-                display: block;
+                display: grid;
             }
         }
+
         .bookly-bootstrap .btn-outline-secondary {
             font-weight: 900;
             font-size: 1.5rem !important;
         }
+
         .bookly-bootstrap .btn-outline-secondary:hover {
             background-color: $bgbooklyHomeKalys;
         }
     }
 }
+/******** 
+page blog/actualités
 
+*****/
+.blog, .page-template-single-soin-mains{
+    #rev_slider_8_1_forcefullwidth, #rev_slider_7_1_forcefullwidth {
+        @include tablet{
+            margin-bottom: 0!important;
+        }
+    }
+    .kalys-post-manucure{
+        @include phone{
+            display: inline-block;
+        }
+    }
+    .zoom-img-card-hover {
+        @include phone {
+            padding-right: 0;
+        }
+    }
+    .full-article{
+        @include phone{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
 /***********
 footer
 */
@@ -385,6 +459,7 @@ footer
     .footer_col {
         width: max-content;
         display: table-footer-group;
+
         ul {
             padding: 0;
         }
@@ -432,10 +507,12 @@ footer
     width: 18rem;
     overflow: hidden;
     transition: all 0.8s;
+
     &:hover {
         box-shadow: 5px 5px 5px rgb(235, 219, 219);
     }
 }
+
 div.zoom-img-card-hover {
     div.zoom-img-card {
         position: relative;
@@ -445,6 +522,7 @@ div.zoom-img-card-hover {
             margin: 0;
             padding: 0;
         }
+
         img {
             transition: filter 0.8s ease-in-out;
             filter: contrast(60%);
@@ -454,6 +532,7 @@ div.zoom-img-card-hover {
             transition: all 0.8s;
         }
     }
+
     &:hover {
         .zoom-img-card {
             img {
@@ -466,6 +545,7 @@ div.zoom-img-card-hover {
         }
     }
 }
+
 .card-group {
     .card-body {
         overflow: hidden;
@@ -480,6 +560,7 @@ page actualités/blog
 *********/
 .blog {
     font-family: $tillan-medium !important;
+
     h1.title-news {
         font-size: 5em;
         text-align: center;
@@ -494,23 +575,28 @@ page actualités/blog
         display: flex;
         position: relative;
         padding-left: 40px;
+
         @include phone {
             display: block;
             padding: 10px;
         }
     }
+
     article.home-news {
         font-family: $tillan-medium !important;
+
         @include phone {
             margin-bottom: 10px;
         }
     }
+
     .home-news,
     .card,
-    .news-img > img {
+    .news-img>img {
         width: 100%;
         height: auto;
     }
+
     .news-sidebar {
         position: relative;
         background-color: $bg-sidebar;
@@ -518,36 +604,45 @@ page actualités/blog
         padding: 10px 0 10px 0;
         float: right;
         transition: box-shadow 0.8s ease-in-out;
+
         &:hover {
             box-shadow: 10px 10px 20px gray;
         }
+
         ul {
             width: 250px;
         }
+
         @include phone {
             display: none;
         }
     }
+
     .pagination {
         display: inline-flex;
         margin: 20px 20px 20px 0;
         text-align: center;
+
         .page-numbers {
             font-size: x-large;
         }
+
         .prev {
             transform: rotate(0.5turn);
         }
+
         .next {
             position: relative;
             // padding-left: 10px;
             // transform: rotate(1turn);
             transform: translateY(-4px);
         }
+
         .prev,
         .next {
             width: 40px;
         }
+
         .icon {
             color: $color-border;
             font-size: 10px;
@@ -561,28 +656,43 @@ page manucure
 .page-template-single-soin-mains {
     font-family: $tillan-medium !important;
 }
+
 /*******
 page épilation
 ******/
 .page-template-single-soin-corps {
     background-color: $color-epilation-bg;
+
     .kalys-epilation-bg {
         background-color: $color-bg-epilation;
         border-radius: 10px;
         box-shadow: 5px 5px 10px $color-shadow;
     }
+
     .elementor-widget-wpr-pricing-table .wpr-pricing-table-price {
         background-color: $bg-pricingT;
     }
+
     /*************** 
 Page template contact 
 ***************/
 }
+
 .page-template-contact {
     .kalys-contact-main {
         font-family: $tillan-Sb;
     }
+
     .wpcf7.js {
         font-family: $tillan-Sb !important;
+    }
+}
+
+/******************** admin menu ****************/
+.wp-admin.wp-core-ui.index-php {
+    background-color: red;
+
+    div#wpwrap div#adminmenumain div#adminmenuback div#adminmenuwrap ul#adminmenu li#menu-posts-soin-mains a.menu-icon-soin-mains div.wp-menu-image.dashicons-before>img {
+        padding: 0px !important;
     }
 }

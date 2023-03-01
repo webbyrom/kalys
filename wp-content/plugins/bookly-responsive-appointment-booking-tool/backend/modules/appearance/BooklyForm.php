@@ -53,7 +53,6 @@ class BooklyForm extends Lib\Base\Component
         ) );
 
         wp_localize_script( 'bookly-appearance.js', 'BooklyL10n', array(
-            'csrf_token' => Lib\Utils\Common::getCsrfToken(),
             'nop_format' => get_option( 'bookly_group_booking_nop_format' ),
             'today' => __( 'Today', 'bookly' ),
             'months' => array_values( $wp_locale->month ),
@@ -106,7 +105,7 @@ class BooklyForm extends Lib\Base\Component
                 'logo_url' => null,
             ),
         );
-        if ( Lib\Cloud\API::getInstance()->account->productActive( 'stripe' ) ) {
+        if ( Lib\Config::stripeCloudEnabled() ) {
             $gateways[ Lib\Entities\Payment::TYPE_CLOUD_STRIPE ] = array(
                 'label_option_name' => 'bookly_l10n_label_pay_cloud_stripe',
                 'title' => 'Stripe Cloud',

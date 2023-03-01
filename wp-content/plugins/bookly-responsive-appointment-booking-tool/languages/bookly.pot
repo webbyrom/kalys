@@ -60,6 +60,15 @@ msgstr ""
 msgid "Choose the font for your invoice template"
 msgstr ""
 
+msgid "Invoice file name prefix"
+msgstr ""
+
+msgid ""
+"Set a prefix for the file name that will be used for your invoices. For "
+"example, if the file name prefix is \"myfile_\", your PDF file will be "
+"downloaded with the \"myfile_1.pdf\" name"
+msgstr ""
+
 msgid "Invoice template"
 msgstr ""
 
@@ -133,9 +142,6 @@ msgid "Coupon discount"
 msgstr ""
 
 msgid "Group discount"
-msgstr ""
-
-msgid "Gift card discount"
 msgstr ""
 
 msgid "Total"
@@ -2548,6 +2554,9 @@ msgstr ""
 msgid "List"
 msgstr ""
 
+msgid "All day"
+msgstr ""
+
 msgid "No appointments for selected period."
 msgstr ""
 
@@ -2866,6 +2875,12 @@ msgid "Sender ID"
 msgstr ""
 
 msgid "Cost"
+msgstr ""
+
+msgid "Template"
+msgstr ""
+
+msgid "Language"
 msgstr ""
 
 msgid "Flag"
@@ -3756,6 +3771,18 @@ msgstr ""
 msgid "SMS has been sent successfully."
 msgstr ""
 
+msgid "WhatsApp Notifications"
+msgstr ""
+
+msgid "Permanent access token"
+msgstr ""
+
+msgid "Phone number ID "
+msgstr ""
+
+msgid "WhatsApp Business Account ID"
+msgstr ""
+
 msgid "Bookly Cloud Billing"
 msgstr ""
 
@@ -3960,6 +3987,9 @@ msgid "Next billing date"
 msgstr ""
 
 msgid "Deactivation date"
+msgstr ""
+
+msgid "Messages"
 msgstr ""
 
 msgid "Tasks"
@@ -4454,6 +4484,9 @@ msgstr ""
 msgid "Time zone of client"
 msgstr ""
 
+msgid "Locale of client"
+msgstr ""
+
 msgid "URL of approve appointment link (to use inside <a> tag)"
 msgstr ""
 
@@ -4569,9 +4602,6 @@ msgid "Voice Notifications"
 msgstr ""
 
 msgid "Make a test call"
-msgstr ""
-
-msgid "Language"
 msgstr ""
 
 msgid "Select the language of your notifications"
@@ -5055,6 +5085,9 @@ msgstr ""
 msgid "Complete payment"
 msgstr ""
 
+msgid "Gift card discount"
+msgstr ""
+
 msgid "Manual adjustment"
 msgstr ""
 
@@ -5157,6 +5190,33 @@ msgid ""
 "accordance with your settings."
 msgstr ""
 
+msgid "Header"
+msgstr ""
+
+msgid "Variable"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "New WhatsApp notification"
+msgstr ""
+
+msgid "Edit WhatsApp notification"
+msgstr ""
+
+msgid "In appeal"
+msgstr ""
+
+msgid "Pending deletion"
+msgstr ""
+
+msgid "Paused"
+msgstr ""
+
+msgid "Limit exceeded"
+msgstr ""
+
 msgid "Delete customers"
 msgstr ""
 
@@ -5257,9 +5317,9 @@ msgid "Select mailing list"
 msgstr ""
 
 msgid ""
-"You are going to delete item which is involved in upcoming appointments. All "
-"related appointments will be deleted. Please double check and edit "
-"appointments before this item deletion if needed."
+"You are going to delete an item that might be involved in existing "
+"appointments. All related appointments will be deleted. Please double-check "
+"and edit appointments before this item deletion if needed."
 msgstr ""
 
 msgid "Edit appointments"
@@ -5453,6 +5513,28 @@ msgid "Advanced service and staff management"
 msgstr ""
 
 msgid "Upgrade"
+msgstr ""
+
+msgid "Migrate your Zoom JWT app to the new app type by June 1, 2023."
+msgstr ""
+
+msgid ""
+"Zoom JWT app type will be deprecated June 1, 2023. After this date, you will "
+"no longer be able to use your JWT apps."
+msgstr ""
+
+msgid ""
+"We recommend that you create an OAuth app to replace the functionality of a "
+"JWT app in your account."
+msgstr ""
+
+msgid ""
+"To learn more, please visit the <a href=\"https://marketplace.zoom.us/docs/"
+"guides/build/jwt-app/jwt-faq/\" target=\"_blank\">official Zoom page</a> "
+"about this change"
+msgstr ""
+
+msgid "Go to Settings"
 msgstr ""
 
 #, php-format
@@ -5915,6 +5997,12 @@ msgstr ""
 msgid "Your package has been created."
 msgstr ""
 
+msgid "Show packages only"
+msgstr ""
+
+msgid "Package info"
+msgstr ""
+
 msgid "Creation Date"
 msgstr ""
 
@@ -6129,8 +6217,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Please verify Bookly Pro license in the administrative panel. If you do not "
-"verify the license within {days}, access to your bookings will be disabled."
+"Please verify Bookly Pro license in the administrative panel on {site_url}."
+msgstr ""
+
+msgid ""
+"If you do not verify the license within {days}, access to your bookings will "
+"be disabled."
 msgstr ""
 
 msgid "Customer address"
@@ -6184,18 +6276,16 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Please contact your website administrator in order to verify the license for "
-"Bookly add-ons. If you do not verify the license within {days}, the "
-"respective add-ons will be disabled."
-msgstr ""
-
-msgid "Contact your admin to verify Bookly add-ons license; {days} remaining."
+"Please contact your website administrator of {site_url} in order to verify "
+"the license for Bookly add-ons."
 msgstr ""
 
 msgid ""
-"Please verify the license for Bookly add-ons in the administrative panel. If "
-"you do not verify the license within {days}, the respective add-ons will be "
-"disabled."
+"If you do not verify the license within {days}, the respective add-ons will "
+"be disabled."
+msgstr ""
+
+msgid "Contact your admin to verify Bookly add-ons license; {days} remaining."
 msgstr ""
 
 msgid "Please verify Bookly add-ons license; {days} remaining."
@@ -6210,6 +6300,9 @@ msgstr ""
 msgid "Services form"
 msgstr ""
 
+msgid "Staff form"
+msgstr ""
+
 msgid "A custom block for displaying cancellation confirmation"
 msgstr ""
 
@@ -6217,6 +6310,9 @@ msgid "A custom block for displaying search form"
 msgstr ""
 
 msgid "A custom block for displaying services form"
+msgstr ""
+
+msgid "A custom block for displaying staff form"
 msgstr ""
 
 msgid "no limit"
@@ -6984,6 +7080,11 @@ msgid ""
 "for your customers."
 msgstr ""
 
+msgid ""
+"Catalog view allows you to organize and display the staff conveniently for "
+"your customers."
+msgstr ""
+
 msgid "Step by step form"
 msgstr ""
 
@@ -6996,6 +7097,66 @@ msgstr ""
 msgid ""
 "Lightweight form that allows your customers to cancel their appointments and "
 "optionally specify the cancellation reason."
+msgstr ""
+
+msgid "Placeholder"
+msgstr ""
+
+msgid "Empty option"
+msgstr ""
+
+msgid "Width"
+msgstr ""
+
+msgid "Header height"
+msgstr ""
+
+msgid "Form title"
+msgstr ""
+
+msgid "Slug"
+msgstr ""
+
+msgid "Main color"
+msgstr ""
+
+msgid "Show 'Book more' button"
+msgstr ""
+
+msgid "Show price"
+msgstr ""
+
+msgid "Show summary"
+msgstr ""
+
+msgid "Show QR Code"
+msgstr ""
+
+msgid "Default value"
+msgstr ""
+
+msgid "Categories list"
+msgstr ""
+
+msgid "Services list"
+msgstr ""
+
+msgid "Hide categories step"
+msgstr ""
+
+msgid "Hide services step"
+msgstr ""
+
+msgid "Show cancellation reason"
+msgstr ""
+
+msgid "Staff list"
+msgstr ""
+
+msgid "Hide staff step"
+msgstr ""
+
+msgid "Card content"
 msgstr ""
 
 msgid "Add new form"
@@ -7040,49 +7201,7 @@ msgid ""
 "added to the page."
 msgstr ""
 
-msgid "Placeholder"
-msgstr ""
-
-msgid "Empty option"
-msgstr ""
-
-msgid "Width"
-msgstr ""
-
-msgid "Form title"
-msgstr ""
-
-msgid "Slug"
-msgstr ""
-
-msgid "Main color"
-msgstr ""
-
-msgid "Show 'Book more' button"
-msgstr ""
-
-msgid "Show price"
-msgstr ""
-
-msgid "Show summary"
-msgstr ""
-
-msgid "Show QR Code"
-msgstr ""
-
-msgid "Categories list"
-msgstr ""
-
-msgid "Services list"
-msgstr ""
-
-msgid "Hide categories step"
-msgstr ""
-
-msgid "Hide services step"
-msgstr ""
-
-msgid "Show cancellation reason"
+msgid "Service title"
 msgstr ""
 
 msgid "Book now"
@@ -7126,6 +7245,9 @@ msgid "Please tell us how you would like to pay"
 msgstr ""
 
 msgid "Please select a category"
+msgstr ""
+
+msgid "Please select a staff"
 msgstr ""
 
 msgid "Thank you for being with us"
@@ -7178,9 +7300,6 @@ msgstr ""
 msgid "Recipient"
 msgstr ""
 
-msgid "Message"
-msgstr ""
-
 msgid "Headers"
 msgstr ""
 
@@ -7221,6 +7340,9 @@ msgid "Add Bookly search form"
 msgstr ""
 
 msgid "Add Bookly services form"
+msgstr ""
+
+msgid "Add Bookly staff form"
 msgstr ""
 
 msgid "Add appointment cancellation confirmation"
@@ -7596,11 +7718,6 @@ msgid ""
 "Please contact your website administrator in order to verify the license."
 msgstr ""
 
-msgid ""
-"If you do not verify the license within {days}, access to your bookings will "
-"be disabled."
-msgstr ""
-
 msgid "Proceed to Bookly Pro without license verification"
 msgstr ""
 
@@ -7875,6 +7992,12 @@ msgid "Enter default mask for auto-generated codes."
 msgstr ""
 
 msgid "Show coupons"
+msgstr ""
+
+msgid "Your coupon code if you have one"
+msgstr ""
+
+msgid "Button"
 msgstr ""
 
 msgid "Group name"

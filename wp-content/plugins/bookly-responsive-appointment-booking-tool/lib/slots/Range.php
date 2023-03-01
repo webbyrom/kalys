@@ -11,7 +11,6 @@ class Range
     const PARTIALLY_BOOKED     = 2;
     const FULLY_BOOKED         = 3;
     const WAITING_LIST_STARTED = 4;
-    const INTERMEDIATE         = 5;  // internal state for multi-day + consecutive/parallel bookings
 
     /** @var IPoint */
     protected $start;
@@ -537,26 +536,6 @@ class Range
     }
 
     /**
-     * Tells whether range's state is intermediate.
-     *
-     * @return bool
-     */
-    public function intermediate()
-    {
-        return $this->data->state() == self::INTERMEDIATE;
-    }
-
-    /**
-     * Tells whether range's state is not intermediate.
-     *
-     * @return bool
-     */
-    public function notIntermediate()
-    {
-        return $this->data->state() != self::INTERMEDIATE;
-    }
-
-    /**
      * Build slot data.
      *
      * @return array
@@ -639,5 +618,22 @@ class Range
         }
 
         return $result;
+    }
+
+    /**
+     * Find alternative slot among all the next slots running in parallel.
+     *
+     * @return Range|null
+     */
+    public function deepAltSlot()
+    {
+        if ( $this->data()->hasNextSlot() && $this->data()->nextConnection() == Generator::CONNECTION_PARALLEL ) {
+            $alt_next_slot = $this->data()->nextSlot()->deepAltSlot();
+            if ( $alt_next_slot ) {
+                return $this->replaceNextSlot( $alt_next_slot );
+            }
+        }
+
+        return $this->data()->altSlot();
     }
 }

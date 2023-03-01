@@ -1,6 +1,6 @@
 <article class="home-news">
-    <div class="row">
-        <div class="row ">
+    <div class="row full-article">
+        <div class="row full-article-second ">
             <div class="col zoom-img-card-hover">
                 <div class="card zoom-img-card">
                     <?php if (has_post_thumbnail()) : ?>

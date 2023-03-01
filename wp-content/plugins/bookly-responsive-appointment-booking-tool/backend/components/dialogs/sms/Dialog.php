@@ -1,10 +1,10 @@
 <?php
 namespace Bookly\Backend\Components\Dialogs\Sms;
 
-use Bookly\Backend\Modules\Notifications\Lib\Codes;
 use Bookly\Lib;
-use Bookly\Backend\Components\Controls\Buttons;
 use Bookly\Lib\Entities\Notification;
+use Bookly\Backend\Components\Controls\Buttons;
+use Bookly\Backend\Modules\Notifications\Lib\Codes;
 
 /**
  * Class Dialog
@@ -35,7 +35,7 @@ class Dialog extends Lib\Base\Component
             'recurringActive' => (int) Lib\Config::recurringAppointmentsActive(),
             'defaultNotification' => self::getDefaultNotification(),
             'codes' => $codes_list,
-            'sms' => true,
+            'gateway' => 'sms',
             'title' => array(
                 'container' => __( 'Sms', 'bookly' ),
                 'new' => __( 'New sms notification', 'bookly' ),

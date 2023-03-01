@@ -59,7 +59,6 @@ class Ajax extends Lib\Base\Ajax
 
         $appointment = Lib\Entities\Appointment::find( $appointment_id );
         if ( $appointment ) {
-            Lib\Utils\Log::deleteEntity( $appointment, __METHOD__ );
             $appointment->delete();
         }
 

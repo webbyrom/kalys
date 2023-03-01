@@ -63,6 +63,8 @@ class Service extends Lib\Base\Form
             'wc_cart_info',
             'min_time_prior_booking',
             'min_time_prior_cancel',
+            'gateways',
+            'gateways_list'
         );
 
         $this->setFields( $fields );

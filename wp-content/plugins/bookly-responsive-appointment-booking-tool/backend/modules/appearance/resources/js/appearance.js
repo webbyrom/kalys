@@ -259,7 +259,7 @@ jQuery(function($) {
     $('#bookly-js-hint-alert').on('closed.bs.alert', function() {
         $.ajax({
             url: ajaxurl,
-            data: {action: 'bookly_dismiss_appearance_notice', csrf_token: BooklyL10n.csrf_token}
+            data: {action: 'bookly_dismiss_appearance_notice', csrf_token: BooklyL10nGlobal.csrf_token}
         });
     });
 
@@ -912,7 +912,7 @@ jQuery(function($) {
             type: 'POST',
             data: {
                 action: 'bookly_save_custom_css',
-                csrf_token: BooklyL10n.csrf_token,
+                csrf_token: BooklyL10nGlobal.csrf_token,
                 custom_css: $custom_css.val()
             },
             dataType: 'json',
@@ -965,7 +965,7 @@ jQuery(function($) {
         // Prepare data.
         var data = {
             action: 'bookly_update_appearance_options',
-            csrf_token: BooklyL10n.csrf_token,
+            csrf_token: BooklyL10nGlobal.csrf_token,
             options: {
                 // Color.
                 'bookly_app_color': $color_picker.wpColorPicker('color'),

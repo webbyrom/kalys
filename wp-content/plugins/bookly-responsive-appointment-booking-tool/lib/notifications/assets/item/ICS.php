@@ -87,7 +87,7 @@ class ICS
      */
     protected function _formatDateTime( $datetime )
     {
-        return date_create( $datetime )->format( 'Ymd\THis' );
+        return date_create( Lib\Utils\DateTime::convertTimeZone( $datetime, Lib\Config::getWPTimeZone(), 'UTC' ) )->format( 'Ymd\THis\Z' );
     }
 
     /**

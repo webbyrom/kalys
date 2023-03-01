@@ -167,7 +167,7 @@ class Installer extends Base\Installer
         $settings['offset_hours'] = 1;
         $settings['perform'] = 'before';
         $settings['at_hour'] = 18;
-        $settings['offset_bidirectional_hours'] = -24;
+        $settings['offset_bidirectional_hours'] = - 24;
         $this->notifications[] = array(
             'gateway' => 'sms',
             'type' => Notification::TYPE_APPOINTMENT_REMINDER,
@@ -197,7 +197,7 @@ class Installer extends Base\Installer
         );
         $settings = $default_settings;
         $settings['at_hour'] = 18;
-        $settings['offset_bidirectional_hours'] = -24;
+        $settings['offset_bidirectional_hours'] = - 24;
         $this->notifications[] = array(
             'gateway' => 'sms',
             'type' => Notification::TYPE_STAFF_DAY_AGENDA,
@@ -480,6 +480,7 @@ class Installer extends Base\Installer
                 'bookly_dismiss_nps_notice',
                 'bookly_dismiss_powered_by_notice',
                 'bookly_dismiss_subscribe_notice',
+                'bookly_dismiss_zoom_jwt_notice',
                 'bookly_email_notifications_table_settings',
                 'bookly_payments_table_settings',
                 'bookly_show_collecting_stats_notice',
@@ -594,6 +595,7 @@ class Installer extends Base\Installer
                 `wc_cart_info`                 TEXT DEFAULT NULL,
                 `min_time_prior_booking`       INT DEFAULT NULL,
                 `min_time_prior_cancel`        INT DEFAULT NULL,
+                `gateways`                     VARCHAR(255) DEFAULT NULL,
                 `visibility`                   ENUM("public","private","group") NOT NULL DEFAULT "public",
                 `position`                     INT NOT NULL DEFAULT 9999,
             CONSTRAINT
@@ -688,7 +690,7 @@ class Installer extends Base\Installer
         $wpdb->query(
             'CREATE TABLE IF NOT EXISTS `' . Entities\Notification::getTableName() . '` (
                 `id`             INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                `gateway`        ENUM("email","sms","voice") NOT NULL DEFAULT "email",
+                `gateway`        ENUM("email","sms","voice","whatsapp") NOT NULL DEFAULT "email",
                 `type`           VARCHAR(255) NOT NULL DEFAULT "",
                 `active`         TINYINT(1) NOT NULL DEFAULT 0,
                 `name`           VARCHAR(255) NOT NULL DEFAULT "",
@@ -1027,6 +1029,7 @@ class Installer extends Base\Installer
             'CREATE TABLE IF NOT EXISTS `' . Entities\Session::getTableName() . '` (
                 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 `token` VARCHAR(255) NOT NULL,
+                `name` VARCHAR(255) DEFAULT NULL,
                 `value` TEXT DEFAULT NULL,
                 `expire` DATETIME NOT NULL,
                 INDEX `token` (`token`),

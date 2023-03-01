@@ -42,6 +42,8 @@ class API extends Cache
     public $square;
     /** @var \BooklyPro\Lib\Cloud\Gift */
     public $gift;
+    /** @var WhatsApp */
+    public $whatsapp;
 
     /**
      * Constructor.
@@ -56,6 +58,8 @@ class API extends Cache
         $this->zapier = new Zapier( $this );
         $this->cron = new Cron( $this );
         $this->voice = new Voice( $this );
+        $this->whatsapp = new WhatsApp( $this );
+
         Proxy\Shared::initApi( $this );
     }
 

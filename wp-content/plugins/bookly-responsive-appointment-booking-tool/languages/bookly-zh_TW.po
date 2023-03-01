@@ -8,9 +8,9 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-14 12:45+0000\n"
-"PO-Revision-Date: 2022-12-15 03:38+0000\n"
-"Last-Translator: Wina H <chillhchill@gmail.com>\n"
+"POT-Creation-Date: 2023-02-08 14:00+0000\n"
+"PO-Revision-Date: 2023-02-08 14:01+0000\n"
+"Last-Translator: support@bookly.info\n"
 "Language-Team: Chinese (Taiwan)\n"
 "X-Loco-Version: 2.3.1; wp-6.1"
 
@@ -88,6 +88,15 @@ msgstr "字體"
 msgid "Choose the font for your invoice template"
 msgstr "為您的發票模板選擇字體"
 
+msgid "Invoice file name prefix"
+msgstr "發票文件名稱前綴"
+
+msgid ""
+"Set a prefix for the file name that will be used for your invoices. For "
+"example, if the file name prefix is \"myfile_\", your PDF file will be "
+"downloaded with the \"myfile_1.pdf\" name"
+msgstr "為將用於發票的文件名設置前綴。例如，如果文件名稱前綴為\"myfile_\"，則PDF文件將以\"myfile_1.pdf\"名稱下載"
+
 msgid "Invoice template"
 msgstr "發票樣式"
 
@@ -162,9 +171,6 @@ msgstr "優惠券折扣"
 
 msgid "Group discount"
 msgstr "組別折扣"
-
-msgid "Gift card discount"
-msgstr "禮品卡折扣"
 
 msgid "Total"
 msgstr "總計"
@@ -2937,6 +2943,9 @@ msgstr "月"
 msgid "List"
 msgstr "列表"
 
+msgid "All day"
+msgstr "全天"
+
 msgid "No appointments for selected period."
 msgstr "選擇時間沒有預約。"
 
@@ -3256,6 +3265,12 @@ msgstr "發件人ID"
 
 msgid "Cost"
 msgstr "成本"
+
+msgid "Template"
+msgstr "模板"
+
+msgid "Language"
+msgstr "語言"
 
 msgid "Flag"
 msgstr "國家"
@@ -4161,6 +4176,18 @@ msgstr "已取消"
 msgid "SMS has been sent successfully."
 msgstr "SMS 短訊發送成功。"
 
+msgid "WhatsApp Notifications"
+msgstr "WhatsApp通知"
+
+msgid "Permanent access token"
+msgstr "永久訪問令牌"
+
+msgid "Phone number ID "
+msgstr "手機號碼ID"
+
+msgid "WhatsApp Business Account ID"
+msgstr "WhatsApp商務版賬號ID"
+
 msgid "Bookly Cloud Billing"
 msgstr "Bookly雲端收費"
 
@@ -4369,6 +4396,9 @@ msgstr "下個收費日期"
 
 msgid "Deactivation date"
 msgstr "取消日期"
+
+msgid "Messages"
+msgstr "消息"
 
 msgid "Tasks"
 msgstr "任務"
@@ -4872,6 +4902,9 @@ msgstr "購物車資料（可取消）"
 msgid "Time zone of client"
 msgstr "客戶的時區"
 
+msgid "Locale of client"
+msgstr "客戶所在地"
+
 msgid "URL of approve appointment link (to use inside <a> tag)"
 msgstr "批准預約鏈接URL（在<a>標籤內使用）"
 
@@ -4989,9 +5022,6 @@ msgstr "語音通知"
 
 msgid "Make a test call"
 msgstr "打一個測試電話"
-
-msgid "Language"
-msgstr "語言"
 
 msgid "Select the language of your notifications"
 msgstr "選擇通知的語言"
@@ -5477,6 +5507,9 @@ msgstr "綁定付款"
 msgid "Complete payment"
 msgstr "完成付款"
 
+msgid "Gift card discount"
+msgstr "禮品卡折扣"
+
 msgid "Manual adjustment"
 msgstr "手動調整"
 
@@ -5580,6 +5613,33 @@ msgid ""
 "accordance with your settings."
 msgstr "您將要刪除預約。通知將根據您的設置發送。"
 
+msgid "Header"
+msgstr "頁頭"
+
+msgid "Variable"
+msgstr "變量"
+
+msgid "Message"
+msgstr "訊息"
+
+msgid "New WhatsApp notification"
+msgstr "新WhatsApp通知"
+
+msgid "Edit WhatsApp notification"
+msgstr "編輯WhatsApp通知"
+
+msgid "In appeal"
+msgstr "正在申訴"
+
+msgid "Pending deletion"
+msgstr "待刪除"
+
+msgid "Paused"
+msgstr "已暫停"
+
+msgid "Limit exceeded"
+msgstr "已超過限制"
+
 msgid "Delete customers"
 msgstr "删除客戶"
 
@@ -5680,10 +5740,10 @@ msgid "Select mailing list"
 msgstr "選擇郵件列表"
 
 msgid ""
-"You are going to delete item which is involved in upcoming appointments. All "
-"related appointments will be deleted. Please double check and edit "
-"appointments before this item deletion if needed."
-msgstr "您將刪除的項目包括即將進行的預約，所有相關的預約將被刪除。如有需要，請在刪除此項之前仔細檢查並編輯預約。"
+"You are going to delete an item that might be involved in existing "
+"appointments. All related appointments will be deleted. Please double-check "
+"and edit appointments before this item deletion if needed."
+msgstr "您將刪除一個可能涉及現有預約的項目。所有相關預約將被刪除。如有需要，請在刪除此項目前仔細檢查並編輯預約。"
 
 msgid "Edit appointments"
 msgstr "編輯預約"
@@ -5879,6 +5939,30 @@ msgstr "高級服務和員工管理"
 
 msgid "Upgrade"
 msgstr "升級"
+
+msgid "Migrate your Zoom JWT app to the new app type by June 1, 2023."
+msgstr "在2023年6月1日之前將Zoom JWT應用遷移到新的應用類型。"
+
+msgid ""
+"Zoom JWT app type will be deprecated June 1, 2023. After this date, you will "
+"no longer be able to use your JWT apps."
+msgstr "Zoom JWT應用類型將於2023年6月1日被棄用，在該日期之後，您將無法使用您的JWT應用。"
+
+msgid ""
+"We recommend that you create an OAuth app to replace the functionality of a "
+"JWT app in your account."
+msgstr "我們建議您創建一個OAuth應用來取代您賬號中JWT應用的功能。"
+
+msgid ""
+"To learn more, please visit the <a href=\"https://marketplace.zoom."
+"us/docs/guides/build/jwt-app/jwt-faq/\" target=\"_blank\">official Zoom "
+"page</a> about this change"
+msgstr ""
+"欲了解更多關於該更改的詳情，請訪問<a href=\"https://marketplace.zoom.us/docs/guides/build/jwt-"
+"app/jwt-faq/\" target=\"_blank\">官方Zoom頁面</a>"
+
+msgid "Go to Settings"
+msgstr "前往設定"
 
 #, php-format
 msgid ""
@@ -6413,6 +6497,12 @@ msgstr "用於顯示軟件包列表的自定義塊"
 msgid "Your package has been created."
 msgstr "您的包裹已創建"
 
+msgid "Show packages only"
+msgstr "僅顯示包裹"
+
+msgid "Package info"
+msgstr "包裹資料"
+
 msgid "Creation Date"
 msgstr "建立日期"
 
@@ -6693,9 +6783,13 @@ msgid ""
 msgstr "Bookly Pro將需要驗證您的許可證才能恢復對預約的訪問。請在管理面板中輸入購買代碼。"
 
 msgid ""
-"Please verify Bookly Pro license in the administrative panel. If you do not "
-"verify the license within {days}, access to your bookings will be disabled."
-msgstr "請在管理面板中驗證Bookly Pro許可。如果您未在{days}內驗證許可證，則將無法訪問您的預約。"
+"Please verify Bookly Pro license in the administrative panel on {site_url}."
+msgstr "請在{site_url}管理面板中驗證Bookly Pro許可證。"
+
+msgid ""
+"If you do not verify the license within {days}, access to your bookings will "
+"be disabled."
+msgstr "如果您在{days}內未驗證許可，您的預約將被禁用。"
 
 msgid "Customer address"
 msgstr "自定地址"
@@ -6748,19 +6842,17 @@ msgid ""
 msgstr "您有新預約。要查看它，請驗證Bookly Pro許可。"
 
 msgid ""
-"Please contact your website administrator in order to verify the license for "
-"Bookly add-ons. If you do not verify the license within {days}, the "
-"respective add-ons will be disabled."
-msgstr "請與您的網站管理員聯繫，以驗證Bookly插件的許可證。 如果您在{days}內未驗證許可，則相應的加載項將被禁用。"
+"Please contact your website administrator of {site_url} in order to verify "
+"the license for Bookly add-ons."
+msgstr "請聯繫您的網站管理員{site_url}，以驗證Bookly擴展組件的許可證。"
+
+msgid ""
+"If you do not verify the license within {days}, the respective add-ons will "
+"be disabled."
+msgstr "如果您沒有在{days}天內驗證許可證，則相應的擴展組件將被禁用。"
 
 msgid "Contact your admin to verify Bookly add-ons license; {days} remaining."
 msgstr "聯繫您的管理員以驗證Bookly附加組件許可證; 剩餘{days}天。"
-
-msgid ""
-"Please verify the license for Bookly add-ons in the administrative panel. If "
-"you do not verify the license within {days}, the respective add-ons will be "
-"disabled."
-msgstr "請在管理面板中驗證Bookly插件的許可證。 如果您在{days}內未驗證許可，則相應的加載項將被禁用。"
 
 msgid "Please verify Bookly add-ons license; {days} remaining."
 msgstr "請驗證Bookly附加組件許可證；剩餘{days}天。"
@@ -6774,6 +6866,9 @@ msgstr "搜索表單"
 msgid "Services form"
 msgstr "服務表單"
 
+msgid "Staff form"
+msgstr "員工表單"
+
 msgid "A custom block for displaying cancellation confirmation"
 msgstr "用於顯示確認取消的自定義塊"
 
@@ -6782,6 +6877,9 @@ msgstr "顯示搜索表單的自定義區塊"
 
 msgid "A custom block for displaying services form"
 msgstr "用於顯示服務表單的自定義塊"
+
+msgid "A custom block for displaying staff form"
+msgstr "用於顯示員工表單的自定義塊"
 
 msgid "no limit"
 msgstr "無限制"
@@ -7573,6 +7671,11 @@ msgid ""
 "for your customers."
 msgstr "目錄視圖允許您方便地為您的客戶整理和顯示服務。"
 
+msgid ""
+"Catalog view allows you to organize and display the staff conveniently for "
+"your customers."
+msgstr "目錄視圖允許您方便地為客戶整理和顯示員工。"
+
 msgid "Step by step form"
 msgstr "分步表單"
 
@@ -7586,6 +7689,66 @@ msgid ""
 "Lightweight form that allows your customers to cancel their appointments and "
 "optionally specify the cancellation reason."
 msgstr "輕量級表單允許您的客戶取消他們的預約並具體說明取消原因（選填）。"
+
+msgid "Placeholder"
+msgstr "佔位符"
+
+msgid "Empty option"
+msgstr "清空選項"
+
+msgid "Width"
+msgstr "寬度"
+
+msgid "Header height"
+msgstr "頁頭高度"
+
+msgid "Form title"
+msgstr "表單標題"
+
+msgid "Slug"
+msgstr "處理後標題"
+
+msgid "Main color"
+msgstr "主要顏色"
+
+msgid "Show 'Book more' button"
+msgstr "顯示\"預定更多\"按鈕"
+
+msgid "Show price"
+msgstr "顯示價格"
+
+msgid "Show summary"
+msgstr "顯示總結"
+
+msgid "Show QR Code"
+msgstr "顯示QR碼"
+
+msgid "Default value"
+msgstr "默認值"
+
+msgid "Categories list"
+msgstr "分類列表"
+
+msgid "Services list"
+msgstr "服務列表"
+
+msgid "Hide categories step"
+msgstr "隱藏分類步驟"
+
+msgid "Hide services step"
+msgstr "隱藏服務步驟"
+
+msgid "Show cancellation reason"
+msgstr "顯示取消原因"
+
+msgid "Staff list"
+msgstr "員工列表"
+
+msgid "Hide staff step"
+msgstr "隱藏員工步驟"
+
+msgid "Card content"
+msgstr "卡片內容"
 
 msgid "Add new form"
 msgstr "添加新表單"
@@ -7630,50 +7793,8 @@ msgid ""
 msgstr ""
 "請選擇您要發佈的表單，點擊菜單按鈕，並選擇\"複製短代碼\"。在頁面編輯模式下，打開要添加預定表單的頁面，並粘貼之前複製的短代碼。該表單將被添加到該頁面中。"
 
-msgid "Placeholder"
-msgstr "佔位符"
-
-msgid "Empty option"
-msgstr "清空選項"
-
-msgid "Width"
-msgstr "寬度"
-
-msgid "Form title"
-msgstr "表單標題"
-
-msgid "Slug"
-msgstr "處理後標題"
-
-msgid "Main color"
-msgstr "主要顏色"
-
-msgid "Show 'Book more' button"
-msgstr "顯示\"預定更多\"按鈕"
-
-msgid "Show price"
-msgstr "顯示價格"
-
-msgid "Show summary"
-msgstr "顯示總結"
-
-msgid "Show QR Code"
-msgstr "顯示QR碼"
-
-msgid "Categories list"
-msgstr "分類列表"
-
-msgid "Services list"
-msgstr "服務列表"
-
-msgid "Hide categories step"
-msgstr "隱藏分類步驟"
-
-msgid "Hide services step"
-msgstr "隱藏服務步驟"
-
-msgid "Show cancellation reason"
-msgstr "顯示取消原因"
+msgid "Service title"
+msgstr "服務標題"
 
 msgid "Book now"
 msgstr "立刻預訂"
@@ -7717,6 +7838,9 @@ msgstr "請告訴我們您想要使用的付款方式"
 
 msgid "Please select a category"
 msgstr "請選擇一個類別"
+
+msgid "Please select a staff"
+msgstr "請選擇一名員工"
 
 msgid "Thank you for being with us"
 msgstr "感謝您與我們在一起"
@@ -7768,9 +7892,6 @@ msgstr "電子郵件詳細信息"
 msgid "Recipient"
 msgstr "收件人"
 
-msgid "Message"
-msgstr "訊息"
-
 msgid "Headers"
 msgstr "頁頭"
 
@@ -7812,6 +7933,9 @@ msgstr "新增 Bookly 搜索表單"
 
 msgid "Add Bookly services form"
 msgstr "添加Blookly服務表單"
+
+msgid "Add Bookly staff form"
+msgstr "添加Bookly員工表單"
 
 msgid "Add appointment cancellation confirmation"
 msgstr "添加取消預約確認"
@@ -8196,11 +8320,6 @@ msgid ""
 "Please contact your website administrator in order to verify the license."
 msgstr "請聯繫您的網站管理員，以驗證該許可證。"
 
-msgid ""
-"If you do not verify the license within {days}, access to your bookings will "
-"be disabled."
-msgstr "如果您在{days}內未驗證許可，您的預約將被禁用。"
-
 msgid "Proceed to Bookly Pro without license verification"
 msgstr "繼續使用未經許可驗證的Bookly Pro"
 
@@ -8509,6 +8628,12 @@ msgstr "輸入預設掩碼作為自動生成代碼。"
 
 msgid "Show coupons"
 msgstr "顯示優惠券"
+
+msgid "Your coupon code if you have one"
+msgstr "優惠券碼（如有）"
+
+msgid "Button"
+msgstr "按鈕"
 
 msgid "Group name"
 msgstr "組別名稱"

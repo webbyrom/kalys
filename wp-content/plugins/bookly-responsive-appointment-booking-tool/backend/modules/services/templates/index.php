@@ -64,7 +64,7 @@ use Bookly\Backend\Components\Dialogs;
             </table>
 
             <div class="text-right mt-3">
-                <?php Controls\Buttons::renderDelete() ?>
+                <?php Controls\Buttons::renderDelete( 'bookly-delete', null, null, array( 'disabled' => 'disabled' ) ) ?>
             </div>
         </div>
     </div>

@@ -186,13 +186,15 @@ class Ajax extends Lib\Base\Ajax
         $cloud = Lib\Cloud\API::getInstance();
         foreach ( $queue as $notification ) {
             $gateway = $notification['gateway'];
-            if ( $gateway == 'sms' ) {
+            if ( $gateway === 'sms' ) {
                 $cloud->sms->sendSms( $notification['address'], $notification['message'], $notification['impersonal'], $notification['type_id'] );
             } elseif ( $gateway === 'email' ) {
                 Lib\Proxy\Pro::logEmail( $notification['address'], $notification['subject'], $notification['message'], $notification['headers'], isset( $notification['attachments'] ) ? $notification['attachments'] : array(), $notification['type_id'] );
                 wp_mail( $notification['address'], $notification['subject'], $notification['message'], $notification['headers'], isset( $notification['attachments'] ) ? $notification['attachments'] : array() );
             } elseif ( $gateway === 'voice' ) {
                 $cloud->voice->call( $notification['address'], $notification['message'], $notification['impersonal'] );
+            } elseif ( $gateway === 'whatsapp' ) {
+                $cloud->whatsapp->send( $notification['address'], $notification['message'] );
             }
         }
         self::_deleteAttachmentFiles( self::parameter( 'attachments', array() ) );

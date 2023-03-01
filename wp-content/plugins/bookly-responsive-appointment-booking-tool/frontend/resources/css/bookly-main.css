@@ -1332,6 +1332,10 @@ label.bookly-square {
     position: inherit;
 }
 
+.bookly-form .picker__input {
+    float: none !important;
+}
+
 .bookly-form .picker__nav--next {
     position: inherit;
     float: right;

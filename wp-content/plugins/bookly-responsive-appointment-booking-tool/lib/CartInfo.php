@@ -5,6 +5,7 @@ use Bookly\Frontend\Modules\Booking\Proxy as BookingProxy;
 
 /**
  * Class CartInfo
+ *
  * @package Bookly\Lib\Booking
  */
 class CartInfo
@@ -37,7 +38,7 @@ class CartInfo
     /** @var float  indicates the method of calculating the value that is sent as tax to payment system */
     protected $gateway_tax_calculation_rule;
 
-    /** @var float  tax amount for partial payment for services  */
+    /** @var float  tax amount for partial payment for services */
     private $deposit_tax;
     /** @var float  total tax amount */
     private $total_tax;
@@ -91,22 +92,28 @@ class CartInfo
             if ( $item->getService() ) {
                 $item_price = $item->getServicePrice( $item->getNumberOfPersons() );
                 if ( Config::waitingListActive() && get_option( 'bookly_waiting_list_enabled' ) && $item->toBePutOnWaitingList() ) {
-                    $this->waiting_list_total   += $item_price;
+                    $this->waiting_list_total += $item_price;
                     $this->waiting_list_deposit += Proxy\DepositPayments::prepareAmount( $item_price, $item->getDeposit(), $item->getNumberOfPersons() );
                 } else {
                     $allow_coupon = false;
                     if ( $this->coupon && $this->coupon->validForCartItem( $item ) ) {
                         $coupon_total += $item_price;
-                        $allow_coupon  = true;
+                        $allow_coupon = true;
                     }
                     $this->subtotal += $item_price;
-                    $this->deposit  += Proxy\DepositPayments::prepareAmount( $item_price, $item->getDeposit(), $item->getNumberOfPersons() );
+                    $this->deposit += Proxy\DepositPayments::prepareAmount( $item_price, $item->getDeposit(), $item->getNumberOfPersons() );
                     $this->amounts_taxable = Proxy\Taxes::prepareTaxRateAmounts( $this->amounts_taxable, $item, $allow_coupon );
                 }
             }
         }
 
         $this->total = $this->subtotal;
+
+        // Discounts order
+        // 1.Coupon
+        // 2.Addon Discounts
+        // 3.Group Discounts
+        // 4.Payment System
 
         if ( $this->coupon ) {
             $this->coupon_discount = $this->coupon->apply( $coupon_total ) - $coupon_total;
@@ -289,6 +296,7 @@ class CartInfo
                     ? $this->getPayTax()
                     : 0;
         }
+
         return 0;
     }
 
@@ -406,13 +414,13 @@ class CartInfo
     {
         if ( $this->total_tax == null ) {
             $taxes = array(
-                'allow_coupon'   => 0,
+                'allow_coupon' => 0,
                 'without_coupon' => 0,
             );
             $coupon_total = 0;
             array_walk( $this->amounts_taxable, function ( $amount ) use ( &$taxes, &$coupon_total ) {
                 if ( $amount['allow_coupon'] ) {
-                    $taxes['allow_coupon']   += Proxy\Taxes::calculateTax( $amount['total'], $amount['rate'] );
+                    $taxes['allow_coupon'] += Proxy\Taxes::calculateTax( $amount['total'], $amount['rate'] );
                     $coupon_total += $amount['total'];
                 } else {
                     $taxes['without_coupon'] += Proxy\Taxes::calculateTax( $amount['total'], $amount['rate'] );
@@ -420,16 +428,16 @@ class CartInfo
             } );
 
             if ( $coupon_total > 0 ) {
-                $tax_products_with_coupon  = 1 - ( $this->coupon->getDiscount() / 100 + $this->coupon->getDeduction() / $coupon_total );
+                $tax_products_with_coupon = 1 - ( $this->coupon->getDiscount() / 100 + $this->coupon->getDeduction() / $coupon_total );
                 $tax_products_with_coupon *= $taxes['allow_coupon'];
             } else {
-                $tax_products_with_coupon  = 0;
+                $tax_products_with_coupon = 0;
             }
 
             $this->total_tax = $tax_products_with_coupon + $taxes['without_coupon'];
             if ( $this->group_discount != 0 ) {
                 $group_discount_percent = $this->group_discount / ( $this->total - $this->group_discount ) * 100;
-                $this->total_tax        = Utils\Price::correction( $this->total_tax, - $group_discount_percent, 0 );
+                $this->total_tax = Utils\Price::correction( $this->total_tax, - $group_discount_percent, 0 );
             }
 
             $this->total_tax = round( $this->total_tax, 2 );

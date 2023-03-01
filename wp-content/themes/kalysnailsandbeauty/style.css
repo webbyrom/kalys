@@ -425,6 +425,17 @@ div.kalys-collapse::before {
   box-sizing: border-box;
   box-shadow: 10px 5px 10px gray;
   border-radius: 10px;
+  /*******resposive accueil*****/
+}
+@media screen and (max-width: 992px) {
+  .home main .kalys-col-full {
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .home main .kalys-col-full {
+    box-shadow: none;
+  }
 }
 .home main .kalys-home-img img:hover {
   transition: box-shadow 0.8s ease-in-out;
@@ -442,7 +453,7 @@ div.kalys-collapse::before {
 }
 @media screen and (max-width: 576px) {
   .home main .bookly-bootstrap .justify-content-start {
-    display: block;
+    display: grid;
   }
 }
 .home main .bookly-bootstrap .btn-outline-secondary {
@@ -451,6 +462,32 @@ div.kalys-collapse::before {
 }
 .home main .bookly-bootstrap .btn-outline-secondary:hover {
   background-color: #ce8aca;
+}
+
+/******** 
+page blog/actualités
+
+*****/
+@media screen and (max-width: 992px) {
+  .blog #rev_slider_8_1_forcefullwidth, .blog #rev_slider_7_1_forcefullwidth, .page-template-single-soin-mains #rev_slider_8_1_forcefullwidth, .page-template-single-soin-mains #rev_slider_7_1_forcefullwidth {
+    margin-bottom: 0 !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .kalys-post-manucure, .page-template-single-soin-mains .kalys-post-manucure {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .zoom-img-card-hover, .page-template-single-soin-mains .zoom-img-card-hover {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .full-article, .page-template-single-soin-mains .full-article {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /***********
@@ -723,4 +760,12 @@ page épilation
 }
 .page-template-contact .wpcf7.js {
   font-family: "Tillana-SemiBold" !important;
+}
+
+/******************** admin menu ****************/
+.wp-admin.wp-core-ui.index-php {
+  background-color: red;
+}
+.wp-admin.wp-core-ui.index-php div#wpwrap div#adminmenumain div#adminmenuback div#adminmenuwrap ul#adminmenu li#menu-posts-soin-mains a.menu-icon-soin-mains div.wp-menu-image.dashicons-before > img {
+  padding: 0px !important;
 }/*# sourceMappingURL=style.css.map */
