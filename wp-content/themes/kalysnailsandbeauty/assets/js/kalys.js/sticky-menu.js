@@ -12,10 +12,16 @@
             }
         })
     })
-})(jQuery)
+})(jQuery);
 
 
 /*************
- * menu active
+ * menu responsive
  */
-// class active on click and scroll
+
+(function($){
+    $('#icon_responsive').click(function(e){
+        e.preventDefault();
+        $('body').toggleClass('side-menu')
+    })
+})(jQuery);

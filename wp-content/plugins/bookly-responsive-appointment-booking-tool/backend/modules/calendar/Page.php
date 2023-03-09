@@ -374,7 +374,7 @@ class Page extends Lib\Base\Ajax
                 'resourceId' => $appointment['staff_id'],
                 'allDay' => $appointment['duration'] >= DAY_IN_SECONDS,
                 'extendedProps' => array(
-                    'tooltip' => Lib\Utils\Codes::stringify( $appointment['duration'] >= DAY_IN_SECONDS ? $tooltip_all_day : $tooltip, $codes, false ),
+                    'tooltip' => Lib\Utils\Codes::stringify( $appointment['duration'] >= DAY_IN_SECONDS ? $tooltip_all_day : $tooltip, $codes, false, array(), true ),
                     'desc' => $codes['description'],
                     'staffId' => $appointment['staff_id'],
                     'series_id' => (int) $appointment['series_id'],
@@ -414,10 +414,10 @@ class Page extends Lib\Base\Ajax
         $calendar = __( 'Calendar', 'bookly' );
         if ( $calendar_badge ) {
             add_submenu_page( 'bookly-menu', $calendar, sprintf( '%s <span class="update-plugins count-%d"><span class="update-count">%d</span></span>', $calendar, $calendar_badge, $calendar_badge ), 'read',
-                self::pageSlug(), function() { Page::render(); } );
+                self::pageSlug(), function () { Page::render(); } );
         } else {
             add_submenu_page( 'bookly-menu', $calendar, $calendar, 'read',
-                self::pageSlug(), function() { Page::render(); } );
+                self::pageSlug(), function () { Page::render(); } );
         }
     }
 }

@@ -222,6 +222,8 @@ nav .kalys_nav_menu ul.kalys_primary_nav li > a {
   color: #5b5b5b;
   -webkit-transition: color 0.8s ease-in-out;
   transition: color 0.8s ease-in-out;
+  border-right: 1px solid #ffffff;
+  padding-right: 25px;
 }
 header .kalys_nav_menu ul.kalys_primary_nav li > a:hover,
 nav .kalys_nav_menu ul.kalys_primary_nav li > a:hover {
@@ -250,6 +252,7 @@ nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li {
 header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a,
 nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu li a {
   padding-left: 0;
+  border-right: none;
 }
 header .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu,
 nav .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu {
@@ -745,6 +748,154 @@ icone
 ***************/
 /*********** responsive****/
 /******* menu **********/
+@media screen and (max-width: 576px) {
+  header,
+  nav {
+    position: static;
+    display: block;
+    height: 60px;
+    z-index: 12;
+  }
+  header .kalys_nav_menu,
+  nav .kalys_nav_menu {
+    display: block;
+  }
+  header .nav_logo,
+  nav .nav_logo {
+    position: relative;
+    display: block;
+  }
+  header .nav_logo img,
+  nav .nav_logo img {
+    width: 120px;
+    height: auto;
+    top: -0.3rem;
+  }
+  .kalys-collapse {
+    display: block;
+    float: left;
+    width: 250px;
+    margin: 0;
+    right: 0.8rem;
+    background-color: #f0b5b5;
+    border-radius: 10px;
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
+    -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+  }
+  .side-menu .kalys-collapse {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+  .kalys_primary_nav {
+    margin-right: 10px;
+    display: block;
+  }
+  .kalys_primary_nav li > a {
+    border-right: none;
+  }
+  .kalys_primary_nav li:nth-child(-n+4) {
+    margin-right: 10px;
+    display: block;
+  }
+  .kalys_primary_nav li:nth-child(-n+4) a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 0.6px solid #ffffff;
+    border-right: none;
+  }
+  button {
+    width: auto !important;
+    position: absolute;
+    top: 1rem;
+  }
+  /******** burger*********/
+  a.icone_responsive {
+    z-index: 12;
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 55px;
+    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+}
+/********* Homepage****************/
+.home {
+  /******** Layout calendar Homepage*********/
+}
+.home main .kalys-col-full {
+  /*******resposive accueil*****/
+}
+@media screen and (max-width: 992px) {
+  .home main .kalys-col-full {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .home main .kalys-col-full {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .home div.bookly-bootstrap div.justify-content-start {
+    display: grid;
+  }
+}
+
+/************* Blog/ news ***********/
+@media screen and (max-width: 992px) {
+  .blog #rev_slider_8_1_forcefullwidth,
+  .blog #rev_slider_7_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_8_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_7_1_forcefullwidth {
+    margin-bottom: 0 !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .kalys-post-manucure,
+  .page-template-single-soin-mains .kalys-post-manucure {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .zoom-img-card-hover,
+  .page-template-single-soin-mains .zoom-img-card-hover {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .full-article,
+  .page-template-single-soin-mains .full-article {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .blog div.news-list {
+    display: block;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog article.home-news {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .news-sidebar {
+    display: none;
+  }
+}
+
 header,
 nav {
   /* .sticky {
@@ -760,6 +911,7 @@ nav {
 @media screen and (max-width: 576px) {
   header,
   nav {
+    position: static;
     display: block;
     height: 60px;
     z-index: 12;
@@ -808,6 +960,15 @@ nav .kalys_nav_menu .nav_logo {
   nav .kalys_nav_menu .kalys-collapse li:nth-child(-n+4) {
     margin-right: 10px;
     display: block;
+  }
+  header .kalys_nav_menu .kalys-collapse li:nth-child(-n+4) a,
+  nav .kalys_nav_menu .kalys-collapse li:nth-child(-n+4) a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 0.6px solid #ffffff;
+    border-right: none;
   }
 }
 @media screen and (max-width: 576px) {

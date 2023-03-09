@@ -26,11 +26,12 @@ abstract class Codes
      * @param array $codes
      * @param bool $bold
      * @param array $exclude
+     * @param bool $escape
      * @return string
      */
-    public static function replace( $text, $codes, $bold = true, $exclude = array() )
+    public static function replace( $text, $codes, $bold = true, $exclude = array(), $escape = false )
     {
-        return self::stringify( self::tokenize( $text ), $codes, $bold, $exclude );
+        return self::stringify( self::tokenize( $text ), $codes, $bold, $exclude, $escape );
     }
 
     /**
@@ -40,9 +41,10 @@ abstract class Codes
      * @param array $codes
      * @param bool $bold
      * @param array $exclude
+     * @param bool $escape
      * @return string
      */
-    public static function stringify( $tokens, $codes, $bold, $exclude = array() )
+    public static function stringify( $tokens, $codes, $bold, $exclude = array(), $escape = false )
     {
         $output = '';
 
@@ -52,7 +54,8 @@ abstract class Codes
                     $output .= $token[1];
                     break;
                 case 'T_CODE':
-                    $data = self::get( $token[1], $codes );
+                    $code = self::get( $token[1], $codes );
+                    $data = $escape ? strip_tags( $code ) : $code;
                     if ( $data !== null ) {
                         if ( $bold !== false && ! in_array( $token[1], $exclude ) ) {
                             $output .= '<b>' . $data . '</b>';
@@ -109,7 +112,7 @@ abstract class Codes
                             break;
                     }
                     if ( $if ) {
-                        $output .= self::stringify( $nested_tokens, $codes, $bold );
+                        $output .= self::stringify( $nested_tokens, $codes, $bold, $exclude, $escape );
                     }
                     break;
                 case 'T_EACH':
@@ -120,7 +123,7 @@ abstract class Codes
                     if ( is_array( $data ) ) {
                         $parts = array();
                         foreach ( $data as $context_codes ) {
-                            $parts[] = self::stringify( $nested_tokens, array( $context_code => $context_codes ) + $codes, $bold );
+                            $parts[] = self::stringify( $nested_tokens, array( $context_code => $context_codes ) + $codes, $bold, $exclude, $escape );
                         }
                         $output .= implode( $delimiter, $parts );
                     }

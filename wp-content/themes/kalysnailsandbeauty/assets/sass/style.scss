@@ -102,7 +102,7 @@ nav {
         text-transform: capitalize;
         transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
 
-        
+
         .nav_logo {
             position: relative;
             top: 10%;
@@ -117,6 +117,7 @@ nav {
                 transition: box-shadow 0.8s ease-in-out;
             }
         }
+
         .kalys-collapse {
             position: relative;
             display: inline-flex;
@@ -124,6 +125,7 @@ nav {
             width: auto;
             right: 10%;
         }
+
         ul.kalys_primary_nav {
             position: relative;
             display: inline-flex;
@@ -137,10 +139,11 @@ nav {
                 margin-right: 30px;
             }
 
-            li > a {
+            li>a {
                 color: $font-body-color;
                 transition: color 0.8s ease-in-out;
-
+                border-right: 1px solid $color-shadow;
+                padding-right: 25px;
                 &:hover {
                     color: $link-nav-hover;
                 }
@@ -165,12 +168,13 @@ nav {
 
                     a {
                         padding-left: 0;
+                        border-right: none;
                     }
                 }
             }
         }
 
-        ul.kalys_primary_nav li:hover > ul.sub-menu {
+        ul.kalys_primary_nav li:hover>ul.sub-menu {
             visibility: visible;
             border-radius: 10px;
             background-color: rgb(245, 245, 245);
@@ -243,6 +247,7 @@ nav {
         border: 1px solid grey;
         border-radius: 5px;
         transition: color 0.8s, border 1s, background-color 0.8s, box-shadow 0.8s;
+
         a {
             font-size: large;
             display: flex;
@@ -264,7 +269,7 @@ nav {
         }
     }
 
-    ul.kalys_primary_nav li.kalys_m_active > a {
+    ul.kalys_primary_nav li.kalys_m_active>a {
         color: $color-border;
     }
 }
@@ -326,6 +331,7 @@ nav {
             box-shadow: 10px 5px 10px gray;
             border-radius: 10px;
         }
+
         .kalys-home-img {
             img:hover {
                 transition: box-shadow 0.8s ease-in-out;
@@ -333,7 +339,7 @@ nav {
             }
         }
 
- /*********
+        /*********
      layout calendar home-page
 
  ***************/
@@ -359,6 +365,7 @@ nav {
         }
     }
 }
+
 /******** 
 page blog/actualités
 
@@ -513,7 +520,7 @@ page actualités/blog
 
     .home-news,
     .card,
-    .news-img > img {
+    .news-img>img {
         width: 100%;
         height: auto;
     }
@@ -534,6 +541,7 @@ page actualités/blog
             width: 250px;
         }
     }
+
     .pagination {
         display: inline-flex;
         margin: 20px 20px 20px 0;
@@ -605,4 +613,4 @@ Page template contact
 }
 
 
-@import "kalys_responsive.scss";//always put at the end of the document 
+@import "kalys_responsive.scss"; //always put at the end of the document 
