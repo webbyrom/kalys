@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/**********
+file vars  css
+*****/
+/******************* 
+icone
+***************/
+/*********** responsive****/
+/******* menu **********/
+@media screen and (max-width: 576px) {
+  header,
+  nav {
+    display: block;
+    z-index: 12;
+    background-color: red;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys_nav_menu,
+  nav .kalys_nav_menu {
+    display: block;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys-collapse,
+  nav .kalys-collapse {
+    display: block;
+    font-size: 1rem;
+    right: 0;
+    margin: 10px 0 0 0;
+    float: left;
+    z-index: 12;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys-collapse ul.kalys_primary_nav,
+  nav .kalys-collapse ul.kalys_primary_nav {
+    margin-right: 10px;
+    display: block;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .nav_logo,
+  nav .nav_logo {
+    top: 0;
+    height: 75px;
+    left: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .nav_logo img,
+  nav .nav_logo img {
+    width: 120px;
+    height: 75px;
+  }
+}
+@media screen and (max-width: 576px) {
+  header ul.kalys_primary_nav,
+  nav ul.kalys_primary_nav {
+    margin-right: 10px;
+    display: block;
+  }
+}
+@media screen and (max-width: 576px) {
+  header ul.kalys_primary_nav li:nth-child(-n+4),
+  nav ul.kalys_primary_nav li:nth-child(-n+4) {
+    margin-right: 10px;
+    display: block;
+  }
+}
+@media screen and (max-width: 992px) {
+  header .sticky,
+  nav .sticky {
+    position: static;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .sticky,
+  nav .sticky {
+    position: static;
+    background-color: red;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  button {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  div.kalys-collapse {
+    background-color: #f0b5b5;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    width: 250px;
+  }
+}
+
+/******** burger*/
+a.icone_responsive {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  a.icone_responsive {
+    z-index: 9999;
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 55px;
+    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+}
+
+/*nav.sticky {
+    @include phone{
+        position: static!important;
+    }
+    @include tablet{
+        position: static;
+    }
+}
+*/
+/********* Homepage****************/
+.home {
+  /******** Layout calendar Homepage*********/
+}
+.home main .kalys-col-full {
+  /*******resposive accueil*****/
+}
+@media screen and (max-width: 992px) {
+  .home main .kalys-col-full {
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .home main .kalys-col-full {
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .home div.bookly-bootstrap div.justify-content-start {
+    display: grid;
+  }
+}
+
+/************* Blog/ news ***********/
+@media screen and (max-width: 992px) {
+  .blog #rev_slider_8_1_forcefullwidth,
+  .blog #rev_slider_7_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_8_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_7_1_forcefullwidth {
+    margin-bottom: 0 !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .kalys-post-manucure,
+  .page-template-single-soin-mains .kalys-post-manucure {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .zoom-img-card-hover,
+  .page-template-single-soin-mains .zoom-img-card-hover {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .full-article,
+  .page-template-single-soin-mains .full-article {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .blog div.news-list {
+    display: block;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog article.home-news {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .news-sidebar {
+    display: none;
+  }
+}/*# sourceMappingURL=kalys_responsive.css.map */

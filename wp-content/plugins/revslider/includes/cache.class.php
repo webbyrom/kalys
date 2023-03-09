@@ -151,7 +151,7 @@ class RevSliderCache extends RevSliderFunctions {
 	}
 	
 	
-	public function set_full_transient($transient, $sid, $content){
+	public function set_full_transient($transient, $sid, $content) {
 		$add = array(
 			'html' => $content,
 			'addition' => $this->get_additions()

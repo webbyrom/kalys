@@ -4,7 +4,6 @@
  * Template Name: Manucure
  */
 
-
 ?>
 <?php get_header(); ?>
 <section class="kalys-section-manucure container">

@@ -14,8 +14,8 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-@import "_colors.scss";
-@import "_font.scss";
+@import "colors.scss";
+@import "font.scss";
 
 *,
 *::before,
@@ -102,34 +102,7 @@ nav {
         text-transform: capitalize;
         transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
 
-        @include phone {
-            display: block;
-        }
-
-        .kalys-collapse {
-            position: relative;
-            display: inline-flex;
-            margin: auto;
-            width: auto;
-            right: 10%;
-
-            @include phone {
-                display: block;
-                font-size: 1rem;
-                right: 0;
-                margin: 10px 0 0 0;
-                float: left;
-                z-index: 12;
-            }
-
-            .kalys_primary_nav {
-                @include phone {
-                    margin-right: 10px;
-                    display: block;
-                }
-            }
-        }
-
+        
         .nav_logo {
             position: relative;
             top: 10%;
@@ -137,25 +110,20 @@ nav {
             height: auto;
             left: 2%;
 
-            @include phone {
-                top: 0;
-                height: 75px;
-                left: 0;
-            }
-
             img {
                 padding: 10px;
                 width: 200px;
                 position: relative;
                 transition: box-shadow 0.8s ease-in-out;
-
-                @include phone {
-                    width: 120px;
-                    height: 75px;
-                }
             }
         }
-
+        .kalys-collapse {
+            position: relative;
+            display: inline-flex;
+            margin: auto;
+            width: auto;
+            right: 10%;
+        }
         ul.kalys_primary_nav {
             position: relative;
             display: inline-flex;
@@ -165,21 +133,11 @@ nav {
             //  top: -51%;
             margin: auto;
 
-            @include phone {
-                margin-right: 10px;
-                display: block;
-            }
-
             li:nth-child(-n + 4) {
                 margin-right: 30px;
-
-                @include phone {
-                    margin-right: 10px;
-                    display: block;
-                }
             }
 
-            li>a {
+            li > a {
                 color: $font-body-color;
                 transition: color 0.8s ease-in-out;
 
@@ -212,7 +170,7 @@ nav {
             }
         }
 
-        ul.kalys_primary_nav li:hover>ul.sub-menu {
+        ul.kalys_primary_nav li:hover > ul.sub-menu {
             visibility: visible;
             border-radius: 10px;
             background-color: rgb(245, 245, 245);
@@ -251,6 +209,14 @@ nav {
         /*top: 0;*/
         width: 100%;
         z-index: 11;
+        /*
+        @include phone{
+            position: static;
+        }
+        @include tablet{
+            position: static;
+        }
+        */
 
         .nav_logo {
             img {
@@ -277,11 +243,6 @@ nav {
         border: 1px solid grey;
         border-radius: 5px;
         transition: color 0.8s, border 1s, background-color 0.8s, box-shadow 0.8s;
-
-        @include phone {
-            width: 80px;
-        }
-
         a {
             font-size: large;
             display: flex;
@@ -303,7 +264,7 @@ nav {
         }
     }
 
-    ul.kalys_primary_nav li.kalys_m_active>a {
+    ul.kalys_primary_nav li.kalys_m_active > a {
         color: $color-border;
     }
 }
@@ -312,32 +273,37 @@ nav {
  navbar responsive
 
 ****************/
-div.kalys-collapse {
-    @include phone {
-        background-color: $title-color;
-        border-radius: 10px;
-        font-size: 2rem;
-        text-align: center;
-    }
 
+/*
     &::before {
-        content: ""; // mettre l'icone du burger
-        width: 50px;
+        content: '';
+       //background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
+        //content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
+        background-size: contain;
+        width: 80px;
         height: 50px;
+        position: relative;
         border-radius: 10px;
-        background-color: red;
+       //box-sizing: border-box;
+       // background-color: rgb(255, 12, 4);
         display: none;
 
         @include phone {
+            content: '';
+           // background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
+           // content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
             display: block;
-            position: absolute;
+            background-size: contain;
+            width:80px;
+            height: 50px;
+           // position: absolute;
             left: 10px;
             //right: 0;
             //top: 0;
         }
-    }
-}
+    }*/
 
+/******* fin navbar responsive*****/
 .space-gradient {
     background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
     height: 5px;
@@ -359,17 +325,7 @@ div.kalys-collapse {
             box-sizing: border-box;
             box-shadow: 10px 5px 10px gray;
             border-radius: 10px;
-
-            /*******resposive accueil*****/
-            @include tablet {
-                box-shadow: none;
-            }
-
-            @include phone {
-                box-shadow: none;
-            }
         }
-
         .kalys-home-img {
             img:hover {
                 transition: box-shadow 0.8s ease-in-out;
@@ -377,7 +333,7 @@ div.kalys-collapse {
             }
         }
 
-        /*********
+ /*********
      layout calendar home-page
 
  ***************/
@@ -391,10 +347,6 @@ div.kalys-collapse {
         .bookly-bootstrap .justify-content-start {
             display: flex;
             justify-content: center !important;
-
-            @include phone {
-                display: grid;
-            }
         }
 
         .bookly-bootstrap .btn-outline-secondary {
@@ -411,29 +363,7 @@ div.kalys-collapse {
 page blog/actualités
 
 *****/
-.blog, .page-template-single-soin-mains{
-    #rev_slider_8_1_forcefullwidth, #rev_slider_7_1_forcefullwidth {
-        @include tablet{
-            margin-bottom: 0!important;
-        }
-    }
-    .kalys-post-manucure{
-        @include phone{
-            display: inline-block;
-        }
-    }
-    .zoom-img-card-hover {
-        @include phone {
-            padding-right: 0;
-        }
-    }
-    .full-article{
-        @include phone{
-            margin-left: 0;
-            margin-right: 0;
-        }
-    }
-}
+
 /***********
 footer
 */
@@ -575,24 +505,15 @@ page actualités/blog
         display: flex;
         position: relative;
         padding-left: 40px;
-
-        @include phone {
-            display: block;
-            padding: 10px;
-        }
     }
 
     article.home-news {
         font-family: $tillan-medium !important;
-
-        @include phone {
-            margin-bottom: 10px;
-        }
     }
 
     .home-news,
     .card,
-    .news-img>img {
+    .news-img > img {
         width: 100%;
         height: auto;
     }
@@ -612,12 +533,7 @@ page actualités/blog
         ul {
             width: 250px;
         }
-
-        @include phone {
-            display: none;
-        }
     }
-
     .pagination {
         display: inline-flex;
         margin: 20px 20px 20px 0;
@@ -688,11 +604,5 @@ Page template contact
     }
 }
 
-/******************** admin menu ****************/
-.wp-admin.wp-core-ui.index-php {
-    background-color: red;
 
-    div#wpwrap div#adminmenumain div#adminmenuback div#adminmenuwrap ul#adminmenu li#menu-posts-soin-mains a.menu-icon-soin-mains div.wp-menu-image.dashicons-before>img {
-        padding: 0px !important;
-    }
-}
+@import "kalys_responsive.scss";//always put at the end of the document 

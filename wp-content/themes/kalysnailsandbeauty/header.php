@@ -15,6 +15,8 @@
 <body <?php body_class(); ?>>
   <header id="kalys_header" class="kalys_header">
     <nav id="kalys_nav_menu" class="kalys_nav_menu nav container-fluid" style="background-color: <?= get_theme_mod('header_background') ?>">
+      <!---------------link icone responsive menu ------->
+
       <a href="<?= home_url('/'); ?>" class="nav_logo" title="<?= __('Homepage', 'kalys') ?>">
         <img src="<?= get_theme_mod('logo') ?>" alt="">
       </a>
@@ -22,9 +24,11 @@
       <?= esc_html(kalys_primary_nav());
 
       ?>
+      <!---burger icon to responsive menu---->
+      <a href="" class="icone_responsive"></a>
       <button id="kalys_price" class="Kalys-price">
         <a href="http://localhost/kalys/wp-content/uploads/2022/12/Flyer_148-x-210-verso.png" target="_blank" value="download" method="get">Tarifs</a>
       </button>
     </nav>
-    
+
   </header>

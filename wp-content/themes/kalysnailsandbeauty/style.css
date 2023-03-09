@@ -80,11 +80,13 @@ icone
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
@@ -146,6 +148,8 @@ h2 {
 /****** main navigation***/
 header,
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   /* width: 100vw;*/
@@ -158,44 +162,16 @@ nav {
 header .kalys_nav_menu,
 nav .kalys_nav_menu {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-family: "Alex Brush" !important;
   font-size: 2rem;
   text-transform: capitalize;
+  -webkit-transition: background-color 0.8s, position 0.8s ease-in-out, -webkit-box-shadow 0.8s;
+  transition: background-color 0.8s, position 0.8s ease-in-out, -webkit-box-shadow 0.8s;
   transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out;
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu,
-  nav .kalys_nav_menu {
-    display: block;
-  }
-}
-header .kalys_nav_menu .kalys-collapse,
-nav .kalys_nav_menu .kalys-collapse {
-  position: relative;
-  display: inline-flex;
-  margin: auto;
-  width: auto;
-  right: 10%;
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu .kalys-collapse,
-  nav .kalys_nav_menu .kalys-collapse {
-    display: block;
-    font-size: 1rem;
-    right: 0;
-    margin: 10px 0 0 0;
-    right: 0;
-    float: left;
-    z-index: 12;
-  }
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu .kalys-collapse .kalys_primary_nav,
-  nav .kalys_nav_menu .kalys-collapse .kalys_primary_nav {
-    margin-right: 10px;
-    display: block;
-  }
+  transition: background-color 0.8s, box-shadow 0.8s, position 0.8s ease-in-out, -webkit-box-shadow 0.8s;
 }
 header .kalys_nav_menu .nav_logo,
 nav .kalys_nav_menu .nav_logo {
@@ -205,57 +181,46 @@ nav .kalys_nav_menu .nav_logo {
   height: auto;
   left: 2%;
 }
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu .nav_logo,
-  nav .kalys_nav_menu .nav_logo {
-    top: 0;
-    height: 75px;
-    left: 0;
-  }
-}
 header .kalys_nav_menu .nav_logo img,
 nav .kalys_nav_menu .nav_logo img {
   padding: 10px;
   width: 200px;
   position: relative;
+  -webkit-transition: -webkit-box-shadow 0.8s ease-in-out;
+  transition: -webkit-box-shadow 0.8s ease-in-out;
   transition: box-shadow 0.8s ease-in-out;
+  transition: box-shadow 0.8s ease-in-out, -webkit-box-shadow 0.8s ease-in-out;
 }
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu .nav_logo img,
-  nav .kalys_nav_menu .nav_logo img {
-    width: 120px;
-    height: 75px;
-  }
+header .kalys_nav_menu .kalys-collapse,
+nav .kalys_nav_menu .kalys-collapse {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: auto;
+  width: auto;
+  right: 10%;
 }
 header .kalys_nav_menu ul.kalys_primary_nav,
 nav .kalys_nav_menu ul.kalys_primary_nav {
   position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: auto;
   margin: auto;
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu ul.kalys_primary_nav,
-  nav .kalys_nav_menu ul.kalys_primary_nav {
-    margin-right: 10px;
-    display: block;
-  }
 }
 header .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4),
 nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
   margin-right: 30px;
 }
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4),
-  nav .kalys_nav_menu ul.kalys_primary_nav li:nth-child(-n+4) {
-    margin-right: 10px;
-    display: block;
-  }
-}
 header .kalys_nav_menu ul.kalys_primary_nav li > a,
 nav .kalys_nav_menu ul.kalys_primary_nav li > a {
   color: #5b5b5b;
+  -webkit-transition: color 0.8s ease-in-out;
   transition: color 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav li > a:hover,
@@ -275,6 +240,7 @@ nav .kalys_nav_menu ul.kalys_primary_nav .sub-menu {
   z-index: 10;
   border-radius: 10px;
   opacity: 0;
+  -webkit-transition: opacity 0.8s ease-in-out;
   transition: opacity 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav .sub-menu li,
@@ -290,7 +256,8 @@ nav .kalys_nav_menu ul.kalys_primary_nav li:hover > ul.sub-menu {
   visibility: visible;
   border-radius: 10px;
   background-color: rgb(245, 245, 245);
-  box-shadow: 10px 5px 10px grey;
+  -webkit-box-shadow: 10px 5px 10px grey;
+          box-shadow: 10px 5px 10px grey;
   opacity: 1;
 }
 header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu,
@@ -302,6 +269,7 @@ header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li,
 nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li {
   padding-left: 0;
   width: 100%;
+  -webkit-transition: padding-left 0.8s, background-color 0.8s ease-in-out;
   transition: padding-left 0.8s, background-color 0.8s ease-in-out;
 }
 header .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li:hover,
@@ -313,20 +281,31 @@ nav .kalys_nav_menu ul.kalys_primary_nav ul.sub-menu li:hover {
 header .sticky,
 nav .sticky {
   position: fixed !important;
-  box-shadow: 10px 5px 10px white;
+  -webkit-box-shadow: 10px 5px 10px white;
+          box-shadow: 10px 5px 10px white;
   background-color: white !important;
   opacity: 0.8;
   /*top: 0;*/
   width: 100%;
   z-index: 11;
+  /*
+  @include phone{
+      position: static;
+  }
+  @include tablet{
+      position: static;
+  }
+  */
 }
 header .sticky .nav_logo img,
 nav .sticky .nav_logo img {
   border-radius: 5px;
-  box-shadow: 20px 5px 30px #000000;
+  -webkit-box-shadow: 20px 5px 30px #000000;
+          box-shadow: 20px 5px 30px #000000;
 }
 header .sticky span,
 nav .sticky span {
+  -webkit-transition: color 1s ease-in-out;
   transition: color 1s ease-in-out;
 }
 header button,
@@ -340,19 +319,20 @@ nav button {
   top: 40%;
   border: 1px solid grey;
   border-radius: 5px;
+  -webkit-transition: color 0.8s, border 1s, background-color 0.8s, -webkit-box-shadow 0.8s;
+  transition: color 0.8s, border 1s, background-color 0.8s, -webkit-box-shadow 0.8s;
   transition: color 0.8s, border 1s, background-color 0.8s, box-shadow 0.8s;
-}
-@media screen and (max-width: 576px) {
-  header button,
-  nav button {
-    width: 80px;
-  }
+  transition: color 0.8s, border 1s, background-color 0.8s, box-shadow 0.8s, -webkit-box-shadow 0.8s;
 }
 header button a,
 nav button a {
   font-size: large;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: font-size 0.8s, font-weight 0.8s;
   transition: font-size 0.8s, font-weight 0.8s;
   color: grey;
 }
@@ -360,7 +340,8 @@ header button:hover,
 nav button:hover {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid black;
-  box-shadow: 2px 2px 5px white;
+  -webkit-box-shadow: 2px 2px 5px white;
+          box-shadow: 2px 2px 5px white;
 }
 header button:hover a:hover,
 nav button:hover a:hover {
@@ -377,31 +358,37 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
  navbar responsive
 
 ****************/
-@media screen and (max-width: 576px) {
-  div.kalys-collapse {
-    background-color: #f0b5b5;
-    border-radius: 10px;
-    font-size: 2rem;
-    text-align: center;
-  }
-}
-div.kalys-collapse::before {
-  content: "";
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  background-color: red;
-  display: none;
-}
-@media screen and (max-width: 576px) {
-  div.kalys-collapse::before {
-    display: block;
-    position: absolute;
-    left: 10px;
-  }
-}
+/*
+    &::before {
+        content: '';
+       //background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
+        //content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
+        background-size: contain;
+        width: 80px;
+        height: 50px;
+        position: relative;
+        border-radius: 10px;
+       //box-sizing: border-box;
+       // background-color: rgb(255, 12, 4);
+        display: none;
 
+        @include phone {
+            content: '';
+           // background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
+           // content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
+            display: block;
+            background-size: contain;
+            width:80px;
+            height: 50px;
+           // position: absolute;
+            left: 10px;
+            //right: 0;
+            //top: 0;
+        }
+    }*/
+/******* fin navbar responsive*****/
 .space-gradient {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(#ffccff), color-stop(#ffffff), to(#ffccff));
   background-image: linear-gradient(to right, #ffffff, #ffccff, #ffffff, #ffccff);
   height: 5px;
   width: 100%;
@@ -422,39 +409,36 @@ div.kalys-collapse::before {
 }
 .home main .kalys-col-full {
   background-color: #ffffff;
-  box-sizing: border-box;
-  box-shadow: 10px 5px 10px gray;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 10px 5px 10px gray;
+          box-shadow: 10px 5px 10px gray;
   border-radius: 10px;
-  /*******resposive accueil*****/
-}
-@media screen and (max-width: 992px) {
-  .home main .kalys-col-full {
-    box-shadow: none;
-  }
-}
-@media screen and (max-width: 576px) {
-  .home main .kalys-col-full {
-    box-shadow: none;
-  }
 }
 .home main .kalys-home-img img:hover {
+  -webkit-transition: -webkit-box-shadow 0.8s ease-in-out;
+  transition: -webkit-box-shadow 0.8s ease-in-out;
   transition: box-shadow 0.8s ease-in-out;
-  box-shadow: 6px 6px 30px black;
+  transition: box-shadow 0.8s ease-in-out, -webkit-box-shadow 0.8s ease-in-out;
+  -webkit-box-shadow: 6px 6px 30px black;
+          box-shadow: 6px 6px 30px black;
 }
 .home main .bookly-search-form,
 .home main .bg-white,
 .home main .svelte-10vuyub {
   font-family: "Tillana-SemiBold";
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .home main .bookly-bootstrap .justify-content-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center !important;
-}
-@media screen and (max-width: 576px) {
-  .home main .bookly-bootstrap .justify-content-start {
-    display: grid;
-  }
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
 }
 .home main .bookly-bootstrap .btn-outline-secondary {
   font-weight: 900;
@@ -468,28 +452,6 @@ div.kalys-collapse::before {
 page blog/actualités
 
 *****/
-@media screen and (max-width: 992px) {
-  .blog #rev_slider_8_1_forcefullwidth, .blog #rev_slider_7_1_forcefullwidth, .page-template-single-soin-mains #rev_slider_8_1_forcefullwidth, .page-template-single-soin-mains #rev_slider_7_1_forcefullwidth {
-    margin-bottom: 0 !important;
-  }
-}
-@media screen and (max-width: 576px) {
-  .blog .kalys-post-manucure, .page-template-single-soin-mains .kalys-post-manucure {
-    display: inline-block;
-  }
-}
-@media screen and (max-width: 576px) {
-  .blog .zoom-img-card-hover, .page-template-single-soin-mains .zoom-img-card-hover {
-    padding-right: 0;
-  }
-}
-@media screen and (max-width: 576px) {
-  .blog .full-article, .page-template-single-soin-mains .full-article {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 /***********
 footer
 */
@@ -499,10 +461,17 @@ footer
 .single-post .kalys-footer,
 .archive .kalys-footer,
 .single .kalys-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-family: "Charm-Bold" !important;
-  flex-direction: row;
-  justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   border-top: 1px solid #fdfdfd;
   background-color: rgb(250, 224, 252) !important;
   padding-top: 20px;
@@ -515,6 +484,7 @@ footer
 .single-post .footer_col,
 .archive .footer_col,
 .single .footer_col {
+  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   display: table-footer-group;
@@ -614,28 +584,38 @@ footer
 .card {
   width: 18rem;
   overflow: hidden;
+  -webkit-transition: all 0.8s;
   transition: all 0.8s;
 }
 .card:hover {
-  box-shadow: 5px 5px 5px rgb(235, 219, 219);
+  -webkit-box-shadow: 5px 5px 5px rgb(235, 219, 219);
+          box-shadow: 5px 5px 5px rgb(235, 219, 219);
 }
 
 div.zoom-img-card-hover div.zoom-img-card {
   position: relative;
 }
 div.zoom-img-card-hover div.zoom-img-card * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 div.zoom-img-card-hover div.zoom-img-card img {
+  -webkit-transition: -webkit-filter 0.8s ease-in-out;
+  transition: -webkit-filter 0.8s ease-in-out;
   transition: filter 0.8s ease-in-out;
-  filter: contrast(60%);
+  transition: filter 0.8s ease-in-out, -webkit-filter 0.8s ease-in-out;
+  -webkit-filter: contrast(60%);
+          filter: contrast(60%);
   max-width: 100%;
+  -webkit-transition: all 0.8s;
   transition: all 0.8s;
 }
 div.zoom-img-card-hover:hover .zoom-img-card img {
-  filter: contrast(150%);
+  -webkit-filter: contrast(150%);
+          filter: contrast(150%);
+  -webkit-transform: scale(1.06);
   transform: scale(1.06);
   padding-bottom: 10px;
 }
@@ -663,23 +643,14 @@ page actualités/blog
   margin-bottom: 50px;
 }
 .blog .news-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   padding-left: 40px;
 }
-@media screen and (max-width: 576px) {
-  .blog .news-list {
-    display: block;
-    padding: 10px;
-  }
-}
 .blog article.home-news {
   font-family: "Tillana-Medium" !important;
-}
-@media screen and (max-width: 576px) {
-  .blog article.home-news {
-    margin-bottom: 10px;
-  }
 }
 .blog .home-news,
 .blog .card,
@@ -693,20 +664,21 @@ page actualités/blog
   border-radius: 5px;
   padding: 10px 0 10px 0;
   float: right;
+  -webkit-transition: -webkit-box-shadow 0.8s ease-in-out;
+  transition: -webkit-box-shadow 0.8s ease-in-out;
   transition: box-shadow 0.8s ease-in-out;
+  transition: box-shadow 0.8s ease-in-out, -webkit-box-shadow 0.8s ease-in-out;
 }
 .blog .news-sidebar:hover {
-  box-shadow: 10px 10px 20px gray;
+  -webkit-box-shadow: 10px 10px 20px gray;
+          box-shadow: 10px 10px 20px gray;
 }
 .blog .news-sidebar ul {
   width: 250px;
 }
-@media screen and (max-width: 576px) {
-  .blog .news-sidebar {
-    display: none;
-  }
-}
 .blog .pagination {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 20px 20px 20px 0;
   text-align: center;
@@ -715,11 +687,13 @@ page actualités/blog
   font-size: x-large;
 }
 .blog .pagination .prev {
-  transform: rotate(0.5turn);
+  -webkit-transform: rotate(0.5turn);
+          transform: rotate(0.5turn);
 }
 .blog .pagination .next {
   position: relative;
-  transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
 }
 .blog .pagination .prev,
 .blog .pagination .next {
@@ -749,7 +723,8 @@ page épilation
 .page-template-single-soin-corps .kalys-epilation-bg {
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #ffffff;
+  -webkit-box-shadow: 5px 5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #ffffff;
 }
 .page-template-single-soin-corps .elementor-widget-wpr-pricing-table .wpr-pricing-table-price {
   background-color: #dd8fec;
@@ -762,10 +737,181 @@ page épilation
   font-family: "Tillana-SemiBold" !important;
 }
 
-/******************** admin menu ****************/
-.wp-admin.wp-core-ui.index-php {
-  background-color: red;
+/**********
+file vars  css
+*****/
+/******************* 
+icone
+***************/
+/*********** responsive****/
+/******* menu **********/
+header,
+nav {
+  /* .sticky {
+       @include tablet {
+           position: static;
+       }
+       @include phone {
+           position: static;
+           background-color: red; // test //
+       }
+   }*/
 }
-.wp-admin.wp-core-ui.index-php div#wpwrap div#adminmenumain div#adminmenuback div#adminmenuwrap ul#adminmenu li#menu-posts-soin-mains a.menu-icon-soin-mains div.wp-menu-image.dashicons-before > img {
-  padding: 0px !important;
+@media screen and (max-width: 576px) {
+  header,
+  nav {
+    display: block;
+    height: 60px;
+    z-index: 12;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys_nav_menu,
+  nav .kalys_nav_menu {
+    display: block;
+  }
+}
+header .kalys_nav_menu .nav_logo,
+nav .kalys_nav_menu .nav_logo {
+  position: relative;
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  header .kalys_nav_menu .nav_logo img,
+  nav .kalys_nav_menu .nav_logo img {
+    width: 120px;
+    height: auto;
+    top: -0.3rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys_nav_menu .kalys-collapse,
+  nav .kalys_nav_menu .kalys-collapse {
+    display: block;
+    float: left;
+    width: 250px;
+    margin: 0;
+    right: 0.8rem;
+    background-color: #f0b5b5;
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys_nav_menu .kalys-collapse ul.kalys_primary_nav,
+  nav .kalys_nav_menu .kalys-collapse ul.kalys_primary_nav {
+    margin-right: 10px;
+    display: block;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys_nav_menu .kalys-collapse li:nth-child(-n+4),
+  nav .kalys_nav_menu .kalys-collapse li:nth-child(-n+4) {
+    margin-right: 10px;
+    display: block;
+  }
+}
+@media screen and (max-width: 576px) {
+  header .kalys_nav_menu button,
+  nav .kalys_nav_menu button {
+    width: auto !important;
+    position: absolute;
+    top: 1rem;
+  }
+}
+
+/******** burger*/
+a.icone_responsive {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  a.icone_responsive {
+    z-index: 12;
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 55px;
+    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+}
+
+/*nav.sticky {
+    @include phone{
+        position: static!important;
+    }
+    @include tablet{
+        position: static;
+    }
+}
+*/
+/********* Homepage****************/
+.home {
+  /******** Layout calendar Homepage*********/
+}
+.home main .kalys-col-full {
+  /*******resposive accueil*****/
+}
+@media screen and (max-width: 992px) {
+  .home main .kalys-col-full {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .home main .kalys-col-full {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .home div.bookly-bootstrap div.justify-content-start {
+    display: grid;
+  }
+}
+
+/************* Blog/ news ***********/
+@media screen and (max-width: 992px) {
+  .blog #rev_slider_8_1_forcefullwidth,
+  .blog #rev_slider_7_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_8_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_7_1_forcefullwidth {
+    margin-bottom: 0 !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .kalys-post-manucure,
+  .page-template-single-soin-mains .kalys-post-manucure {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .zoom-img-card-hover,
+  .page-template-single-soin-mains .zoom-img-card-hover {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .full-article,
+  .page-template-single-soin-mains .full-article {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .blog div.news-list {
+    display: block;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog article.home-news {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .news-sidebar {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
