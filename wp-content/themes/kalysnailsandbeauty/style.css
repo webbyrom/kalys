@@ -755,23 +755,25 @@ icone
     display: block;
     height: 60px;
     z-index: 12;
+    /******** burger*********/
   }
   header .kalys_nav_menu,
   nav .kalys_nav_menu {
     display: block;
   }
-  header .nav_logo,
-  nav .nav_logo {
+  header .kalys_nav_menu .nav_logo,
+  nav .kalys_nav_menu .nav_logo {
     position: relative;
     display: block;
   }
-  header .nav_logo img,
-  nav .nav_logo img {
+  header .kalys_nav_menu .nav_logo img,
+  nav .kalys_nav_menu .nav_logo img {
     width: 120px;
     height: auto;
     top: -0.3rem;
   }
-  .kalys-collapse {
+  header .kalys-collapse,
+  nav .kalys-collapse {
     display: block;
     float: left;
     width: 250px;
@@ -784,37 +786,40 @@ icone
     -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
   }
-  .side-menu .kalys-collapse {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-    opacity: 1;
+  header .kalys-collapse .kalys_primary_nav,
+  nav .kalys-collapse .kalys_primary_nav {
+    margin-right: 10px !important;
+    display: block !important;
+    text-align: center;
+    margin: 0;
+    left: 1rem;
   }
-  .kalys_primary_nav {
+  header .kalys-collapse .kalys_primary_nav li > a,
+  nav .kalys-collapse .kalys_primary_nav li > a {
+    border-right: none !important;
+  }
+  header .kalys-collapse .kalys_primary_nav li:nth-child(-n+4),
+  nav .kalys-collapse .kalys_primary_nav li:nth-child(-n+4) {
     margin-right: 10px;
     display: block;
   }
-  .kalys_primary_nav li > a {
-    border-right: none;
-  }
-  .kalys_primary_nav li:nth-child(-n+4) {
-    margin-right: 10px;
-    display: block;
-  }
-  .kalys_primary_nav li:nth-child(-n+4) a {
+  header .kalys-collapse .kalys_primary_nav li:nth-child(-n+4) a,
+  nav .kalys-collapse .kalys_primary_nav li:nth-child(-n+4) a {
     display: block;
     height: 40px;
     line-height: 40px;
     text-align: center;
-    border-bottom: 0.6px solid #ffffff;
+    border-bottom: 0.6px solid #c334f4;
     border-right: none;
   }
-  button {
+  header button,
+  nav button {
     width: auto !important;
     position: absolute;
     top: 1rem;
   }
-  /******** burger*********/
-  a.icone_responsive {
+  header .icone_responsive,
+  nav .icone_responsive {
     z-index: 12;
     position: absolute;
     display: block;
@@ -823,6 +828,12 @@ icone
     background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
     background-size: contain;
     cursor: pointer;
+  }
+  .side-menu .kalys-collapse {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+    left: 0;
   }
 }
 /********* Homepage****************/
@@ -896,116 +907,6 @@ icone
   }
 }
 
-header,
-nav {
-  /* .sticky {
-       @include tablet {
-           position: static;
-       }
-       @include phone {
-           position: static;
-           background-color: red; // test //
-       }
-   }*/
-}
-@media screen and (max-width: 576px) {
-  header,
-  nav {
-    position: static;
-    display: block;
-    height: 60px;
-    z-index: 12;
-  }
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu,
-  nav .kalys_nav_menu {
-    display: block;
-  }
-}
-header .kalys_nav_menu .nav_logo,
-nav .kalys_nav_menu .nav_logo {
-  position: relative;
-  display: block;
-}
-@media screen and (max-width: 768px) {
-  header .kalys_nav_menu .nav_logo img,
-  nav .kalys_nav_menu .nav_logo img {
-    width: 120px;
-    height: auto;
-    top: -0.3rem;
-  }
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu .kalys-collapse,
-  nav .kalys_nav_menu .kalys-collapse {
-    display: block;
-    float: left;
-    width: 250px;
-    margin: 0;
-    right: 0.8rem;
-    background-color: #f0b5b5;
-    border-radius: 10px;
-  }
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu .kalys-collapse ul.kalys_primary_nav,
-  nav .kalys_nav_menu .kalys-collapse ul.kalys_primary_nav {
-    margin-right: 10px;
-    display: block;
-  }
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu .kalys-collapse li:nth-child(-n+4),
-  nav .kalys_nav_menu .kalys-collapse li:nth-child(-n+4) {
-    margin-right: 10px;
-    display: block;
-  }
-  header .kalys_nav_menu .kalys-collapse li:nth-child(-n+4) a,
-  nav .kalys_nav_menu .kalys-collapse li:nth-child(-n+4) a {
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-bottom: 0.6px solid #ffffff;
-    border-right: none;
-  }
-}
-@media screen and (max-width: 576px) {
-  header .kalys_nav_menu button,
-  nav .kalys_nav_menu button {
-    width: auto !important;
-    position: absolute;
-    top: 1rem;
-  }
-}
-
-/******** burger*/
-a.icone_responsive {
-  display: none;
-}
-@media screen and (max-width: 992px) {
-  a.icone_responsive {
-    z-index: 12;
-    position: absolute;
-    display: block;
-    width: 80px;
-    height: 55px;
-    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
-    background-size: contain;
-    cursor: pointer;
-  }
-}
-
-/*nav.sticky {
-    @include phone{
-        position: static!important;
-    }
-    @include tablet{
-        position: static;
-    }
-}
-*/
 /********* Homepage****************/
 .home {
   /******** Layout calendar Homepage*********/

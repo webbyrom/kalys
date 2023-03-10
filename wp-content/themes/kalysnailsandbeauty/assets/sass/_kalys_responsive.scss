@@ -12,89 +12,90 @@
 
         .kalys_nav_menu {
             display: block;
+
+            .nav_logo {
+                position: relative;
+                display: block;
+
+                img {
+                    width: 120px;
+                    height: auto;
+                    top: -0.3rem;
+                }
+            }
+
         }
-
-        .nav_logo {
-            position: relative;
-            // width: 120px; à veriier si je garde ou pas
+        .kalys-collapse {
             display: block;
+            float: left;
+            width: 250px;
+            margin: 0;
+            right: 0.8rem;
+            background-color: $title-color;
+            border-radius: 10px;
+            transform: translateX(-250px);
+            transition-duration: 0.4s;
 
-            // left: 0;
-            img {
-                width: 120px;
-                height: auto;
-                top: -0.3rem;
+            .kalys_primary_nav{
+                margin-right: 10px!important;
+                display: block!important;
+                text-align: center;
+                margin: 0;
+                left: 1rem;
+
+                li> a {
+                    border-right: none!important;
+                }
+
+                li:nth-child(-n + 4) {
+                    margin-right: 10px;
+                    display: block;
+
+                    a {
+                        display: block;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        border-bottom: 0.6px solid $color-border;
+                        border-right: none;
+                    }
+                }
             }
         }
-    }
+        button {
+            width: auto !important;
+            position: absolute;
+            top: 1rem;
+        }
 
-    .kalys-collapse {
-        display: block;
-        float: left;
-        // font-size: 1rem; plus lisible 
-        width: 250px;
-        margin: 0;
-        right: 0.8rem;
-        background-color: $title-color;
-        border-radius: 10px;
-        transform: translateX(-250px);
-        transition-duration: 0.4s;
-        // right: 0;
-        // margin: 10px 0 0 0;
-        //float: left;
-        // z-index: 12;
-    }
+       
 
+        /******** burger*********/
+        .icone_responsive {
+            // display: none;
+            z-index: 12;
+            //top: 1rem;
+            position: absolute;
+            display: block;
+            width: 80px;
+            height: 55px;
+            background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
+            background-size: contain;
+            //box-shadow: 5px 5px 20px $color-shadow;
+            cursor: pointer;
+        }
+
+    }
     .side-menu {
         .kalys-collapse {
             transform: translateX(0px);
             opacity: 1;
+            left:0;
         }
     }
 
-    .kalys_primary_nav {
-        margin-right: 10px;
-        display: block;
-        li> a {
-            border-right: none;
-        }
-        li:nth-child(-n + 4) {
-            margin-right: 10px;
-            display: block;
-            a {
-                display: block;
-                height: 40px;
-                line-height: 40px;
-                text-align: center;
-                border-bottom: 0.6px solid $color-shadow;
-                border-right: none;
-            }
-        }
-        
-    }
-
-    button {
-
-        width: auto !important;
-        position: absolute;
-        top: 1rem;
-    }
-
-    /******** burger*********/
-    a.icone_responsive {
-        // display: none;
-        z-index: 12;
-        //top: 1rem;
-        position: absolute;
-        display: block;
-        width: 80px;
-        height: 55px;
-        background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
-        background-size: contain;
-        //box-shadow: 5px 5px 20px $color-shadow;
-        cursor: pointer;
-    }
 }
+
 
 
 /********* Homepage****************/
@@ -174,145 +175,6 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-header,
-nav {
-    @include phone {
-        position: static;
-        display: block;
-        height: 60px;
-        z-index: 12; // see for modification
-    }
-    .kalys_nav_menu {
-        @include phone {
-            display: block;
-        }
-        .nav_logo {
-            position: relative;
-           // width: 120px; à veriier si je garde ou pas
-            display: block;
-           // left: 0;
-            img {
-                @include tablet-P {
-                    width: 120px;
-                    height: auto;
-                    top: -0.3rem;
-
-                }
-            }
-        }
-        .kalys-collapse {
-            @include phone {
-                display: block;
-                float: left;
-               // font-size: 1rem; plus lisible 
-                width: 250px;
-                margin: 0;
-                right: 0.8rem;
-                background-color: $title-color;
-                border-radius: 10px;
-               // right: 0;
-               // margin: 10px 0 0 0;
-                //float: left;
-               // z-index: 12;
-            }
-            ul.kalys_primary_nav {
-                @include phone {
-                    margin-right: 10px;
-                    display: block;
-                }
-            }
-            li:nth-child(-n + 4) {
-                @include phone {
-                    margin-right: 10px;
-                    display: block;
-                    a{
-                        display: block;
-                        height: 40px;
-                        line-height: 40px;
-                        text-align: center;
-                        border-bottom: 0.6px solid $color-shadow;
-                        border-right: none;
-
-                    }
-                }
-                
-            }
-           
-        }
-        button {
-            @include phone {
-                width: auto!important;
-                position: absolute;
-                top: 1rem;
-            }
-        }
-    }
-   
-   /* .sticky {
-        @include tablet {
-            position: static;
-        }
-        @include phone {
-            position: static;
-            background-color: red; // test //
-        }
-    }*/
-}
-
-
-
-/******** burger*/
-a.icone_responsive {
-    display: none;
-    @include tablet {
-        z-index: 12;
-        //top: 1rem;
-        position: absolute;
-        display: block;
-        width: 80px;
-        height: 55px;
-        background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg")
-            no-repeat;
-        background-size: contain;
-        //box-shadow: 5px 5px 20px $color-shadow;
-        cursor: pointer;
-    }
-}
-/*nav.sticky {
-    @include phone{
-        position: static!important;
-    }
-    @include tablet{
-        position: static;
-    }
-}
-*/
 
 /********* Homepage****************/
 .home {

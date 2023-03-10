@@ -18,7 +18,6 @@
 /*************
  * menu responsive
  */
-
 (function($){
     $('#icon_responsive').click(function(e){
         e.preventDefault();

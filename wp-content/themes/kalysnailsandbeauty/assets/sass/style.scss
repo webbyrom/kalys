@@ -131,8 +131,6 @@ nav {
             display: inline-flex;
             justify-content: center;
             height: auto;
-            // width: 100vw;
-            //  top: -51%;
             margin: auto;
 
             li:nth-child(-n + 4) {
@@ -613,4 +611,4 @@ Page template contact
 }
 
 
-@import "kalys_responsive.scss"; //always put at the end of the document 
+@import "_kalys_responsive.scss"; //always put at the end of the document 

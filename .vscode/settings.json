@@ -15,17 +15,15 @@
             "savePathReplacementPairs": null
         }
     ],
-    "liveSassCompile.settings.excludeList": [ 
-                "**/node_modules/**",
-                ".vscode/**" 
-            ],
+    
     "liveSassCompile.settings.includeItems": [
-        "/wp-content/themes/kalysnailsandbeauty/assets/sass/colors.scss",
-        "/wp-content/themes/kalysnailsandbeauty/assets/sass/font.scss",
-        "/wp-content/themes/kalysnailsandbeauty/assets/sass/kalys_reponsive.scss",
+        "/wp-content/themes/kalysnailsandbeauty/assets/sass/_colors.scss",
+        "/wp-content/themes/kalysnailsandbeauty/assets/sass/_font.scss",
+        "/wp-content/themes/kalysnailsandbeauty/assets/sass/_kalys_responsive.scss",
         "/wp-content/themes/kalysnailsandbeauty/assets/sass/style.scss",
     ],
-    "liveSassCompile.settings.rootIsWorkspace": null,
+   //"liveSassCompile.settings.rootIsWorkspace": null,
+    "liveSassCompile.settings.generateMap": true,
     "liveSassCompile.settings.compileOnWatch": true,
     "liveSassCompile.settings.autoprefix": [ "> 1%",
     "last 2 versions"],

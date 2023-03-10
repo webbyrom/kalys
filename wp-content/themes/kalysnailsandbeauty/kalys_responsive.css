@@ -12,7 +12,7 @@ icone
   nav {
     display: block;
     z-index: 12;
-    background-color: red;
+    
   }
 }
 @media screen and (max-width: 576px) {
@@ -78,7 +78,7 @@ icone
   header .sticky,
   nav .sticky {
     position: static;
-    background-color: red;
+    
   }
 }
 
