@@ -63,7 +63,9 @@ nav {
     list-style: none;
     text-align: center;
 }
-
+.home, .archive, .blog, .page-template, .post-template, .single-post, .single-soin-mains{
+    font-family: $tillan-medium;
+}
 h1 {
     font-size: 4em !important;
     font-family: inherit;
@@ -211,14 +213,7 @@ nav {
         /*top: 0;*/
         width: 100%;
         z-index: 11;
-        /*
-        @include phone{
-            position: static;
-        }
-        @include tablet{
-            position: static;
-        }
-        */
+     
 
         .nav_logo {
             img {
@@ -271,40 +266,6 @@ nav {
         color: $color-border;
     }
 }
-
-/*********
- navbar responsive
-
-****************/
-
-/*
-    &::before {
-        content: '';
-       //background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
-        //content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
-        background-size: contain;
-        width: 80px;
-        height: 50px;
-        position: relative;
-        border-radius: 10px;
-       //box-sizing: border-box;
-       // background-color: rgb(255, 12, 4);
-        display: none;
-
-        @include phone {
-            content: '';
-           // background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
-           // content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
-            display: block;
-            background-size: contain;
-            width:80px;
-            height: 50px;
-           // position: absolute;
-            left: 10px;
-            //right: 0;
-            //top: 0;
-        }
-    }*/
 
 /******* fin navbar responsive*****/
 .space-gradient {
@@ -378,6 +339,25 @@ footer
 .single-post,
 .archive,
 .single {
+    .news-sidebar {
+        position: relative;
+        background-color: $bg-sidebar;
+        border-radius: 5px;
+        padding: 10px 0 10px 0;
+        float: right;
+        transition: box-shadow 0.8s ease-in-out;
+
+        &:hover {
+            box-shadow: 10px 10px 20px gray;
+        }
+
+        ul {
+            width: 250px;
+        }
+    }
+    .comment-respond{
+        display: inline-block;
+    }
     .kalys-footer {
         display: flex;
         font-family: $font-body-bold !important;
@@ -571,12 +551,40 @@ page actualités/blog
         }
     }
 }
+/*******************  
+post-template
+ *********************/
+.post-template{
+    .container-single-post {
+        display: flex;
+    }
+    .news-sidebar {
+        position: relative;
+        background-color: $bg-sidebar;
+        border-radius: 5px;
+        padding: 10px 0 10px 0;
+        float: right;
+        transition: box-shadow 0.8s ease-in-out;
+
+        &:hover {
+            box-shadow: 10px 10px 20px gray;
+        }
+        ul {
+            width: 250px;
+        }
+    }
+   
+}
+
 
 /*******************
 page manucure
 ****************/
 .page-template-single-soin-mains {
     font-family: $tillan-medium !important;
+    .single-soin-mains{
+        display: inline-flex;
+    }
 }
 
 /*******

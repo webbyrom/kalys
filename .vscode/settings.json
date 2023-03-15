@@ -19,7 +19,7 @@
     "liveSassCompile.settings.includeItems": [
         "/wp-content/themes/kalysnailsandbeauty/assets/sass/_colors.scss",
         "/wp-content/themes/kalysnailsandbeauty/assets/sass/_font.scss",
-        "/wp-content/themes/kalysnailsandbeauty/assets/sass/_kalys_responsive.scss",
+        "/wp-content/themes/kalysnailsandbeauty/assets/sass/kalys_responsive.scss",
         "/wp-content/themes/kalysnailsandbeauty/assets/sass/style.scss",
     ],
    //"liveSassCompile.settings.rootIsWorkspace": null,

@@ -15,7 +15,7 @@
     </h1>
     <div class="space-gradient"></div>
 
-    <main class="kalys-news container">
+    <main class="kalys-news container-fluid">
         <div class="container news-list g-4">
             <?php the_content() ?>
         </div>

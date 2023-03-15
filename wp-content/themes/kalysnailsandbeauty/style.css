@@ -126,6 +126,10 @@ nav {
   text-align: center;
 }
 
+.home, .archive, .blog, .page-template, .post-template, .single-post, .single-soin-mains {
+  font-family: "Tillana-Medium";
+}
+
 h1 {
   font-size: 4em !important;
   font-family: inherit;
@@ -291,14 +295,6 @@ nav .sticky {
   /*top: 0;*/
   width: 100%;
   z-index: 11;
-  /*
-  @include phone{
-      position: static;
-  }
-  @include tablet{
-      position: static;
-  }
-  */
 }
 header .sticky .nav_logo img,
 nav .sticky .nav_logo img {
@@ -357,38 +353,6 @@ nav ul.kalys_primary_nav li.kalys_m_active > a {
   color: #c334f4;
 }
 
-/*********
- navbar responsive
-
-****************/
-/*
-    &::before {
-        content: '';
-       //background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
-        //content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
-        background-size: contain;
-        width: 80px;
-        height: 50px;
-        position: relative;
-        border-radius: 10px;
-       //box-sizing: border-box;
-       // background-color: rgb(255, 12, 4);
-        display: none;
-
-        @include phone {
-            content: '';
-           // background: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png') no-repeat ;
-           // content: url('http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.png');
-            display: block;
-            background-size: contain;
-            width:80px;
-            height: 50px;
-           // position: absolute;
-            left: 10px;
-            //right: 0;
-            //top: 0;
-        }
-    }*/
 /******* fin navbar responsive*****/
 .space-gradient {
   background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(#ffccff), color-stop(#ffffff), to(#ffccff));
@@ -458,6 +422,47 @@ page blog/actualités
 /***********
 footer
 */
+.page-template-default .news-sidebar,
+.page .news-sidebar,
+.blog .news-sidebar,
+.single-post .news-sidebar,
+.archive .news-sidebar,
+.single .news-sidebar {
+  position: relative;
+  background-color: #ffe6e6;
+  border-radius: 5px;
+  padding: 10px 0 10px 0;
+  float: right;
+  -webkit-transition: -webkit-box-shadow 0.8s ease-in-out;
+  transition: -webkit-box-shadow 0.8s ease-in-out;
+  transition: box-shadow 0.8s ease-in-out;
+  transition: box-shadow 0.8s ease-in-out, -webkit-box-shadow 0.8s ease-in-out;
+}
+.page-template-default .news-sidebar:hover,
+.page .news-sidebar:hover,
+.blog .news-sidebar:hover,
+.single-post .news-sidebar:hover,
+.archive .news-sidebar:hover,
+.single .news-sidebar:hover {
+  -webkit-box-shadow: 10px 10px 20px gray;
+          box-shadow: 10px 10px 20px gray;
+}
+.page-template-default .news-sidebar ul,
+.page .news-sidebar ul,
+.blog .news-sidebar ul,
+.single-post .news-sidebar ul,
+.archive .news-sidebar ul,
+.single .news-sidebar ul {
+  width: 250px;
+}
+.page-template-default .comment-respond,
+.page .comment-respond,
+.blog .comment-respond,
+.single-post .comment-respond,
+.archive .comment-respond,
+.single .comment-respond {
+  display: inline-block;
+}
 .page-template-default .kalys-footer,
 .page .kalys-footer,
 .blog .kalys-footer,
@@ -707,11 +712,43 @@ page actualités/blog
   font-size: 10px;
 }
 
+/*******************  
+post-template
+ *********************/
+.post-template .container-single-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.post-template .news-sidebar {
+  position: relative;
+  background-color: #ffe6e6;
+  border-radius: 5px;
+  padding: 10px 0 10px 0;
+  float: right;
+  -webkit-transition: -webkit-box-shadow 0.8s ease-in-out;
+  transition: -webkit-box-shadow 0.8s ease-in-out;
+  transition: box-shadow 0.8s ease-in-out;
+  transition: box-shadow 0.8s ease-in-out, -webkit-box-shadow 0.8s ease-in-out;
+}
+.post-template .news-sidebar:hover {
+  -webkit-box-shadow: 10px 10px 20px gray;
+          box-shadow: 10px 10px 20px gray;
+}
+.post-template .news-sidebar ul {
+  width: 250px;
+}
+
 /*******************
 page manucure
 ****************/
 .page-template-single-soin-mains {
   font-family: "Tillana-Medium" !important;
+}
+.page-template-single-soin-mains .single-soin-mains {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 /*******
@@ -768,9 +805,11 @@ icone
   }
   header .kalys_nav_menu .nav_logo img,
   nav .kalys_nav_menu .nav_logo img {
+    display: inline-block;
     width: 120px;
     height: auto;
     top: -0.3rem;
+    left: -2rem;
   }
   header .kalys-collapse,
   nav .kalys-collapse {
@@ -825,7 +864,7 @@ icone
     display: block;
     width: 80px;
     height: 55px;
-    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
+    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icone_burger.svg") no-repeat;
     background-size: contain;
     cursor: pointer;
   }
@@ -835,29 +874,72 @@ icone
     opacity: 1;
     left: 0;
   }
-}
-/********* Homepage****************/
-.home {
-  /******** Layout calendar Homepage*********/
-}
-.home main .kalys-col-full {
-  /*******resposive accueil*****/
-}
-@media screen and (max-width: 992px) {
+  .post-template .container-single-post {
+    display: block;
+  }
+  .post-template .news-sidebar {
+    float: none;
+  }
+  .post-template .comment-respond {
+    display: inline-block;
+    width: 80vw;
+  }
+  /********* Homepage****************/
+  .home {
+    /******** Layout calendar Homepage*********/
+  }
   .home main .kalys-col-full {
+    /*******resposive accueil*****/
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-}
-@media screen and (max-width: 576px) {
-  .home main .kalys-col-full {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-}
-@media screen and (max-width: 576px) {
   .home div.bookly-bootstrap div.justify-content-start {
     display: grid;
+  }
+}
+/************* Blog/ news ***********/
+@media screen and (max-width: 992px) {
+  .blog #rev_slider_8_1_forcefullwidth,
+  .blog #rev_slider_7_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_8_1_forcefullwidth,
+  .page-template-single-soin-mains #rev_slider_7_1_forcefullwidth {
+    margin-bottom: 0 !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .kalys-post-manucure,
+  .page-template-single-soin-mains .kalys-post-manucure {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .zoom-img-card-hover,
+  .page-template-single-soin-mains .zoom-img-card-hover {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .full-article,
+  .page-template-single-soin-mains .full-article {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .blog div.news-list {
+    display: block;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog article.home-news {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .blog .news-sidebar {
+    display: none;
   }
 }
 
@@ -907,73 +989,92 @@ icone
   }
 }
 
-/********* Homepage****************/
-.home {
-  /******** Layout calendar Homepage*********/
-}
-.home main .kalys-col-full {
-  /*******resposive accueil*****/
-}
 @media screen and (max-width: 992px) {
-  .home main .kalys-col-full {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-}
-@media screen and (max-width: 576px) {
-  .home main .kalys-col-full {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-}
-@media screen and (max-width: 576px) {
-  .home div.bookly-bootstrap div.justify-content-start {
-    display: grid;
-  }
-}
-
-/************* Blog/ news ***********/
-@media screen and (max-width: 992px) {
-  .blog #rev_slider_8_1_forcefullwidth,
-  .blog #rev_slider_7_1_forcefullwidth,
-  .page-template-single-soin-mains #rev_slider_8_1_forcefullwidth,
-  .page-template-single-soin-mains #rev_slider_7_1_forcefullwidth {
-    margin-bottom: 0 !important;
-  }
-}
-@media screen and (max-width: 576px) {
-  .blog .kalys-post-manucure,
-  .page-template-single-soin-mains .kalys-post-manucure {
-    display: inline-block;
-  }
-}
-@media screen and (max-width: 576px) {
-  .blog .zoom-img-card-hover,
-  .page-template-single-soin-mains .zoom-img-card-hover {
-    padding-right: 0;
-  }
-}
-@media screen and (max-width: 576px) {
-  .blog .full-article,
-  .page-template-single-soin-mains .full-article {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .blog div.news-list {
+  header,
+  nav {
+    position: static;
     display: block;
-    padding: 10px;
+    height: 60px;
+    z-index: 12;
   }
-}
-@media screen and (max-width: 576px) {
-  .blog article.home-news {
-    margin-bottom: 10px;
+  header .kalys_nav_menu,
+  nav .kalys_nav_menu {
+    display: block;
   }
-}
-@media screen and (max-width: 576px) {
-  .blog .news-sidebar {
-    display: none;
+  header .kalys_nav_menu .nav_logo,
+  nav .kalys_nav_menu .nav_logo {
+    position: relative;
+    display: block;
+  }
+  header .kalys_nav_menu .nav_logo img,
+  nav .kalys_nav_menu .nav_logo img {
+    display: inline-block;
+    width: 120px;
+    height: auto;
+    top: -0.3rem;
+    left: -2rem;
+  }
+  header .kalys-collapse,
+  nav .kalys-collapse {
+    display: block;
+    float: left;
+    width: 250px;
+    margin: 0;
+    right: 0.8rem;
+    background-color: #f0b5b5;
+    border-radius: 10px;
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
+    -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+  }
+  header .kalys-collapse .kalys_primary_nav,
+  nav .kalys-collapse .kalys_primary_nav {
+    margin-right: 10px !important;
+    display: block !important;
+    text-align: center;
+    margin: 0;
+    left: 1rem;
+  }
+  header .kalys-collapse .kalys_primary_nav li > a,
+  nav .kalys-collapse .kalys_primary_nav li > a {
+    border-right: none !important;
+  }
+  header .kalys-collapse .kalys_primary_nav li:nth-child(-n+4),
+  nav .kalys-collapse .kalys_primary_nav li:nth-child(-n+4) {
+    margin-right: 10px;
+    display: block;
+  }
+  header .kalys-collapse .kalys_primary_nav li:nth-child(-n+4) a,
+  nav .kalys-collapse .kalys_primary_nav li:nth-child(-n+4) a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 0.6px solid #c334f4;
+    border-right: none;
+  }
+  header button,
+  nav button {
+    width: auto !important;
+    position: absolute;
+    top: 1rem;
+  }
+  header .icone_responsive,
+  nav .icone_responsive {
+    z-index: 12;
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 55px;
+    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icone_burger.svg") no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+  .home main .elementor.elementor-13 section.elementor-element-cdce6d5 .elementor-container.elementor-column-gap-default {
+    display: block !important;
+  }
+  .home main .elementor.elementor-13 section.elementor-element-cdce6d5 .elementor-column.elementor-col-33.elementor-top-column.elementor-element.elementor-element-eddfb98, .home main .elementor.elementor-13 section.elementor-element-cdce6d5 .elementor-column.elementor-col-33.elementor-top-column.elementor-element.elementor-element-0c61463, .home main .elementor.elementor-13 section.elementor-element-cdce6d5 .elementor-column.elementor-col-33.elementor-top-column.elementor-element.elementor-element-4f63d3d {
+    width: auto;
   }
 }/*# sourceMappingURL=style.css.map */

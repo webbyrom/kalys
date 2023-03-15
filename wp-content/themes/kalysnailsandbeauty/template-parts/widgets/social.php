@@ -5,7 +5,6 @@ $networks = [
     'tiktok'    =>  'TikTok'
 ];
 ?>
-<div class="footer_credits"><?= esc_html($instance['credits']) ?></div>
 <div class="footer_social">
     <?php foreach ($networks as $name => $label) : ?>
         <?php if (!empty($instance[$name])) : ?>
@@ -15,3 +14,4 @@ $networks = [
         <?php endif ?>
     <?php endforeach; ?>
 </div>
+<div class="footer_credits"><a href="<?= esc_html($instance['Design_by']); ?>">Design by Web-byRom</a></div>

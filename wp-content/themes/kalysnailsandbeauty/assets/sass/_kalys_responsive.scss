@@ -18,13 +18,16 @@
                 display: block;
 
                 img {
+                    display: inline-block;
                     width: 120px;
                     height: auto;
                     top: -0.3rem;
+                    left: -2rem;
                 }
             }
 
         }
+
         .kalys-collapse {
             display: block;
             float: left;
@@ -36,15 +39,257 @@
             transform: translateX(-250px);
             transition-duration: 0.4s;
 
-            .kalys_primary_nav{
-                margin-right: 10px!important;
-                display: block!important;
+            .kalys_primary_nav {
+                margin-right: 10px !important;
+                display: block !important;
                 text-align: center;
                 margin: 0;
                 left: 1rem;
 
-                li> a {
-                    border-right: none!important;
+                li>a {
+                    border-right: none !important;
+                }
+
+                li:nth-child(-n + 4) {
+                    margin-right: 10px;
+                    display: block;
+
+                    a {
+                        display: block;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        border-bottom: 0.6px solid $color-border;
+                        border-right: none;
+                    }
+                }
+            }
+        }
+
+        button {
+            width: auto !important;
+            position: absolute;
+            top: 1rem;
+        }
+
+
+
+        /******** burger*********/
+        .icone_responsive {
+            // display: none;
+            z-index: 12;
+            //top: 1rem;
+            position: absolute;
+            display: block;
+            width: 80px;
+            height: 55px;
+            background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icone_burger.svg") no-repeat;
+            background-size: contain;
+            //box-shadow: 5px 5px 20px $color-shadow;
+            cursor: pointer;
+        }
+
+    }
+
+    .side-menu {
+        .kalys-collapse {
+            transform: translateX(0px);
+            opacity: 1;
+            left: 0;
+        }
+    }
+
+    .post-template {
+        .container-single-post {
+            display: block;
+        }
+
+        .news-sidebar {
+            //clear: both;
+            float: none;
+        }
+
+        .comment-respond {
+            display: inline-block;
+            width: 80vw;
+        }
+    }
+
+    /********* Homepage****************/
+    .home {
+        main {
+            .kalys-col-full {
+
+                /*******resposive accueil*****/
+
+                box-shadow: none;
+            }
+        }
+
+        /******** Layout calendar Homepage*********/
+        div.bookly-bootstrap {
+            div.justify-content-start {
+
+                display: grid;
+
+            }
+        }
+    }
+
+
+}
+
+/************* Blog/ news ***********/
+.blog,
+.page-template-single-soin-mains {
+
+    #rev_slider_8_1_forcefullwidth,
+    #rev_slider_7_1_forcefullwidth {
+        @include tablet {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .kalys-post-manucure {
+        @include phone {
+            display: inline-block;
+        }
+    }
+
+    .zoom-img-card-hover {
+        @include phone {
+            padding-right: 0;
+        }
+    }
+
+    .full-article {
+        @include phone {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.blog {
+    div.news-list {
+        @include phone {
+            display: block;
+            padding: 10px;
+        }
+    }
+
+    article.home-news {
+        @include phone {
+            margin-bottom: 10px;
+        }
+    }
+
+    .news-sidebar {
+        @include phone {
+            display: none;
+        }
+    }
+}
+
+/************* Blog/ news ***********/
+.blog,
+.page-template-single-soin-mains {
+
+    #rev_slider_8_1_forcefullwidth,
+    #rev_slider_7_1_forcefullwidth {
+        @include tablet {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .kalys-post-manucure {
+        @include phone {
+            display: inline-block;
+        }
+    }
+
+    .zoom-img-card-hover {
+        @include phone {
+            padding-right: 0;
+        }
+    }
+
+    .full-article {
+        @include phone {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.blog {
+    div.news-list {
+        @include phone {
+            display: block;
+            padding: 10px;
+        }
+    }
+
+    article.home-news {
+        @include phone {
+            margin-bottom: 10px;
+        }
+    }
+
+    .news-sidebar {
+        @include phone {
+            display: none;
+        }
+    }
+}
+
+@include tablet {
+
+    header,
+    nav {
+        position: static;
+        display: block;
+        height: 60px;
+        z-index: 12; // see for modification
+
+        .kalys_nav_menu {
+            display: block;
+
+            .nav_logo {
+                position: relative;
+                display: block;
+
+                img {
+                    display: inline-block;
+                    width: 120px;
+                    height: auto;
+                    top: -0.3rem;
+                    left: -2rem;
+                }
+            }
+
+        }
+
+        .kalys-collapse {
+            display: block;
+            float: left;
+            width: 250px;
+            margin: 0;
+            right: 0.8rem;
+            background-color: $title-color;
+            border-radius: 10px;
+            transform: translateX(-250px);
+            transition-duration: 0.4s;
+
+            .kalys_primary_nav {
+                margin-right: 10px !important;
+                display: block !important;
+                text-align: center;
+                margin: 0;
+                left: 1rem;
+
+                li>a {
+                    border-right: none !important;
                 }
 
                 li:nth-child(-n + 4) {
@@ -67,10 +312,6 @@
             position: absolute;
             top: 1rem;
         }
-
-       
-
-        /******** burger*********/
         .icone_responsive {
             // display: none;
             z-index: 12;
@@ -79,168 +320,26 @@
             display: block;
             width: 80px;
             height: 55px;
-            background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
+            background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icone_burger.svg") no-repeat;
             background-size: contain;
             //box-shadow: 5px 5px 20px $color-shadow;
             cursor: pointer;
         }
 
+       
     }
-    .side-menu {
-        .kalys-collapse {
-            transform: translateX(0px);
-            opacity: 1;
-            left:0;
-        }
-    }
-
-}
-
-
-
-/********* Homepage****************/
-.home {
-    main {
-        .kalys-col-full {
-
-            /*******resposive accueil*****/
-            @include tablet {
-                box-shadow: none;
+    .home {
+        main{
+            .elementor.elementor-13{
+               section.elementor-element-cdce6d5{
+                    .elementor-container.elementor-column-gap-default {
+                        display: block!important;
+                    }
+                    .elementor-column.elementor-col-33.elementor-top-column.elementor-element.elementor-element-eddfb98, .elementor-column.elementor-col-33.elementor-top-column.elementor-element.elementor-element-0c61463,.elementor-column.elementor-col-33.elementor-top-column.elementor-element.elementor-element-4f63d3d {
+                        width: auto;
+                    }
+                }
             }
-
-            @include phone {
-                box-shadow: none;
-            }
-        }
-    }
-
-    /******** Layout calendar Homepage*********/
-    div.bookly-bootstrap {
-        div.justify-content-start {
-            @include phone {
-                display: grid;
-            }
-        }
-    }
-}
-
-/************* Blog/ news ***********/
-.blog,
-.page-template-single-soin-mains {
-
-    #rev_slider_8_1_forcefullwidth,
-    #rev_slider_7_1_forcefullwidth {
-        @include tablet {
-            margin-bottom: 0 !important;
-        }
-    }
-
-    .kalys-post-manucure {
-        @include phone {
-            display: inline-block;
-        }
-    }
-
-    .zoom-img-card-hover {
-        @include phone {
-            padding-right: 0;
-        }
-    }
-
-    .full-article {
-        @include phone {
-            margin-left: 0;
-            margin-right: 0;
-        }
-    }
-}
-
-.blog {
-    div.news-list {
-        @include phone {
-            display: block;
-            padding: 10px;
-        }
-    }
-
-    article.home-news {
-        @include phone {
-            margin-bottom: 10px;
-        }
-    }
-
-    .news-sidebar {
-        @include phone {
-            display: none;
-        }
-    }
-}
-
-/********* Homepage****************/
-.home {
-    main {
-        .kalys-col-full {
-            /*******resposive accueil*****/
-            @include tablet {
-                box-shadow: none;
-            }
-
-            @include phone {
-                box-shadow: none;
-            }
-        }
-    }
-    /******** Layout calendar Homepage*********/
-    div.bookly-bootstrap {
-        div.justify-content-start {
-            @include phone {
-                display: grid;
-            }
-        }
-    }
-}
-
-/************* Blog/ news ***********/
-.blog,
-.page-template-single-soin-mains {
-    #rev_slider_8_1_forcefullwidth,
-    #rev_slider_7_1_forcefullwidth {
-        @include tablet {
-            margin-bottom: 0 !important;
-        }
-    }
-    .kalys-post-manucure {
-        @include phone {
-            display: inline-block;
-        }
-    }
-    .zoom-img-card-hover {
-        @include phone {
-            padding-right: 0;
-        }
-    }
-    .full-article {
-        @include phone {
-            margin-left: 0;
-            margin-right: 0;
-        }
-    }
-}
-.blog {
-    div.news-list {
-        @include phone {
-            display: block;
-            padding: 10px;
-        }
-    }
-    article.home-news {
-        @include phone {
-            margin-bottom: 10px;
-        }
-    }
-    .news-sidebar {
-        @include phone {
-            display: none;
         }
     }
 }

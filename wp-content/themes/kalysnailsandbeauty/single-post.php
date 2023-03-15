@@ -13,7 +13,7 @@
     <div class="space-gradient"></div>
 </div>
 <!---------contenu des articles-------->
-<div class="container px-4 container-single-post page-sidebar">
+<div class="container-fluid px-4 container-single-post page-sidebar">
     <?php while (have_posts()) : the_post(); ?>
         <section class="single-post-kalys container">
             <header class=" row gx-5 news-single-post">
@@ -29,28 +29,32 @@
                     <div class="news-date"><?= sprintf(__('Published on %s at %s', 'kalys'), get_the_date(), get_the_time()) ?></div>
                 </div>
             </header>
-            <div class="row single-post-img container">
+            <div class="row single-post-img container-fluid">
                 <?php if (has_post_thumbnail()) : ?>
                     <p class="container">
                         <?= the_post_thumbnail('medium'); ?>
                     </p>
                 <?php endif ?>
-                <div class="container">
+                <div class="container-fluid">
                     <?php the_content() ?>
 
                 </div>
+                <aside class="news-sidebar">
+                    <?php dynamic_sidebar('blog') ?>
+                </aside>
             </div>
+
         </section>
     <?php endwhile ?>
+    <!-------------------sidebar--------------->
+
+
 </div>
 <!------- Partie commentaire------->
 <?php
-if (comments_open()|| get_comments_number() >0) {
+if (comments_open() || get_comments_number() > 0) {
     comments_template();
 };
 ?>
-<!-------------------sidebar--------------->
-<aside class="news-sidebar">
-    <?php dynamic_sidebar('blog') ?>
-</aside>
+
 <?php get_footer() ?>

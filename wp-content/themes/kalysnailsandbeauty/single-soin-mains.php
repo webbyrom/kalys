@@ -22,7 +22,7 @@
 
             <?php $kalysManucures = get_terms(['taxonomy' => 'manucure']); ?>
             <?php if(is_array($kalysManucures)):?>
-            <ul class="nav nav-pills">
+            <ul class="nav nav-pills single-soin-mains">
                 <?php foreach ($kalysManucures as $kalysManucure): ?>
                     <li class="nav-item">
                         <a href="<?= get_term_link($kalysManucure) ?>" class="nav-link <?= is_tax('manucure', $kalysManucure->term_id) ? 'active' : '' ?>"><?= $kalysManucure->name ?></a>

@@ -6,7 +6,7 @@ class Kalys_Social_Widget extends WP_Widget
     {
         parent::__construct('kalys_social_widget', __('Social widget', 'kalys'));
         $this->fields = [
-            'credits' => __('Credits', 'kalys'),
+            'Design_by' => __('Design', 'kalys'),
             'title' => __('Title', 'kalys'),
             'tiktok' => 'TikTok',
             'facebook'=> 'Facebook',
@@ -58,7 +58,6 @@ class Kalys_Social_Widget extends WP_Widget
             if (!empty($newInstance[$field] )){
                 $output[$field] = $newInstance[$field];
             }
-
         }
         return $output;
     }

@@ -99,9 +99,7 @@ icone
 }
 
 /******** burger*/
-a.icone_responsive {
-  display: none;
-}
+
 @media screen and (max-width: 992px) {
   a.icone_responsive {
     z-index: 9999;
@@ -109,28 +107,19 @@ a.icone_responsive {
     display: block;
     width: 80px;
     height: 55px;
-    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icône_burger.svg") no-repeat;
+    background: url("http://localhost/kalys/wp-content/themes/kalysnailsandbeauty/assets/logo/icone_burger.svg") no-repeat;
     background-size: contain;
     cursor: pointer;
   }
 }
 
-/*nav.sticky {
-    @include phone{
-        position: static!important;
-    }
-    @include tablet{
-        position: static;
-    }
-}
-*/
+
 /********* Homepage****************/
-.home {
+
   /******** Layout calendar Homepage*********/
-}
-.home main .kalys-col-full {
+
   /*******resposive accueil*****/
-}
+
 @media screen and (max-width: 992px) {
   .home main .kalys-col-full {
     box-shadow: none;
